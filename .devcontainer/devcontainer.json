@@ -8,5 +8,5 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "postCreateCommand": "corepack enable && npm --version && npm run setup",
-  "postStartCommand": "npm run start"
+  "postStartCommand": "npm run db:up && npm run start"
 }
