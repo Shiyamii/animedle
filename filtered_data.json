@@ -5,6 +5,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/47347t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/47347l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Award Winning",
@@ -45,7 +46,7 @@
         "title": "L'Attaque des Titans"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2013-04-07T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -58,6 +59,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1079/138100t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1079/138100l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Supernatural",
       "Suspense"
@@ -80,7 +82,7 @@
         "title": "Death Note"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 37,
     "season_start": "2006-10-04T00:00:00+00:00",
     "studio": "Madhouse",
@@ -93,6 +95,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/76049t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/76049l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy"
@@ -119,7 +122,7 @@
         "title": "One-Punch Man"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2015-10-05T00:00:00+00:00",
     "studio": "Madhouse",
@@ -132,6 +135,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1286/99889t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1286/99889l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Award Winning",
@@ -167,7 +171,7 @@
         "title": "Demon Slayer"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 26,
     "season_start": "2019-04-06T00:00:00+00:00",
     "studio": "ufotable",
@@ -180,6 +184,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1208/94745t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1208/94745l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -220,7 +225,7 @@
         "title": "Fullmetal Alchemist Brotherhood"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 64,
     "season_start": "2009-04-05T00:00:00+00:00",
     "studio": "Bones",
@@ -233,6 +238,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/39717t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/39717l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -261,7 +267,7 @@
         "title": "Sword Art Online"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2012-07-08T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -274,6 +280,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/78745t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/78745l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action"
     ],
@@ -303,7 +310,7 @@
         "title": "My Hero Academia"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2016-04-03T00:00:00+00:00",
     "studio": "Bones",
@@ -316,6 +323,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1141/142503t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1141/142503l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -339,7 +347,7 @@
         "title": "Naruto"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 220,
     "season_start": "2002-10-03T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -352,6 +360,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/87048t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/87048l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Award Winning",
       "Drama"
@@ -382,7 +391,7 @@
         "title": "Your Name."
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2016-08-26T00:00:00+00:00",
     "studio": "CoMix Wave Films",
@@ -395,6 +404,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/84177t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/84177l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -426,7 +436,7 @@
         "title": "L'Attaque des Titans Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2017-04-01T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -439,6 +449,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1498/134443t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1498/134443l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -471,7 +482,7 @@
         "title": "Tokyo Ghoul"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2014-07-04T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -484,6 +495,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1171/109222t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1171/109222l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Award Winning",
@@ -523,7 +535,7 @@
         "title": "Jujutsu Kaisen"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2020-10-03T00:00:00+00:00",
     "studio": "MAPPA",
@@ -536,6 +548,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1337/99013t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1337/99013l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -571,7 +584,7 @@
         "title": "Hunter X Hunter"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 148,
     "season_start": "2011-10-02T00:00:00+00:00",
     "studio": "Madhouse",
@@ -584,6 +597,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/85221t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/85221l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action"
     ],
@@ -613,7 +627,7 @@
         "title": "My Hero Academia Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2017-04-01T00:00:00+00:00",
     "studio": "Bones",
@@ -626,6 +640,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1565/111305t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1565/111305l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -661,7 +676,7 @@
         "title": "Naruto Shippuden"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 500,
     "season_start": "2007-02-15T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -674,6 +689,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1173/92110t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1173/92110l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -705,7 +721,7 @@
         "title": "L'Attaque des Titans Saison 3"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2018-07-23T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -718,6 +734,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1122/96435t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1122/96435l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Award Winning",
       "Drama"
@@ -752,7 +769,7 @@
         "title": "A Silent Voice"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 1,
     "season_start": "2016-09-17T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -765,6 +782,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1517/100633t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1517/100633l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -796,7 +814,7 @@
         "title": "L'Attaque des Titans Saison 3 Partie 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 10,
     "season_start": "2019-04-29T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -809,6 +827,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1074/111944t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1074/111944l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Fantasy",
@@ -844,7 +863,7 @@
         "title": "No Game, No Life"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2014-04-09T00:00:00+00:00",
     "studio": "Madhouse",
@@ -857,6 +876,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1522/128039t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1522/128039l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Fantasy",
@@ -896,7 +916,7 @@
         "title": "Re:Zero -Starting Life in Another World-"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2016-04-04T00:00:00+00:00",
     "studio": "White Fox",
@@ -909,6 +929,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1319/92084t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1319/92084l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action"
     ],
@@ -938,7 +959,7 @@
         "title": "My Hero Academia Saison 3"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2018-04-07T00:00:00+00:00",
     "studio": "Bones",
@@ -951,6 +972,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1032/135088t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1032/135088l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Award Winning",
       "Drama",
@@ -982,7 +1004,7 @@
         "title": "Code Geass: Lelouch of the Rebellion"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2006-10-06T00:00:00+00:00",
     "studio": "Sunrise",
@@ -995,6 +1017,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1244/138851t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1244/138851l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -1018,7 +1041,7 @@
         "title": "One Piece"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": null,
     "season_start": "1999-10-20T00:00:00+00:00",
     "studio": "Toei Animation",
@@ -1031,6 +1054,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1935/127974t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1935/127974l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Sci-Fi",
@@ -1050,7 +1074,7 @@
         "title": "Steins;Gate"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2011-04-06T00:00:00+00:00",
     "studio": "White Fox",
@@ -1063,6 +1087,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1000/110531t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1000/110531l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -1102,7 +1127,7 @@
         "title": "L'Attaque des Titans Saison Finale"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 16,
     "season_start": "2020-12-07T00:00:00+00:00",
     "studio": "MAPPA",
@@ -1115,6 +1140,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/77957t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/77957l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Mystery",
       "Suspense"
@@ -1153,7 +1179,7 @@
         "title": "ERASED"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2016-01-08T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -1166,6 +1192,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/13/22128t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/13/22128l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -1188,7 +1215,7 @@
         "title": "Toradora!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2008-10-02T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -1201,6 +1228,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1405/143284t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1405/143284l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -1235,7 +1263,7 @@
         "title": "Your Lie in April"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 22,
     "season_start": "2014-10-10T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -1248,6 +1276,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/8/65409t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/8/65409l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -1275,7 +1304,7 @@
         "title": "The Seven Deadly Sins"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2014-10-05T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -1288,6 +1317,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/8/80356t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/8/80356l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -1315,7 +1345,7 @@
         "title": "Mob Psycho 100"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2016-07-11T00:00:00+00:00",
     "studio": "Bones",
@@ -1328,6 +1358,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1223/121999t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1223/121999l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -1368,7 +1399,7 @@
         "title": "Sword Art Online Ⅱ"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2014-07-05T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -1381,6 +1412,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/6/79597t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/6/79597l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Adventure",
       "Award Winning",
@@ -1416,7 +1448,7 @@
         "title": "Le Voyage de Chihiro"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2001-07-20T00:00:00+00:00",
     "studio": "Studio Ghibli",
@@ -1429,6 +1461,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1429/95946t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1429/95946l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -1455,7 +1488,7 @@
         "title": "Red Eyes Sword - Akame ga Kill!"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2014-07-07T00:00:00+00:00",
     "studio": "White Fox",
@@ -1468,6 +1501,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1830/118780t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1830/118780l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Mystery",
       "Suspense"
@@ -1498,7 +1532,7 @@
         "title": "The Promised Neverland"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2019-01-11T00:00:00+00:00",
     "studio": "CloverWorks",
@@ -1511,6 +1545,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1895/142748t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1895/142748l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Comedy",
@@ -1546,7 +1581,7 @@
         "title": "KonoSuba: God's Blessing on This Wonderful World!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 10,
     "season_start": "2016-01-14T00:00:00+00:00",
     "studio": "Studio Deen",
@@ -1559,6 +1594,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1244/111115t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1244/111115l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Fantasy"
@@ -1577,7 +1613,7 @@
         "title": "Angel Beats!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2010-04-03T00:00:00+00:00",
     "studio": "P.A. Works",
@@ -1590,6 +1626,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1886/128266t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1886/128266l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -1608,7 +1645,7 @@
         "title": "Noragami"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2014-01-05T00:00:00+00:00",
     "studio": "Bones",
@@ -1621,6 +1658,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/7/76014t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/7/76014l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -1658,7 +1696,7 @@
         "title": "Haikyu!!"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2014-04-06T00:00:00+00:00",
     "studio": "Production I.G",
@@ -1671,6 +1709,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/75639t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/75639l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy"
@@ -1701,7 +1740,7 @@
         "title": "Assassination Classroom"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 22,
     "season_start": "2015-01-10T00:00:00+00:00",
     "studio": "Lerche",
@@ -1714,6 +1753,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1088/135089t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1088/135089l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Award Winning",
       "Drama",
@@ -1753,7 +1793,7 @@
         "title": "Code Geass: Lelouch of the Rebellion R2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2008-04-06T00:00:00+00:00",
     "studio": "Sunrise",
@@ -1766,6 +1806,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/13/33465t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/13/33465l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural",
@@ -1797,7 +1838,7 @@
         "title": "The Future Diary"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 26,
     "season_start": "2011-10-09T00:00:00+00:00",
     "studio": "asread.",
@@ -1810,6 +1851,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1889/123307t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1889/123307l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -1842,7 +1884,7 @@
         "title": "Tokyo Ghoul √A"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2015-01-09T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -1855,6 +1897,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1541/147774t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1541/147774l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -1874,7 +1917,7 @@
         "title": "Bleach"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 366,
     "season_start": "2004-10-05T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -1887,6 +1930,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/73178t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/73178l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Horror",
@@ -1931,7 +1975,7 @@
         "title": "Parasite -la maxime-"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 24,
     "season_start": "2014-10-09T00:00:00+00:00",
     "studio": "Madhouse",
@@ -1944,6 +1988,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1301/93586t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1301/93586l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance",
@@ -1979,7 +2024,7 @@
         "title": "Rascal does not Dream of Bunny Girl Senpai (Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai)"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2018-10-04T00:00:00+00:00",
     "studio": "CloverWorks",
@@ -1992,6 +2037,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/75195t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/75195l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -2026,7 +2072,7 @@
         "title": "Blue Exorcist"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2011-04-17T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -2039,6 +2085,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1295/106551t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1295/106551l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -2073,7 +2120,7 @@
         "title": "Kaguya-sama: Love is War"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2019-01-12T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -2086,6 +2133,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1314/108941t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1314/108941l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Avant Garde",
       "Award Winning",
@@ -2115,7 +2163,7 @@
         "title": "Neon Genesis Evangelion"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 26,
     "season_start": "1995-10-04T00:00:00+00:00",
     "studio": "Gainax",
@@ -2128,6 +2176,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/40409t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/40409l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -2179,7 +2228,7 @@
         "title": "JoJo's Bizarre Adventure"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 26,
     "season_start": "2012-10-06T00:00:00+00:00",
     "studio": "David Production",
@@ -2192,6 +2241,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1412/107914t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1412/107914l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action"
     ],
@@ -2221,7 +2271,7 @@
         "title": "My Hero Academia Saison 4"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2019-10-12T00:00:00+00:00",
     "studio": "Bones",
@@ -2234,6 +2284,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1613/102576t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1613/102576l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Comedy"
@@ -2252,7 +2303,7 @@
         "title": "Dr. Stone"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2019-07-05T00:00:00+00:00",
     "studio": "TMS Entertainment",
@@ -2265,6 +2316,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1704/106947t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1704/106947l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Action",
       "Supernatural"
@@ -2303,7 +2355,7 @@
         "title": "Demon Slayer - Kimetsu no Yaiba - Le film : Le train de l'Infini"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 1,
     "season_start": "2020-10-16T00:00:00+00:00",
     "studio": "ufotable",
@@ -2316,6 +2368,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1441/122795t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1441/122795l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Award Winning",
@@ -2331,7 +2384,7 @@
         "title": "SPY×FAMILY"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2022-04-09T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -2344,6 +2397,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1247/122044t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1247/122044l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy"
@@ -2386,7 +2440,7 @@
         "title": "One Punch Man Saison 2"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2019-04-10T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -2399,6 +2453,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1806/126216t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1806/126216l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -2421,7 +2476,7 @@
         "title": "Chainsaw Man"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2022-10-12T00:00:00+00:00",
     "studio": "MAPPA",
@@ -2434,6 +2489,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1614/90408t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1614/90408l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance",
@@ -2461,7 +2517,7 @@
         "title": "Darling in The FranXX"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2018-01-13T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -2474,6 +2530,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1908/120036t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1908/120036l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -2492,7 +2549,7 @@
         "title": "Demon Slayer: Kimetsu no Yaiba Entertainment District Arc"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 11,
     "season_start": "2021-12-05T00:00:00+00:00",
     "studio": "ufotable",
@@ -2505,6 +2562,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/2/83188t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/2/83188l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Comedy",
@@ -2540,7 +2598,7 @@
         "title": "KonoSuba: God's blessing on this wonderful world! 2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 10,
     "season_start": "2017-01-12T00:00:00+00:00",
     "studio": "Studio Deen",
@@ -2553,6 +2611,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1490/101365t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1490/101365l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -2585,7 +2644,7 @@
         "title": "The Rising of the Shield Hero"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2019-01-09T00:00:00+00:00",
     "studio": "Kinema Citrus",
@@ -2598,6 +2657,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1795/95088t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1795/95088l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama"
     ],
@@ -2615,7 +2675,7 @@
         "title": "Violet Evergarden"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2018-01-11T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -2628,6 +2688,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1918/96303t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1918/96303l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -2659,7 +2720,7 @@
         "title": "Mob Psycho 100 II"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2019-01-07T00:00:00+00:00",
     "studio": "Bones",
@@ -2672,6 +2733,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/71553t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/71553l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Fantasy",
@@ -2691,7 +2753,7 @@
         "title": "Death Parade"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2015-01-10T00:00:00+00:00",
     "studio": "Madhouse",
@@ -2704,6 +2766,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1826/147276t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1826/147276l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama"
     ],
@@ -2721,7 +2784,7 @@
         "title": "Charlotte"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2015-07-05T00:00:00+00:00",
     "studio": "P.A. Works",
@@ -2734,6 +2797,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/18179t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/18179l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -2753,7 +2817,7 @@
         "title": "Fairy Tail"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 175,
     "season_start": "2009-10-12T00:00:00+00:00",
     "studio": "Satelight",
@@ -2766,6 +2830,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/19644t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/19644l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Award Winning",
@@ -2785,7 +2850,7 @@
         "title": "Cowboy Bebop"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 26,
     "season_start": "1998-04-03T00:00:00+00:00",
     "studio": "Sunrise",
@@ -2798,6 +2863,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1444/148976t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1444/148976l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Gourmet",
       "Ecchi"
@@ -2836,7 +2902,7 @@
         "title": "Food Wars! Shokugeki no Soma"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -2849,6 +2915,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/75509t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/75509l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Horror",
       "Mystery"
@@ -2867,7 +2934,7 @@
         "title": "Another"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2012-01-10T00:00:00+00:00",
     "studio": "P.A. Works",
@@ -2880,6 +2947,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1500/103005t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1500/103005l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -2895,7 +2963,7 @@
         "title": "ヴィンランド・サガ"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 24,
     "season_start": "2019-07-08T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -2908,6 +2976,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/79697t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/79697l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Supernatural"
@@ -2946,7 +3015,7 @@
         "title": "Anohana: The Flower We Saw That Day"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 11,
     "season_start": "2011-04-15T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -2959,6 +3028,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1945/136600t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1945/136600l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -2978,7 +3048,7 @@
         "title": "Overlord"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2015-07-07T00:00:00+00:00",
     "studio": "Madhouse",
@@ -2991,6 +3061,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/9/76662t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/9/76662l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -3024,7 +3095,7 @@
         "title": "Haikyu!! Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2015-10-04T00:00:00+00:00",
     "studio": "Production I.G",
@@ -3037,6 +3108,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1470/138723t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1470/138723l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Adventure",
       "Award Winning",
@@ -3070,7 +3142,7 @@
         "title": "Le Château ambulant"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2004-11-20T00:00:00+00:00",
     "studio": "Studio Ghibli",
@@ -3083,6 +3155,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1172/148981t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1172/148981l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -3122,7 +3195,7 @@
         "title": "DanMachi: Familia Myth"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -3135,6 +3208,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1464/111943t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1464/111943l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -3175,7 +3249,7 @@
         "title": "KILL la KILL"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2013-10-04T00:00:00+00:00",
     "studio": "Trigger",
@@ -3188,6 +3262,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/50177t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/50177l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Supernatural"
@@ -3222,7 +3297,7 @@
         "title": "The Devil is a Part-Timer!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2013-04-04T00:00:00+00:00",
     "studio": "White Fox",
@@ -3235,6 +3310,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/78311t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/78311l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Horror",
@@ -3275,7 +3351,7 @@
         "title": "High School of The Dead"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2010-07-05T00:00:00+00:00",
     "studio": "Madhouse",
@@ -3288,6 +3364,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/86578t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/86578l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Mystery",
@@ -3323,7 +3400,7 @@
         "title": "Gambling School"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2017-07-01T00:00:00+00:00",
     "studio": "MAPPA",
@@ -3336,6 +3413,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1069/123309t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1069/123309l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -3371,7 +3449,7 @@
         "title": "That Time I Got Reincarnated as a Slime"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2018-10-02T00:00:00+00:00",
     "studio": "8bit",
@@ -3384,6 +3462,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1695/111486t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1695/111486l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Romance"
     ],
@@ -3405,7 +3484,7 @@
         "title": "Horimiya"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2021-01-10T00:00:00+00:00",
     "studio": "CloverWorks",
@@ -3418,6 +3497,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/2/88336t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/2/88336l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -3436,7 +3516,7 @@
         "title": "Black Clover"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 170,
     "season_start": "2017-10-03T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -3449,6 +3529,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/5123t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/5123l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Award Winning",
@@ -3500,7 +3581,7 @@
         "title": "Gurren Lagann"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 27,
     "season_start": "2007-04-01T00:00:00+00:00",
     "studio": "Gainax",
@@ -3513,6 +3594,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/8/77966t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/8/77966l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy"
@@ -3551,7 +3633,7 @@
         "title": "Assassination Classroom Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2016-01-08T00:00:00+00:00",
     "studio": "Lerche",
@@ -3564,6 +3646,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1530/117776t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1530/117776l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Drama",
@@ -3596,7 +3679,7 @@
         "title": "Mushoku Tensei: Jobless Reincarnation"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 11,
     "season_start": "2021-01-11T00:00:00+00:00",
     "studio": "Studio Bind",
@@ -3609,6 +3692,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/55267t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/55267l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure"
@@ -3647,7 +3731,7 @@
         "title": "JoJo's Bizarre Adventure: Stardust Crusaders"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2014-04-05T00:00:00+00:00",
     "studio": "David Production",
@@ -3660,6 +3744,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1331/111940t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1331/111940l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -3689,7 +3774,7 @@
         "title": "Highschool DxD"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2012-01-06T00:00:00+00:00",
     "studio": "TNK",
@@ -3702,6 +3787,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1764/106659t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1764/106659l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -3744,7 +3830,7 @@
         "title": "Kaguya-sama: Love is War Saison 2"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2020-04-11T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -3757,6 +3843,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1689/94850t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1689/94850l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -3775,7 +3862,7 @@
         "title": "Noragami Aragoto"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2015-10-03T00:00:00+00:00",
     "studio": "Bones",
@@ -3788,6 +3875,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/75815t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/75815l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -3821,7 +3909,7 @@
         "title": "Fullmetal Alchemist"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 51,
     "season_start": "2003-10-04T00:00:00+00:00",
     "studio": "Bones",
@@ -3834,6 +3922,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1780/121555t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1780/121555l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -3867,7 +3956,7 @@
         "title": "Elfen Lied"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 13,
     "season_start": "2004-07-25T00:00:00+00:00",
     "studio": "Arms",
@@ -3880,6 +3969,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1786/120117t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1786/120117l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -3918,7 +4008,7 @@
         "title": "My Teen Romantic Comedy SNAFU"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2013-04-05T00:00:00+00:00",
     "studio": "Brain's Base",
@@ -3931,6 +4021,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1948/120625t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1948/120625l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -3958,7 +4049,7 @@
         "title": "Attack on Titan: Final Season Part 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2022-01-10T00:00:00+00:00",
     "studio": "MAPPA",
@@ -3971,6 +4062,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1887/117644t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1887/117644l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -3989,7 +4081,7 @@
         "title": "Fate/Zero"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2011-10-02T00:00:00+00:00",
     "studio": "ufotable",
@@ -4002,6 +4094,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/86830t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/86830l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Suspense"
@@ -4044,7 +4137,7 @@
         "title": "Classroom of the Elite"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2017-07-12T00:00:00+00:00",
     "studio": "Lerche",
@@ -4057,6 +4150,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1277/142022t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1277/142022l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -4085,7 +4179,7 @@
         "title": "Dragon Ball Z"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 291,
     "season_start": "1989-04-26T00:00:00+00:00",
     "studio": "Toei Animation",
@@ -4098,6 +4192,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1071/149486t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1071/149486l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -4117,7 +4212,7 @@
         "title": "Soul Eater"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 51,
     "season_start": "2008-04-07T00:00:00+00:00",
     "studio": "Bones",
@@ -4130,6 +4225,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1355/147277t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1355/147277l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Action",
       "Adventure",
@@ -4166,7 +4262,7 @@
         "title": "Princesse Mononoké"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "1997-07-12T00:00:00+00:00",
     "studio": "Studio Ghibli",
@@ -4179,6 +4275,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/75045t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/75045l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure"
@@ -4209,7 +4306,7 @@
         "title": "Jojo's Bizarre Adventures. Stardust Crusaders: Battle in Egypt Temporada 2 Parte 3"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2015-01-10T00:00:00+00:00",
     "studio": "David Production",
@@ -4222,6 +4319,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/7/81992t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/7/81992l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -4259,7 +4357,7 @@
         "title": "Haikyuu!! Saison 3"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 10,
     "season_start": "2016-10-08T00:00:00+00:00",
     "studio": "Production I.G",
@@ -4272,6 +4370,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/79156t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/79156l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure"
@@ -4306,7 +4405,7 @@
         "title": "JoJo's Bizarre Adventure: Diamond is Unbreakable"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 39,
     "season_start": "2016-04-02T00:00:00+00:00",
     "studio": "David Production",
@@ -4319,6 +4418,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/6/86733t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/6/86733l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Drama",
@@ -4340,7 +4440,7 @@
         "title": "Made in Abyss"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2017-07-07T00:00:00+00:00",
     "studio": "Kinema Citrus",
@@ -4353,6 +4453,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1905/142840t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1905/142840l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -4395,7 +4496,7 @@
         "title": "Love, Chunibyo & Other Delusions!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2012-10-04T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -4408,6 +4509,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1314/142015t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1314/142015l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Mystery",
@@ -4432,7 +4534,7 @@
         "title": "Psycho-Pass"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 22,
     "season_start": "2012-10-12T00:00:00+00:00",
     "studio": "Production I.G",
@@ -4445,6 +4547,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1015/138006t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1015/138006l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Drama",
@@ -4472,7 +4575,7 @@
         "title": "Frieren: Beyond Journey's End"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 28,
     "season_start": "2023-09-29T00:00:00+00:00",
     "studio": "Madhouse",
@@ -4485,6 +4588,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1664/103275t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1664/103275l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -4520,7 +4624,7 @@
         "title": "Fire Force"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2019-07-06T00:00:00+00:00",
     "studio": "David Production",
@@ -4533,6 +4637,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/55225t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/55225l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Award Winning",
       "Drama",
@@ -4572,7 +4677,7 @@
         "title": "Puella Magi Madoka Magica"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2011-01-07T00:00:00+00:00",
     "studio": "Shaft",
@@ -4585,6 +4690,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1179/119897t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1179/119897l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Romance"
     ],
@@ -4610,7 +4716,7 @@
         "title": "My Dress-Up Darling"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2022-01-09T00:00:00+00:00",
     "studio": "CloverWorks",
@@ -4623,6 +4729,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1804/95033t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1804/95033l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -4641,7 +4748,7 @@
         "title": "Clannad"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 23,
     "season_start": "2007-10-05T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -4654,6 +4761,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1792/138022t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1792/138022l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -4696,7 +4804,7 @@
         "title": "Jujutsu Kaisen Season 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 23,
     "season_start": "2023-07-06T00:00:00+00:00",
     "studio": "MAPPA",
@@ -4709,6 +4817,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/85434t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/85434l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Slice of Life",
       "Supernatural"
@@ -4743,7 +4852,7 @@
         "title": "Miss kobayashi's Dragon Maid"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2017-01-12T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -4756,6 +4865,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/79409t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/79409l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Mystery"
@@ -4794,7 +4904,7 @@
         "title": "Bungo Stray Dogs"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2016-04-07T00:00:00+00:00",
     "studio": "Bones",
@@ -4807,6 +4917,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1879/148979t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1879/148979l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama",
@@ -4842,7 +4953,7 @@
         "title": "Seraph of the End: Vampire Reign"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -4855,6 +4966,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1839/122012t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1839/122012l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Drama"
@@ -4873,7 +4985,7 @@
         "title": "Tokyo Revengers"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2021-04-11T00:00:00+00:00",
     "studio": "LIDENFILMS",
@@ -4886,6 +4998,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1882/94989t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1882/94989l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure"
@@ -4928,7 +5041,7 @@
         "title": "JoJo's Bizarre Adventure: Golden Wind"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 39,
     "season_start": "2018-10-06T00:00:00+00:00",
     "studio": "David Production",
@@ -4941,6 +5054,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/6/25254t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/6/25254l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -4963,7 +5077,7 @@
         "title": "Maid Sama!"
       }
     ],
-    "demographic": "Shoujo",
+    "demographic_type": "Shoujo",
     "episodes": 26,
     "season_start": "2010-04-02T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -4976,6 +5090,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/75274t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/75274l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Mystery",
       "Romance",
@@ -5003,7 +5118,7 @@
         "title": "Bakemonogatari"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 15,
     "season_start": "2009-07-03T00:00:00+00:00",
     "studio": "Shaft",
@@ -5016,6 +5131,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1121/119044t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1121/119044l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Action",
       "Supernatural"
@@ -5042,7 +5158,7 @@
         "title": "Jujutsu Kaisen 0"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 1,
     "season_start": "2021-12-24T00:00:00+00:00",
     "studio": "MAPPA",
@@ -5055,6 +5171,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1063/95086t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1063/95086l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -5091,7 +5208,7 @@
         "title": "Tokyo Ghoul: re"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2018-04-03T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -5104,6 +5221,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/50453t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/50453l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -5141,7 +5259,7 @@
         "title": "Kuroko's Basket"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2012-04-08T00:00:00+00:00",
     "studio": "Production I.G",
@@ -5154,6 +5272,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/2/89973t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/2/89973l.webp"
     },
+    "anime_format": "ONA",
     "genres": [
       "Action",
       "Avant Garde",
@@ -5186,7 +5305,7 @@
         "title": "DEVILMAN: Crybaby"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 10,
     "season_start": "2018-01-05T00:00:00+00:00",
     "studio": "Science SARU",
@@ -5199,6 +5318,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/8/79353t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/8/79353l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Gourmet",
       "Ecchi"
@@ -5245,7 +5365,7 @@
         "title": "Food Wars! Shokugeki no Soma: The Second Plate"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2016-07-02T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -5258,6 +5378,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1522/117645t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1522/117645l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -5292,7 +5413,7 @@
         "title": "Fate Zero Saison 2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2012-04-08T00:00:00+00:00",
     "studio": "ufotable",
@@ -5305,6 +5426,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1110/147278t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1110/147278l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Adventure",
       "Award Winning",
@@ -5340,7 +5462,7 @@
         "title": "Mon Voisin Totoro"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "1988-04-16T00:00:00+00:00",
     "studio": "Studio Ghibli",
@@ -5353,6 +5475,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/90089t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/90089l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -5388,7 +5511,7 @@
         "title": "The Seven Deadly Sins"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2018-01-13T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -5401,6 +5524,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1444/108005t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1444/108005l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Fantasy",
@@ -5432,7 +5556,7 @@
         "title": "Re:ZERO -Starting Life in Another World- Season 2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2020-07-08T00:00:00+00:00",
     "studio": "White Fox",
@@ -5445,6 +5569,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/43643t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/43643l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -5479,7 +5604,7 @@
         "title": "The Pet Girl of Sakurasou"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2012-10-09T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -5492,6 +5617,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/75376t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/75376l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -5538,7 +5664,7 @@
         "title": "My Teen Romantic Comedy SNAFU Too!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2015-04-03T00:00:00+00:00",
     "studio": "feel.",
@@ -5551,6 +5677,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1719/95621t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1719/95621l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -5570,7 +5697,7 @@
         "title": "Goblin Slayer"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2018-10-07T00:00:00+00:00",
     "studio": "White Fox",
@@ -5583,6 +5710,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/67333t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/67333l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -5621,7 +5749,7 @@
         "title": "Fate/stay night [Unlimited Blade Works]"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2014-10-12T00:00:00+00:00",
     "studio": "ufotable",
@@ -5634,6 +5762,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/2/71992t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/2/71992l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -5676,7 +5805,7 @@
         "title": "Le Lycée de la Seduction Host Club Ouran High School"
       }
     ],
-    "demographic": "Shoujo",
+    "demographic_type": "Shoujo",
     "episodes": 26,
     "season_start": "2006-04-05T00:00:00+00:00",
     "studio": "Bones",
@@ -5689,6 +5818,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1887/92364t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1887/92364l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -5717,7 +5847,7 @@
         "title": "Dragon Ball"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 153,
     "season_start": "1986-02-26T00:00:00+00:00",
     "studio": "Toei Animation",
@@ -5730,6 +5860,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/9/75299t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/9/75299l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Sci-Fi",
@@ -5754,7 +5885,7 @@
         "title": "Deadman Wonderland"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2011-04-17T00:00:00+00:00",
     "studio": "Manglobe",
@@ -5767,6 +5898,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1911/113611t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1911/113611l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action"
     ],
@@ -5800,7 +5932,7 @@
         "title": "My Hero Academia Saison 5"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2021-03-27T00:00:00+00:00",
     "studio": "Bones",
@@ -5813,6 +5945,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1299/110774t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1299/110774l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -5843,7 +5976,7 @@
         "title": "Clannad ~After Story~"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2008-10-03T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -5856,6 +5989,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1818/126435t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1818/126435l.webp"
     },
+    "anime_format": "ONA",
     "genres": [
       "Action",
       "Sci-Fi"
@@ -5870,7 +6004,7 @@
         "title": "サイバーパンク エッジランナーズ"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 10,
     "season_start": "2022-09-13T00:00:00+00:00",
     "studio": "Trigger",
@@ -5883,6 +6017,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1879/100467t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1879/100467l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -5910,7 +6045,7 @@
         "title": "Dororo to Hyakkimaru"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2019-01-07T00:00:00+00:00",
     "studio": "Tezuka Productions",
@@ -5923,6 +6058,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1028/117777t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1028/117777l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Drama",
@@ -5943,7 +6079,7 @@
         "title": "Mushoku Tensei: Jobless Reincarnation Part 2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2021-10-04T00:00:00+00:00",
     "studio": "Studio Bind",
@@ -5956,6 +6092,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1212/113415t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1212/113415l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -5975,7 +6112,7 @@
         "title": "Overlord II"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2018-01-09T00:00:00+00:00",
     "studio": "Madhouse",
@@ -5988,6 +6125,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1973/142750t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1973/142750l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy"
     ],
@@ -6025,7 +6163,7 @@
         "title": "The Disastrous Life of Saiki K."
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 120,
     "season_start": "2016-07-04T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -6038,6 +6176,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/13/75587t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/13/75587l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -6072,7 +6211,7 @@
         "title": "Nisekoi: Amours, mensonges & yakuzas!"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 20,
     "season_start": "2014-01-11T00:00:00+00:00",
     "studio": "Shaft",
@@ -6085,6 +6224,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/71772t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/71772l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Mystery",
@@ -6124,7 +6264,7 @@
         "title": "Durarara!!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2010-01-08T00:00:00+00:00",
     "studio": "Brain's Base",
@@ -6137,6 +6277,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1404/98182t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1404/98182l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Avant Garde",
       "Drama",
@@ -6165,7 +6306,7 @@
         "title": "Neon Genesis Evangelion: The End of Evangelion"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "1997-07-19T00:00:00+00:00",
     "studio": "Gainax",
@@ -6178,6 +6319,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/13/50521t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/13/50521l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Mystery",
       "Slice of Life"
@@ -6212,7 +6354,7 @@
         "title": "Hyouka"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 22,
     "season_start": "2012-04-23T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -6225,6 +6367,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1801/142390t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1801/142390l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -6256,7 +6399,7 @@
         "title": "Solo Leveling"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2024-01-07T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -6269,6 +6412,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1902/128382t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1902/128382l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -6307,7 +6451,7 @@
         "title": "Rent-a-Girlfriend"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2020-07-11T00:00:00+00:00",
     "studio": "TMS Entertainment",
@@ -6320,6 +6464,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1370/135212t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1370/135212l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -6343,7 +6488,7 @@
         "title": "Samurai Champloo"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 26,
     "season_start": "2004-05-20T00:00:00+00:00",
     "studio": "Manglobe",
@@ -6356,6 +6501,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1819/97947t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1819/97947l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -6394,7 +6540,7 @@
         "title": "The Quintessential Quintuplets"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2019-01-11T00:00:00+00:00",
     "studio": "Tezuka Productions",
@@ -6407,6 +6553,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1711/110614t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1711/110614l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Adventure",
       "Comedy"
@@ -6437,7 +6584,7 @@
         "title": "Dr. Stone : Stone Wars"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 11,
     "season_start": "2021-01-14T00:00:00+00:00",
     "studio": "TMS Entertainment",
@@ -6450,6 +6597,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1880/101146t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1880/101146l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Award Winning",
       "Drama",
@@ -6482,7 +6630,7 @@
         "title": "Les Enfants du Temps"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2019-07-19T00:00:00+00:00",
     "studio": "CoMix Wave Films",
@@ -6495,6 +6643,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1993/93837t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1993/93837l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -6538,7 +6687,7 @@
         "title": "Sword Art Online Alicization"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2018-10-07T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -6551,6 +6700,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1417/117422t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1417/117422l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Mystery",
       "Suspense"
@@ -6589,7 +6739,7 @@
         "title": "Terror in Resonance"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 11,
     "season_start": "2014-07-11T00:00:00+00:00",
     "studio": "MAPPA",
@@ -6602,6 +6752,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1765/135099t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1765/135099l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -6620,7 +6771,7 @@
         "title": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 11,
     "season_start": "2023-04-09T00:00:00+00:00",
     "studio": "ufotable",
@@ -6633,6 +6784,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1566/133912t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1566/133912l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Sci-Fi"
@@ -6655,7 +6807,7 @@
         "title": "Guilty Crown"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 22,
     "season_start": "2011-10-14T00:00:00+00:00",
     "studio": "Production I.G",
@@ -6668,6 +6820,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1768/93291t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1768/93291l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Drama",
       "Romance"
@@ -6706,7 +6859,7 @@
         "title": "Je Veux Manger Ton Pancréas"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2018-09-01T00:00:00+00:00",
     "studio": "Studio VOLN",
@@ -6719,6 +6872,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/39779t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/39779l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -6757,7 +6911,7 @@
         "title": "Le Garçon d'à Côté"
       }
     ],
-    "demographic": "Shoujo",
+    "demographic_type": "Shoujo",
     "episodes": 13,
     "season_start": "2012-10-02T00:00:00+00:00",
     "studio": "Brain's Base",
@@ -6770,6 +6924,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1467/137783t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1467/137783l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Mystery",
@@ -6809,7 +6964,7 @@
         "title": "Black Butler"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 24,
     "season_start": "2008-10-03T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -6822,6 +6977,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1286/112161t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1286/112161l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Ecchi"
@@ -6844,7 +7000,7 @@
         "title": "Prison School"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2015-07-11T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -6857,6 +7013,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1813/105367t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1813/105367l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -6894,7 +7051,7 @@
         "title": "Haikyu!! To The Top"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2020-01-11T00:00:00+00:00",
     "studio": "Production I.G",
@@ -6907,6 +7064,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1271/109841t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1271/109841l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -6942,7 +7100,7 @@
         "title": "Moi, quand je me réincarne en Slime Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2021-01-12T00:00:00+00:00",
     "studio": "8bit",
@@ -6955,6 +7113,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/82149t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/82149l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -6977,7 +7136,7 @@
         "title": "ReLIFE"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2016-07-02T00:00:00+00:00",
     "studio": "TMS Entertainment",
@@ -6990,6 +7149,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/88434t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/88434l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Gourmet",
       "Ecchi"
@@ -7028,7 +7188,7 @@
         "title": "Food Wars! The Third Plate"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2017-10-04T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -7041,6 +7201,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1160/122627t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1160/122627l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -7067,7 +7228,7 @@
         "title": "Kaguya-sama: Love is War -Ultra Romantic-"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 13,
     "season_start": "2022-04-09T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -7080,6 +7241,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1724/117421t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1724/117421l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Fantasy",
@@ -7123,7 +7285,7 @@
         "title": "Re:Zero-Starting Life in Another World-Part 2/2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2021-01-06T00:00:00+00:00",
     "studio": "White Fox",
@@ -7136,6 +7298,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/61039t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/61039l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -7164,7 +7327,7 @@
         "title": "The Irregular at Magic High School"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 26,
     "season_start": "2014-04-06T00:00:00+00:00",
     "studio": "Madhouse",
@@ -7177,6 +7340,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/47729t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/47729l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -7214,7 +7378,7 @@
         "title": "High School DxD New"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2013-07-07T00:00:00+00:00",
     "studio": "TNK",
@@ -7227,6 +7391,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/13/44844t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/13/44844l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -7247,7 +7412,7 @@
         "title": "Date A Live"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2013-04-06T00:00:00+00:00",
     "studio": "AIC PLUS+",
@@ -7260,6 +7425,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1511/93473t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1511/93473l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7279,7 +7445,7 @@
         "title": "Overlord III"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2018-07-10T00:00:00+00:00",
     "studio": "Madhouse",
@@ -7292,6 +7458,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1702/106229t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1702/106229l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7333,7 +7500,7 @@
         "title": "Tower of God"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2020-04-02T00:00:00+00:00",
     "studio": "Telecom Animation Film",
@@ -7346,6 +7513,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1111/127508t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1111/127508l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy"
@@ -7360,7 +7528,7 @@
         "title": "SPY×FAMILY"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 13,
     "season_start": "2022-10-01T00:00:00+00:00",
     "studio": "Wit Studio",
@@ -7373,6 +7541,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/10/76120t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/10/76120l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy"
     ],
@@ -7406,7 +7575,7 @@
         "title": "K-ON!"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2009-04-03T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -7419,6 +7588,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1812/134736t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1812/134736l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Award Winning",
       "Drama"
@@ -7441,7 +7611,7 @@
         "title": "[Oshi No Ko]"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 11,
     "season_start": "2023-04-12T00:00:00+00:00",
     "studio": "Doga Kobo",
@@ -7454,6 +7624,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/84004t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/84004l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7473,7 +7644,7 @@
         "title": "Log Horizon"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 25,
     "season_start": "2013-10-05T00:00:00+00:00",
     "studio": "Satelight",
@@ -7486,6 +7657,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1881/124810t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1881/124810l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -7512,7 +7684,7 @@
         "title": "Fate/stay night [Unlimited Blade Works] Season 2"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2015-04-05T00:00:00+00:00",
     "studio": "ufotable",
@@ -7525,6 +7697,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1410/112994t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1410/112994l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Drama",
       "Romance"
@@ -7571,7 +7744,7 @@
         "title": "5 Centimeters Per Second"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 3,
     "season_start": "2007-03-03T00:00:00+00:00",
     "studio": "CoMix Wave Films",
@@ -7584,6 +7757,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/9/76493t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/9/76493l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -7628,7 +7802,7 @@
         "title": "Chivalry of a Failed Knight"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2015-10-03T00:00:00+00:00",
     "studio": "SILVER LINK.",
@@ -7641,6 +7815,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/60551t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/60551l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7676,7 +7851,7 @@
         "title": "Fairy Tail Deuxième Saison"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 102,
     "season_start": "2014-04-05T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -7689,6 +7864,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1713/145599t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1713/145599l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Suspense"
@@ -7703,7 +7879,7 @@
         "title": "BEASTARS"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2019-10-10T00:00:00+00:00",
     "studio": "Orange",
@@ -7716,6 +7892,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/52091t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/52091l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Drama",
       "Romance"
@@ -7734,7 +7911,7 @@
         "title": "Golden Time"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2013-10-04T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -7747,6 +7924,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/9/56155t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/9/56155l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -7784,7 +7962,7 @@
         "title": "Kuroko's Basketball Saison 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2013-10-06T00:00:00+00:00",
     "studio": "Production I.G",
@@ -7797,6 +7975,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/7/74606t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/7/74606l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7829,7 +8008,7 @@
         "title": "Dragon Ball Super"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 131,
     "season_start": "2015-07-05T00:00:00+00:00",
     "studio": "Toei Animation",
@@ -7842,6 +8021,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/11/42773t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/11/42773l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Adventure",
@@ -7865,7 +8045,7 @@
         "title": "Magi: The Labyrinth of Magic"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 25,
     "season_start": "2012-10-07T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -7878,6 +8058,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1065/118763t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1065/118763l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -7900,7 +8081,7 @@
         "title": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 7,
     "season_start": "2021-10-10T00:00:00+00:00",
     "studio": "ufotable",
@@ -7913,6 +8094,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1545/121995t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1545/121995l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -7953,7 +8135,7 @@
         "title": "Tokyo Ghoul:re Partie 2"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2018-10-09T00:00:00+00:00",
     "studio": "Studio Pierrot",
@@ -7966,6 +8148,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1864/93518t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1864/93518l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -7988,7 +8171,7 @@
         "title": "Wotakoi: Love is Hard for Otaku"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 11,
     "season_start": "2018-04-13T00:00:00+00:00",
     "studio": "A-1 Pictures",
@@ -8001,6 +8184,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/3/85468t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/3/85468l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Supernatural"
@@ -8035,7 +8219,7 @@
         "title": "Beyond The Boundary"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2013-10-03T00:00:00+00:00",
     "studio": "Kyoto Animation",
@@ -8048,6 +8232,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/51463t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/51463l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Horror",
       "Mystery",
@@ -8083,7 +8268,7 @@
         "title": "Danganronpa: The Animation"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2013-07-05T00:00:00+00:00",
     "studio": "Lerche",
@@ -8096,6 +8281,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1584/143719t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1584/143719l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -8115,7 +8301,7 @@
         "title": "Dan Da Dan"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2024-10-04T00:00:00+00:00",
     "studio": "Science SARU",
@@ -8128,6 +8314,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/6/81149t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/6/81149l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Award Winning",
       "Sports"
@@ -8146,7 +8333,7 @@
         "title": "Yuri!!! On Ice"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2016-10-06T00:00:00+00:00",
     "studio": "MAPPA",
@@ -8159,6 +8346,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/83709t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/83709l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -8189,7 +8377,7 @@
         "title": "Masamune-kun's Revenge"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2017-01-05T00:00:00+00:00",
     "studio": "SILVER LINK.",
@@ -8202,6 +8390,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1722/107269t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1722/107269l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -8236,7 +8425,7 @@
         "title": "The God Of High School"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 13,
     "season_start": "2020-07-06T00:00:00+00:00",
     "studio": "MAPPA",
@@ -8249,6 +8438,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1408/114012t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1408/114012l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Action",
       "Horror",
@@ -8268,7 +8458,7 @@
         "title": "Akira"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 1,
     "season_start": "1988-07-16T00:00:00+00:00",
     "studio": "Tokyo Movie Shinsha",
@@ -8281,6 +8471,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/82890t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/82890l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy"
@@ -8315,7 +8506,7 @@
         "title": "Saga of Tanya the Evil"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2017-01-06T00:00:00+00:00",
     "studio": "Nut",
@@ -8328,6 +8519,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1638/119321t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1638/119321l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Adventure",
       "Comedy",
@@ -8367,7 +8559,7 @@
         "title": "Konosuba -God's Blessing on This Wonderful World!- Legend of Crimson"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2019-08-30T00:00:00+00:00",
     "studio": "J.C.Staff",
@@ -8380,6 +8572,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1597/112995t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1597/112995l.webp"
     },
+    "anime_format": "Movie",
     "genres": [
       "Award Winning",
       "Drama",
@@ -8419,7 +8612,7 @@
         "title": "The Garden of Words"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 1,
     "season_start": "2013-05-31T00:00:00+00:00",
     "studio": "CoMix Wave Films",
@@ -8432,6 +8625,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1453/106768t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1453/106768l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Sports"
     ],
@@ -8469,7 +8663,7 @@
         "title": "Haikyu!! Saison 4 Cour 2"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2020-10-03T00:00:00+00:00",
     "studio": "Production I.G",
@@ -8482,6 +8676,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/4/30327t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/4/30327l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Fantasy",
@@ -8505,7 +8700,7 @@
         "title": "Fate/stay night"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 24,
     "season_start": "2006-01-07T00:00:00+00:00",
     "studio": "Studio Deen",
@@ -8518,6 +8713,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/5/66083t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/5/66083l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy",
       "Romance"
@@ -8552,7 +8748,7 @@
         "title": "Monthly Girls' Nozaki-kun"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2014-07-07T00:00:00+00:00",
     "studio": "Doga Kobo",
@@ -8565,6 +8761,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1572/133096t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1572/133096l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Mystery"
@@ -8595,7 +8792,7 @@
         "title": "Bungo Stray Dogs Saison 2"
       }
     ],
-    "demographic": "Seinen",
+    "demographic_type": "Seinen",
     "episodes": 12,
     "season_start": "2016-10-06T00:00:00+00:00",
     "studio": "Bones",
@@ -8608,6 +8805,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/8/64813t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/8/64813l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Romance"
     ],
@@ -8641,7 +8839,7 @@
         "title": "Blue Spring Ride"
       }
     ],
-    "demographic": "Shoujo",
+    "demographic_type": "Shoujo",
     "episodes": 12,
     "season_start": "2014-07-08T00:00:00+00:00",
     "studio": "Production I.G",
@@ -8654,6 +8852,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/12/73642t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/12/73642l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Action",
       "Comedy",
@@ -8687,7 +8886,7 @@
         "title": "High School DxD BorN"
       }
     ],
-    "demographic": null,
+    "demographic_type": null,
     "episodes": 12,
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "TNK",
@@ -8700,6 +8899,7 @@
       "small_image_url": "https://myanimelist.net/images/anime/1899/117237t.webp",
       "large_image_url": "https://myanimelist.net/images/anime/1899/117237l.webp"
     },
+    "anime_format": "TV",
     "genres": [
       "Comedy"
     ],
@@ -8725,7 +8925,7 @@
         "title": "Komi Can't Communicate"
       }
     ],
-    "demographic": "Shounen",
+    "demographic_type": "Shounen",
     "episodes": 12,
     "season_start": "2021-10-07T00:00:00+00:00",
     "studio": "OLM",
