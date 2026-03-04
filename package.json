@@ -1,0 +1,21 @@
+{
+  "name": "animedle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "npm install",
+    "start": "tsx filterdata.ts",
+    "dev": "tsx watch filterdata.ts",
+    "typecheck": "tsc --noEmit",
+    "run:on-start": "npm run setup && npm run start"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

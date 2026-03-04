@@ -1,0 +1,12 @@
+{
+  "name": "Anidle Devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "corepack enable && npm --version && npm run setup",
+  "postStartCommand": "npm run start"
+}
