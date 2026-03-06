@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import type { AuthType } from "@/lib/auth"
 import authRoutes from '@/routes/auth';
+import animeRoutes from '@/routes/anime';
 
 const app = new Hono<{ Variables: AuthType }>({
   strict: false,
@@ -14,7 +15,7 @@ app.use("/api/*", cors({
   credentials: true,
 }));
 
-const routes = [authRoutes] as const;
+const routes = [authRoutes, animeRoutes] as const;
 
 routes.forEach((route) => {
   app.basePath("/api").route("/", route);
