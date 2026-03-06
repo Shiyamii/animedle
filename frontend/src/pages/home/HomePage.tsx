@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 
-function App() {
+function HomePage() {
     return (
         <div className="flex min-h-svh w-full flex-col items-center justify-center">
             <Button variant={'default'}>Click me</Button>
@@ -11,4 +11,4 @@ function App() {
     )
 }
 
-export default App
+export default HomePage;
