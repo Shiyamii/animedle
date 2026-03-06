@@ -1,24 +1,27 @@
 {
-  "name": "animedle",
+  "name": "animedle-monorepo",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
+  "description": "Animedle monorepo",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "data_fetcher"
+  ],
   "scripts": {
-    "setup": "npm install",
-    "start": "tsx filterdata.ts",
-    "dev": "tsx watch filterdata.ts",
-    "db:up": "docker compose up -d",
-    "db:down": "docker compose down",
-    "typecheck": "tsc --noEmit",
-    "run:on-start": "npm run setup && npm run start"
-  },
-  "dependencies": {
-    "mongoose": "^9.2.4",
-    "node-fetch": "^3.3.2"
+    "dev": "bun run --filter '*' dev",
+    "dev:backend": "bun run --filter backend dev",
+    "dev:frontend": "bun run --filter frontend dev",
+    "build": "bun run --filter '*' build",
+    "build:frontend": "bun run --filter frontend build",
+    "fetch-data": "bun run --filter data_fetcher start",
+    "install:all": "bun install",
+    "clean": "bun run --filter '*' clean && rm -rf node_modules",
+    "lint": "bun run --filter '*' lint",
+    "typecheck": "bun run --filter '*' typecheck"
   },
   "devDependencies": {
     "@types/node": "^25.3.3",
-    "tsx": "^4.20.3",
     "typescript": "^5.9.2"
   }
 }

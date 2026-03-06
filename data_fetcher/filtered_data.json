@@ -6,12 +6,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/47347l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Action", "Award Winning", "Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -26,20 +21,8 @@
         "title": "SnK"
       },
       {
-        "type": "Japanese",
-        "title": "進撃の巨人"
-      },
-      {
         "type": "English",
         "title": "Attack on Titan"
-      },
-      {
-        "type": "German",
-        "title": "Attack on Titan"
-      },
-      {
-        "type": "Spanish",
-        "title": "Ataque a los Titanes"
       },
       {
         "type": "French",
@@ -60,10 +43,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1079/138100l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -72,10 +52,6 @@
       {
         "type": "Synonym",
         "title": "DN"
-      },
-      {
-        "type": "Japanese",
-        "title": "デスノート"
       },
       {
         "type": "English",
@@ -96,10 +72,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/76049l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -112,10 +85,6 @@
       {
         "type": "Synonym",
         "title": "OPM"
-      },
-      {
-        "type": "Japanese",
-        "title": "ワンパンマン"
       },
       {
         "type": "English",
@@ -136,11 +105,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/99889l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -151,20 +116,8 @@
         "title": "Blade of Demon Destruction"
       },
       {
-        "type": "Japanese",
-        "title": "鬼滅の刃"
-      },
-      {
         "type": "English",
         "title": "Demon Slayer: Kimetsu no Yaiba"
-      },
-      {
-        "type": "German",
-        "title": "Demon Slayer"
-      },
-      {
-        "type": "Spanish",
-        "title": "Guardianes De La Noche: Kimetsu no Yaiba"
       },
       {
         "type": "French",
@@ -185,12 +138,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1208/94745l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -211,10 +159,6 @@
       {
         "type": "Synonym",
         "title": "FMAB"
-      },
-      {
-        "type": "Japanese",
-        "title": "鋼の錬金術師 FULLMETAL ALCHEMIST"
       },
       {
         "type": "English",
@@ -239,12 +183,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/39717l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -257,10 +196,6 @@
       {
         "type": "Synonym",
         "title": "SAO"
-      },
-      {
-        "type": "Japanese",
-        "title": "ソードアート・オンライン"
       },
       {
         "type": "English",
@@ -281,28 +216,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78745l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
         "title": "Boku no Hero Academia"
       },
       {
-        "type": "Japanese",
-        "title": "僕のヒーローアカデミア"
-      },
-      {
         "type": "English",
-        "title": "My Hero Academia"
-      },
-      {
-        "type": "German",
-        "title": "My Hero Academia"
-      },
-      {
-        "type": "Spanish",
         "title": "My Hero Academia"
       },
       {
@@ -324,11 +245,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1141/142503l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -337,10 +254,6 @@
       {
         "type": "Synonym",
         "title": "NARUTO"
-      },
-      {
-        "type": "Japanese",
-        "title": "ナルト"
       },
       {
         "type": "English",
@@ -361,29 +274,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/87048l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
         "title": "Kimi no Na wa."
       },
       {
-        "type": "Japanese",
-        "title": "君の名は。"
-      },
-      {
         "type": "English",
-        "title": "Your Name."
-      },
-      {
-        "type": "German",
-        "title": "Your Name."
-      },
-      {
-        "type": "Spanish",
         "title": "Your Name."
       },
       {
@@ -405,12 +303,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1498/134443l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -427,10 +320,6 @@
       {
         "type": "Synonym",
         "title": "Toukyou Ghoul"
-      },
-      {
-        "type": "Japanese",
-        "title": "東京喰種-トーキョーグール-"
       },
       {
         "type": "English",
@@ -451,11 +340,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1171/109222l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -470,19 +355,7 @@
         "title": "JJK"
       },
       {
-        "type": "Japanese",
-        "title": "呪術廻戦"
-      },
-      {
         "type": "English",
-        "title": "Jujutsu Kaisen"
-      },
-      {
-        "type": "German",
-        "title": "Jujutsu Kaisen"
-      },
-      {
-        "type": "Spanish",
         "title": "Jujutsu Kaisen"
       },
       {
@@ -504,11 +377,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1337/99013l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -519,19 +388,7 @@
         "title": "HxH (2011)"
       },
       {
-        "type": "Japanese",
-        "title": "HUNTER×HUNTER（ハンター×ハンター）"
-      },
-      {
         "type": "English",
-        "title": "Hunter x Hunter"
-      },
-      {
-        "type": "German",
-        "title": "Hunter x Hunter"
-      },
-      {
-        "type": "Spanish",
         "title": "Hunter x Hunter"
       },
       {
@@ -553,10 +410,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1122/96435l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -567,20 +421,8 @@
         "title": "The Shape of Voice"
       },
       {
-        "type": "Japanese",
-        "title": "聲の形"
-      },
-      {
         "type": "English",
         "title": "A Silent Voice"
-      },
-      {
-        "type": "German",
-        "title": "A Silent Voice"
-      },
-      {
-        "type": "Spanish",
-        "title": "Una Voz Silenciosa"
       },
       {
         "type": "French",
@@ -601,11 +443,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1074/111944l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -616,19 +454,7 @@
         "title": "NGNL"
       },
       {
-        "type": "Japanese",
-        "title": "ノーゲーム・ノーライフ"
-      },
-      {
         "type": "English",
-        "title": "No Game, No Life"
-      },
-      {
-        "type": "German",
-        "title": "No Game, No Life"
-      },
-      {
-        "type": "Spanish",
         "title": "No Game, No Life"
       },
       {
@@ -650,11 +476,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1522/128039l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Fantasy", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -669,20 +491,8 @@
         "title": "ReZero"
       },
       {
-        "type": "Japanese",
-        "title": "Re:ゼロから始める異世界生活"
-      },
-      {
         "type": "English",
         "title": "Re:ZERO -Starting Life in Another World-"
-      },
-      {
-        "type": "German",
-        "title": "Re:ZERO -Starting Life in Another World-"
-      },
-      {
-        "type": "Spanish",
-        "title": "Re:Zero -Empezar de cero en un mundo diferente-"
       },
       {
         "type": "French",
@@ -703,31 +513,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/1032/135088l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Code Geass: Hangyaku no Lelouch"
       },
       {
-        "type": "Japanese",
-        "title": "コードギアス 反逆のルルーシュ"
-      },
-      {
         "type": "English",
         "title": "Code Geass: Lelouch of the Rebellion"
-      },
-      {
-        "type": "German",
-        "title": "Code Geass: Lelouch of the Rebellion"
-      },
-      {
-        "type": "Spanish",
-        "title": "Code Geass: Lelouch, el de la Rebelión"
       },
       {
         "type": "French",
@@ -748,11 +542,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/138851l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -761,10 +551,6 @@
       {
         "type": "Synonym",
         "title": "OP"
-      },
-      {
-        "type": "Japanese",
-        "title": "ONE PIECE"
       },
       {
         "type": "English",
@@ -785,19 +571,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1935/127974l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Steins;Gate"
-      },
-      {
-        "type": "Japanese",
-        "title": "STEINS;GATE"
       },
       {
         "type": "English",
@@ -818,10 +596,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/77957l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -836,20 +611,8 @@
         "title": "BokuMachi"
       },
       {
-        "type": "Japanese",
-        "title": "僕だけがいない街"
-      },
-      {
         "type": "English",
         "title": "Erased"
-      },
-      {
-        "type": "German",
-        "title": "ERASED - Die Stadt, in der es mich nicht gibt -"
-      },
-      {
-        "type": "Spanish",
-        "title": "Desaparecido"
       },
       {
         "type": "French",
@@ -870,10 +633,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/22128l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -882,10 +642,6 @@
       {
         "type": "Synonym",
         "title": "Tiger X Dragon"
-      },
-      {
-        "type": "Japanese",
-        "title": "とらドラ！"
       },
       {
         "type": "English",
@@ -917,10 +673,6 @@
         "title": "Shigatsu wa Kimi no Uso OVA"
       },
       {
-        "type": "Japanese",
-        "title": "四月は君の嘘 MOMENTS"
-      },
-      {
         "type": "English",
         "title": "Your Lie in April: Moments"
       }
@@ -939,26 +691,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/65409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Nanatsu no Taizai"
       },
       {
-        "type": "Japanese",
-        "title": "七つの大罪"
-      },
-      {
         "type": "English",
-        "title": "The Seven Deadly Sins"
-      },
-      {
-        "type": "German",
         "title": "The Seven Deadly Sins"
       },
       {
@@ -980,11 +720,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/80356l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -997,10 +733,6 @@
       {
         "type": "Synonym",
         "title": "Mob Psycho One Hundred"
-      },
-      {
-        "type": "Japanese",
-        "title": "モブサイコ100"
       },
       {
         "type": "English",
@@ -1021,11 +753,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/79597l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1036,20 +764,8 @@
         "title": "Sen and Chihiro's Spiriting Away"
       },
       {
-        "type": "Japanese",
-        "title": "千と千尋の神隠し"
-      },
-      {
         "type": "English",
         "title": "Spirited Away"
-      },
-      {
-        "type": "German",
-        "title": "Chihiros Reise ins Zauberland"
-      },
-      {
-        "type": "Spanish",
-        "title": "El viaje de Chihiro"
       },
       {
         "type": "French",
@@ -1070,10 +786,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1429/95946l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1082,10 +795,6 @@
       {
         "type": "Synonym",
         "title": "Akame ga Kiru!"
-      },
-      {
-        "type": "Japanese",
-        "title": "アカメが斬る！"
       },
       {
         "type": "English",
@@ -1110,29 +819,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/1830/118780l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Yakusoku no Neverland"
       },
       {
-        "type": "Japanese",
-        "title": "約束のネバーランド"
-      },
-      {
         "type": "English",
-        "title": "The Promised Neverland"
-      },
-      {
-        "type": "German",
-        "title": "The Promised Neverland"
-      },
-      {
-        "type": "Spanish",
         "title": "The Promised Neverland"
       },
       {
@@ -1154,11 +848,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1895/142748l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1169,20 +859,8 @@
         "title": "Give Blessings to This Wonderful World!"
       },
       {
-        "type": "Japanese",
-        "title": "この素晴らしい世界に祝福を！"
-      },
-      {
         "type": "English",
         "title": "KonoSuba: God's Blessing on This Wonderful World!"
-      },
-      {
-        "type": "German",
-        "title": "KonoSuba: God's Blessing on This Wonderful World!"
-      },
-      {
-        "type": "Spanish",
-        "title": "KonoSuba: God's blessing on this wonderful world!"
       },
       {
         "type": "French",
@@ -1203,18 +881,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/111115l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Angel Beats!"
-      },
-      {
-        "type": "Japanese",
-        "title": "Angel Beats!（エンジェルビーツ!）"
       },
       {
         "type": "English",
@@ -1235,18 +906,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1886/128266l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Noragami"
-      },
-      {
-        "type": "Japanese",
-        "title": "ノラガミ"
       },
       {
         "type": "English",
@@ -1267,9 +931,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/76014l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -1284,20 +946,8 @@
         "title": "HQ!!"
       },
       {
-        "type": "Japanese",
-        "title": "ハイキュー!!"
-      },
-      {
         "type": "English",
         "title": "Haikyu!!"
-      },
-      {
-        "type": "German",
-        "title": "Haikyu!!"
-      },
-      {
-        "type": "Spanish",
-        "title": "Haikyu!! Los Ases del Vóley"
       },
       {
         "type": "French",
@@ -1318,10 +968,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/68547l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -1338,10 +985,6 @@
       {
         "type": "Synonym",
         "title": "Ansatsu Kyoushitsu: Jump Festa 2014 Special"
-      },
-      {
-        "type": "Japanese",
-        "title": "暗殺教室 episode:0 出会いの時間"
       },
       {
         "type": "English",
@@ -1362,11 +1005,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/33465l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Action", "Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1381,15 +1020,7 @@
         "title": "Mirai Nikki (2011)"
       },
       {
-        "type": "Japanese",
-        "title": "未来日記"
-      },
-      {
         "type": "English",
-        "title": "The Future Diary"
-      },
-      {
-        "type": "Spanish",
         "title": "The Future Diary"
       }
     ],
@@ -1407,19 +1038,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1541/147774l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Bleach"
-      },
-      {
-        "type": "Japanese",
-        "title": "BLEACH - ブリーチ -"
       },
       {
         "type": "English",
@@ -1440,12 +1063,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/73178l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Horror",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Action", "Horror", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1464,20 +1082,8 @@
         "title": "Parasyte"
       },
       {
-        "type": "Japanese",
-        "title": "寄生獣 セイの格率"
-      },
-      {
         "type": "English",
         "title": "Parasyte: The Maxim"
-      },
-      {
-        "type": "German",
-        "title": "Parasyte -the maxim-"
-      },
-      {
-        "type": "Spanish",
-        "title": "Parasyte -the maxim-"
       },
       {
         "type": "French",
@@ -1498,11 +1104,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1301/93586l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1513,20 +1115,8 @@
         "title": "AoButa"
       },
       {
-        "type": "Japanese",
-        "title": "青春ブタ野郎はバニーガール先輩の夢を見ない"
-      },
-      {
         "type": "English",
         "title": "Rascal Does Not Dream of Bunny Girl Senpai"
-      },
-      {
-        "type": "German",
-        "title": "Rascal Dpes Not Dream Of Bunny Girl Senpai"
-      },
-      {
-        "type": "Spanish",
-        "title": "Rascal does not Dream of Bunny Girl Senpai (Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai)"
       },
       {
         "type": "French",
@@ -1547,10 +1137,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75195l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1561,19 +1148,7 @@
         "title": "Ao no Futsumashi"
       },
       {
-        "type": "Japanese",
-        "title": "青の祓魔師"
-      },
-      {
         "type": "English",
-        "title": "Blue Exorcist"
-      },
-      {
-        "type": "German",
-        "title": "Blue Exorcist"
-      },
-      {
-        "type": "Spanish",
         "title": "Blue Exorcist"
       },
       {
@@ -1595,10 +1170,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1295/106551l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -1609,19 +1181,7 @@
         "title": "Kaguya Wants to be Confessed To: The Geniuses' War of Love and Brains"
       },
       {
-        "type": "Japanese",
-        "title": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～"
-      },
-      {
         "type": "English",
-        "title": "Kaguya-sama: Love is War"
-      },
-      {
-        "type": "German",
-        "title": "Kauya-sama: Love Is War"
-      },
-      {
-        "type": "Spanish",
         "title": "Kaguya-sama: Love is War"
       },
       {
@@ -1643,13 +1203,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/108941l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Avant Garde",
-      "Award Winning",
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Award Winning", "Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1662,10 +1216,6 @@
       {
         "type": "Synonym",
         "title": "Evangelion (1995)"
-      },
-      {
-        "type": "Japanese",
-        "title": "新世紀エヴァンゲリオン"
       },
       {
         "type": "English",
@@ -1686,11 +1236,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/40409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1717,20 +1263,8 @@
         "title": "JoJo's Bizarre Adventure The Animation"
       },
       {
-        "type": "Japanese",
-        "title": "ジョジョの奇妙な冒険"
-      },
-      {
         "type": "English",
         "title": "JoJo's Bizarre Adventure (2012)"
-      },
-      {
-        "type": "German",
-        "title": "JoJo's Bizarre Adventure: Phantom Blood"
-      },
-      {
-        "type": "Spanish",
-        "title": "JoJo's Bizarre Adventure. Phantom Blood"
       },
       {
         "type": "French",
@@ -1751,18 +1285,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102576l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Comedy"
-    ],
+    "genres": ["Adventure", "Comedy"],
     "titles": [
       {
         "type": "Default",
         "title": "Dr. Stone"
-      },
-      {
-        "type": "Japanese",
-        "title": "ドクターストーン"
       },
       {
         "type": "English",
@@ -1783,10 +1310,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1704/106947l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1805,16 +1329,8 @@
         "title": "Demon Slayer Movie: Infinity Train"
       },
       {
-        "type": "Japanese",
-        "title": "劇場版 鬼滅の刃 無限列車編"
-      },
-      {
         "type": "English",
         "title": "Demon Slayer: Kimetsu no Yaiba - The Movie: Mugen Train"
-      },
-      {
-        "type": "Spanish",
-        "title": "Guardianes De La Noche - Kimetsu No Yaiba - Tren Infinito"
       },
       {
         "type": "French",
@@ -1835,21 +1351,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1441/122795l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Comedy"
-    ],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Spy x Family"
-      },
-      {
-        "type": "Japanese",
-        "title": "SPY×FAMILY"
-      }
-    ],
+    "genres": ["Action", "Award Winning", "Comedy"],
+    "titles": {
+      "type": "Default",
+      "title": "Spy x Family"
+    },
     "demographic_type": "Shounen",
     "episodes": 50,
     "season_start": "2022-04-09T00:00:00+00:00",
@@ -1864,10 +1370,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1806/126216l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1876,10 +1379,6 @@
       {
         "type": "Synonym",
         "title": "CSM"
-      },
-      {
-        "type": "Japanese",
-        "title": "チェンソーマン"
       },
       {
         "type": "English",
@@ -1900,31 +1399,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/1614/90408l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Darling in the FranXX"
       },
       {
-        "type": "Japanese",
-        "title": "ダーリン・イン・ザ・フランキス"
-      },
-      {
         "type": "English",
         "title": "DARLING in the FRANXX"
-      },
-      {
-        "type": "German",
-        "title": "Darling in the Franxx"
-      },
-      {
-        "type": "Spanish",
-        "title": "Darling in The FranXX"
       }
     ],
     "demographic_type": null,
@@ -1941,31 +1424,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/1490/101365l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Tate no Yuusha no Nariagari"
       },
       {
-        "type": "Japanese",
-        "title": "盾の勇者の成り上がり"
-      },
-      {
         "type": "English",
-        "title": "The Rising of the Shield Hero"
-      },
-      {
-        "type": "German",
-        "title": "The Rising of the Shield Hero"
-      },
-      {
-        "type": "Spanish",
         "title": "The Rising of the Shield Hero"
       },
       {
@@ -1987,17 +1453,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1795/95088l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
         "title": "Violet Evergarden"
-      },
-      {
-        "type": "Japanese",
-        "title": "ヴァイオレット・エヴァーガーデン"
       },
       {
         "type": "English",
@@ -2018,19 +1478,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/71553l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Fantasy", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Death Parade"
-      },
-      {
-        "type": "Japanese",
-        "title": "デス・パレード"
       },
       {
         "type": "English",
@@ -2051,17 +1503,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1826/147276l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
         "title": "Charlotte"
-      },
-      {
-        "type": "Japanese",
-        "title": "Charlotte（シャーロット）"
       },
       {
         "type": "English",
@@ -2082,19 +1528,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/18179l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Fairy Tail"
-      },
-      {
-        "type": "Japanese",
-        "title": "FAIRY TAIL（フェアリーテイル）"
       },
       {
         "type": "English",
@@ -2115,19 +1553,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/19644l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Award Winning", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Cowboy Bebop"
-      },
-      {
-        "type": "Japanese",
-        "title": "カウボーイビバップ"
       },
       {
         "type": "English",
@@ -2148,10 +1578,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1444/148976l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Gourmet",
-      "Ecchi"
-    ],
+    "genres": ["Gourmet", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2166,19 +1593,7 @@
         "title": "Food Wars: Shokugeki no Soma"
       },
       {
-        "type": "Japanese",
-        "title": "食戟のソーマ"
-      },
-      {
         "type": "English",
-        "title": "Food Wars! Shokugeki no Soma"
-      },
-      {
-        "type": "German",
-        "title": "Food Wars! Shokugeki no Soma"
-      },
-      {
-        "type": "Spanish",
         "title": "Food Wars! Shokugeki no Soma"
       },
       {
@@ -2200,11 +1615,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/42051l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Horror",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Horror", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2227,10 +1638,6 @@
         "title": "Another OVA"
       },
       {
-        "type": "Japanese",
-        "title": "アナザー The Other -因果-"
-      },
-      {
         "type": "English",
         "title": "Another: The Other"
       }
@@ -2249,21 +1656,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1500/103005l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama"
-    ],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Vinland Saga"
-      },
-      {
-        "type": "Japanese",
-        "title": "ヴィンランド・サガ"
-      }
-    ],
+    "genres": ["Action", "Adventure", "Drama"],
+    "titles": {
+      "type": "Default",
+      "title": "Vinland Saga"
+    },
     "demographic_type": "Seinen",
     "episodes": 48,
     "season_start": "2019-07-08T00:00:00+00:00",
@@ -2278,10 +1675,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/79697l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -2296,20 +1690,8 @@
         "title": "We Still Don't Know the Name of the Flower We Saw That Day."
       },
       {
-        "type": "Japanese",
-        "title": "あの日見た花の名前を僕達はまだ知らない。"
-      },
-      {
         "type": "English",
         "title": "Anohana: The Flower We Saw That Day"
-      },
-      {
-        "type": "German",
-        "title": "AnoHana: Die Blume, die Wir an Jenem Tag Sahen"
-      },
-      {
-        "type": "Spanish",
-        "title": "anohana: The Flower We Saw that Day"
       },
       {
         "type": "French",
@@ -2330,19 +1712,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1945/136600l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Overlord"
-      },
-      {
-        "type": "Japanese",
-        "title": "オーバーロード"
       },
       {
         "type": "English",
@@ -2363,33 +1737,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/138723l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Adventure", "Award Winning", "Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
         "title": "Howl no Ugoku Shiro"
       },
       {
-        "type": "Japanese",
-        "title": "ハウルの動く城"
-      },
-      {
         "type": "English",
         "title": "Howl's Moving Castle"
-      },
-      {
-        "type": "German",
-        "title": "Das wandelnde Schloss"
-      },
-      {
-        "type": "Spanish",
-        "title": "El Castillo Ambulante"
       },
       {
         "type": "French",
@@ -2410,11 +1766,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1172/148981l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2429,20 +1781,8 @@
         "title": "Is It Wrong That I Want to Meet You in a Dungeon"
       },
       {
-        "type": "Japanese",
-        "title": "ダンジョンに出会いを求めるのは間違っているだろうか"
-      },
-      {
         "type": "English",
         "title": "Is It Wrong to Try to Pick Up Girls in a Dungeon?"
-      },
-      {
-        "type": "German",
-        "title": "DanMachi: Is It Wrong to Try to Pick Up Girls in a Dungeon?"
-      },
-      {
-        "type": "Spanish",
-        "title": "DANMACHI ¿Qué tiene de Malo intentar Ligar en una Mazmorra?"
       },
       {
         "type": "French",
@@ -2463,12 +1803,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1464/111943l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2483,20 +1818,8 @@
         "title": "Dressed to Kill"
       },
       {
-        "type": "Japanese",
-        "title": "キルラキル"
-      },
-      {
         "type": "English",
         "title": "Kill la Kill"
-      },
-      {
-        "type": "German",
-        "title": "KILL la KILL"
-      },
-      {
-        "type": "Spanish",
-        "title": "KILL la KILL"
       },
       {
         "type": "French",
@@ -2517,10 +1840,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/50177l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -2531,19 +1851,7 @@
         "title": "Hataraku Maou-sama!"
       },
       {
-        "type": "Japanese",
-        "title": "はたらく魔王さま!"
-      },
-      {
         "type": "English",
-        "title": "The Devil is a Part-Timer!"
-      },
-      {
-        "type": "German",
-        "title": "The Devil is a Part-Timer!"
-      },
-      {
-        "type": "Spanish",
         "title": "The Devil is a Part-Timer!"
       },
       {
@@ -2565,12 +1873,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/78311l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Horror",
-      "Suspense",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Horror", "Suspense", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2589,16 +1892,8 @@
         "title": "HSOTD"
       },
       {
-        "type": "Japanese",
-        "title": "学園黙示録 HIGHSCHOOL OF THE DEAD"
-      },
-      {
         "type": "English",
         "title": "High School of the Dead"
-      },
-      {
-        "type": "Spanish",
-        "title": "High School Of The Dead: Apocalipsis en el Instituto"
       },
       {
         "type": "French",
@@ -2619,11 +1914,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/86578l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2638,16 +1929,8 @@
         "title": "Gambling School"
       },
       {
-        "type": "Japanese",
-        "title": "賭ケグルイ"
-      },
-      {
         "type": "English",
         "title": "Kakegurui"
-      },
-      {
-        "type": "German",
-        "title": "Kakegurui: Das Leben ist ein Spiel"
       },
       {
         "type": "French",
@@ -2668,11 +1951,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1069/123309l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2683,19 +1962,7 @@
         "title": "TenSura"
       },
       {
-        "type": "Japanese",
-        "title": "転生したらスライムだった件"
-      },
-      {
         "type": "English",
-        "title": "That Time I Got Reincarnated as a Slime"
-      },
-      {
-        "type": "German",
-        "title": "That Time I Got Reincamrnated as a Slime"
-      },
-      {
-        "type": "Spanish",
         "title": "That Time I Got Reincarnated as a Slime"
       },
       {
@@ -2717,9 +1984,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1695/111486l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -2728,10 +1993,6 @@
       {
         "type": "Synonym",
         "title": "Hori-san and Miyamura-kun"
-      },
-      {
-        "type": "Japanese",
-        "title": "ホリミヤ"
       },
       {
         "type": "English",
@@ -2752,18 +2013,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/88336l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Black Clover"
-      },
-      {
-        "type": "Japanese",
-        "title": "ブラッククローバー"
       },
       {
         "type": "English",
@@ -2784,11 +2038,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/5123l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Sci-Fi"
-    ],
+    "genres": ["Adventure", "Award Winning", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -2815,19 +2065,7 @@
         "title": "Gurren Laggan"
       },
       {
-        "type": "Japanese",
-        "title": "天元突破グレンラガン"
-      },
-      {
         "type": "English",
-        "title": "Gurren Lagann"
-      },
-      {
-        "type": "German",
-        "title": "Gurren Lagann"
-      },
-      {
-        "type": "Spanish",
         "title": "Gurren Lagann"
       },
       {
@@ -2849,12 +2087,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1530/117776l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Adventure", "Drama", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2865,15 +2098,7 @@
         "title": "Jobless Reincarnation: I Will Seriously Try If I Go To Another World"
       },
       {
-        "type": "Japanese",
-        "title": "無職転生 ～異世界行ったら本気だす～"
-      },
-      {
         "type": "English",
-        "title": "Mushoku Tensei: Jobless Reincarnation"
-      },
-      {
-        "type": "German",
         "title": "Mushoku Tensei: Jobless Reincarnation"
       },
       {
@@ -2895,13 +2120,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/111940l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Romance",
-      "Supernatural",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Romance", "Supernatural", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2912,16 +2131,8 @@
         "title": "Highschool DxD"
       },
       {
-        "type": "Japanese",
-        "title": "ハイスクールD×D"
-      },
-      {
         "type": "English",
         "title": "High School DxD"
-      },
-      {
-        "type": "German",
-        "title": "Highschool DxD"
       }
     ],
     "demographic_type": null,
@@ -2938,13 +2149,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75815l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Award Winning",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Award Winning", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2961,10 +2166,6 @@
       {
         "type": "Synonym",
         "title": "Full Metal Alchemist"
-      },
-      {
-        "type": "Japanese",
-        "title": "鋼の錬金術師"
       },
       {
         "type": "English",
@@ -2985,13 +2186,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1780/121555l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama",
-      "Horror",
-      "Romance",
-      "Suspense"
-    ],
+    "genres": ["Action", "Drama", "Horror", "Romance", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3008,10 +2203,6 @@
       {
         "type": "Synonym",
         "title": "Elf Song"
-      },
-      {
-        "type": "Japanese",
-        "title": "エルフェンリート"
       },
       {
         "type": "English",
@@ -3032,10 +2223,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1786/120117l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3050,19 +2238,7 @@
         "title": "My youth romantic comedy is wrong as I expected."
       },
       {
-        "type": "Japanese",
-        "title": "やはり俺の青春ラブコメはまちがっている。"
-      },
-      {
         "type": "English",
-        "title": "My Teen Romantic Comedy SNAFU"
-      },
-      {
-        "type": "German",
-        "title": "My Teen Romantic Comedy SNAFU"
-      },
-      {
-        "type": "Spanish",
         "title": "My Teen Romantic Comedy SNAFU"
       },
       {
@@ -3084,18 +2260,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/117644l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Fate/Zero"
-      },
-      {
-        "type": "Japanese",
-        "title": "フェイト/ゼロ"
       },
       {
         "type": "English",
@@ -3116,10 +2285,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/86830l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3138,19 +2304,7 @@
         "title": "You-zitsu"
       },
       {
-        "type": "Japanese",
-        "title": "ようこそ実力至上主義の教室へ"
-      },
-      {
         "type": "English",
-        "title": "Classroom of the Elite"
-      },
-      {
-        "type": "German",
-        "title": "Classroom of the Elite"
-      },
-      {
-        "type": "Spanish",
         "title": "Classroom of the Elite"
       },
       {
@@ -3172,12 +2326,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/92364l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3190,10 +2339,6 @@
       {
         "type": "Synonym",
         "title": "DB"
-      },
-      {
-        "type": "Japanese",
-        "title": "ドラゴンボール"
       },
       {
         "type": "English",
@@ -3214,19 +2359,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1071/149486l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Soul Eater"
-      },
-      {
-        "type": "Japanese",
-        "title": "ソウルイーター"
       },
       {
         "type": "English",
@@ -3247,12 +2384,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1355/147277l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3263,20 +2395,8 @@
         "title": "Mononoke Hime"
       },
       {
-        "type": "Japanese",
-        "title": "もののけ姫"
-      },
-      {
         "type": "English",
         "title": "Princess Mononoke"
-      },
-      {
-        "type": "German",
-        "title": "Prinzessin Mononoke"
-      },
-      {
-        "type": "Spanish",
-        "title": "La Princesa Mononoke"
       },
       {
         "type": "French",
@@ -3297,21 +2417,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/86733l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Adventure", "Drama", "Fantasy", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Made in Abyss"
-      },
-      {
-        "type": "Japanese",
-        "title": "メイドインアビス"
       },
       {
         "type": "English",
@@ -3332,10 +2442,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1905/142840l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3354,20 +2461,8 @@
         "title": "I Want a Date!"
       },
       {
-        "type": "Japanese",
-        "title": "中二病でも恋がしたい!"
-      },
-      {
         "type": "English",
         "title": "Love, Chunibyo & Other Delusions!"
-      },
-      {
-        "type": "German",
-        "title": "Love, Chunibyo & Other Delusions!"
-      },
-      {
-        "type": "Spanish",
-        "title": "Love, Chunibyo & Other Delusions"
       },
       {
         "type": "French",
@@ -3388,12 +2483,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/142015l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Action", "Mystery", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3402,10 +2492,6 @@
       {
         "type": "Synonym",
         "title": "Psychopath"
-      },
-      {
-        "type": "Japanese",
-        "title": "サイコパス"
       },
       {
         "type": "English",
@@ -3426,11 +2512,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1015/138006l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3443,10 +2525,6 @@
       {
         "type": "Synonym",
         "title": "Frieren The Slayer"
-      },
-      {
-        "type": "Japanese",
-        "title": "葬送のフリーレン"
       },
       {
         "type": "English",
@@ -3467,11 +2545,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1664/103275l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -3482,19 +2556,7 @@
         "title": "Fire Brigade of Flames"
       },
       {
-        "type": "Japanese",
-        "title": "炎炎ノ消防隊"
-      },
-      {
         "type": "English",
-        "title": "Fire Force"
-      },
-      {
-        "type": "German",
-        "title": "Fire Force"
-      },
-      {
-        "type": "Spanish",
         "title": "Fire Force"
       },
       {
@@ -3516,11 +2578,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/55225l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Award Winning", "Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3535,19 +2593,7 @@
         "title": "Magical Girl Madoka Magica"
       },
       {
-        "type": "Japanese",
-        "title": "魔法少女まどか★マギカ"
-      },
-      {
         "type": "English",
-        "title": "Puella Magi Madoka Magica"
-      },
-      {
-        "type": "German",
-        "title": "Puella Magi Madoka Magica"
-      },
-      {
-        "type": "Spanish",
         "title": "Puella Magi Madoka Magica"
       },
       {
@@ -3569,9 +2615,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1179/119897l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3584,10 +2628,6 @@
       {
         "type": "Synonym",
         "title": "KiseKoi"
-      },
-      {
-        "type": "Japanese",
-        "title": "その着せ替え人形は恋をする"
       },
       {
         "type": "English",
@@ -3608,18 +2648,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1804/95033l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
         "title": "Clannad"
-      },
-      {
-        "type": "Japanese",
-        "title": "CLANNAD"
       },
       {
         "type": "English",
@@ -3640,10 +2673,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/85434l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Slice of Life",
-      "Supernatural"
-    ],
+    "genres": ["Slice of Life", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3654,19 +2684,7 @@
         "title": "The maid dragon of Kobayashi-san"
       },
       {
-        "type": "Japanese",
-        "title": "小林さんちのメイドラゴン"
-      },
-      {
         "type": "English",
-        "title": "Miss Kobayashi's Dragon Maid"
-      },
-      {
-        "type": "German",
-        "title": "Miss Kobayashi's Dragon Maid"
-      },
-      {
-        "type": "Spanish",
         "title": "Miss Kobayashi's Dragon Maid"
       },
       {
@@ -3688,10 +2706,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/79409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery"
-    ],
+    "genres": ["Action", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -3706,19 +2721,7 @@
         "title": "BSD"
       },
       {
-        "type": "Japanese",
-        "title": "文豪ストレイドッグス"
-      },
-      {
         "type": "English",
-        "title": "Bungo Stray Dogs"
-      },
-      {
-        "type": "German",
-        "title": "Bungo Stray Dogs"
-      },
-      {
-        "type": "Spanish",
         "title": "Bungo Stray Dogs"
       },
       {
@@ -3740,11 +2743,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/148979l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3755,20 +2754,8 @@
         "title": "Seraph of the End"
       },
       {
-        "type": "Japanese",
-        "title": "終わりのセラフ"
-      },
-      {
         "type": "English",
         "title": "Seraph of the End: Vampire Reign"
-      },
-      {
-        "type": "German",
-        "title": "Seraph of the End: Vampire Reign"
-      },
-      {
-        "type": "Spanish",
-        "title": "Seraph of the End: El Reino de los Vampiros"
       },
       {
         "type": "French",
@@ -3789,18 +2776,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1839/122012l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama"
-    ],
+    "genres": ["Action", "Drama"],
     "titles": [
       {
         "type": "Default",
         "title": "Tokyo Revengers"
-      },
-      {
-        "type": "Japanese",
-        "title": "東京リベンジャーズ"
       },
       {
         "type": "English",
@@ -3821,10 +2801,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/25254l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3833,10 +2810,6 @@
       {
         "type": "Synonym",
         "title": "Class President is a Maid!"
-      },
-      {
-        "type": "Japanese",
-        "title": "会長はメイド様!"
       },
       {
         "type": "English",
@@ -3857,10 +2830,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1121/119044l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3873,10 +2843,6 @@
       {
         "type": "Synonym",
         "title": "JJK 0"
-      },
-      {
-        "type": "Japanese",
-        "title": "劇場版 呪術廻戦 0"
       },
       {
         "type": "English",
@@ -3897,12 +2863,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1170/121597l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Mystery",
-      "Romance",
-      "Supernatural",
-      "Ecchi"
-    ],
+    "genres": ["Mystery", "Romance", "Supernatural", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -3913,19 +2874,7 @@
         "title": "Nekomonogatari Black: Tsubasa Family"
       },
       {
-        "type": "Japanese",
-        "title": "猫物語（黒）"
-      },
-      {
         "type": "English",
-        "title": "Nekomonogatari Black"
-      },
-      {
-        "type": "German",
-        "title": "Nekomonogatari Black"
-      },
-      {
-        "type": "Spanish",
         "title": "Nekomonogatari Black"
       },
       {
@@ -3947,9 +2896,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76803l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -3962,10 +2909,6 @@
       {
         "type": "Synonym",
         "title": "Kuroko no Basket Episode 22.5"
-      },
-      {
-        "type": "Japanese",
-        "title": "黒子のバスケ 第22.5Q 「Tip Off」"
       },
       {
         "type": "English",
@@ -3986,32 +2929,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/89973l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Action",
-      "Avant Garde",
-      "Horror",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Avant Garde", "Horror", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Devilman: Crybaby"
       },
       {
-        "type": "Japanese",
-        "title": "DEVILMAN crybaby"
-      },
-      {
         "type": "English",
         "title": "Devilman: Crybaby"
-      },
-      {
-        "type": "German",
-        "title": "DEVILMAN: Crybaby"
-      },
-      {
-        "type": "Spanish",
-        "title": "DEVILMAN: Crybaby"
       },
       {
         "type": "French",
@@ -4032,11 +2958,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1110/147278l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Adventure", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4047,20 +2969,8 @@
         "title": "My Neighbour Totoro"
       },
       {
-        "type": "Japanese",
-        "title": "となりのトトロ"
-      },
-      {
         "type": "English",
         "title": "My Neighbor Totoro"
-      },
-      {
-        "type": "German",
-        "title": "Mein Nachbar Totoro"
-      },
-      {
-        "type": "Spanish",
-        "title": "Mi Vecino Totoro"
       },
       {
         "type": "French",
@@ -4081,10 +2991,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/43643l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4095,19 +3002,7 @@
         "title": "Sakurasou no Pet na Kanojo"
       },
       {
-        "type": "Japanese",
-        "title": "さくら荘のペットな彼女"
-      },
-      {
         "type": "English",
-        "title": "The Pet Girl of Sakurasou"
-      },
-      {
-        "type": "German",
-        "title": "The Pet Girl of Sakurasou"
-      },
-      {
-        "type": "Spanish",
         "title": "The Pet Girl of Sakurasou"
       },
       {
@@ -4129,19 +3024,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1719/95621l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Goblin Slayer"
-      },
-      {
-        "type": "Japanese",
-        "title": "ゴブリンスレイヤー"
       },
       {
         "type": "English",
@@ -4162,10 +3049,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/71992l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4188,15 +3072,7 @@
         "title": "OHSHC"
       },
       {
-        "type": "Japanese",
-        "title": "桜蘭高校ホスト部"
-      },
-      {
         "type": "English",
-        "title": "Ouran High School Host Club"
-      },
-      {
-        "type": "German",
         "title": "Ouran High School Host Club"
       },
       {
@@ -4218,12 +3094,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75299l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Sci-Fi",
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Action", "Sci-Fi", "Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4232,10 +3103,6 @@
       {
         "type": "Synonym",
         "title": "DEADMAN WONDERLAND"
-      },
-      {
-        "type": "Japanese",
-        "title": "デッドマン・ワンダーランド"
       },
       {
         "type": "English",
@@ -4256,20 +3123,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1818/126435l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Action",
-      "Sci-Fi"
-    ],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Cyberpunk: Edgerunners"
-      },
-      {
-        "type": "Japanese",
-        "title": "サイバーパンク エッジランナーズ"
-      }
-    ],
+    "genres": ["Action", "Sci-Fi"],
+    "titles": {
+      "type": "Default",
+      "title": "Cyberpunk: Edgerunners"
+    },
     "demographic_type": null,
     "episodes": 20,
     "season_start": "2022-09-13T00:00:00+00:00",
@@ -4284,11 +3142,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/100467l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4297,10 +3151,6 @@
       {
         "type": "Synonym",
         "title": "Dororo to Hyakkimaru"
-      },
-      {
-        "type": "Japanese",
-        "title": "どろろ"
       },
       {
         "type": "English",
@@ -4325,9 +3175,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1973/142750l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -4342,19 +3190,7 @@
         "title": "Saiki Kusuo no Sainan"
       },
       {
-        "type": "Japanese",
-        "title": "斉木楠雄のΨ難"
-      },
-      {
         "type": "English",
-        "title": "The Disastrous Life of Saiki K."
-      },
-      {
-        "type": "German",
-        "title": "The Disastrous Life of Saiki K."
-      },
-      {
-        "type": "Spanish",
         "title": "The Disastrous Life of Saiki K."
       },
       {
@@ -4376,10 +3212,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/75587l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4390,19 +3223,7 @@
         "title": "Nisekoi"
       },
       {
-        "type": "Japanese",
-        "title": "ニセコイ"
-      },
-      {
         "type": "English",
-        "title": "Nisekoi: False Love"
-      },
-      {
-        "type": "German",
-        "title": "Nisekoi: False Love"
-      },
-      {
-        "type": "Spanish",
         "title": "Nisekoi: False Love"
       },
       {
@@ -4424,11 +3245,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/71772l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Mystery", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4455,10 +3272,6 @@
         "title": "DRRR!!"
       },
       {
-        "type": "Japanese",
-        "title": "デュラララ!!"
-      },
-      {
         "type": "English",
         "title": "Durarara!!"
       }
@@ -4477,12 +3290,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1404/98182l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Avant Garde",
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4495,10 +3303,6 @@
       {
         "type": "Synonym",
         "title": "EoE"
-      },
-      {
-        "type": "Japanese",
-        "title": "新世紀エヴァンゲリオン劇場版 Air / まごころを, 君に"
       },
       {
         "type": "English",
@@ -4519,10 +3323,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/50521l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Slice of Life"
-    ],
+    "genres": ["Mystery", "Slice of Life"],
     "titles": [
       {
         "type": "Default",
@@ -4545,10 +3346,6 @@
         "title": "Hyoka"
       },
       {
-        "type": "Japanese",
-        "title": "氷菓"
-      },
-      {
         "type": "English",
         "title": "Hyouka"
       }
@@ -4567,11 +3364,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1801/142390l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4588,10 +3381,6 @@
       {
         "type": "Synonym",
         "title": "I Level Up Alone"
-      },
-      {
-        "type": "Japanese",
-        "title": "俺だけレベルアップな件"
       },
       {
         "type": "English",
@@ -4612,10 +3401,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1902/128382l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4630,19 +3416,7 @@
         "title": "Kanokari"
       },
       {
-        "type": "Japanese",
-        "title": "彼女、お借りします"
-      },
-      {
         "type": "English",
-        "title": "Rent-a-Girlfriend"
-      },
-      {
-        "type": "German",
-        "title": "Rent-a-Girlfriend"
-      },
-      {
-        "type": "Spanish",
         "title": "Rent-a-Girlfriend"
       },
       {
@@ -4664,11 +3438,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1370/135212l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -4677,10 +3447,6 @@
       {
         "type": "Synonym",
         "title": "SAMURAI CHAMPLOO"
-      },
-      {
-        "type": "Japanese",
-        "title": "サムライチャンプルー"
       },
       {
         "type": "English",
@@ -4701,10 +3467,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1819/97947l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4719,19 +3482,7 @@
         "title": "The Five Wedded Brides"
       },
       {
-        "type": "Japanese",
-        "title": "五等分の花嫁"
-      },
-      {
         "type": "English",
-        "title": "The Quintessential Quintuplets"
-      },
-      {
-        "type": "German",
-        "title": "The Quintessential Quintuplets"
-      },
-      {
-        "type": "Spanish",
         "title": "The Quintessential Quintuplets"
       },
       {
@@ -4753,32 +3504,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/1880/101146l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Tenki no Ko"
       },
       {
-        "type": "Japanese",
-        "title": "天気の子"
-      },
-      {
         "type": "English",
         "title": "Weathering with You"
-      },
-      {
-        "type": "German",
-        "title": "Weathering With You: Das Mädchen, das die Sonne berührte"
-      },
-      {
-        "type": "Spanish",
-        "title": "El Tiempo Contigo (Weathering With You)"
       },
       {
         "type": "French",
@@ -4799,11 +3533,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1993/93837l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4826,20 +3556,8 @@
         "title": "SAO 3"
       },
       {
-        "type": "Japanese",
-        "title": "ソードアート・オンライン アリシゼーション"
-      },
-      {
         "type": "English",
         "title": "Sword Art Online: Alicization"
-      },
-      {
-        "type": "German",
-        "title": "Sword Art Online Alicization"
-      },
-      {
-        "type": "Spanish",
-        "title": "Sword Art Online Alicization"
       }
     ],
     "demographic_type": null,
@@ -4856,10 +3574,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1417/117422l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4874,19 +3589,7 @@
         "title": "Terror of Resonance"
       },
       {
-        "type": "Japanese",
-        "title": "残響のテロル"
-      },
-      {
         "type": "English",
-        "title": "Terror in Resonance"
-      },
-      {
-        "type": "German",
-        "title": "Terror in Resonance"
-      },
-      {
-        "type": "Spanish",
         "title": "Terror in Resonance"
       },
       {
@@ -4908,19 +3611,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/80010l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Action",
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Guilty Crown: Lost Christmas - An Episode of Port Town"
-      },
-      {
-        "type": "Japanese",
-        "title": "ギルティクラウン ロストクリスマス an episode of port town"
       },
       {
         "type": "English",
@@ -4941,10 +3636,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1768/93291l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4959,20 +3651,8 @@
         "title": "Let Me Eat Your Pancreas"
       },
       {
-        "type": "Japanese",
-        "title": "君の膵臓をたべたい"
-      },
-      {
         "type": "English",
         "title": "I Want To Eat Your Pancreas"
-      },
-      {
-        "type": "German",
-        "title": "I Want To Eat Your Pancreas"
-      },
-      {
-        "type": "Spanish",
-        "title": "Quiero comerme tu Páncreas"
       },
       {
         "type": "French",
@@ -4993,10 +3673,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/39779l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5015,15 +3692,7 @@
         "title": "My Neighbor Monster-kun"
       },
       {
-        "type": "Japanese",
-        "title": "となりの怪物くん"
-      },
-      {
         "type": "English",
-        "title": "My Little Monster"
-      },
-      {
-        "type": "German",
         "title": "My Little Monster"
       },
       {
@@ -5045,11 +3714,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1467/137783l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Mystery", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5064,20 +3729,8 @@
         "title": "Kuroshitsuzi"
       },
       {
-        "type": "Japanese",
-        "title": "黒執事"
-      },
-      {
         "type": "English",
         "title": "Black Butler"
-      },
-      {
-        "type": "German",
-        "title": "Black Butler"
-      },
-      {
-        "type": "Spanish",
-        "title": "El Mayordomo Oscuro"
       },
       {
         "type": "French",
@@ -5098,10 +3751,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/112161l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -5110,10 +3760,6 @@
       {
         "type": "Synonym",
         "title": "Kangoku Gakuen"
-      },
-      {
-        "type": "Japanese",
-        "title": "監獄学園〈プリズンスクール〉"
       },
       {
         "type": "English",
@@ -5134,10 +3780,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/82149l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5146,10 +3789,6 @@
       {
         "type": "Synonym",
         "title": "Re LIFE"
-      },
-      {
-        "type": "Japanese",
-        "title": "ReLIFE"
       },
       {
         "type": "English",
@@ -5170,19 +3809,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1847/120234l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Mahouka Koukou no Rettousei: Tsuioku-hen"
-      },
-      {
-        "type": "Japanese",
-        "title": "魔法科高校の劣等生 追憶編"
       },
       {
         "type": "English",
@@ -5203,20 +3834,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/44844l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Date A Live"
-      },
-      {
-        "type": "Japanese",
-        "title": "デート・ア・ライブ"
       },
       {
         "type": "English",
@@ -5237,13 +3859,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1702/106229l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Mystery"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -5258,19 +3874,7 @@
         "title": "신의 탑"
       },
       {
-        "type": "Japanese",
-        "title": "神之塔 -Tower of God-"
-      },
-      {
         "type": "English",
-        "title": "Tower of God"
-      },
-      {
-        "type": "German",
-        "title": "Tower of God"
-      },
-      {
-        "type": "Spanish",
         "title": "Tower of God"
       },
       {
@@ -5292,9 +3896,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76120l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -5309,15 +3911,7 @@
         "title": "K-ON! Season 1"
       },
       {
-        "type": "Japanese",
-        "title": "けいおん!"
-      },
-      {
         "type": "English",
-        "title": "K-ON!"
-      },
-      {
-        "type": "German",
         "title": "K-ON!"
       },
       {
@@ -5339,10 +3933,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1812/134736l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -5351,10 +3942,6 @@
       {
         "type": "Synonym",
         "title": "My Star"
-      },
-      {
-        "type": "Japanese",
-        "title": "【推しの子】"
       },
       {
         "type": "English",
@@ -5375,19 +3962,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/84004l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Log Horizon"
-      },
-      {
-        "type": "Japanese",
-        "title": "ログ・ホライズン"
       },
       {
         "type": "English",
@@ -5408,10 +3987,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1410/112994l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5434,20 +4010,8 @@
         "title": "5 cm per second"
       },
       {
-        "type": "Japanese",
-        "title": "秒速５センチメートル"
-      },
-      {
         "type": "English",
         "title": "5 Centimeters per Second"
-      },
-      {
-        "type": "German",
-        "title": "5 Centimeter per Second"
-      },
-      {
-        "type": "Spanish",
-        "title": "5 Centímetros por Segundo"
       },
       {
         "type": "French",
@@ -5468,12 +4032,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/76493l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -5492,19 +4051,7 @@
         "title": "A Tale of Worst One"
       },
       {
-        "type": "Japanese",
-        "title": "落第騎士の英雄譚《キャバルリィ》"
-      },
-      {
         "type": "English",
-        "title": "Chivalry of a Failed Knight"
-      },
-      {
-        "type": "German",
-        "title": "A Chivalry of a Failed Knight"
-      },
-      {
-        "type": "Spanish",
         "title": "Chivalry of a Failed Knight"
       },
       {
@@ -5526,20 +4073,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1713/145599l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Suspense"
-    ],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Beastars"
-      },
-      {
-        "type": "Japanese",
-        "title": "BEASTARS"
-      }
-    ],
+    "genres": ["Drama", "Suspense"],
+    "titles": {
+      "type": "Default",
+      "title": "Beastars"
+    },
     "demographic_type": "Shounen",
     "episodes": 36,
     "season_start": "2019-10-10T00:00:00+00:00",
@@ -5554,18 +4092,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/52091l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
         "title": "Golden Time"
-      },
-      {
-        "type": "Japanese",
-        "title": "ゴールデンタイム"
       },
       {
         "type": "English",
@@ -5586,12 +4117,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/74606l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5608,10 +4134,6 @@
       {
         "type": "Synonym",
         "title": "DBS"
-      },
-      {
-        "type": "Japanese",
-        "title": "ドラゴンボール超（スーパー）"
       },
       {
         "type": "English",
@@ -5632,19 +4154,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78783l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Magi: Sinbad no Bouken (TV)"
-      },
-      {
-        "type": "Japanese",
-        "title": "マギ シンドバッドの冒険"
       },
       {
         "type": "English",
@@ -5665,10 +4179,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1864/93518l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5677,10 +4188,6 @@
       {
         "type": "Synonym",
         "title": "It's Difficult to Love an Otaku"
-      },
-      {
-        "type": "Japanese",
-        "title": "ヲタクに恋は難しい"
       },
       {
         "type": "English",
@@ -5701,10 +4208,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/63205l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5713,10 +4217,6 @@
       {
         "type": "Synonym",
         "title": "Beyond the Horizon: Daybreak"
-      },
-      {
-        "type": "Japanese",
-        "title": "境界の彼方 ＃0「東雲」"
       },
       {
         "type": "English",
@@ -5741,11 +4241,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/51463l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Horror",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Horror", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -5756,19 +4252,7 @@
         "title": "Dangan Ronpa: The Animation"
       },
       {
-        "type": "Japanese",
-        "title": "ダンガンロンパ 希望の学園と絶望の高校生 THE ANIMATION"
-      },
-      {
         "type": "English",
-        "title": "Danganronpa: The Animation"
-      },
-      {
-        "type": "German",
-        "title": "Danganronpa: The Animation"
-      },
-      {
-        "type": "Spanish",
         "title": "Danganronpa: The Animation"
       },
       {
@@ -5790,19 +4274,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1584/143719l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Dandadan"
-      },
-      {
-        "type": "Japanese",
-        "title": "ダンダダン"
       },
       {
         "type": "English",
@@ -5823,18 +4299,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/81149l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Sports"
-    ],
+    "genres": ["Award Winning", "Sports"],
     "titles": [
       {
         "type": "Default",
         "title": "Yuri!!! on Ice"
-      },
-      {
-        "type": "Japanese",
-        "title": "ユーリ!!! on ICE"
       },
       {
         "type": "English",
@@ -5855,29 +4324,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/83709l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
         "title": "Masamune-kun no Revenge"
       },
       {
-        "type": "Japanese",
-        "title": "政宗くんのリベンジ"
-      },
-      {
         "type": "English",
-        "title": "Masamune-kun's Revenge"
-      },
-      {
-        "type": "German",
-        "title": "Masamune-kun's Revenge"
-      },
-      {
-        "type": "Spanish",
         "title": "Masamune-kun's Revenge"
       },
       {
@@ -5899,10 +4353,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1722/107269l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5921,16 +4372,8 @@
         "title": "GOHS"
       },
       {
-        "type": "Japanese",
-        "title": "THE GOD OF HIGH SCHOOL ゴッド・オブ・ハイスクール"
-      },
-      {
         "type": "English",
         "title": "The God of High School"
-      },
-      {
-        "type": "German",
-        "title": "The God Of High School"
       }
     ],
     "demographic_type": null,
@@ -5947,19 +4390,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1408/114012l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Horror",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Horror", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Akira"
-      },
-      {
-        "type": "Japanese",
-        "title": "AKIRA（アキラ）"
       },
       {
         "type": "English",
@@ -5980,10 +4415,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/82890l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5994,20 +4426,8 @@
         "title": "The Military Chronicles of a Little Girl"
       },
       {
-        "type": "Japanese",
-        "title": "幼女戦記"
-      },
-      {
         "type": "English",
         "title": "Saga of Tanya the Evil"
-      },
-      {
-        "type": "German",
-        "title": "Saga of Tanya the Evil"
-      },
-      {
-        "type": "Spanish",
-        "title": "Saga of Tanya the Evil (Youjo Senki)"
       },
       {
         "type": "French",
@@ -6028,11 +4448,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1638/119321l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6047,20 +4463,8 @@
         "title": "Eiga Kono Subarashii Sekai ni Shukufuku wo!"
       },
       {
-        "type": "Japanese",
-        "title": "映画 この素晴らしい世界に祝福を！紅伝説"
-      },
-      {
         "type": "English",
         "title": "KonoSuba: God's Blessing on This Wonderful World! - Legend of Crimson"
-      },
-      {
-        "type": "German",
-        "title": "Konosuba -God's Blessing on This Wonderful World!- Legend of Crimson"
-      },
-      {
-        "type": "Spanish",
-        "title": "KonoSuba: God's Blessing on This Wonderful World!: Legend of Crimson"
       },
       {
         "type": "French",
@@ -6081,11 +4485,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1597/112995l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6100,20 +4500,8 @@
         "title": "The Garden of Kotonoha"
       },
       {
-        "type": "Japanese",
-        "title": "言の葉の庭"
-      },
-      {
         "type": "English",
         "title": "The Garden of Words"
-      },
-      {
-        "type": "German",
-        "title": "The Garden of Words"
-      },
-      {
-        "type": "Spanish",
-        "title": "El Jardín de las Palabras"
       },
       {
         "type": "French",
@@ -6134,10 +4522,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/66083l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6148,20 +4533,8 @@
         "title": "Gekkan Shoujo Nozaki-kun"
       },
       {
-        "type": "Japanese",
-        "title": "月刊少女野崎くん"
-      },
-      {
         "type": "English",
         "title": "Monthly Girls' Nozaki-kun"
-      },
-      {
-        "type": "German",
-        "title": "Monthly Girls' Nozaki-kun"
-      },
-      {
-        "type": "Spanish",
-        "title": "Gekkan Shojo Nozaki-kun"
       },
       {
         "type": "French",
@@ -6182,9 +4555,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/64813l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6195,19 +4566,7 @@
         "title": "Aoharaido"
       },
       {
-        "type": "Japanese",
-        "title": "アオハライド"
-      },
-      {
         "type": "English",
-        "title": "Blue Spring Ride"
-      },
-      {
-        "type": "German",
-        "title": "Blue Spring Ride"
-      },
-      {
-        "type": "Spanish",
         "title": "Blue Spring Ride"
       },
       {
@@ -6229,9 +4588,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1899/117237l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -6244,10 +4601,6 @@
       {
         "type": "Synonym",
         "title": "Communication Shougai desu."
-      },
-      {
-        "type": "Japanese",
-        "title": "古見さんは、コミュ症です。"
       },
       {
         "type": "English",
@@ -6268,17 +4621,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1906/121592l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
         "title": "Black Lagoon"
-      },
-      {
-        "type": "Japanese",
-        "title": "BLACK LAGOON"
       },
       {
         "type": "English",
@@ -6299,10 +4646,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1126/108573l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6313,19 +4657,7 @@
         "title": "The Misfit of Demon King Academy: History's Strongest Demon King Reincarnates and Goes to School with His Descendants"
       },
       {
-        "type": "Japanese",
-        "title": "魔王学院の不適合者 ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～"
-      },
-      {
         "type": "English",
-        "title": "The Misfit of Demon King Academy"
-      },
-      {
-        "type": "German",
-        "title": "The Misfit of Demon King Academy"
-      },
-      {
-        "type": "Spanish",
         "title": "The Misfit of Demon King Academy"
       },
       {
@@ -6347,11 +4679,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/30667l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Horror",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Horror", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -6372,10 +4700,6 @@
       {
         "type": "Synonym",
         "title": "Drifters"
-      },
-      {
-        "type": "Japanese",
-        "title": "HELLSING THE DAWN"
       }
     ],
     "demographic_type": "Seinen",
@@ -6392,10 +4716,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1502/124384l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6406,16 +4727,8 @@
         "title": "Reaching You"
       },
       {
-        "type": "Japanese",
-        "title": "君に届け"
-      },
-      {
         "type": "English",
         "title": "Kimi ni Todoke: From Me to You"
-      },
-      {
-        "type": "Spanish",
-        "title": "Kimi ni Todoke: From Me To You"
       },
       {
         "type": "French",
@@ -6436,18 +4749,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/40977l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Suspense"
-    ],
+    "genres": ["Action", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Btooom!"
-      },
-      {
-        "type": "Japanese",
-        "title": "BTOOOM!"
       },
       {
         "type": "English",
@@ -6468,26 +4774,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102179l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
         "title": "Seishun Buta Yarou wa Yumemiru Shoujo no Yume wo Minai"
       },
       {
-        "type": "Japanese",
-        "title": "青春ブタ野郎はゆめみる少女の夢を見ない"
-      },
-      {
         "type": "English",
-        "title": "Rascal Does Not Dream of a Dreaming Girl"
-      },
-      {
-        "type": "German",
         "title": "Rascal Does Not Dream of a Dreaming Girl"
       },
       {
@@ -6509,11 +4803,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/72750l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -6522,10 +4812,6 @@
       {
         "type": "Synonym",
         "title": "Plamemo"
-      },
-      {
-        "type": "Japanese",
-        "title": "プラスティック・メモリーズ"
       },
       {
         "type": "English",
@@ -6546,11 +4832,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1085/90759l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6565,16 +4847,8 @@
         "title": "NGNL the Movie"
       },
       {
-        "type": "Japanese",
-        "title": "ノーゲーム・ノーライフ ゼロ"
-      },
-      {
         "type": "English",
         "title": "No Game, No Life: Zero"
-      },
-      {
-        "type": "Spanish",
-        "title": "No Game no Life Zero"
       }
     ],
     "demographic_type": null,
@@ -6591,11 +4865,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1075/131925l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -6608,10 +4878,6 @@
       {
         "type": "Synonym",
         "title": "Heavenhell"
-      },
-      {
-        "type": "Japanese",
-        "title": "地獄楽"
       },
       {
         "type": "English",
@@ -6632,19 +4898,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1292/94693l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Black Bullet"
-      },
-      {
-        "type": "Japanese",
-        "title": "ブラック・ブレット　BLACK BULLET　［黒の銃弾］"
       },
       {
         "type": "English",
@@ -6665,19 +4923,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/18793l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Monster"
-      },
-      {
-        "type": "Japanese",
-        "title": "モンスター"
       },
       {
         "type": "English",
@@ -6698,12 +4948,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/137929l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Comedy",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Comedy", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -6712,10 +4957,6 @@
       {
         "type": "Synonym",
         "title": "Suzumiya Haruhi no Yuuutsu"
-      },
-      {
-        "type": "Japanese",
-        "title": "涼宮ハルヒの憂鬱"
       },
       {
         "type": "English",
@@ -6740,10 +4981,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1987/117507l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -6754,19 +4992,7 @@
         "title": "Eighty Six"
       },
       {
-        "type": "Japanese",
-        "title": "86―エイティシックス―"
-      },
-      {
         "type": "English",
-        "title": "86 Eighty-Six"
-      },
-      {
-        "type": "German",
-        "title": "86 Eighty-Six"
-      },
-      {
-        "type": "Spanish",
         "title": "86 Eighty-Six"
       },
       {
@@ -6788,9 +5014,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1736/93138l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
@@ -6801,20 +5025,8 @@
         "title": "My Hero Academia the Movie: The Two Heroes"
       },
       {
-        "type": "Japanese",
-        "title": "僕のヒーローアカデミア THE MOVIE ～2人の英雄（ヒーロー）～"
-      },
-      {
         "type": "English",
         "title": "My Hero Academia: Two Heroes"
-      },
-      {
-        "type": "German",
-        "title": "My Hero Academia: Two Heroes"
-      },
-      {
-        "type": "Spanish",
-        "title": "My Hero Academia la Película: Dos Héroes."
       },
       {
         "type": "French",
@@ -6835,10 +5047,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1021/95670l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6853,19 +5062,7 @@
         "title": "Domekano"
       },
       {
-        "type": "Japanese",
-        "title": "ドメスティックな彼女"
-      },
-      {
         "type": "English",
-        "title": "Domestic Girlfriend"
-      },
-      {
-        "type": "German",
-        "title": "Domestic Girlfriend"
-      },
-      {
-        "type": "Spanish",
         "title": "Domestic Girlfriend"
       },
       {
@@ -6887,17 +5084,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1258/126929l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
         "title": "Blue Lock"
-      },
-      {
-        "type": "Japanese",
-        "title": "ブルーロック"
       },
       {
         "type": "English",
@@ -6918,11 +5109,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/76222l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6933,19 +5120,7 @@
         "title": "Gate: Thus the JSDF Fought There!"
       },
       {
-        "type": "Japanese",
-        "title": "GATE（ゲート）自衛隊　彼の地にて、斯く戦えり"
-      },
-      {
         "type": "English",
-        "title": "GATE"
-      },
-      {
-        "type": "German",
-        "title": "GATE"
-      },
-      {
-        "type": "Spanish",
         "title": "GATE"
       },
       {
@@ -6967,21 +5142,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/67795l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
         "title": "Trinity Seven"
-      },
-      {
-        "type": "Japanese",
-        "title": "トリニティセブン"
       },
       {
         "type": "English",
@@ -7002,12 +5167,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1599/112267l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -7016,10 +5176,6 @@
       {
         "type": "Synonym",
         "title": "The Light of a Firefly Forest"
-      },
-      {
-        "type": "Japanese",
-        "title": "蛍火の杜へ"
       },
       {
         "type": "English",
@@ -7040,14 +5196,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/20680l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -7058,16 +5207,8 @@
         "title": "Zero's Familiar"
       },
       {
-        "type": "Japanese",
-        "title": "ゼロの使い魔"
-      },
-      {
         "type": "English",
         "title": "The Familiar of Zero"
-      },
-      {
-        "type": "Spanish",
-        "title": "La Magia de Zero"
       }
     ],
     "demographic_type": null,
@@ -7084,11 +5225,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/35721l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Slice of Life",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Slice of Life", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -7099,20 +5236,8 @@
         "title": "The Wolf Children Ame and Yuki"
       },
       {
-        "type": "Japanese",
-        "title": "おおかみこどもの雨と雪"
-      },
-      {
         "type": "English",
         "title": "Wolf Children"
-      },
-      {
-        "type": "German",
-        "title": "Ame & Yuki: Die Wolfskinder"
-      },
-      {
-        "type": "Spanish",
-        "title": "Wolf Children: Los Niños Lobo"
       },
       {
         "type": "French",
@@ -7133,11 +5258,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1557/123313l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Adventure", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -7148,20 +5269,8 @@
         "title": "Gekijouban Sword Art Online"
       },
       {
-        "type": "Japanese",
-        "title": "劇場版 ソードアート・オンライン -オーディナル・スケール-"
-      },
-      {
         "type": "English",
         "title": "Sword Art Online the Movie: Ordinal Scale"
-      },
-      {
-        "type": "German",
-        "title": "Sword Art Online: Ordinal Scale The Movie"
-      },
-      {
-        "type": "Spanish",
-        "title": "Sword Art Online, la Película: Ordinal Scale"
       },
       {
         "type": "French",
@@ -7182,10 +5291,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1900/110097l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -7200,20 +5306,8 @@
         "title": "Nagatoro"
       },
       {
-        "type": "Japanese",
-        "title": "イジらないで、長瀞さん"
-      },
-      {
         "type": "English",
         "title": "Don't Toy with Me, Miss Nagatoro"
-      },
-      {
-        "type": "German",
-        "title": "Don´t Toy with Me, Miss Nagatoro"
-      },
-      {
-        "type": "Spanish",
-        "title": "Don´t Toy with Me, Miss Nagatoro"
       },
       {
         "type": "French",
@@ -7234,28 +5328,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/1302/94882l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
         "title": "Grand Blue"
       },
       {
-        "type": "Japanese",
-        "title": "ぐらんぶる"
-      },
-      {
         "type": "English",
-        "title": "Grand Blue Dreaming"
-      },
-      {
-        "type": "German",
-        "title": "Grand Blue Dreaming"
-      },
-      {
-        "type": "Spanish",
         "title": "Grand Blue Dreaming"
       },
       {
@@ -7277,12 +5357,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/73700l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Mystery",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Comedy", "Mystery", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -7301,20 +5376,8 @@
         "title": "Yamajo"
       },
       {
-        "type": "Japanese",
-        "title": "山田くんと7人の魔女"
-      },
-      {
         "type": "English",
         "title": "Yamada-kun and the Seven Witches"
-      },
-      {
-        "type": "German",
-        "title": "Yamada-Kun & the Seven Witches"
-      },
-      {
-        "type": "Spanish",
-        "title": "Yamada-kun And The Seven Witches"
       },
       {
         "type": "French",
@@ -7335,12 +5398,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1/2432l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -7367,20 +5425,8 @@
         "title": "The Little Girl Who Conquered Time"
       },
       {
-        "type": "Japanese",
-        "title": "時をかける少女"
-      },
-      {
         "type": "English",
         "title": "The Girl Who Leapt Through Time"
-      },
-      {
-        "type": "German",
-        "title": "Das Mädchen, das durch die Zeit sprang"
-      },
-      {
-        "type": "Spanish",
-        "title": "La Chica que Saltaba a través del Tiempo"
       },
       {
         "type": "French",
@@ -7401,10 +5447,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/30097l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -7431,10 +5474,6 @@
         "title": "Boku ha Tomodachi ga Sukunai OVA"
       },
       {
-        "type": "Japanese",
-        "title": "僕は友達が少ない 闇鍋は美少女が残念な臭い"
-      },
-      {
         "type": "English",
         "title": "Haganai: Black Hotpot Gives Girls a Bad Smell"
       }
@@ -7453,10 +5492,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77324l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -7469,10 +5505,6 @@
       {
         "type": "Synonym",
         "title": "Open the Missing Link"
-      },
-      {
-        "type": "Japanese",
-        "title": "シュタインズ・ゲート境界面上のミッシングリンク-Divide By Zero-"
       },
       {
         "type": "English",
@@ -7493,10 +5525,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/75106l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -7507,20 +5536,8 @@
         "title": "Shimoseka"
       },
       {
-        "type": "Japanese",
-        "title": "下ネタという概念が存在しない退屈な世界"
-      },
-      {
         "type": "English",
         "title": "SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn't Exist"
-      },
-      {
-        "type": "German",
-        "title": "Shimoneta: A Boring World Where the Concept of \"Dirty Jokes\" Doesn't Exist"
-      },
-      {
-        "type": "Spanish",
-        "title": "SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn’t Exist"
       },
       {
         "type": "French",
@@ -7541,17 +5558,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1448/127956l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
         "title": "Bocchi the Rock!"
-      },
-      {
-        "type": "Japanese",
-        "title": "ぼっち・ざ・ろっく！"
       },
       {
         "type": "English",
@@ -7572,10 +5583,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/108722l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -7590,20 +5598,8 @@
         "title": "Fly Me to the Moon"
       },
       {
-        "type": "Japanese",
-        "title": "トニカクカワイイ"
-      },
-      {
         "type": "English",
         "title": "Tonikawa: Over The Moon For You"
-      },
-      {
-        "type": "German",
-        "title": "TONIKAWA: Over the Moon For You"
-      },
-      {
-        "type": "Spanish",
-        "title": "Tonikawa: Over the Moon For You"
       },
       {
         "type": "French",
@@ -7624,12 +5620,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77356l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Avant Garde",
-      "Comedy",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Comedy", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -7644,16 +5635,8 @@
         "title": "Furi Kuri"
       },
       {
-        "type": "Japanese",
-        "title": "フリクリ"
-      },
-      {
         "type": "English",
         "title": "FLCL"
-      },
-      {
-        "type": "Spanish",
-        "title": "FLCL Furi Kuri"
       }
     ],
     "demographic_type": null,
@@ -7670,9 +5653,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/51107l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -7683,16 +5664,8 @@
         "title": "フリー！"
       },
       {
-        "type": "Japanese",
-        "title": "Free!"
-      },
-      {
         "type": "English",
         "title": "Free! - Iwatobi Swim Club"
-      },
-      {
-        "type": "Spanish",
-        "title": "Free! Iwatobi Swim Club"
       }
     ],
     "demographic_type": null,
@@ -7709,11 +5682,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1091/128729l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7722,10 +5691,6 @@
       {
         "type": "Synonym",
         "title": "Shadow Garden"
-      },
-      {
-        "type": "Japanese",
-        "title": "陰の実力者になりたくて！"
       },
       {
         "type": "English",
@@ -7746,32 +5711,15 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/79164l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Koutetsujou no Kabaneri"
       },
       {
-        "type": "Japanese",
-        "title": "甲鉄城のカバネリ"
-      },
-      {
         "type": "English",
         "title": "Kabaneri of the Iron Fortress"
-      },
-      {
-        "type": "German",
-        "title": "Kabaneri of the Iron Fortress"
-      },
-      {
-        "type": "Spanish",
-        "title": "Kabaneri de la Fortaleza de Hierro: La Batalla de Unato"
       },
       {
         "type": "French",
@@ -7792,13 +5740,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1649/93412l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -7809,20 +5751,8 @@
         "title": "The Otherworldly Demon King and the Summoner Girls' Slave Magic"
       },
       {
-        "type": "Japanese",
-        "title": "異世界魔王と召喚少女の奴隷魔術"
-      },
-      {
         "type": "English",
         "title": "How Not to Summon a Demon Lord"
-      },
-      {
-        "type": "German",
-        "title": "How Not To Summon A Demon Lord"
-      },
-      {
-        "type": "Spanish",
-        "title": "How not to Summon a Demon Lord"
       },
       {
         "type": "French",
@@ -7843,9 +5773,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1285/111316l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Fantasy"
-    ],
+    "genres": ["Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7854,10 +5782,6 @@
       {
         "type": "Synonym",
         "title": "Arifureta Shokugyou de Sekai Saikyou Episode 0"
-      },
-      {
-        "type": "Japanese",
-        "title": "ありふれた職業で世界最強 プロローグ"
       },
       {
         "type": "English",
@@ -7878,9 +5802,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1485/141208l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
@@ -7891,20 +5813,8 @@
         "title": "Tombstone for Fireflies"
       },
       {
-        "type": "Japanese",
-        "title": "火垂るの墓"
-      },
-      {
         "type": "English",
         "title": "Grave of the Fireflies"
-      },
-      {
-        "type": "German",
-        "title": "Die letzten Glühwürmchen"
-      },
-      {
-        "type": "Spanish",
-        "title": "La Tumba de las Luciérnagas"
       },
       {
         "type": "French",
@@ -7925,10 +5835,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/85593l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7939,20 +5846,8 @@
         "title": "RokuAka"
       },
       {
-        "type": "Japanese",
-        "title": "ロクでなし魔術講師と禁忌教典"
-      },
-      {
         "type": "English",
         "title": "Akashic Records of Bastard Magic Instructor"
-      },
-      {
-        "type": "German",
-        "title": "Akashic Records of Bastard Magic Instructor"
-      },
-      {
-        "type": "Spanish",
-        "title": "Akashic Records of Bastard Magical Instructor"
       },
       {
         "type": "French",
@@ -7973,10 +5868,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/19570l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery"
-    ],
+    "genres": ["Action", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -7987,16 +5879,8 @@
         "title": "DTB"
       },
       {
-        "type": "Japanese",
-        "title": "Darker than BLACK -黒の契約者-"
-      },
-      {
         "type": "English",
         "title": "Darker than Black"
-      },
-      {
-        "type": "German",
-        "title": "Darker Than Black"
       },
       {
         "type": "French",
@@ -8017,10 +5901,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1708/138033l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery"
-    ],
+    "genres": ["Drama", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -8033,10 +5914,6 @@
       {
         "type": "Synonym",
         "title": "Drugstore Soliloquy"
-      },
-      {
-        "type": "Japanese",
-        "title": "薬屋のひとりごと"
       },
       {
         "type": "English",
@@ -8057,12 +5934,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75104l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -8073,20 +5945,8 @@
         "title": "MonMusu"
       },
       {
-        "type": "Japanese",
-        "title": "モンスター娘のいる日常"
-      },
-      {
         "type": "English",
         "title": "Monster Musume: Everyday Life with Monster Girls"
-      },
-      {
-        "type": "German",
-        "title": "Die Monster Mädchen"
-      },
-      {
-        "type": "Spanish",
-        "title": "Monster Musume: Everyday Life with Monster Girls (Monster Musume no Iru Nichijou)"
       },
       {
         "type": "French",
@@ -8107,11 +5967,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/64225l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -8122,20 +5978,8 @@
         "title": "Yona: The girl standing in the blush of dawn"
       },
       {
-        "type": "Japanese",
-        "title": "暁のヨナ"
-      },
-      {
         "type": "English",
         "title": "Yona of the Dawn"
-      },
-      {
-        "type": "German",
-        "title": "Akatsuki No Yona: Prinzessin der Morgendämmerung"
-      },
-      {
-        "type": "Spanish",
-        "title": "Akatsuka no Yona: Yona of the Dawn"
       },
       {
         "type": "French",
@@ -8156,30 +6000,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/86468l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
         "title": "Eromanga-sensei"
       },
       {
-        "type": "Japanese",
-        "title": "エロマンガ先生"
-      },
-      {
         "type": "English",
-        "title": "Eromanga Sensei"
-      },
-      {
-        "type": "German",
-        "title": "Eromanga Sensei"
-      },
-      {
-        "type": "Spanish",
         "title": "Eromanga Sensei"
       },
       {
@@ -8201,11 +6029,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1447/99827l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -8220,20 +6044,8 @@
         "title": "Fruits Basket (Zenpen)"
       },
       {
-        "type": "Japanese",
-        "title": "フルーツバスケット"
-      },
-      {
         "type": "English",
         "title": "Fruits Basket 1st Season"
-      },
-      {
-        "type": "German",
-        "title": "Fruits Basket"
-      },
-      {
-        "type": "Spanish",
-        "title": "Fruits Basket"
       },
       {
         "type": "French",
@@ -8254,10 +6066,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1941/98123l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -8280,10 +6089,6 @@
         "title": "Pure Love Gang of Shounan"
       },
       {
-        "type": "Japanese",
-        "title": "湘南純愛組!"
-      },
-      {
         "type": "English",
         "title": "Young GTO"
       }
@@ -8302,11 +6107,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/39665l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -8315,10 +6116,6 @@
       {
         "type": "Synonym",
         "title": "Kokoroco"
-      },
-      {
-        "type": "Japanese",
-        "title": "ココロコネクト"
       },
       {
         "type": "English",
@@ -8339,28 +6136,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/33257l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
         "title": "Danshi Koukousei no Nichijou"
       },
       {
-        "type": "Japanese",
-        "title": "男子高校生の日常"
-      },
-      {
         "type": "English",
-        "title": "Daily Lives of High School Boys"
-      },
-      {
-        "type": "German",
-        "title": "Daily Lives of High School Boys"
-      },
-      {
-        "type": "Spanish",
         "title": "Daily Lives of High School Boys"
       },
       {
@@ -8382,12 +6165,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1491/134498l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -8398,20 +6176,8 @@
         "title": "Naruto Movie 10: Naruto the Movie: The Last,Naruto: Shippuuden Movie 7 - The Last"
       },
       {
-        "type": "Japanese",
-        "title": "THE LAST NARUTO THE MOVIE"
-      },
-      {
         "type": "English",
         "title": "Naruto Shippuden the Movie 7: The Last"
-      },
-      {
-        "type": "German",
-        "title": "Naruto Film 7: The Last"
-      },
-      {
-        "type": "Spanish",
-        "title": "Naruto Película 7: The Last"
       },
       {
         "type": "French",
@@ -8432,21 +6198,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1254/134212l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Avant Garde",
-      "Award Winning",
-      "Drama",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Award Winning", "Drama", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
         "title": "Perfect Blue"
-      },
-      {
-        "type": "Japanese",
-        "title": "パーフェクトブルー"
       },
       {
         "type": "English",
@@ -8467,19 +6223,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1218/135107l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
         "title": "Mashle"
-      },
-      {
-        "type": "Japanese",
-        "title": "マッシュル-MASHLE-"
       },
       {
         "type": "English",
@@ -8500,19 +6248,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1415/102477l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
         "title": "Orange"
-      },
-      {
-        "type": "Japanese",
-        "title": "orange（オレンジ）"
       },
       {
         "type": "English",
@@ -8533,11 +6273,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/138727l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -8548,20 +6284,8 @@
         "title": "Ponyo on the Cliff by the Sea"
       },
       {
-        "type": "Japanese",
-        "title": "崖の上のポニョ"
-      },
-      {
         "type": "English",
         "title": "Ponyo"
-      },
-      {
-        "type": "German",
-        "title": "Ponyo: Das große Abenteuer am Meer"
-      },
-      {
-        "type": "Spanish",
-        "title": "Ponyo en el Acantilado"
       },
       {
         "type": "French",
@@ -8582,13 +6306,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1579/140483l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Comedy",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Comedy", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -8599,20 +6317,8 @@
         "title": "Witch's Express Delivery"
       },
       {
-        "type": "Japanese",
-        "title": "魔女の宅急便"
-      },
-      {
         "type": "English",
         "title": "Kiki's Delivery Service"
-      },
-      {
-        "type": "German",
-        "title": "Kikis kleiner Lieferservice"
-      },
-      {
-        "type": "Spanish",
-        "title": "Nicky, la Aprendiz de Bruja"
       },
       {
         "type": "French",
@@ -8633,12 +6339,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1787/140239l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -8669,19 +6370,7 @@
         "title": "Master Quest"
       },
       {
-        "type": "Japanese",
-        "title": "ポケットモンスター"
-      },
-      {
         "type": "English",
-        "title": "Pokémon"
-      },
-      {
-        "type": "German",
-        "title": "Pokémon"
-      },
-      {
-        "type": "Spanish",
         "title": "Pokémon"
       },
       {
@@ -8703,11 +6392,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/88476l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -8722,20 +6407,8 @@
         "title": "Mahoyome"
       },
       {
-        "type": "Japanese",
-        "title": "魔法使いの嫁"
-      },
-      {
         "type": "English",
         "title": "The Ancient Magus' Bride"
-      },
-      {
-        "type": "German",
-        "title": "The Ancient Magus' Bride"
-      },
-      {
-        "type": "Spanish",
-        "title": "The Ancient Magus Bride"
       },
       {
         "type": "French",
@@ -8756,11 +6429,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/73274l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Comedy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -8777,10 +6446,6 @@
       {
         "type": "Synonym",
         "title": "Yorinuki Gintama-san"
-      },
-      {
-        "type": "Japanese",
-        "title": "銀魂"
       },
       {
         "type": "English",
