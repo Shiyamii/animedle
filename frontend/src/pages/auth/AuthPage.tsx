@@ -1,40 +1,8 @@
-import { useState } from "react";
-import { authClient } from "@/lib/auth-client";
-import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
+import { useAuthViewModel } from "./useAuthViewModel.ts";
 
-export default function LoginPage() {
-    const navigate = useNavigate();
-    const [mode, setMode] = useState<"login" | "register">("login");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
-    const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
-
-    async function handleSubmit(e: SubmitEvent) {
-        e.preventDefault();
-        setError(null);
-        setLoading(true);
-
-        if (mode === "login") {
-            const { error } = await authClient.signIn.email({ email, password });
-            if (error) {
-                setError(error.message ?? "Erreur de connexion");
-            } else {
-                navigate("/");
-            }
-        } else {
-            const { error } = await authClient.signUp.email({ email, password, name });
-            if (error) {
-                setError(error.message ?? "Erreur d'inscription");
-            } else {
-                navigate("/");
-            }
-        }
-
-        setLoading(false);
-    }
+export function AuthPage() {
+    const { mode, email, setEmail, password, setPassword, name, setName, error, loading, handleSubmit, toggleMode } = useAuthViewModel();
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-background">
@@ -90,10 +58,7 @@ export default function LoginPage() {
 
                 <p className="text-center text-muted-foreground text-sm mt-6">
                     {mode === "login" ? "Pas encore de compte ?" : "Déjà un compte ?"}{" "}
-                    <button
-                        onClick={() => { setMode(mode === "login" ? "register" : "login"); setError(null); }}
-                        className="text-primary font-medium hover:underline"
-                    >
+                    <button onClick={toggleMode} className="text-primary font-medium hover:underline">
                         {mode === "login" ? "S'inscrire" : "Se connecter"}
                     </button>
                 </p>
