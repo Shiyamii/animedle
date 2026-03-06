@@ -4,6 +4,9 @@
 
 This is a separate package responsible for fetching and filtering data from the Jikan API and storing it in a MongoDB database. It is designed to run independently of the main application, allowing for efficient data management and updates.
 
+### Configuration
+Base yourself on the provided `.env.example` file to create a `.env.local` file in the `data_fetcher` directory. This file should contain the necessary environment variables for connecting to the MongoDB database, such as `MONGO_URI`.
+
 ### Data fetching and filtering
 
 The data fetcher retrieves anime data from the Jikan API, which provides comprehensive information about anime series. The fetched data is then filtered to include only relevant information such as titles, genres, ratings, and other metadata that are essential for the application's functionality.
