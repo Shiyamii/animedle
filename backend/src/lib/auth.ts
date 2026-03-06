@@ -1,9 +1,6 @@
 import { betterAuth } from "better-auth";
-import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
-
-const client = new MongoClient(process.env.MONGODB_URL ?? "mongodb://localhost:27017/auth-database");
-const db = client.db();
+import { db } from '@/lib/db';
 
 function generateAvatarSeed(): string {
     return Math.random().toString(36).substring(2, 10);
