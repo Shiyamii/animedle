@@ -1,4 +1,5 @@
-FROM oven/bun:1
+FROM oven/bun:latest AS builder
+
 
 WORKDIR /app
 
@@ -9,6 +10,12 @@ COPY frontend ./frontend
 COPY data_fetcher ./data_fetcher
 
 RUN bun install
+
+FROM oven/bun:latest AS dev
+
+WORKDIR /app
+
+COPY --from=builder /app ./
 
 EXPOSE 3000
 

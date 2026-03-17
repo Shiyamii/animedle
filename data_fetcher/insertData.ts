@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import fs from 'fs';
 
-type FilteredAnime = {
+type Anime = {
   mal_id?: number;
   images_webp: unknown;
   anime_format: string | null;
@@ -21,7 +21,7 @@ type JikanTitle = {
 };
 
 
-const filteredAnimeSchema = new Schema<FilteredAnime>(
+const AnimeSchema = new Schema<Anime>(
   {
     images_webp: { type: Schema.Types.Mixed, required: true },
     anime_format: { type: String, default: null },
@@ -48,33 +48,33 @@ const filteredAnimeSchema = new Schema<FilteredAnime>(
   },
 );
 
-const FilteredAnimeModel =
-  mongoose.models.FilteredAnime || mongoose.model<FilteredAnime>('FilteredAnime', filteredAnimeSchema);
+const AnimeModel =
+  mongoose.models.Anime || mongoose.model<Anime>('Anime', AnimeSchema);
 
-const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/animedle';
+const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/animedle?authSource=admin';
 
 const FORCE_DELETE_AND_RECREATE = false; // Mettre à true pour forcer la suppression et la recréation de la collection
 
 async function isDatabaseEmpty(): Promise<boolean> {
-  const count = await FilteredAnimeModel.countDocuments();
+  const count = await AnimeModel.countDocuments();
   return count === 0;
 }
 
-async function saveFilteredAnimeToMongo(filtered: FilteredAnime[]) {
+async function saveAnimeToMongo(animes: Anime[]) {
   const mongoUri = process.env.MONGO_URI ?? DEFAULT_MONGO_URI;
-  const forceDelete = process.env.FORCE_DELETE_AND_RECREATE === 'true';
+  const forceDelete = process.env.FORCE_DELETE_AND_RECREATE || FORCE_DELETE_AND_RECREATE;
 
   await mongoose.connect(mongoUri);
   const isEmpty = await isDatabaseEmpty();
   if (isEmpty || forceDelete) {
-    await FilteredAnimeModel.deleteMany({});
-    await FilteredAnimeModel.insertMany(filtered, { ordered: false });
+    await AnimeModel.deleteMany({});
+    await AnimeModel.insertMany(animes, { ordered: false });
   } else {
     console.log("No insertion needed, database is already populated.");
   }
   await mongoose.disconnect();
 
-  console.log(`MongoDB: ${filtered.length} animes enregistrés.`);
+  console.log(`MongoDB: ${animes.length} animes enregistrés.`);
 }
 
 
@@ -82,8 +82,8 @@ async function saveFilteredAnimeToMongo(filtered: FilteredAnime[]) {
 //fecth file "filtered_data.json" and insert it to mongoDB
 async function insertFilteredDataToMongo() {
   const rawData = fs.readFileSync('filtered_data.json', 'utf-8');
-  const filtered: FilteredAnime[] = JSON.parse(rawData);
-  await saveFilteredAnimeToMongo(filtered);
+  const filtered: Anime[] = JSON.parse(rawData);
+  await saveAnimeToMongo(filtered);
   console.log(`Insertion terminée.`);
 }
 
