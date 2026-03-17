@@ -1,3 +1,4 @@
+import { log } from "node:console";
 import { AnimeEntity, AnimeRepository } from "./AnimeRepositories";
 
 export interface AnimeItemDTO {
@@ -24,15 +25,24 @@ export interface AnimeDetailsDTO {
 
 
 export class AnimeService {
+    private static instance: AnimeService;
+
     private repository: AnimeRepository;
 
     constructor() {
         this.repository = new AnimeRepository();
     }
 
+    public static getInstance(): AnimeService {
+        if (!AnimeService.instance) {
+            AnimeService.instance = new AnimeService();
+        }
+        return AnimeService.instance;
+    }
+
     async getAnimeList(): Promise<AnimeItemDTO[]> {
         const entities = await this.repository.findAll();
-        return entities.map(this.toItemDTO);
+        return entities.map(entity => this.toItemDTO(entity));
     }
 
     async getAnimeById(id: number): Promise<AnimeDetailsDTO | null> {

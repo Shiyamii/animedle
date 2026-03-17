@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { AnimeService } from "@/services/AnimeService";
 
 const router = new Hono({ strict: false });
-const animeService = new AnimeService();
+const animeService = AnimeService.getInstance();
 
 router.get("/animes", async (c) => {
     const animes = await animeService.getAnimeList();
