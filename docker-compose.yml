@@ -1,6 +1,6 @@
 services:
   mongo:
-    image: mongo:7
+    image: mongo:latest
     container_name: animedle-mongo
     restart: unless-stopped
     ports:
@@ -8,9 +8,9 @@ services:
     volumes:
       - mongo_data:/data/db
     environment: 
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=adminpassword
-      - MONGO_INITDB_DATABASE=animedle
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: adminpassword
+      MONGO_INITDB_DATABASE: animedle
 
   app:
     build: .
@@ -21,6 +21,8 @@ services:
       - "5173:5173"
     depends_on:
       - mongo
+    environment:
+      - name=value
 
 volumes:
   mongo_data:

@@ -53,16 +53,31 @@ const FilteredAnimeModel =
 
 const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/animedle';
 
+const FORCE_DELETE_AND_RECREATE = false; // Mettre à true pour forcer la suppression et la recréation de la collection
+
+async function isDatabaseEmpty(): Promise<boolean> {
+  const count = await FilteredAnimeModel.countDocuments();
+  return count === 0;
+}
+
 async function saveFilteredAnimeToMongo(filtered: FilteredAnime[]) {
   const mongoUri = process.env.MONGO_URI ?? DEFAULT_MONGO_URI;
+  const forceDelete = process.env.FORCE_DELETE_AND_RECREATE === 'true';
 
   await mongoose.connect(mongoUri);
-  await FilteredAnimeModel.deleteMany({});
-  await FilteredAnimeModel.insertMany(filtered, { ordered: false });
+  const isEmpty = await isDatabaseEmpty();
+  if (isEmpty || forceDelete) {
+    await FilteredAnimeModel.deleteMany({});
+    await FilteredAnimeModel.insertMany(filtered, { ordered: false });
+  } else {
+    console.log("No insertion needed, database is already populated.");
+  }
   await mongoose.disconnect();
 
   console.log(`MongoDB: ${filtered.length} animes enregistrés.`);
 }
+
+
 
 //fecth file "filtered_data.json" and insert it to mongoDB
 async function insertFilteredDataToMongo() {
