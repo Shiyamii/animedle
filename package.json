@@ -9,19 +9,19 @@
     "data_fetcher"
   ],
   "scripts": {
-    "dev": "bun run --filter '*' dev",
-    "dev:backend": "bun run --filter backend dev",
-    "dev:frontend": "bun run --filter frontend dev",
-    "build": "bun run --filter '*' build",
-    "build:frontend": "bun run --filter frontend build",
-    "fetch-data": "bun run --filter data_fetcher start",
-    "install:all": "bun install",
-    "clean": "bun run --filter '*' clean && rm -rf node_modules",
-    "lint": "bun run --filter '*' lint",
-    "typecheck": "bun run --filter '*' typecheck"
+    "dev": "concurrently \"bun run dev:frontend\" \"bun run dev:backend\"",
+    "dev:backend": "cd backend && bun run dev",
+    "dev:frontend": "cd frontend && bun run dev",
+    "build": "cd frontend && bun run build && cd ../backend && bun run build",
+    "fetch-data": "cd data_fetcher && bun run start",
+    "install:all": "bun install"
   },
   "devDependencies": {
     "@types/node": "^25.3.3",
+    "cross-env": "^10.1.0",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
   }
 }
