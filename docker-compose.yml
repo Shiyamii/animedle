@@ -12,5 +12,15 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=adminpassword
       - MONGO_INITDB_DATABASE=animedle
 
+  app:
+    build: .
+    container_name: animedle-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+    depends_on:
+      - mongo
+
 volumes:
   mongo_data:
