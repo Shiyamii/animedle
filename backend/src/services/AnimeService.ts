@@ -2,14 +2,14 @@ import { log } from "node:console";
 import { AnimeEntity, AnimeRepository } from "./AnimeRepositories";
 
 export interface AnimeItemDTO {
-    id: number;
+    id: string;
     title: string;
     alias: string[];
     imageUrl: string;
 }
 
 export interface AnimeDetailsDTO {
-    id: number;
+    id: string;
     alias: string[];
     title: string;
     demographic_type: string;
@@ -65,7 +65,7 @@ export class AnimeService {
 
     private toItemDTO(entity: AnimeEntity): AnimeItemDTO {
         return {
-            id: entity.mal_id,
+            id: entity._id?.toHexString() ? entity._id.toHexString() : "",
             title: this.getMainTitle(entity),
             alias: this.getAliases(entity),
             imageUrl: entity.images_webp.image_url,
@@ -74,7 +74,7 @@ export class AnimeService {
 
     private toDetailsDTO(entity: AnimeEntity): AnimeDetailsDTO {
         return {
-            id: entity.mal_id,
+            id: entity._id?.toHexString() ? entity._id.toHexString() : "",
             title: this.getMainTitle(entity),
             alias: this.getAliases(entity),
             imageUrl: entity.images_webp.large_image_url,

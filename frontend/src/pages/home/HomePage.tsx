@@ -3,7 +3,7 @@ import { useHomePageViewModel } from "./useHomePageViewModel";
 import { AutocompleteTextInput } from "@/components/AutoComplete";
 
 function HomePage() {
-    const {filtredAnimeList, isGuessingStarted, setIsGuessingStarted, inputValue, setInputValue} = useHomePageViewModel();
+    const {filtredAnimeList, isGuessingStarted, setIsGuessingStarted, inputValue, setInputValue, isFilteringLoading} = useHomePageViewModel();
     return (
         <div className="flex min-h-svh w-full flex-col items-center justify-center">
                 {!isGuessingStarted ? (
@@ -17,7 +17,7 @@ function HomePage() {
                     <div className='w-full max-w-3xl bg-card text-card-foreground rounded-xl p-8 shadow-md border border-border'>
                         <h1 className="text-2xl font-bold text-primary">Guess Today's Anime!</h1>
                         <div className="mt-4">
-                            <AutocompleteTextInput values={filtredAnimeList} inputValue={inputValue} setInputValue={setInputValue} />
+                            <AutocompleteTextInput values={filtredAnimeList} inputValue={inputValue} setInputValue={setInputValue} isFilteringLoading={isFilteringLoading} />
                         </div>
                     </div>
                 )}

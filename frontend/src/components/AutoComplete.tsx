@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Input } from "@/components/ui/input"
+import { Command as CommandPrimitive } from "cmdk"
 import {
   Command,
   CommandEmpty,
@@ -15,11 +15,12 @@ export type AutoCompleteProps = {
   values: AnimeItemDTO[],
   inputValue: string,
   setInputValue: (value: string) => void,
+isFilteringLoading: boolean
 }
 
 
-export function AutocompleteTextInput({ values, inputValue, setInputValue }: AutoCompleteProps) {
-  const [selectedValue, setSelectedValue] = React.useState<number | null>(null)
+export function AutocompleteTextInput({ values, inputValue, setInputValue, isFilteringLoading }: AutoCompleteProps) {
+  const [selectedValue, setSelectedValue] = React.useState<string | null>(null)
   const [isOpen, setIsOpen] = React.useState(false)
 
   // Référence pour détecter les clics en dehors du composant
@@ -38,16 +39,19 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue }: Aut
 
 
   return (
-    <div ref={wrapperRef} className="relative w-full">
-      <Input
-        type="text"
+    <Command 
+    ref={wrapperRef} 
+    shouldFilter={false} 
+    className="relative w-full overflow-visible">
+      <CommandPrimitive.Input
         placeholder="Commencez à taper (ex: React)..."
         value={inputValue}
         autoComplete="off"
         name="searchAnime"
-        spellCheck={false}
-        onChange={(e) => {
-          const value = e.target.value
+
+        className="h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40"
+        
+        onValueChange={(value) => {
           setInputValue(value)
           setIsOpen(value.length > 0) 
           if (selectedValue) setSelectedValue(null)
@@ -59,11 +63,10 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue }: Aut
 
       {isOpen && (
         <div className="absolute top-full z-10 mt-1 w-full rounded-md border bg-popover text-popover-foreground shadow-md outline-none animate-in fade-in-0 zoom-in-95">
-          <Command shouldFilter={false}>
             <CommandList>
-              {values.length === 0 ? (
+              {values.length === 0 || isFilteringLoading ? (
                 <CommandEmpty className="py-6 text-center text-sm">
-                  Aucune proposition trouvée.
+                  {isFilteringLoading ? "Chargement..." : "Aucun résultat trouvé."}
                 </CommandEmpty>
               ) : (
                 <CommandGroup>
@@ -90,9 +93,8 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue }: Aut
                 </CommandGroup>
               )}
             </CommandList>
-          </Command>
         </div>
       )}
-    </div>
+    </Command>
   )
 }

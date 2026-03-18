@@ -4,7 +4,7 @@ import Fuse from "fuse.js";
 
 function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
     if (!query) return [];
-    const results = fuse.search(query);
+    const results = fuse.search(query, { limit: 20 });
     return results.map((result: any) => result.item);
 }
 
@@ -27,6 +27,8 @@ export function useHomePageViewModel() {
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [fuse, setFuse] = useState<Fuse<AnimeItemDTO>>(createFuse(animeStore.animeList));
+    const [filtredAnimeList, setFiltredAnimeList] = useState<AnimeItemDTO[]>([]);
+    const [isFilteringLoading, setIsFilteringLoading] = useState(false);
 
     useEffect(() => {
         if(animeStore.animeList.length === 0)
@@ -37,12 +39,18 @@ export function useHomePageViewModel() {
         setFuse(createFuse(animeStore.animeList));
     }, [animeStore.animeList]);
  
+    useEffect(() => {
+        setIsFilteringLoading(true);
+        setFiltredAnimeList(filterAnimeList(fuse, inputValue));
+        setIsFilteringLoading(false);
+    }, [inputValue]);
 
     return {
-        filtredAnimeList: filterAnimeList(fuse, inputValue),
+        filtredAnimeList,
         isGuessingStarted,
         setIsGuessingStarted,
         inputValue,
-        setInputValue
+        setInputValue,
+        isFilteringLoading
     };
 }

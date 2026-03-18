@@ -3,7 +3,6 @@ import { db } from "@/lib/db";
 
 export interface AnimeEntity {
     _id?: ObjectId;
-    mal_id: number;
     images_webp: AnimeImagesWebpEntity;
     anime_format: string;
     genres: string[];

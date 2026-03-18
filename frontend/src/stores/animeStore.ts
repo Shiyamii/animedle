@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export interface AnimeItemDTO {
-    id: number;
+    id: string;
     title: string;
     alias: string[];
     imageUrl: string;
