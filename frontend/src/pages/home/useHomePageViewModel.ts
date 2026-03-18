@@ -1,22 +1,36 @@
-import { useAnimeStore } from "@/stores/animeStore";
+import { useAnimeStore, type AnimeItemDTO } from "@/stores/animeStore";
 import { useEffect, useState } from "react";
+
+function filterAnimeList(animeList: AnimeItemDTO[], query: string) {
+    if (!query) return [];
+    const lowerCaseQuery = query.toLowerCase();
+    return animeList.filter((anime: AnimeItemDTO) => {
+        const titleMatch = anime.title.toLowerCase().includes(lowerCaseQuery);
+        const alternativeTitleMatch = anime.alias.some((altTitle: string) => altTitle.toLowerCase().includes(lowerCaseQuery));
+        return titleMatch || alternativeTitleMatch;
+    });
+}
 
 export function useHomePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
+    const [inputValue, setInputValue] = useState("");
 
     useEffect(() => {
-        animeStore.loadAnimeList();
+        if(animeStore.animeList.length === 0)
+            animeStore.loadAnimeList();
     }, []);
 
-    const getAnimeList = () => {
-        return animeStore.animeList;
-    } 
 
+    
+    useEffect(() => {
+    }, [inputValue]);
 
     return {
-        getAnimeList,
+        filtredAnimeList: filterAnimeList(animeStore.animeList, inputValue),
         isGuessingStarted,
-        setIsGuessingStarted
+        setIsGuessingStarted,
+        inputValue,
+        setInputValue
     };
 }
