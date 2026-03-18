@@ -11,7 +11,7 @@ router.get("/animes", async (c) => {
 
 
 
-router.get("/animes/guess/:id", async (c) => {
+router.post("/animes/guess/:id", async (c) => {
     const id = c.req.param("id");
     const anime = await animeService.guessAnime(id);
     if (!anime) {

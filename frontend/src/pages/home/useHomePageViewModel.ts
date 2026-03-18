@@ -1,4 +1,4 @@
-import { useAnimeStore, type AnimeItemDTO } from "@/stores/animeStore";
+import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO } from "@/stores/animeStore";
 import { useEffect, useState } from "react";
 import Fuse from "fuse.js";
 
@@ -22,6 +22,25 @@ function createFuse(animeList: AnimeItemDTO[]): Fuse<AnimeItemDTO> {
     );
 }
 
+async function makeGuessRequest(animeId: string) {
+    try{
+        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/guess/" + animeId, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        if (!response.ok) {
+            console.error("Failed to make guess:", response.statusText);
+            return;
+        }
+        const guessResult: GuessResultDTO = await response.json();
+        return guessResult;
+    } catch (error) {
+        console.error("Error making guess:", error);
+    }
+}
+
 export function useHomePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -29,10 +48,12 @@ export function useHomePageViewModel() {
     const [fuse, setFuse] = useState<Fuse<AnimeItemDTO>>(createFuse(animeStore.animeList));
     const [filtredAnimeList, setFiltredAnimeList] = useState<AnimeItemDTO[]>([]);
     const [isFilteringLoading, setIsFilteringLoading] = useState(false);
+    const [guessList, setGuessList] = useState<GuessResultDTO[]>([]);
 
     useEffect(() => {
         if(animeStore.animeList.length === 0)
             animeStore.loadAnimeList();
+        setGuessList(animeStore.getGuessList())
     }, []);
 
     useEffect(() => {
@@ -51,6 +72,14 @@ export function useHomePageViewModel() {
         setIsGuessingStarted,
         inputValue,
         setInputValue,
-        isFilteringLoading
+        isFilteringLoading,
+        guessList,
+        onAnimeSelect: async (animeId: string) => {
+            const guessResult = await makeGuessRequest(animeId);
+            if(guessResult) {
+                animeStore.addGuessToList(guessResult);
+                setGuessList(animeStore.getGuessList());
+            }
+        }
     };
 }

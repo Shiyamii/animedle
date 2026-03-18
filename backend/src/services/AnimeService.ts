@@ -54,7 +54,8 @@ export interface GuessResultDTO {
         animeFormat: {
             isCorrect: boolean;
         }
-    }
+    }, 
+    anime: AnimeDetailsDTO;
 }
 
 
@@ -199,7 +200,8 @@ export class AnimeService {
                 animeFormat: {
                     isCorrect: ref.anime_format === test.anime_format
                 }
-            }
+            },
+            anime: this.toDetailsDTO(test)
         };
     }
 
