@@ -9,12 +9,11 @@ router.get("/animes", async (c) => {
     return c.json(animes);
 });
 
-router.get("/animes/:id", async (c) => {
-    const id = Number(c.req.param("id"));
-    if (isNaN(id)) {
-        return c.json({ error: "ID invalide" }, 400);
-    }
-    const anime = await animeService.getAnimeById(id);
+
+
+router.get("/animes/guess/:id", async (c) => {
+    const id = c.req.param("id");
+    const anime = await animeService.guessAnime(id);
     if (!anime) {
         return c.json({ error: "Anime non trouvé" }, 404);
     }

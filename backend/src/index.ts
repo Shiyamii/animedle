@@ -4,12 +4,23 @@ import type { AuthType } from "@/lib/auth"
 import authRoutes from '@/routes/auth';
 import animeRoutes from '@/routes/anime';
 import loadDotenv from "@/lib/dotenv-loader";
+import { AnimeService } from "@/services/AnimeService";
+import cron from "node-cron";
 
 loadDotenv();
 
 const app = new Hono<{ Variables: AuthType }>({
   strict: false,
 });
+
+const animeService = AnimeService.getInstance();
+cron.schedule('0 0 * * *', async () => {
+  console.log('Exécution de updateGoalAnime à 00:00 UTC')
+  await animeService.updateGoalAnime()
+}, {
+  timezone: "UTC"
+})
+
 app.basePath("/api");
 app.use("/api/*", cors({
   origin: "http://localhost:5173",

@@ -40,8 +40,7 @@ const AnimeSchema = new Schema<Anime>(
     season_start: { type: String, default: null },
     studio: { type: String, default: null },
     source: { type: String, default: null },
-    score: { type: Number, default: null },
-    mal_id: { type: Number, unique: true, sparse: true },
+    score: { type: Number, default: null }
   },
   {
     versionKey: false,
