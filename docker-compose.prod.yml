@@ -19,7 +19,7 @@ services:
       context: .
       target: prod-frontend
       args:
-        - VITE_BACKEND_URL=http://app-prod-backend:3000
+        - VITE_API_URL=http://app-prod-backend:3000
     container_name: animedle-frontend
     restart: unless-stopped
     ports:
