@@ -10,6 +10,10 @@ COPY frontend ./frontend
 COPY data_fetcher ./data_fetcher
 
 RUN bun install
+
+ARG VITE_BACKEND_URL
+ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
+
 RUN cd frontend && bun run build
 
 FROM oven/bun:latest AS dev

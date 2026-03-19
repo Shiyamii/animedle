@@ -18,14 +18,14 @@ services:
     build:
       context: .
       target: prod-frontend
+      args:
+        - VITE_BACKEND_URL=http://app-prod-backend:3000
     container_name: animedle-frontend
     restart: unless-stopped
     ports:
       - "80:80"
     depends_on:
       - mongo
-    environment:
-      - VITE_BACKEND_URL=http://app-prod-backend:3000
     
 
 include:
