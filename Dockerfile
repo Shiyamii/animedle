@@ -32,6 +32,9 @@ ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 
 WORKDIR  /app/frontend
 RUN bun install
+
+RUN echo "============== DEBUG URL : ${VITE_BACKEND_URL} =============="
+
 RUN bun run build
 
 
