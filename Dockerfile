@@ -21,9 +21,7 @@ EXPOSE 3000
 
 CMD ["bun", "run", "dev"]
 
-FROM nginx:alpine AS prod-frontend
-
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+FROM oven/bun:latest AS build-frontend
 
 WORKDIR /app
 
@@ -36,7 +34,11 @@ WORKDIR  /app/frontend
 RUN bun install
 RUN bun run build
 
-COPY /dist /usr/share/nginx/html
+
+FROM nginx:alpine AS prod-frontend
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-frontend /app/frontend/dist /usr/share/nginx/html
 
 EXPOSE 80
 
