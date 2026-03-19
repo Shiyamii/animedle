@@ -11,11 +11,6 @@ COPY data_fetcher ./data_fetcher
 
 RUN bun install
 
-ARG VITE_BACKEND_URL
-ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
-
-RUN cd frontend && bun run build
-
 FROM oven/bun:latest AS dev
 
 WORKDIR /app
@@ -27,8 +22,20 @@ EXPOSE 3000
 CMD ["bun", "run", "dev"]
 
 FROM nginx:alpine AS prod-frontend
-COPY --from=builder /app/frontend/dist /usr/share/nginx/html
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+WORKDIR /app
+
+COPY --from=builder /app/frontend  /app/frontend
+
+ARG VITE_BACKEND_URL
+ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
+
+RUN cd frontend && bun run build
+
+COPY /app/frontend/dist /usr/share/nginx/html
+
 EXPOSE 80
 
 
