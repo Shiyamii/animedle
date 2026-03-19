@@ -8,9 +8,9 @@ services:
     ports:
       - "4445:3000"
     environment:
-      - MONGODB_URL=mongodb://admin:adminpassword@mongo:27017/animedle?authSource=admin
-      - BETTER_AUTH_URL=http://app-prod-backend:3000
-      - FRONTEND_URL=http://localhost
+      - MONGODB_URL=${MONGODB_URL}
+      - BETTER_AUTH_URL=${BACKEND_URL}
+      - FRONTEND_URL=${FRONTEND_URL}
   
   app-prod-frontend:
     build:
@@ -21,5 +21,5 @@ services:
     ports:
       - "4444:80"
     environment:
-      - VITE_BACKEND_URL=http://app-prod-backend:3000
+      - VITE_BACKEND_URL=${BACKEND_URL}
     
