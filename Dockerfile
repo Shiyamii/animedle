@@ -32,7 +32,9 @@ COPY --from=builder /app/frontend  /app/frontend
 ARG VITE_BACKEND_URL
 ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 
-RUN cd frontend && bun run build
+WORKDIR  /app/frontend
+RUN bun install
+RUN bun run build
 
 COPY /app/frontend/dist /usr/share/nginx/html
 
