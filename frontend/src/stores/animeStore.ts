@@ -36,6 +36,7 @@ export interface GuessResultDTO {
     animeFormat: { isCorrect: boolean };
   };
   anime: AnimeDetailsDTO;
+  guessNumber: number;
 }
 
 interface AnimeStore {
@@ -44,7 +45,7 @@ interface AnimeStore {
     guessDate: string | null;
     getGuessList: () => GuessResultDTO[];
     setAnimeList: (animes: AnimeItemDTO[]) => void;
-    addGuessToList: (guess: GuessResultDTO) => void;
+    addGuessToListAsFirst: (guess: GuessResultDTO) => void;
     setGuessDate: (date: string | null) => void;
     loadAnimeList: () => Promise<void>;
 }
@@ -63,7 +64,7 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 } else {return useAnimeStore.getState().guessList; }
             },
             setAnimeList: (animes) => set({ animeList: animes }),
-            addGuessToList: (guess) => set((state) => ({ guessList: [...state.guessList, guess] })),
+            addGuessToListAsFirst: (guess) => set((state) => ({ guessList: [guess, ...state.guessList] })),
             setGuessDate: (date) => set({ guessDate: date }),
             loadAnimeList: async () => {
                 try {

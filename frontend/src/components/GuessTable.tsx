@@ -9,7 +9,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import type { GuessResultDTO } from "@/stores/animeStore";
+import { GenreIcons } from "./GenreIcons";
 
 
 
@@ -19,24 +25,25 @@ interface AnimatedCellProps {
   status: "correct" | "partial" | "incorrect";
   children: React.ReactNode;
   hintDirection?: "up" | "down" | null; // Pour les flèches + ou -
+  shouldAnimate?: boolean;
 }
 
-const AnimatedCell = ({ delay, status, children, hintDirection }: AnimatedCellProps) => {
+const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = true }: AnimatedCellProps) => {
   // Choix de la couleur selon le statut
   let bgClass = "bg-red-500 text-white"; // Faux par défaut
   if (status === "correct") bgClass = "bg-green-500 text-white";
   if (status === "partial") bgClass = "bg-orange-500 text-white";
 
   return (
-    <TableCell className="p-1 sm:p-2 text-center align-middle w-20 h-20">
+    <TableCell className="!p-1 text-center align-middle w-20 h-20">
       <motion.div
-        initial={{ rotateX: 90, opacity: 0 }}
-        animate={{ rotateX: 0, opacity: 1 }}
+        initial={shouldAnimate ? { rotateX: 90, opacity: 0 } : false}
+        animate={shouldAnimate ? { rotateX: 0, opacity: 1 } : { rotateX: 0, opacity: 1 }}
         transition={{ delay, duration: 0.4, ease: "easeOut" }}
-        className={`w-20 h-20 flex flex-row items-center justify-center p-1 rounded-md shadow-sm border border-black/10 font-medium text-center ${bgClass}`}
+        className={`w-full h-full flex flex-row items-center justify-center p-1 rounded-md shadow-sm border border-black/10 font-medium text-center ${bgClass}`}
         style={{ transformOrigin: "center" }}
       >
-        <span className="text-sm line-clamp-2 break-words flex-1 min-w-0 leading-tight">{children}</span>
+        <span className="text-sm leading-tight break-words text-balance min-w-0">{children}</span>
         {hintDirection === "up" && <ArrowUp className="w-4 h-8 mr-1" />}
         {hintDirection === "down" && <ArrowDown className="w-4 h-8 mr-1" />}
       </motion.div>
@@ -46,6 +53,8 @@ const AnimatedCell = ({ delay, status, children, hintDirection }: AnimatedCellPr
 
 // --- Composant Principal ---
 export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
+  console.log(guesses);
+  
   return (
     <div className="w-full overflow-x-auto rounded-md border">
       <Table className="min-w-[800px]">
@@ -73,42 +82,51 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
             else if (r.genres.isPartiallyCorrect) genresStatus = "partial";
 
             return (
-              <TableRow key={`${a.id}-${rowIndex}`} className="hover:bg-transparent border-b-0">
+              <TableRow key={`${a.id}-${rowIndex}`} className="hover:bg-transparent border-b-0 mx-auto">
+                {/** L'animation est active uniquement sur la première ligne. */}
                 {/* 1. Anime - Delay 0 */}
                 <AnimatedCell 
                   delay={0} 
                   status={guess.isCorrect ? "correct" : "incorrect"}
+                  shouldAnimate={rowIndex === 0}
                 >
                   <div className="flex flex-col items-center w-12">
-                    {a.imageUrl && (
-                      <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm mb-1" />
-                    )}
+                    <Tooltip key={a.title}>
+                        <TooltipTrigger>
+                        {a.imageUrl && (
+                          <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm mb-1" />
+                        )}
+                      </TooltipTrigger>
+                      <TooltipContent side="bottom">
+                        <p>{a.title}</p>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
                 </AnimatedCell>
 
                 {/* 2. Format - Delay 0.15s */}
-                <AnimatedCell delay={0.15} status={r.animeFormat.isCorrect ? "correct" : "incorrect"}>
+                <AnimatedCell delay={0.15} status={r.animeFormat.isCorrect ? "correct" : "incorrect"} shouldAnimate={rowIndex === 0}>
                   {a.anime_format}
                 </AnimatedCell>
 
                 {/* 3. Demographic - Delay 0.3s */}
-                <AnimatedCell delay={0.3} status={r.demographicType.isCorrect ? "correct" : "incorrect"}>
+                <AnimatedCell delay={0.3} status={r.demographicType.isCorrect ? "correct" : "incorrect"} shouldAnimate={rowIndex === 0}>
                   {a.demographic_type || "N/A"}
                 </AnimatedCell>
 
                 {/* 4. Studio - Delay 0.45s */}
-                <AnimatedCell delay={0.45} status={r.studio.isCorrect ? "correct" : "incorrect"}>
+                <AnimatedCell delay={0.45} status={r.studio.isCorrect ? "correct" : "incorrect"} shouldAnimate={rowIndex === 0}>
                   {a.studio}
                 </AnimatedCell>
 
                 {/* 5. Source - Delay 0.6s */}
-                <AnimatedCell delay={0.6} status={r.source.isCorrect ? "correct" : "incorrect"}>
+                <AnimatedCell delay={0.6} status={r.source.isCorrect ? "correct" : "incorrect"} shouldAnimate={rowIndex === 0}>
                   {a.source}
                 </AnimatedCell>
 
                 {/* 6. Genres - Delay 0.75s (Gère l'état "partiel" en orange) */}
-                <AnimatedCell delay={0.75} status={genresStatus}>
-                  {a.genres.join(", ")}
+                <AnimatedCell delay={0.75} status={genresStatus} shouldAnimate={rowIndex === 0}>
+                  <GenreIcons genres={a.genres} />
                 </AnimatedCell>
 
                 {/* 7. Episodes - Delay 0.9s (Avec flèches d'indice) */}
@@ -116,6 +134,7 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                   delay={0.9} 
                   status={r.episodes.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.episodes.isCorrect && r.episodes.isHigher !== null ? (r.episodes.isHigher ? "up" : "down") : null}
+                  shouldAnimate={rowIndex === 0}
                 >
                   {a.episodes || "?"}
                 </AnimatedCell>
@@ -125,6 +144,7 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                   delay={1.05} 
                   status={r.seasonStart.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.seasonStart.isCorrect && r.seasonStart.isEarlier !== null ? (r.seasonStart.isEarlier ? "down" : "up") : null}
+                  shouldAnimate={rowIndex === 0}
                 >
                   {a.season_start}
                 </AnimatedCell>
@@ -134,6 +154,7 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                   delay={1.2} 
                   status={r.score.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.score.isCorrect && r.score.isHigher !== null ? (r.score.isHigher ? "up" : "down") : null}
+                  shouldAnimate={rowIndex === 0}
                 >
                   {a.score}
                 </AnimatedCell>

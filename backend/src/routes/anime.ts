@@ -13,7 +13,11 @@ router.get("/animes", async (c) => {
 
 router.post("/animes/guess/:id", async (c) => {
     const id = c.req.param("id");
-    const anime = await animeService.guessAnime(id);
+    const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);
+     if (isNaN(guessNumber) || guessNumber < 1) {
+        return c.json({ error: "Invalid guess number" }, 400);
+    }
+    const anime = await animeService.guessAnime(id, guessNumber);
     if (!anime) {
         return c.json({ error: "Anime non trouvé" }, 404);
     }

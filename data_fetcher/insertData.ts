@@ -76,13 +76,32 @@ async function saveAnimeToMongo(animes: Anime[]) {
   console.log(`MongoDB: ${animes.length} animes enregistrés.`);
 }
 
+function replaceDateBySeasonDate(anime: Anime): Anime {
+  if (!anime.season_start) return anime;
+  const date = new Date(anime.season_start);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  let season: string;
+  if (month >= 3 && month <= 5) {
+    season = "Spring";
+  } else if (month >= 6 && month <= 8) {
+    season = "Summer";
+  }
+  else if (month >= 9 && month <= 11) {
+    season = "Fall";
+  } else {
+    season = "Winter";
+  }
+  return { ...anime, season_start: `${season} ${year}` };
+}
 
 
 //fecth file "filtered_data.json" and insert it to mongoDB
 async function insertFilteredDataToMongo() {
   const rawData = fs.readFileSync('filtered_data.json', 'utf-8');
   const filtered: Anime[] = JSON.parse(rawData);
-  await saveAnimeToMongo(filtered);
+  const filteredWithSeasonDate = filtered.map(replaceDateBySeasonDate);
+  await saveAnimeToMongo(filteredWithSeasonDate);
   console.log(`Insertion terminée.`);
 }
 

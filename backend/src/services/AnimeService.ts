@@ -56,6 +56,7 @@ export interface GuessResultDTO {
         }
     }, 
     anime: AnimeDetailsDTO;
+    guessNumber: number;
 }
 
 
@@ -159,29 +160,47 @@ export class AnimeService {
         });
     }
 
-    public async guessAnime(id: string): Promise<GuessResultDTO> {
+    public async guessAnime(id: string, guessNumber: number): Promise<GuessResultDTO> {
         const currentAnime = await this.getCurrentAnime();
         const guessedAnime = await this.repository.findById(id);
         if (!currentAnime || !guessedAnime) {
             throw new Error("Current anime or guessed anime not found");
         }
-        return this.compareAnimes(currentAnime, guessedAnime);
+        return this.compareAnimes(currentAnime, guessedAnime, guessNumber);
     }
 
-    private compareAnimes(ref: AnimeEntity, test: AnimeEntity): GuessResultDTO {
+    // Compare two dates in "Season Year" format (e.g., "Spring 2023")
+    private compareDates(date1: string, date2: string): number {
+        const [season1, year1] = date1.split(" ");
+        const [season2, year2] = date2.split(" ");
+        const seasonOrder = ["Winter", "Spring", "Summer", "Fall"];
+        if (year1 !== year2) {
+            return parseInt(year1) - parseInt(year2);
+        }
+        return seasonOrder.indexOf(season1) - seasonOrder.indexOf(season2);
+    }
+
+    private compareGenreLists(genres1: string[], genres2: string[]): { isCorrect: boolean; isPartiallyCorrect: boolean } {
+        const isCorrect = genres1.every(g => genres2.includes(g)) && genres1.length === genres2.length;
+        const isPartiallyCorrect = genres1.some(g => genres2.includes(g)) && !isCorrect;
+        return { isCorrect, isPartiallyCorrect };
+    }
+
+    private compareAnimes(ref: AnimeEntity, test: AnimeEntity, guessNumber: number): GuessResultDTO {
         return {
             isCorrect: ref._id?.toHexString() === test._id?.toHexString(),
+            guessNumber: guessNumber,
             results : {
                 demographicType: {
                     isCorrect: ref.demographic_type === test.demographic_type
                 },
                 episodes: {
                     isCorrect: ref.episodes === test.episodes,
-                    isHigher: ref.episodes < test.episodes ? true : null
+                    isHigher: test.episodes < ref.episodes ? true : false
                 },
                 seasonStart: {
                     isCorrect: ref.season_start === test.season_start,
-                    isEarlier: ref.season_start > test.season_start ? true : null
+                    isEarlier: this.compareDates(test.season_start, ref.season_start) > 0 ? true : false
                 },
                 studio: {
                     isCorrect: ref.studio === test.studio
@@ -191,11 +210,10 @@ export class AnimeService {
                 },
                 score: {
                     isCorrect: ref.score === test.score,
-                    isHigher: ref.score < test.score ? true : null
+                    isHigher: test.score < ref.score ? true : false
                 },
                 genres: {
-                    isCorrect: ref.genres.every(g => test.genres.includes(g)),
-                    isPartiallyCorrect: ref.genres.some(g => test.genres.includes(g))
+                    ...this.compareGenreLists(ref.genres, test.genres)
                 },
                 animeFormat: {
                     isCorrect: ref.anime_format === test.anime_format

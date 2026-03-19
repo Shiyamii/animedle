@@ -77,7 +77,7 @@ export function useHomePageViewModel() {
         onAnimeSelect: async (animeId: string) => {
             const guessResult = await makeGuessRequest(animeId);
             if(guessResult) {
-                animeStore.addGuessToList(guessResult);
+                animeStore.addGuessToListAsFirst(guessResult);
                 setGuessList(animeStore.getGuessList());
             }
         }
