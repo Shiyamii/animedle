@@ -41,8 +41,8 @@ const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = 
         className={`w-full h-full flex flex-col items-center justify-center p-1 rounded-md shadow-sm border border-black/10 font-medium text-center ${bgClass}`}
         style={{ transformOrigin: "center" }}
       >
-        <span className="leading-tight break-words text-balance font-semibold min-w-0">{children}</span>
         {hintDirection && (<ArrowHint direction={hintDirection} />)}
+        <span className="text-[1rem] leading-tight break-words text-balance min-w-0">{children}</span>
       </motion.div>
     </TableCell> 
   );
@@ -50,10 +50,10 @@ const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = 
 
 const ArrowHint = ({ direction }: { direction: "up" | "down" }) => {
     return <div className="w-full h-0 flex items-center justify-center">
-      <div className="-translate-y-2 opacity-30">
+      <div className="translate-y-2 opacity-30">
         {direction === "up" ?
             <ArrowBigUp fill={"white"} className="w-16 h-32"/> :
-            <ArrowBigDown fill={"white"} className="w-14 h-28" />}
+            <ArrowBigDown fill={"white"} className="w-16 h-32" />}
       </div>
     </div>
 }
