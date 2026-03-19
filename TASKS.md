@@ -11,3 +11,8 @@ Authentification : Titouan L.
 Coeur du Animdle : Tamas P.
 - Systeme guessing : Tamas P.
 - Cron de l'anime du jour : Tamas P.
+
+Déploiement : Tamas P.
+- Dockerisation : Tamas P.
+- CI/CD : 
+- Configuration du serveur : Tamas P.

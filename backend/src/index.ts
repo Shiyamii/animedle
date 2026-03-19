@@ -21,9 +21,12 @@ cron.schedule('0 0 * * *', async () => {
   timezone: "UTC"
 })
 
+const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+
+
 app.basePath("/api");
 app.use("/api/*", cors({
-  origin: "http://localhost:5173",
+  origin: frontendUrl,
   allowHeaders: ["Content-Type", "Authorization"],
   allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,

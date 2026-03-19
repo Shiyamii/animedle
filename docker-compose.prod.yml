@@ -1,0 +1,32 @@
+services:
+  app-prod-backend:
+    build:
+      context: .
+      target: prod-backend
+    container_name: animedle-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URL=mongodb://admin:adminpassword@mongo:27017/animedle?authSource=admin
+      - BETTER_AUTH_URL=http://app-prod-backend:3000
+      - FRONTEND_URL=http://localhost
+  
+  app-prod-frontend:
+    build:
+      context: .
+      target: prod-frontend
+    container_name: animedle-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - mongo
+    environment:
+      - VITE_BACKEND_URL=http://app-prod-backend:3000
+    
+
+include:
+  - docker-compose.yml

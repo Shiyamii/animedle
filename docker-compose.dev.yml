@@ -11,7 +11,8 @@ services:
     depends_on:
       - mongo
     environment:
-      - name=value
+      - MONGODB_URL=mongodb://admin:adminpassword@mongo:27017/animedle?authSource=admin
+      - FRONTEND_URL=http://localhost:5173
 
 include:
   - docker-compose.yml
