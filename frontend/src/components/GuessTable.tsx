@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUp, ArrowDown } from "lucide-react";
+import { ArrowBigDown, ArrowBigUp } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -16,8 +16,6 @@ import {
 } from "@/components/ui/tooltip";
 import type { GuessResultDTO } from "@/stores/animeStore";
 import { GenreIcons } from "./GenreIcons";
-
-
 
 // --- Sous-composant pour la case animée ---
 interface AnimatedCellProps {
@@ -40,16 +38,25 @@ const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = 
         initial={shouldAnimate ? { rotateX: 90, opacity: 0 } : false}
         animate={shouldAnimate ? { rotateX: 0, opacity: 1 } : { rotateX: 0, opacity: 1 }}
         transition={{ delay, duration: 0.4, ease: "easeOut" }}
-        className={`w-full h-full flex flex-row items-center justify-center p-1 rounded-md shadow-sm border border-black/10 font-medium text-center ${bgClass}`}
+        className={`w-full h-full flex flex-col items-center justify-center p-1 rounded-md shadow-sm border border-black/10 font-medium text-center ${bgClass}`}
         style={{ transformOrigin: "center" }}
       >
-        <span className="text-sm leading-tight break-words text-balance min-w-0">{children}</span>
-        {hintDirection === "up" && <ArrowUp className="w-4 h-8 mr-1" />}
-        {hintDirection === "down" && <ArrowDown className="w-4 h-8 mr-1" />}
+        <span className="leading-tight break-words text-balance font-semibold min-w-0">{children}</span>
+        {hintDirection && (<ArrowHint direction={hintDirection} />)}
       </motion.div>
     </TableCell> 
   );
 };
+
+const ArrowHint = ({ direction }: { direction: "up" | "down" }) => {
+    return <div className="w-full h-0 flex items-center justify-center">
+      <div className="-translate-y-2 opacity-30">
+        {direction === "up" ?
+            <ArrowBigUp fill={"white"} className="w-16 h-32"/> :
+            <ArrowBigDown fill={"white"} className="w-14 h-28" />}
+      </div>
+    </div>
+}
 
 // --- Composant Principal ---
 export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {  
