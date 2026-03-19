@@ -76,7 +76,7 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue, isFil
                       key={anime.id}
                       value={anime.title}
                       onSelect={() => {
-                        setInputValue(anime.title) 
+                        setInputValue("") 
                         setSelectedValue(anime.id) 
                         setIsOpen(false)
                         onSelect?.(anime.id)

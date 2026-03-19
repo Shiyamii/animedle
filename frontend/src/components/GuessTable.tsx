@@ -52,9 +52,7 @@ const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = 
 };
 
 // --- Composant Principal ---
-export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
-  console.log(guesses);
-  
+export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {  
   return (
     <div className="w-full overflow-x-auto rounded-md border">
       <Table className="min-w-[800px]">

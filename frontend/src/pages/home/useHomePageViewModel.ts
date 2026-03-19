@@ -41,6 +41,11 @@ async function makeGuessRequest(animeId: string) {
     }
 }
 
+function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[]): AnimeItemDTO[] {
+    const guessedAnimeIds = new Set(guessList.map(guess => guess.anime.id));
+    return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
+}
+
 export function useHomePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -57,8 +62,8 @@ export function useHomePageViewModel() {
     }, []);
 
     useEffect(() => {
-        setFuse(createFuse(animeStore.animeList));
-    }, [animeStore.animeList]);
+        setFuse(createFuse(makeGuessableList(animeStore.animeList, guessList)));
+    }, [animeStore.animeList, guessList]);
  
     useEffect(() => {
         setIsFilteringLoading(true);
