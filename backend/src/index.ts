@@ -7,6 +7,9 @@ import loadDotenv from "@/lib/dotenv-loader";
 import { AnimeService } from "@/services/AnimeService";
 import cron from "node-cron";
 
+// Start WebSocket server for multiplayer
+import "./ws";
+
 loadDotenv();
 
 const app = new Hono<{ Variables: AuthType }>({

@@ -46,6 +46,7 @@ function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[
     return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
 }
 
+
 export function useHomePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -90,6 +91,7 @@ export function useHomePageViewModel() {
                 if(success) {
                     setFoundAnime(guessResult.anime);
                 }
+                return guessResult;
             }
         },
         foundAnime
