@@ -54,6 +54,7 @@ export function useHomePageViewModel() {
     const [filtredAnimeList, setFiltredAnimeList] = useState<AnimeItemDTO[]>([]);
     const [isFilteringLoading, setIsFilteringLoading] = useState(false);
     const [guessList, setGuessList] = useState<GuessResultDTO[]>([]);
+    const [foundAnime, setFoundAnime] = useState<AnimeItemDTO | null>(null);
 
     useEffect(() => {
         if(animeStore.animeList.length === 0)
@@ -84,7 +85,13 @@ export function useHomePageViewModel() {
             if(guessResult) {
                 animeStore.addGuessToListAsFirst(guessResult);
                 setGuessList(animeStore.getGuessList());
+                const success = Object.entries(guessResult.results)
+                    .every(([_, value]) => value.isCorrect);
+                if(success) {
+                    setFoundAnime(guessResult.anime);
+                }
             }
-        }
+        },
+        foundAnime
     };
 }

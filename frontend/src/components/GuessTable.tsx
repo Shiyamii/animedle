@@ -99,7 +99,7 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                     <Tooltip key={a.title}>
                         <TooltipTrigger>
                         {a.imageUrl && (
-                          <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm mb-1" />
+                          <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm" />
                         )}
                       </TooltipTrigger>
                       <TooltipContent side="bottom">
