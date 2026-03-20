@@ -61,6 +61,71 @@
     "season": "Saison",
     "score": "Score"
   },
+  "admin": {
+    "title": "Administration",
+    "tabs": {
+      "animes": "Gestion des animes",
+      "daily": "Anime du jour"
+    },
+    "animes": {
+      "count_one": "{{count}} anime",
+      "count_other": "{{count}} animes",
+      "add": "Ajouter un anime",
+      "loading": "Chargement...",
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "format": "Format",
+        "studio": "Studio",
+        "score": "Score",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "titleCreate": "Ajouter un anime",
+      "titleEdit": "Modifier l'anime",
+      "imageUrl": "URL image MyAnimeList",
+      "imageUrlHint": "Les variantes small et large seront dérivées automatiquement.",
+      "imageUrlPlaceholder": "https://cdn.myanimelist.net/images/anime/4/19756.webp",
+      "titles": "Titres",
+      "addTitle": "Ajouter",
+      "titleTypePlaceholder": "Type (ex: Default)",
+      "titleValuePlaceholder": "Titre",
+      "format": "Format",
+      "demographic": "Démographique",
+      "episodes": "Épisodes",
+      "score": "Score",
+      "seasonStart": "Saison de début",
+      "seasonStartPlaceholder": "Spring 2023",
+      "studio": "Studio",
+      "studioPlaceholder": "MAPPA",
+      "source": "Source",
+      "genres": "Genres",
+      "genresHint": "Séparés par des virgules.",
+      "genresPlaceholder": "Action, Adventure, Fantasy",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "saving": "Sauvegarde..."
+    },
+    "delete": {
+      "title": "Supprimer l'anime",
+      "confirm": "Supprimer «\u00a0{{title}}\u00a0»\u00a0? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "confirmBtn": "Supprimer",
+      "deleting": "Suppression..."
+    },
+    "daily": {
+      "current": "Anime actuel",
+      "noCurrent": "Aucun anime défini.",
+      "random": "Anime aléatoire",
+      "randomDesc": "Sélectionne un anime au hasard comme anime du jour.",
+      "randomBtn": "Aléatoire",
+      "manual": "Choisir manuellement",
+      "manualDesc": "Définit un anime spécifique comme anime du jour.",
+      "selectPlaceholder": "Sélectionner un anime...",
+      "setBtn": "Définir"
+    }
+  },
   "userWidget": {
     "signIn": "Se connecter",
     "myAccount": "Mon compte",

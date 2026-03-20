@@ -74,4 +74,22 @@ export class AnimeRepository {
         await ensureMongooseConnection();
         return this.model.findOne({ _id: id }).lean<AnimeEntity>().exec();
     }
+
+    async create(data: Omit<AnimeEntity, '_id'>): Promise<AnimeEntity> {
+        await ensureMongooseConnection();
+        const anime = new this.model(data);
+        const saved = await anime.save();
+        return saved.toObject() as AnimeEntity;
+    }
+
+    async update(id: string, data: Partial<Omit<AnimeEntity, '_id'>>): Promise<AnimeEntity | null> {
+        await ensureMongooseConnection();
+        return this.model.findByIdAndUpdate(id, data, { new: true }).lean<AnimeEntity>().exec();
+    }
+
+    async delete(id: string): Promise<boolean> {
+        await ensureMongooseConnection();
+        const result = await this.model.findByIdAndDelete(id).exec();
+        return result !== null;
+    }
 }

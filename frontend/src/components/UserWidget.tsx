@@ -3,11 +3,13 @@ import { useUserStore } from "@/stores/userStore";
 import { getAvatarUrl } from "@/lib/avatar";
 import { useTranslation } from "react-i18next";
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui";
-import { LogIn, LogOut, Moon, Sun, User } from "lucide-react";
+import { LogIn, LogOut, Moon, Sun, User, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { authClient } from "@/lib/auth-client";
 import i18n from "@/i18n/i18n";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+type SessionUser = { role?: string };
 import { flushSync } from "react-dom";
 
 function ThemeToggleItem() {
@@ -71,6 +73,8 @@ export function UserWidget() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const user = useUserStore((s) => s.user);
+    const { data: session } = authClient.useSession();
+    const isAdmin = (session?.user as unknown as SessionUser)?.role === 'admin';
     const [currentLang, setCurrentLang] = useState(i18n.language);
 
     const changeLanguage = (lang: string) => {
@@ -149,6 +153,15 @@ export function UserWidget() {
                                 <User className="h-4 w-4" />
                                 {t("userWidget.myAccount")}
                             </DropdownMenuPrimitive.Item>
+                            {isAdmin && (
+                                <DropdownMenuPrimitive.Item
+                                    onSelect={() => navigate("/admin")}
+                                    className="flex items-center gap-3 rounded-md px-2 py-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer outline-none"
+                                >
+                                    <ShieldCheck className="h-4 w-4" />
+                                    Administration
+                                </DropdownMenuPrimitive.Item>
+                            )}
                             <DropdownMenuPrimitive.Separator className="my-1 h-px bg-border" />
                         </>
                     )}

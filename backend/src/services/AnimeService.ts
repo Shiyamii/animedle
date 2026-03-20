@@ -1,4 +1,4 @@
-import { AnimeEntity, AnimeRepository } from "./AnimeRepositories";
+import { AnimeEntity, AnimeImagesWebpEntity, AnimeTitleEntity, AnimeRepository } from "./AnimeRepositories";
 import { CurrentAnimeRepository } from "./CurrentAnimeRepositories";
 
 export interface AnimeItemDTO {
@@ -60,6 +60,34 @@ export interface GuessResultDTO {
 }
 
 
+export interface AdminAnimeDTO {
+    id: string;
+    title: string;
+    imageUrl: string;
+    titles: AnimeTitleEntity[];
+    anime_format: string;
+    genres: string[];
+    demographic_type: string;
+    episodes: number;
+    season_start: string;
+    studio: string;
+    source: string;
+    score: number;
+}
+
+export interface CreateAdminAnimeDTO {
+    imageUrl: string;
+    titles: AnimeTitleEntity[];
+    anime_format: string;
+    genres: string[];
+    demographic_type: string;
+    episodes: number;
+    season_start: string;
+    studio: string;
+    source: string;
+    score: number;
+}
+
 export class AnimeService {
     private static instance: AnimeService;
 
@@ -87,6 +115,96 @@ export class AnimeService {
         const entity = await this.repository.findById(id);
         if (!entity) return null;
         return this.toDetailsDTO(entity);
+    }
+
+    private parseMALImageUrl(url: string): AnimeImagesWebpEntity {
+        const match = url.match(/^(https?:\/\/(?:cdn\.)?myanimelist\.net\/images\/anime\/\d+\/\d+)/);
+        if (!match) throw new Error('URL MAL invalide. Format attendu : https://cdn.myanimelist.net/images/anime/{dossier}/{id}');
+        const base = match[1];
+        return {
+            image_url: `${base}.webp`,
+            small_image_url: `${base}s.webp`,
+            large_image_url: `${base}l.webp`,
+        };
+    }
+
+    private toAdminDTO(entity: AnimeEntity): AdminAnimeDTO {
+        return {
+            id: entity._id?.toHexString() ?? "",
+            title: this.getMainTitle(entity),
+            imageUrl: entity.images_webp.image_url,
+            titles: entity.titles,
+            anime_format: entity.anime_format,
+            genres: entity.genres,
+            demographic_type: entity.demographic_type,
+            episodes: entity.episodes,
+            season_start: entity.season_start,
+            studio: entity.studio,
+            source: entity.source,
+            score: entity.score,
+        };
+    }
+
+    async getAdminAnimeList(): Promise<AdminAnimeDTO[]> {
+        const entities = await this.repository.findAll();
+        return entities.map(entity => this.toAdminDTO(entity));
+    }
+
+    async getCurrentAnimeAdmin(): Promise<AdminAnimeDTO | null> {
+        const current = await this.currentAnimeRepository.getCurrentAnime();
+        if (!current?.anime) return null;
+        return this.toAdminDTO(current.anime);
+    }
+
+    async createAnime(data: CreateAdminAnimeDTO): Promise<AdminAnimeDTO> {
+        const images_webp = this.parseMALImageUrl(data.imageUrl);
+        const entity = await this.repository.create({
+            images_webp,
+            titles: data.titles,
+            anime_format: data.anime_format,
+            genres: data.genres,
+            demographic_type: data.demographic_type,
+            episodes: data.episodes,
+            season_start: data.season_start,
+            studio: data.studio,
+            source: data.source,
+            score: data.score,
+        });
+        return this.toAdminDTO(entity);
+    }
+
+    async updateAnime(id: string, data: CreateAdminAnimeDTO): Promise<AdminAnimeDTO | null> {
+        const images_webp = this.parseMALImageUrl(data.imageUrl);
+        const entity = await this.repository.update(id, {
+            images_webp,
+            titles: data.titles,
+            anime_format: data.anime_format,
+            genres: data.genres,
+            demographic_type: data.demographic_type,
+            episodes: data.episodes,
+            season_start: data.season_start,
+            studio: data.studio,
+            source: data.source,
+            score: data.score,
+        });
+        if (!entity) return null;
+        return this.toAdminDTO(entity);
+    }
+
+    async deleteAnime(id: string): Promise<boolean> {
+        return this.repository.delete(id);
+    }
+
+    async setCurrentAnimeById(id: string): Promise<AdminAnimeDTO | null> {
+        const entity = await this.repository.findById(id);
+        if (!entity) return null;
+        await this.currentAnimeRepository.saveCurrentAnime(entity);
+        return this.toAdminDTO(entity);
+    }
+
+    async setCurrentAnimeRandom(): Promise<AdminAnimeDTO> {
+        const entity = await this.updateGoalAnime();
+        return this.toAdminDTO(entity);
     }
 
     private getMainTitle(entity: AnimeEntity): string {

@@ -3,6 +3,7 @@ import { cors } from "hono/cors";
 import type { AuthType } from "@/lib/auth"
 import authRoutes from '@/routes/auth';
 import animeRoutes from '@/routes/anime';
+import adminRoutes from '@/routes/admin';
 import loadDotenv from "@/lib/dotenv-loader";
 import { AnimeService } from "@/services/AnimeService";
 import cron from "node-cron";
@@ -32,7 +33,7 @@ app.use("/api/*", cors({
   credentials: true,
 }));
 
-const routes = [authRoutes, animeRoutes] as Hono[];
+const routes = [authRoutes, animeRoutes, adminRoutes] as Hono[];
 
 routes.forEach((route: Hono) => {
   app.route("/api/", route);

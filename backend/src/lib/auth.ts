@@ -20,6 +20,13 @@ export const auth = betterAuth({
                 returned: true,
                 input: true,
             },
+            role: {
+                type: "string",
+                required: false,
+                returned: true,
+                input: false,
+                defaultValue: "user",
+            },
         },
     },
     databaseHooks: {
