@@ -61,6 +61,71 @@
     "season": "Season",
     "score": "Score"
   },
+  "admin": {
+    "title": "Administration",
+    "tabs": {
+      "animes": "Anime management",
+      "daily": "Daily anime"
+    },
+    "animes": {
+      "count_one": "{{count}} anime",
+      "count_other": "{{count}} animes",
+      "add": "Add anime",
+      "loading": "Loading...",
+      "table": {
+        "image": "Image",
+        "title": "Title",
+        "format": "Format",
+        "studio": "Studio",
+        "score": "Score",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "titleCreate": "Add anime",
+      "titleEdit": "Edit anime",
+      "imageUrl": "MyAnimeList image URL",
+      "imageUrlHint": "Small and large variants will be derived automatically.",
+      "imageUrlPlaceholder": "https://cdn.myanimelist.net/images/anime/4/19756.webp",
+      "titles": "Titles",
+      "addTitle": "Add",
+      "titleTypePlaceholder": "Type (e.g. Default)",
+      "titleValuePlaceholder": "Title",
+      "format": "Format",
+      "demographic": "Demographic",
+      "episodes": "Episodes",
+      "score": "Score",
+      "seasonStart": "Start season",
+      "seasonStartPlaceholder": "Spring 2023",
+      "studio": "Studio",
+      "studioPlaceholder": "MAPPA",
+      "source": "Source",
+      "genres": "Genres",
+      "genresHint": "Separated by commas.",
+      "genresPlaceholder": "Action, Adventure, Fantasy",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete anime",
+      "confirm": "Delete \"{{title}}\"? This action is irreversible.",
+      "cancel": "Cancel",
+      "confirmBtn": "Delete",
+      "deleting": "Deleting..."
+    },
+    "daily": {
+      "current": "Current anime",
+      "noCurrent": "No anime defined.",
+      "random": "Random anime",
+      "randomDesc": "Selects a random anime as today's anime.",
+      "randomBtn": "Random",
+      "manual": "Choose manually",
+      "manualDesc": "Sets a specific anime as today's anime.",
+      "selectPlaceholder": "Select an anime...",
+      "setBtn": "Set"
+    }
+  },
   "userWidget": {
     "signIn": "Sign in",
     "myAccount": "My account",

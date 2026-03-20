@@ -6,7 +6,8 @@ import RootLayout from '@/layouts/RootLayout.tsx'
 import HomePage from '@/pages/home/HomePage.tsx'
 import { AuthPage } from '@/pages/auth/AuthPage.tsx'
 import AccountPage from '@/pages/account/AccountPage.tsx'
-import { ProtectedRoute, GuestRoute } from '@/components/ProtectedRoute.tsx'
+import { ProtectedRoute, GuestRoute, AdminRoute } from '@/components/ProtectedRoute.tsx'
+import { AdminPage } from '@/pages/admin/AdminPage.tsx'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
@@ -33,6 +34,15 @@ const router = createBrowserRouter([
                     {
                         path: "/account",
                         element: <AccountPage />,
+                    },
+                ],
+            },
+            {
+                element: <AdminRoute />,
+                children: [
+                    {
+                        path: "/admin",
+                        element: <AdminPage />,
                     },
                 ],
             },
