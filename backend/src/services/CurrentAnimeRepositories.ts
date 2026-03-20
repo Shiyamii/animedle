@@ -105,6 +105,11 @@ export class CurrentAnimeRepository {
     ).exec();
   }
 
+  async getAllHistory(): Promise<CurrentAnimeEntity[]> {
+    await ensureMongooseConnection();
+    return this.model.find({}).sort({ date: -1 }).lean<CurrentAnimeEntity[]>().exec();
+  }
+
   async getStatsByAnimeIds(animeIds: string[]): Promise<AnimeStatsDTO[]> {
     await ensureMongooseConnection();
     const objectIds = animeIds.map(id => new Types.ObjectId(id));

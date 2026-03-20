@@ -53,6 +53,11 @@ router.put("/admin/animes/:id", async (c) => {
     }
 });
 
+router.get("/admin/stats", async (c) => {
+    const stats = await animeService.getAdminStats();
+    return c.json(stats);
+});
+
 router.delete("/admin/animes/:id", async (c) => {
     const id = c.req.param("id");
     const deleted = await animeService.deleteAnime(id);
