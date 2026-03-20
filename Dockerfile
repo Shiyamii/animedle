@@ -10,7 +10,6 @@ COPY frontend ./frontend
 COPY data_fetcher ./data_fetcher
 
 RUN bun install
-RUN cd frontend && bun run build
 
 FROM oven/bun:latest AS dev
 
@@ -22,9 +21,28 @@ EXPOSE 3000
 
 CMD ["bun", "run", "dev"]
 
+FROM oven/bun:latest AS build-frontend
+
+WORKDIR /app
+
+COPY --from=builder /app/frontend  /app/frontend
+
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
+WORKDIR  /app/frontend
+RUN bun install
+
+RUN echo "============== DEBUG URL : ${VITE_API_URL} =============="
+
+RUN bun run build
+
+
 FROM nginx:alpine AS prod-frontend
-COPY --from=builder /app/frontend/dist /usr/share/nginx/html
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-frontend /app/frontend/dist /usr/share/nginx/html
+
 EXPOSE 80
 
 

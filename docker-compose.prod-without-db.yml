@@ -16,10 +16,10 @@ services:
     build:
       context: .
       target: prod-frontend
+      args:
+        - VITE_API_URL=${BACKEND_URL}
     container_name: animedle-frontend
     restart: unless-stopped
     ports:
       - "4444:80"
-    environment:
-      - VITE_BACKEND_URL=${BACKEND_URL}
     
