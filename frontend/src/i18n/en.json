@@ -1,0 +1,72 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "email": "Email"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "name": "Name",
+    "password": "Password",
+    "loginButton": "Sign in",
+    "registerButton": "Sign up",
+    "noAccount": "No account yet?",
+    "alreadyAccount": "Already have an account?",
+    "errorLogin": "Login error",
+    "errorRegister": "Registration error"
+  },
+  "account": {
+    "title": "My account",
+    "signOut": "Sign out",
+    "notConnected": "Not connected",
+    "profile": {
+      "title": "Profile",
+      "username": "Username",
+      "generateAvatar": "Generate avatar",
+      "save": "Save",
+      "success": "Profile updated!",
+      "errorUpdate": "Update error"
+    },
+    "password": {
+      "title": "Change password",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "change": "Change password",
+      "success": "Password changed!",
+      "errorMismatch": "Passwords do not match",
+      "errorChange": "Error changing password"
+    }
+  },
+  "home": {
+    "startTitle": "Guess today's anime!",
+    "start": "Start",
+    "congratulations": "Congratulations! You found the anime:",
+    "guessTitle": "Guess today's anime!"
+  },
+  "autocomplete": {
+    "placeholder": "Start typing...",
+    "noResults": "No results found.",
+    "loading": "Loading..."
+  },
+  "guessTable": {
+    "anime": "Anime",
+    "format": "Format",
+    "demographic": "Demographic",
+    "studio": "Studio",
+    "source": "Source",
+    "genres": "Genres",
+    "episodes": "Episodes",
+    "season": "Season",
+    "score": "Score"
+  },
+  "userWidget": {
+    "signIn": "Sign in",
+    "myAccount": "My account",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "signOut": "Sign out"
+  }
+}

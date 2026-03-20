@@ -62,6 +62,11 @@
     "score": "Score"
   },
   "userWidget": {
-    "signIn": "Se connecter ?"
+    "signIn": "Se connecter",
+    "myAccount": "Mon compte",
+    "settings": "Paramètres",
+    "language": "Langue",
+    "theme": "Thème",
+    "signOut": "Se déconnecter"
   }
 }
