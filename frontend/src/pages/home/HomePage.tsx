@@ -4,8 +4,10 @@ import { AutocompleteTextInput } from "@/components/AutoComplete";
 import GuessTable from "@/components/GuessTable";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import useConfetti from '@/hooks/useConfetti.ts';
+import { useTranslation } from "react-i18next";
 
 function HomePage() {
+    const { t } = useTranslation();
     const {
         filtredAnimeList,
         isGuessingStarted,
@@ -26,8 +28,8 @@ function HomePage() {
                 {!isGuessingStarted ? (
                     <div className='w-full max-w-md bg-card text-card-foreground rounded-xl p-8 shadow-md border border-border'>
                         <div className="mt-4 flex flex-col items-center gap-4">
-                            <h1 className="text-2xl font-bold text-primary">Start Guessing Today's Anime!</h1>
-                            <Button onClick={() => setIsGuessingStarted(true)} className="mt-4">Start</Button>
+                            <h1 className="text-2xl font-bold text-primary">{t("home.startTitle")}</h1>
+                            <Button onClick={() => setIsGuessingStarted(true)} className="mt-4">{t("home.start")}</Button>
                         </div>
                     </div>
                 ) : (
@@ -36,12 +38,12 @@ function HomePage() {
                         {
                             !!foundAnime ? (
                                 <div className="my-4 max-w-lg">
-                                    <h2 className="text-2xl font-semibold">Congratulations! You found the anime:</h2>
+                                    <h2 className="text-2xl font-semibold">{t("home.congratulations")}</h2>
                                     <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>
                                 </div>
                             ) : (
                                 <>
-                                    <h1 className="text-2xl font-bold text-primary">Guess Today's Anime!</h1>
+                                    <h1 className="text-2xl font-bold text-primary">{t("home.guessTitle")}</h1>
                                     <div className="my-4 max-w-lg w-full items-center gap-4 flex flex-col flex-wrap">
                                         <AutocompleteTextInput values={filtredAnimeList}
                                                                inputValue={inputValue}

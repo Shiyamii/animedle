@@ -10,6 +10,7 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import type { AnimeItemDTO } from "@/stores/animeStore"
+import { useTranslation } from "react-i18next"
 
 export type AutoCompleteProps = {
   values: AnimeItemDTO[],
@@ -21,6 +22,7 @@ export type AutoCompleteProps = {
 
 
 export function AutocompleteTextInput({ values, inputValue, setInputValue, isFilteringLoading, onSelect }: AutoCompleteProps) {
+  const { t } = useTranslation()
   const [selectedValue, setSelectedValue] = React.useState<string | null>(null)
   const [isOpen, setIsOpen] = React.useState(false)
 
@@ -40,21 +42,21 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue, isFil
 
 
   return (
-    <Command 
-    ref={wrapperRef} 
-    shouldFilter={false} 
+    <Command
+    ref={wrapperRef}
+    shouldFilter={false}
     className="relative w-full overflow-visible">
       <CommandPrimitive.Input
-        placeholder="Commencez à taper (ex: React)..."
+        placeholder={t("autocomplete.placeholder")}
         value={inputValue}
         autoComplete="off"
         name="searchAnime"
 
         className="h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40"
-        
+
         onValueChange={(value: string) => {
           setInputValue(value)
-          setIsOpen(value.length > 0) 
+          setIsOpen(value.length > 0)
           if (selectedValue) setSelectedValue(null)
         }}
         onFocus={() => {
@@ -67,7 +69,7 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue, isFil
             <CommandList>
               {values.length === 0 || isFilteringLoading ? (
                 <CommandEmpty className="py-6 text-center text-sm">
-                  {isFilteringLoading ? "Chargement..." : "Aucun résultat trouvé."}
+                  {isFilteringLoading ? t("autocomplete.loading") : t("autocomplete.noResults")}
                 </CommandEmpty>
               ) : (
                 <CommandGroup>
@@ -76,8 +78,8 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue, isFil
                       key={anime.id}
                       value={anime.title}
                       onSelect={() => {
-                        setInputValue("") 
-                        setSelectedValue(anime.id) 
+                        setInputValue("")
+                        setSelectedValue(anime.id)
                         setIsOpen(false)
                         onSelect?.(anime.id)
                       }}
@@ -88,8 +90,8 @@ export function AutocompleteTextInput({ values, inputValue, setInputValue, isFil
                             <div className="flex flex-col">
                                 <p className="text-lg ">{anime.title}</p>
                                 <p className="text-sm text-muted-foreground">{anime.alias[0]}</p>
-                            </div>    
-                        </div>    
+                            </div>
+                        </div>
                     </CommandItem>
                   ))}
                 </CommandGroup>

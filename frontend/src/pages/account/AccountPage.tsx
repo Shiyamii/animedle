@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useAccountViewModel, getAvatarUrl } from "./useAccountViewModel";
+import { useTranslation } from "react-i18next";
 
 function AvatarSection({
     avatarSeed,
@@ -8,6 +9,7 @@ function AvatarSection({
     avatarSeed: string;
     onRandomize: () => void;
 }) {
+    const { t } = useTranslation();
     return (
         <div className="flex flex-col items-center gap-3">
             <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary bg-muted">
@@ -20,7 +22,7 @@ function AvatarSection({
                 )}
             </div>
             <Button variant="outline" size="sm" onClick={onRandomize} type="button">
-                Générer un avatar
+                {t("account.profile.generateAvatar")}
             </Button>
         </div>
     );
@@ -47,14 +49,15 @@ function ProfileSection({
     error: string | null;
     success: boolean;
 }) {
+    const { t } = useTranslation();
     return (
         <div className="bg-card text-card-foreground rounded-xl p-6 shadow-sm border border-border flex flex-col gap-5">
-            <h2 className="text-lg font-semibold text-foreground">Profil</h2>
+            <h2 className="text-lg font-semibold text-foreground">{t("account.profile.title")}</h2>
 
             <AvatarSection avatarSeed={avatarSeed} onRandomize={onRandomizeAvatar} />
 
             <div className="flex flex-col gap-1">
-                <label className="text-sm text-muted-foreground">Nom d'utilisateur</label>
+                <label className="text-sm text-muted-foreground">{t("account.profile.username")}</label>
                 <input
                     type="text"
                     value={name}
@@ -64,7 +67,7 @@ function ProfileSection({
             </div>
 
             <div className="flex flex-col gap-1">
-                <label className="text-sm text-muted-foreground">Email</label>
+                <label className="text-sm text-muted-foreground">{t("common.email")}</label>
                 <input
                     type="email"
                     value={email}
@@ -74,10 +77,10 @@ function ProfileSection({
             </div>
 
             {error && <p className="text-destructive text-sm">{error}</p>}
-            {success && <p className="text-sm" style={{ color: "var(--secondary)" }}>Profil mis à jour !</p>}
+            {success && <p className="text-sm" style={{ color: "var(--secondary)" }}>{t("account.profile.success")}</p>}
 
             <Button onClick={onSubmit} disabled={loading} className="w-full">
-                {loading ? "Enregistrement..." : "Enregistrer"}
+                {loading ? t("common.saving") : t("account.profile.save")}
             </Button>
         </div>
     );
@@ -106,12 +109,13 @@ function PasswordSection({
     error: string | null;
     success: boolean;
 }) {
+    const { t } = useTranslation();
     return (
         <div className="bg-card text-card-foreground rounded-xl p-6 shadow-sm border border-border flex flex-col gap-4">
-            <h2 className="text-lg font-semibold text-foreground">Changer le mot de passe</h2>
+            <h2 className="text-lg font-semibold text-foreground">{t("account.password.title")}</h2>
 
             <div className="flex flex-col gap-1">
-                <label className="text-sm text-muted-foreground">Mot de passe actuel</label>
+                <label className="text-sm text-muted-foreground">{t("account.password.current")}</label>
                 <input
                     type="password"
                     value={currentPassword}
@@ -121,7 +125,7 @@ function PasswordSection({
             </div>
 
             <div className="flex flex-col gap-1">
-                <label className="text-sm text-muted-foreground">Nouveau mot de passe</label>
+                <label className="text-sm text-muted-foreground">{t("account.password.new")}</label>
                 <input
                     type="password"
                     value={newPassword}
@@ -131,7 +135,7 @@ function PasswordSection({
             </div>
 
             <div className="flex flex-col gap-1">
-                <label className="text-sm text-muted-foreground">Confirmer le nouveau mot de passe</label>
+                <label className="text-sm text-muted-foreground">{t("account.password.confirm")}</label>
                 <input
                     type="password"
                     value={confirmPassword}
@@ -141,22 +145,23 @@ function PasswordSection({
             </div>
 
             {error && <p className="text-destructive text-sm">{error}</p>}
-            {success && <p className="text-sm" style={{ color: "var(--secondary)" }}>Mot de passe modifié !</p>}
+            {success && <p className="text-sm" style={{ color: "var(--secondary)" }}>{t("account.password.success")}</p>}
 
             <Button onClick={onSubmit} disabled={loading} className="w-full">
-                {loading ? "Enregistrement..." : "Changer le mot de passe"}
+                {loading ? t("common.saving") : t("account.password.change")}
             </Button>
         </div>
     );
 }
 
 export default function AccountPage() {
+    const { t } = useTranslation();
     const vm = useAccountViewModel();
 
     if (vm.isPending) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-background">
-                <p className="text-muted-foreground">Chargement...</p>
+                <p className="text-muted-foreground">{t("common.loading")}</p>
             </div>
         );
     }
@@ -164,7 +169,7 @@ export default function AccountPage() {
     if (!vm.user) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-background">
-                <p className="text-muted-foreground">Non connecté</p>
+                <p className="text-muted-foreground">{t("account.notConnected")}</p>
             </div>
         );
     }
@@ -173,9 +178,9 @@ export default function AccountPage() {
         <div className="min-h-screen bg-background py-10 px-4">
             <div className="max-w-lg mx-auto flex flex-col gap-6">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-2xl font-bold text-foreground font-sans">Mon compte</h1>
+                    <h1 className="text-2xl font-bold text-foreground font-sans">{t("account.title")}</h1>
                     <Button variant="destructive" size="sm" onClick={vm.signOut}>
-                        Se déconnecter
+                        {t("account.signOut")}
                     </Button>
                 </div>
 

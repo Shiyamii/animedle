@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import './i18n/i18n'
 import RootLayout from '@/layouts/RootLayout.tsx'
 import HomePage from '@/pages/home/HomePage.tsx'
 import { AuthPage } from '@/pages/auth/AuthPage.tsx'

@@ -3,10 +3,12 @@ import { authClient } from "@/lib/auth-client";
 import { useNavigate } from "react-router";
 import { generateSeed, getAvatarUrl } from "@/lib/avatar";
 import { useUserStore } from "@/stores/userStore";
+import { useTranslation } from "react-i18next";
 
 export { getAvatarUrl };
 
 export function useAccountViewModel() {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
@@ -44,7 +46,7 @@ export function useAccountViewModel() {
         const { error } = await authClient.updateUser({ name, avatarSeed } as any);
 
         if (error) {
-            setProfileError(error.message ?? "Erreur lors de la mise à jour");
+            setProfileError(error.message ?? t("account.profile.errorUpdate"));
         } else {
             setProfileSuccess(true);
             if (user) {
@@ -56,7 +58,7 @@ export function useAccountViewModel() {
 
     async function updatePassword() {
         if (newPassword !== confirmPassword) {
-            setPasswordError("Les mots de passe ne correspondent pas");
+            setPasswordError(t("account.password.errorMismatch"));
             return;
         }
         setPasswordLoading(true);
@@ -66,7 +68,7 @@ export function useAccountViewModel() {
         const { error } = await (authClient as any).changePassword({ currentPassword, newPassword });
 
         if (error) {
-            setPasswordError(error.message ?? "Erreur lors du changement de mot de passe");
+            setPasswordError(error.message ?? t("account.password.errorChange"));
         } else {
             setPasswordSuccess(true);
             setCurrentPassword("");

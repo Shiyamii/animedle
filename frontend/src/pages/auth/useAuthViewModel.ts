@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 export function useAuthViewModel() {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const [mode, setMode] = useState<"login" | "register">("login");
     const [email, setEmail] = useState("");
@@ -19,14 +21,14 @@ export function useAuthViewModel() {
         if (mode === "login") {
             const { error } = await authClient.signIn.email({ email, password });
             if (error) {
-                setError(error.message ?? "Erreur de connexion");
+                setError(error.message ?? t("auth.errorLogin"));
             } else {
                 navigate("/");
             }
         } else {
             const { error } = await authClient.signUp.email({ email, password, name });
             if (error) {
-                setError(error.message ?? "Erreur d'inscription");
+                setError(error.message ?? t("auth.errorRegister"));
             } else {
                 navigate("/");
             }

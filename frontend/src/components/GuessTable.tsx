@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 import type { GuessResultDTO } from "@/stores/animeStore";
 import { GenreIcons } from "./GenreIcons";
+import { useTranslation } from "react-i18next";
 
 // --- Sous-composant pour la case animée ---
 interface AnimatedCellProps {
@@ -44,7 +45,7 @@ const AnimatedCell = ({ delay, status, children, hintDirection, shouldAnimate = 
         {hintDirection && (<ArrowHint direction={hintDirection} />)}
         <span className="text-[1rem] leading-tight break-words text-balance min-w-0">{children}</span>
       </motion.div>
-    </TableCell> 
+    </TableCell>
   );
 };
 
@@ -59,28 +60,29 @@ const ArrowHint = ({ direction }: { direction: "up" | "down" }) => {
 }
 
 // --- Composant Principal ---
-export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {  
+export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
+  const { t } = useTranslation();
   return (
     <div className="w-full overflow-x-auto rounded-md border">
       <Table className="min-w-[800px]">
         <TableHeader>
           <TableRow>
-            <TableHead className="text-center">Anime</TableHead>
-            <TableHead className="text-center">Format</TableHead>
-            <TableHead className="text-center">Demographic</TableHead>
-            <TableHead className="text-center">Studio</TableHead>
-            <TableHead className="text-center">Source</TableHead>
-            <TableHead className="text-center">Genres</TableHead>
-            <TableHead className="text-center">Episodes</TableHead>
-            <TableHead className="text-center">Season</TableHead>
-            <TableHead className="text-center">Score</TableHead>
+            <TableHead className="text-center">{t("guessTable.anime")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.format")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.demographic")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.studio")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.source")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.genres")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.episodes")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.season")}</TableHead>
+            <TableHead className="text-center">{t("guessTable.score")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {guesses.map((guess, rowIndex) => {
             const r = guess.results;
             const a = guess.anime;
-            
+
             // On calcule l'état des genres
             let genresStatus: "correct" | "partial" | "incorrect" = "incorrect";
             if (r.genres.isCorrect) genresStatus = "correct";
@@ -90,8 +92,8 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
               <TableRow key={`${a.id}-${rowIndex}`} className="hover:bg-transparent border-b-0 mx-auto">
                 {/** L'animation est active uniquement sur la première ligne. */}
                 {/* 1. Anime - Delay 0 */}
-                <AnimatedCell 
-                  delay={0} 
+                <AnimatedCell
+                  delay={0}
                   status={guess.isCorrect ? "correct" : "incorrect"}
                   shouldAnimate={rowIndex === 0}
                 >
@@ -135,8 +137,8 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                 </AnimatedCell>
 
                 {/* 7. Episodes - Delay 0.9s (Avec flèches d'indice) */}
-                <AnimatedCell 
-                  delay={0.9} 
+                <AnimatedCell
+                  delay={0.9}
                   status={r.episodes.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.episodes.isCorrect && r.episodes.isHigher !== null ? (r.episodes.isHigher ? "up" : "down") : null}
                   shouldAnimate={rowIndex === 0}
@@ -145,8 +147,8 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                 </AnimatedCell>
 
                 {/* 8. Season Start - Delay 1.05s (Avec flèches d'indice) */}
-                <AnimatedCell 
-                  delay={1.05} 
+                <AnimatedCell
+                  delay={1.05}
                   status={r.seasonStart.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.seasonStart.isCorrect && r.seasonStart.isEarlier !== null ? (r.seasonStart.isEarlier ? "down" : "up") : null}
                   shouldAnimate={rowIndex === 0}
@@ -155,8 +157,8 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                 </AnimatedCell>
 
                 {/* 9. Score - Delay 1.2s (Avec flèches d'indice) */}
-                <AnimatedCell 
-                  delay={1.2} 
+                <AnimatedCell
+                  delay={1.2}
                   status={r.score.isCorrect ? "correct" : "incorrect"}
                   hintDirection={!r.score.isCorrect && r.score.isHigher !== null ? (r.score.isHigher ? "up" : "down") : null}
                   shouldAnimate={rowIndex === 0}

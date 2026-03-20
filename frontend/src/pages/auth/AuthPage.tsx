@@ -1,20 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { useAuthViewModel } from "./useAuthViewModel.ts";
+import { useTranslation } from "react-i18next";
 
 export function AuthPage() {
+    const { t } = useTranslation();
     const { mode, email, setEmail, password, setPassword, name, setName, error, loading, handleSubmit, toggleMode } = useAuthViewModel();
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-background">
             <div className="w-full max-w-sm bg-card text-card-foreground rounded-xl p-8 shadow-md border border-border">
                 <h1 className="text-2xl font-bold text-foreground mb-6 text-center font-sans">
-                    {mode === "login" ? "Connexion" : "Inscription"}
+                    {mode === "login" ? t("auth.login") : t("auth.register")}
                 </h1>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                     {mode === "register" && (
                         <div className="flex flex-col gap-1">
-                            <label className="text-sm text-muted-foreground">Nom</label>
+                            <label className="text-sm text-muted-foreground">{t("auth.name")}</label>
                             <input
                                 type="text"
                                 value={name}
@@ -26,7 +28,7 @@ export function AuthPage() {
                     )}
 
                     <div className="flex flex-col gap-1">
-                        <label className="text-sm text-muted-foreground">Email</label>
+                        <label className="text-sm text-muted-foreground">{t("common.email")}</label>
                         <input
                             type="email"
                             value={email}
@@ -37,7 +39,7 @@ export function AuthPage() {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                        <label className="text-sm text-muted-foreground">Mot de passe</label>
+                        <label className="text-sm text-muted-foreground">{t("auth.password")}</label>
                         <input
                             type="password"
                             value={password}
@@ -52,14 +54,14 @@ export function AuthPage() {
                     )}
 
                     <Button type="submit" disabled={loading} className="w-full mt-2">
-                        {loading ? "Chargement..." : mode === "login" ? "Se connecter" : "S'inscrire"}
+                        {loading ? t("common.loading") : mode === "login" ? t("auth.loginButton") : t("auth.registerButton")}
                     </Button>
                 </form>
 
                 <p className="text-center text-muted-foreground text-sm mt-6">
-                    {mode === "login" ? "Pas encore de compte ?" : "Déjà un compte ?"}{" "}
+                    {mode === "login" ? t("auth.noAccount") : t("auth.alreadyAccount")}{" "}
                     <button onClick={toggleMode} className="text-primary font-medium hover:underline">
-                        {mode === "login" ? "S'inscrire" : "Se connecter"}
+                        {mode === "login" ? t("auth.registerButton") : t("auth.loginButton")}
                     </button>
                 </p>
             </div>

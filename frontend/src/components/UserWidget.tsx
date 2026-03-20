@@ -2,8 +2,10 @@ import { useNavigate } from "react-router";
 import { useUserStore } from "@/stores/userStore";
 import { getAvatarUrl } from "@/lib/avatar";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { useTranslation } from "react-i18next";
 
 export default function UserWidget() {
+    const { t } = useTranslation();
     const navigate = useNavigate();
     const user = useUserStore((s) => s.user);
 
@@ -35,7 +37,7 @@ export default function UserWidget() {
                     onClick={() => navigate("/login")}
                     className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-md hover:shadow-lg transition-shadow cursor-pointer"
                 >
-                    <span className="text-sm font-medium text-muted-foreground">Se connecter ?</span>
+                    <span className="text-sm font-medium text-muted-foreground">{t("userWidget.signIn")}</span>
                 </button>
             )}
         </div>
