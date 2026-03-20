@@ -97,33 +97,31 @@ export default function GuessTable({ guesses, guessStats = {} }: { guesses: Gues
                   status={guess.isCorrect ? "correct" : "incorrect"}
                   shouldAnimate={rowIndex === 0}
                 >
-                  <div className="flex flex-col items-center w-12">
-                    {guessStats[a.id] !== undefined && (
-                        <Tooltip key={a.title}>
-                          <TooltipTrigger>
-                        <div className="absolute top-0.5 left-0.5 flex items-center gap-0.5 bg-black/60 text-white text-[0.6rem] font-semibold px-1 py-0.5 rounded">
-                          <Users className="w-2.5 h-2.5" />
-                          <span>{guessStats[a.id]}</span>
-                        </div>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="relative w-12">
+                        {a.imageUrl && (
+                          <img src={a.imageUrl} alt={a.title} className="w-12 h-16 object-cover rounded-sm" />
+                        )}
+                        {guessStats[a.id] !== undefined && (
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <div className="absolute top-0.5 left-0.5 flex items-center gap-0.5 -translate-x-7 bg-black/60 text-white text-[0.6rem] font-semibold px-1 py-0.5 rounded cursor-default">
+                                <Users className="w-2.5 h-2.5" />
+                                <span>{guessStats[a.id]}</span>
+                              </div>
                             </TooltipTrigger>
                             <TooltipContent side="top">
-                                <p>{t("guessTable.guessesCount", { count: guessStats[a.id] })}</p>
+                              <p>{t("guessTable.guessesCount", { count: guessStats[a.id] })}</p>
                             </TooltipContent>
-                        </Tooltip>
-                    )}
-                    <Tooltip key={a.title}>
-                        <TooltipTrigger>
-                          <div className="relative">
-                            {a.imageUrl && (
-                              <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm" />
-                            )}
-                          </div>
-                      </TooltipTrigger>
-                      <TooltipContent side="bottom">
-                        <p>{a.title}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
+                          </Tooltip>
+                        )}
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">
+                      <p>{a.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </AnimatedCell>
 
                 {/* 2. Format - Delay 0.15s */}

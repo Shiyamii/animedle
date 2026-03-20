@@ -24,6 +24,12 @@ router.post("/animes/guess/:id", async (c) => {
     return c.json(anime);
 });
 
+router.get("/animes/current-date", async (c) => {
+    const date = await animeService.getCurrentAnimeDate();
+    if (!date) return c.json({ error: "Aucun anime courant" }, 404);
+    return c.json({ date });
+});
+
 router.get("/animes/stats", async (c) => {
     const idsParam = c.req.query("ids");
     if (!idsParam) {

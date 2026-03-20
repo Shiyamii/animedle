@@ -43,10 +43,15 @@ interface AnimeStore {
     animeList: AnimeItemDTO[];
     guessList: GuessResultDTO[];
     guessDate: string | null;
+    foundAnime: AnimeItemDTO | null;
+    currentAnimeDate: string | null;
     getGuessList: () => GuessResultDTO[];
     setAnimeList: (animes: AnimeItemDTO[]) => void;
     addGuessToListAsFirst: (guess: GuessResultDTO) => void;
     setGuessDate: (date: string | null) => void;
+    setFoundAnime: (anime: AnimeItemDTO | null) => void;
+    setCurrentAnimeDate: (date: string | null) => void;
+    resetGame: () => void;
     loadAnimeList: () => Promise<void>;
 }
 
@@ -56,16 +61,21 @@ export const useAnimeStore: any = create<AnimeStore>()(
             animeList: [],
             guessList: [],
             guessDate: null,
+            foundAnime: null,
+            currentAnimeDate: null,
             getGuessList: () => {
                 const today = new Date().toDateString();
                 if(useAnimeStore.getState().guessDate !== today) {
-                    set({ guessList: [], guessDate: today });
+                    set({ guessList: [], guessDate: today, foundAnime: null, currentAnimeDate: null });
                     return [];
                 } else {return useAnimeStore.getState().guessList; }
             },
             setAnimeList: (animes) => set({ animeList: animes }),
             addGuessToListAsFirst: (guess) => set((state) => ({ guessList: [guess, ...state.guessList] })),
             setGuessDate: (date) => set({ guessDate: date }),
+            setFoundAnime: (anime) => set({ foundAnime: anime }),
+            setCurrentAnimeDate: (date) => set({ currentAnimeDate: date }),
+            resetGame: () => set({ guessList: [], guessDate: null, foundAnime: null, currentAnimeDate: null }),
             loadAnimeList: async () => {
                 try {
                     const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes");
@@ -82,8 +92,10 @@ export const useAnimeStore: any = create<AnimeStore>()(
         {
             name: "anime-store",
             partialize: (state) => ({
-                guessList: state.guessList, 
-                guessDate: state.guessDate 
+                guessList: state.guessList,
+                guessDate: state.guessDate,
+                foundAnime: state.foundAnime,
+                currentAnimeDate: state.currentAnimeDate,
             })
         }
     )

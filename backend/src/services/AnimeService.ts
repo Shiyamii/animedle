@@ -296,6 +296,12 @@ export class AnimeService {
         return this.currentAnimeRepository.getStatsByAnimeIds(animeIds);
     }
 
+    public async getCurrentAnimeDate(): Promise<string | null> {
+        await this.getCurrentAnime(); // déclenche le reset quotidien si nécessaire
+        const current = await this.currentAnimeRepository.getCurrentAnime();
+        return current?.date?.toISOString() ?? null;
+    }
+
     // Compare two dates in "Season Year" format (e.g., "Spring 2023")
     private compareDates(date1: string, date2: string): number {
         const [season1, year1] = date1.split(" ");

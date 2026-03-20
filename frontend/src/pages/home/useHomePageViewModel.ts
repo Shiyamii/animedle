@@ -57,6 +57,17 @@ function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[
     return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
 }
 
+async function fetchCurrentAnimeDate(): Promise<string | null> {
+    try {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/current-date");
+        if (!response.ok) return null;
+        const data = await response.json();
+        return data.date ?? null;
+    } catch {
+        return null;
+    }
+}
+
 export function useHomePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -67,26 +78,43 @@ export function useHomePageViewModel() {
     const [guessList, setGuessList] = useState<GuessResultDTO[]>([]);
     const [foundAnime, setFoundAnime] = useState<AnimeItemDTO | null>(null);
     const [guessStats, setGuessStats] = useState<Record<string, number>>({});
+    const [serverAnimeDate, setServerAnimeDate] = useState<string | null>(null);
 
     useEffect(() => {
         if(animeStore.animeList.length === 0)
             animeStore.loadAnimeList();
-        setGuessList(animeStore.getGuessList())
+
+        fetchCurrentAnimeDate().then((date) => {
+            setServerAnimeDate(date);
+            const dateChanged = date && animeStore.currentAnimeDate !== date;
+            const isInProgress = animeStore.guessList.length > 0 && !animeStore.foundAnime;
+            if (dateChanged && !isInProgress) {
+                animeStore.resetGame();
+            } else {
+                const list = animeStore.getGuessList();
+                setGuessList(list);
+                if (animeStore.foundAnime) {
+                    setFoundAnime(animeStore.foundAnime);
+                }
+            }
+        });
     }, []);
 
     useEffect(() => {
         setFuse(createFuse(makeGuessableList(animeStore.animeList, guessList)));
     }, [animeStore.animeList, guessList]);
- 
+
     useEffect(() => {
         setIsFilteringLoading(true);
         setFiltredAnimeList(filterAnimeList(fuse, inputValue));
         setIsFilteringLoading(false);
     }, [inputValue]);
 
-    if (foundAnime) {
-        fetchAnimeStats(foundAnime.id).then(stats => setGuessStats(stats));
-    }
+    useEffect(() => {
+        if (foundAnime) {
+            fetchAnimeStats(foundAnime.id).then(stats => setGuessStats(stats));
+        }
+    }, [foundAnime?.id]);
 
     return {
         filtredAnimeList,
@@ -104,6 +132,14 @@ export function useHomePageViewModel() {
                 const success = Object.entries(guessResult.results)
                     .every(([_, value]) => value.isCorrect);
                 if(success) {
+                    const winAnime: AnimeItemDTO = {
+                        id: guessResult.anime.id,
+                        title: guessResult.anime.title,
+                        alias: guessResult.anime.alias,
+                        imageUrl: guessResult.anime.imageUrl,
+                    };
+                    animeStore.setFoundAnime(winAnime);
+                    animeStore.setCurrentAnimeDate(serverAnimeDate);
                     setFoundAnime(guessResult.anime);
                 }
             }
