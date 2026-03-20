@@ -6,7 +6,9 @@ Fetch des données : Samy D. - Tamas P.
 Insertion des données : Samy D. - Tamas P.
 - Adaptation du format des données : Tamas P.
 
-Authentification : Titouan L.
+- Authentification : Titouan L.
+- Espace Admin : Titouan L.
+- Refont visuelle : Titouan L.
 
 Coeur du Animdle : Tamas P.
 - Systeme guessing : Tamas P.
