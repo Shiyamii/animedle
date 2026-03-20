@@ -8,8 +8,18 @@ export interface CurrentAnimeEntity{
   _id?: Types.ObjectId;
   anime: AnimeEntity;
   date: Date;
+  guesses: Record<string, number>;
+  totalWins: number;
+  winDistribution: Record<string, number>;
 }
 
+export interface AnimeStatsDTO {
+  animeId: string;
+  date: Date;
+  guesses: Record<string, number>;
+  totalWins: number;
+  winDistribution: Record<string, number>;
+}
 
 const CurrentAnimeSchema = new Schema<CurrentAnimeEntity>(
   {
@@ -34,7 +44,10 @@ const CurrentAnimeSchema = new Schema<CurrentAnimeEntity>(
       source: { type: String, default: null },
       score: { type: Number, default: null }
     },
-    date: { type: Date, required: true }
+    date: { type: Date, required: true },
+    guesses: { type: Schema.Types.Mixed, default: {} },
+    totalWins: { type: Number, default: 0 },
+    winDistribution: { type: Schema.Types.Mixed, default: {} },
   },
   {
     versionKey: false,
@@ -72,6 +85,40 @@ export class CurrentAnimeRepository {
   async deleteCurrentAnime(): Promise<void> {
     await ensureMongooseConnection();
     await this.model.deleteMany({});
+  }
+
+  async recordGuess(animeId: string): Promise<void> {
+    await ensureMongooseConnection();
+    await this.model.findOneAndUpdate(
+      {},
+      { $inc: { [`guesses.${animeId}`]: 1 } },
+      { sort: { date: -1 } }
+    ).exec();
+  }
+
+  async recordWin(guessNumber: number): Promise<void> {
+    await ensureMongooseConnection();
+    await this.model.findOneAndUpdate(
+      {},
+      { $inc: { totalWins: 1, [`winDistribution.${guessNumber}`]: 1 } },
+      { sort: { date: -1 } }
+    ).exec();
+  }
+
+  async getStatsByAnimeIds(animeIds: string[]): Promise<AnimeStatsDTO[]> {
+    await ensureMongooseConnection();
+    const objectIds = animeIds.map(id => new Types.ObjectId(id));
+    const docs = await this.model
+      .find({ "anime._id": { $in: objectIds } })
+      .lean<CurrentAnimeEntity[]>()
+      .exec();
+    return docs.map(doc => ({
+      animeId: doc.anime._id?.toHexString() ?? "",
+      date: doc.date,
+      guesses: doc.guesses ?? {},
+      totalWins: doc.totalWins ?? 0,
+      winDistribution: doc.winDistribution ?? {},
+    }));
   }
 
 }

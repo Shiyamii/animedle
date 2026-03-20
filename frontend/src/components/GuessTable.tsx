@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import { ArrowBigDown, ArrowBigUp, Users } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -60,7 +60,7 @@ const ArrowHint = ({ direction }: { direction: "up" | "down" }) => {
 }
 
 // --- Composant Principal ---
-export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
+export default function GuessTable({ guesses, guessStats = {} }: { guesses: GuessResultDTO[]; guessStats?: Record<string, number> }) {
   const { t } = useTranslation();
   return (
     <div className="w-full overflow-x-auto rounded-md border">
@@ -98,11 +98,26 @@ export default function GuessTable({ guesses }: { guesses: GuessResultDTO[] }) {
                   shouldAnimate={rowIndex === 0}
                 >
                   <div className="flex flex-col items-center w-12">
+                    {guessStats[a.id] !== undefined && (
+                        <Tooltip key={a.title}>
+                          <TooltipTrigger>
+                        <div className="absolute top-0.5 left-0.5 flex items-center gap-0.5 bg-black/60 text-white text-[0.6rem] font-semibold px-1 py-0.5 rounded">
+                          <Users className="w-2.5 h-2.5" />
+                          <span>{guessStats[a.id]}</span>
+                        </div>
+                            </TooltipTrigger>
+                            <TooltipContent side="top">
+                                <p>{t("guessTable.guessesCount", { count: guessStats[a.id] })}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    )}
                     <Tooltip key={a.title}>
                         <TooltipTrigger>
-                        {a.imageUrl && (
-                          <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm" />
-                        )}
+                          <div className="relative">
+                            {a.imageUrl && (
+                              <img src={a.imageUrl} alt={a.title} className="w-15 h-18 object-cover rounded-sm" />
+                            )}
+                          </div>
                       </TooltipTrigger>
                       <TooltipContent side="bottom">
                         <p>{a.title}</p>

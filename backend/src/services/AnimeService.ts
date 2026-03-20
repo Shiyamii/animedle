@@ -1,5 +1,5 @@
 import { AnimeEntity, AnimeImagesWebpEntity, AnimeTitleEntity, AnimeRepository } from "./AnimeRepositories";
-import { CurrentAnimeRepository } from "./CurrentAnimeRepositories";
+import { AnimeStatsDTO, CurrentAnimeRepository } from "./CurrentAnimeRepositories";
 
 export interface AnimeItemDTO {
     id: string;
@@ -284,7 +284,16 @@ export class AnimeService {
         if (!currentAnime || !guessedAnime) {
             throw new Error("Current anime or guessed anime not found");
         }
-        return this.compareAnimes(currentAnime, guessedAnime, guessNumber);
+        const result = this.compareAnimes(currentAnime, guessedAnime, guessNumber);
+        await this.currentAnimeRepository.recordGuess(id);
+        if (result.isCorrect) {
+            await this.currentAnimeRepository.recordWin(guessNumber);
+        }
+        return result;
+    }
+
+    public async getAnimeStats(animeIds: string[]): Promise<AnimeStatsDTO[]> {
+        return this.currentAnimeRepository.getStatsByAnimeIds(animeIds);
     }
 
     // Compare two dates in "Season Year" format (e.g., "Spring 2023")

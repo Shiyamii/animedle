@@ -1,5 +1,16 @@
 import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO } from "@/stores/animeStore";
 import { useEffect, useState } from "react";
+
+async function fetchAnimeStats(animeId: string): Promise<Record<string, number>> {
+    try {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/stats?ids=" + animeId);
+        if (!response.ok) return {};
+        const data = await response.json();
+        return data[0]?.guesses ?? {};
+    } catch {
+        return {};
+    }
+}
 import Fuse from "fuse.js";
 
 function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
@@ -22,9 +33,9 @@ function createFuse(animeList: AnimeItemDTO[]): Fuse<AnimeItemDTO> {
     );
 }
 
-async function makeGuessRequest(animeId: string) {
+async function makeGuessRequest(animeId: string, guessNumber: number) {
     try{
-        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/guess/" + animeId, {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/guess/" + animeId + "?guessNumber=" + guessNumber, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -55,6 +66,7 @@ export function useHomePageViewModel() {
     const [isFilteringLoading, setIsFilteringLoading] = useState(false);
     const [guessList, setGuessList] = useState<GuessResultDTO[]>([]);
     const [foundAnime, setFoundAnime] = useState<AnimeItemDTO | null>(null);
+    const [guessStats, setGuessStats] = useState<Record<string, number>>({});
 
     useEffect(() => {
         if(animeStore.animeList.length === 0)
@@ -72,6 +84,10 @@ export function useHomePageViewModel() {
         setIsFilteringLoading(false);
     }, [inputValue]);
 
+    if (foundAnime) {
+        fetchAnimeStats(foundAnime.id).then(stats => setGuessStats(stats));
+    }
+
     return {
         filtredAnimeList,
         isGuessingStarted,
@@ -81,7 +97,7 @@ export function useHomePageViewModel() {
         isFilteringLoading,
         guessList,
         onAnimeSelect: async (animeId: string) => {
-            const guessResult = await makeGuessRequest(animeId);
+            const guessResult = await makeGuessRequest(animeId, guessList.length + 1);
             if(guessResult) {
                 animeStore.addGuessToListAsFirst(guessResult);
                 setGuessList(animeStore.getGuessList());
@@ -92,6 +108,7 @@ export function useHomePageViewModel() {
                 }
             }
         },
-        foundAnime
+        foundAnime,
+        guessStats,
     };
 }

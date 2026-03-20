@@ -14,7 +14,8 @@ function HomePage() {
         isFilteringLoading,
         guessList,
         onAnimeSelect,
-        foundAnime
+        foundAnime,
+        guessStats,
     } = useHomePageViewModel();
 
     useConfetti(!!foundAnime);
@@ -46,7 +47,7 @@ function HomePage() {
                         )
                     }
                     {guessList.length > 0 && (
-                        <GuessTable guesses={guessList}/>
+                        <GuessTable guesses={guessList} guessStats={guessStats}/>
                     )}
                 </div>
                 

@@ -24,4 +24,17 @@ router.post("/animes/guess/:id", async (c) => {
     return c.json(anime);
 });
 
+router.get("/animes/stats", async (c) => {
+    const idsParam = c.req.query("ids");
+    if (!idsParam) {
+        return c.json({ error: "Paramètre 'ids' requis" }, 400);
+    }
+    const ids = idsParam.split(",").map(id => id.trim()).filter(Boolean);
+    if (ids.length === 0) {
+        return c.json({ error: "Aucun identifiant fourni" }, 400);
+    }
+    const stats = await animeService.getAnimeStats(ids);
+    return c.json(stats);
+});
+
 export default router;

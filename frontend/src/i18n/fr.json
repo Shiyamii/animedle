@@ -59,7 +59,8 @@
     "genres": "Genres",
     "episodes": "Épisodes",
     "season": "Saison",
-    "score": "Score"
+    "score": "Score",
+    "guessesCount" : "Nombre de tentatives : {{count}}"
   },
   "admin": {
     "title": "Administration",
