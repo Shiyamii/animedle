@@ -39,20 +39,30 @@ export interface GuessResultDTO {
   guessNumber: number;
 }
 
+export interface RandomAnimeDTO {
+    id: string;
+}
+
 interface AnimeStore {
     animeList: AnimeItemDTO[];
     guessList: GuessResultDTO[];
+    endlessGuessList: GuessResultDTO[];
     guessDate: string | null;
     foundAnime: AnimeItemDTO | null;
     currentAnimeDate: string | null;
+    animeToGuess: RandomAnimeDTO | null;
     getGuessList: () => GuessResultDTO[];
+    getEndlessGuessList: () => GuessResultDTO[];
     setAnimeList: (animes: AnimeItemDTO[]) => void;
     addGuessToListAsFirst: (guess: GuessResultDTO) => void;
+    addEndlessGuessToListAsFirst: (guess: GuessResultDTO) => void;
     setGuessDate: (date: string | null) => void;
     setFoundAnime: (anime: AnimeItemDTO | null) => void;
     setCurrentAnimeDate: (date: string | null) => void;
     resetGame: () => void;
     loadAnimeList: () => Promise<void>;
+    setAnimeToGuess: (anime: RandomAnimeDTO) => void;
+    clearEndlessGuessList: () => void;
 }
 
 export const useAnimeStore: any = create<AnimeStore>()(
@@ -60,9 +70,11 @@ export const useAnimeStore: any = create<AnimeStore>()(
         (set) => ({
             animeList: [],
             guessList: [],
+            endlessGuessList: [],
             guessDate: null,
             foundAnime: null,
             currentAnimeDate: null,
+            animeToGuess: null,
             getGuessList: () => {
                 const today = new Date().toDateString();
                 if(useAnimeStore.getState().guessDate !== today) {
@@ -70,8 +82,12 @@ export const useAnimeStore: any = create<AnimeStore>()(
                     return [];
                 } else {return useAnimeStore.getState().guessList; }
             },
+            getEndlessGuessList: () => {
+                return useAnimeStore.getState().endlessGuessList;
+            },
             setAnimeList: (animes) => set({ animeList: animes }),
             addGuessToListAsFirst: (guess) => set((state) => ({ guessList: [guess, ...state.guessList] })),
+            addEndlessGuessToListAsFirst: (guess) => set((state) => ({ endlessGuessList: [guess, ...state.endlessGuessList] })),
             setGuessDate: (date) => set({ guessDate: date }),
             setFoundAnime: (anime) => set({ foundAnime: anime }),
             setCurrentAnimeDate: (date) => set({ currentAnimeDate: date }),
@@ -87,7 +103,9 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 } catch (error) {
                     console.error("Error loading anime list:", error);
                 }
-            }
+            },
+            setAnimeToGuess: (anime) => set({ animeToGuess: anime }),
+            clearEndlessGuessList: () => set({ endlessGuessList: [] }),
         }),
         {
             name: "anime-store",
@@ -96,6 +114,8 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 guessDate: state.guessDate,
                 foundAnime: state.foundAnime,
                 currentAnimeDate: state.currentAnimeDate,
+                endlessGuessList: state.endlessGuessList,
+                animeToGuess: state.animeToGuess,
             })
         }
     )

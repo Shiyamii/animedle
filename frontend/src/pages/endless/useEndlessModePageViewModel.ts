@@ -1,4 +1,4 @@
-import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO } from "@/stores/animeStore";
+import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO, type RandomAnimeDTO } from "@/stores/animeStore";
 import { useEffect, useState } from "react";
 import Fuse from "fuse.js";
 
@@ -22,9 +22,9 @@ function createFuse(animeList: AnimeItemDTO[]): Fuse<AnimeItemDTO> {
     );
 }
 
-async function makeGuessRequest(animeId: string) {
+async function makeGuessRequest(animeId: string, guessNumber: number, refAnimeId: string) {
     try{
-        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/guess/" + animeId, {
+        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/endless/guess/" + animeId  + "?guessNumber=" + guessNumber + "&refAnimeId=" + refAnimeId, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,6 +46,21 @@ function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[
     return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
 }
 
+function fecthAnimeToGuess(): Promise<RandomAnimeDTO | null> {
+    return fetch(import.meta.env.VITE_API_URL + "/api/animes/endless")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch anime to guess");
+            }
+            return response.json();
+        })
+        .then((data: RandomAnimeDTO) => data)
+        .catch(error => {
+            console.error("Error fetching anime to guess:", error);
+            return null;
+        });
+}
+
 export function useEndlessModePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -59,7 +74,15 @@ export function useEndlessModePageViewModel() {
     useEffect(() => {
         if(animeStore.animeList.length === 0)
             animeStore.loadAnimeList();
-        setGuessList(animeStore.getGuessList())
+        setGuessList(animeStore.getEndlessGuessList())
+        const animeToGuess = animeStore.animeToGuess;
+        if(!animeToGuess) {
+            fecthAnimeToGuess().then((anime) => {
+                if(anime) {
+                    animeStore.setAnimeToGuess(anime);
+                }
+            });
+        }
     }, []);
 
     useEffect(() => {
@@ -81,10 +104,10 @@ export function useEndlessModePageViewModel() {
         isFilteringLoading,
         guessList,
         onAnimeSelect: async (animeId: string) => {
-            const guessResult = await makeGuessRequest(animeId);
+            const guessResult = await makeGuessRequest(animeId, guessList.length + 1, animeStore.animeToGuess?.id || "");
             if(guessResult) {
-                animeStore.addGuessToListAsFirst(guessResult);
-                setGuessList(animeStore.getGuessList());
+                animeStore.addEndlessGuessToListAsFirst(guessResult);
+                setGuessList(animeStore.getEndlessGuessList());
                 const success = Object.entries(guessResult.results)
                     .every(([_, value]) => value.isCorrect);
                 if(success) {
@@ -92,6 +115,20 @@ export function useEndlessModePageViewModel() {
                 }
             }
         },
-        foundAnime
+        foundAnime,
+        startNewGame: () => {
+            animeStore.setAnimeToGuess(null);
+            animeStore.setFoundAnime(null);
+            animeStore.setCurrentAnimeDate(null);
+            animeStore.setGuessDate(null);
+            animeStore.clearEndlessGuessList();
+            setGuessList([]);
+            setFoundAnime(null);
+            fecthAnimeToGuess().then((anime) => {
+                if(anime) {
+                    animeStore.setAnimeToGuess(anime);
+                }
+            });
+        }
     };
 }

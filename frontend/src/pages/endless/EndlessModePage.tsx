@@ -1,6 +1,7 @@
 import { useEndlessModePageViewModel } from "./useEndlessModePageViewModel";
 import { AutocompleteTextInput } from "@/components/AutoComplete";
 import GuessTable from "@/components/GuessTable";
+import { Button } from "@/components/ui/button";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import useConfetti from '@/hooks/useConfetti.ts';
 import { useTranslation } from "react-i18next";
@@ -14,7 +15,8 @@ function EndlessPage() {
         isFilteringLoading,
         guessList,
         onAnimeSelect,
-        foundAnime
+        foundAnime,
+        startNewGame
     } = useEndlessModePageViewModel();
 
     useConfetti(!!foundAnime);
@@ -29,6 +31,7 @@ function EndlessPage() {
                             <div className="my-4 max-w-lg">
                                 <h2 className="text-2xl font-semibold">{t("home.congratulations")}</h2>
                                 <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>
+                                <Button className="mt-4" onClick={() => startNewGame()}>{t("endless.playAgain")}</Button>
                             </div>
                         ) : (
                             <>

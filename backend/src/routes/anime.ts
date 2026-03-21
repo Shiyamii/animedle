@@ -31,7 +31,7 @@ router.post("/animes/guess/:id", async (c) => {
     return c.json(anime);
 });
 
-router.post("/animes/endless/post/:id", async (c) => {
+router.post("/animes/endless/guess/:id", async (c) => {
     const id = c.req.param("id");
     const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);
     const refAnimeId = c.req.query("refAnimeId") || "";
