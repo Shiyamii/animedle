@@ -1,50 +1,7 @@
 import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO, type RandomAnimeDTO } from "@/stores/animeStore";
+import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from "@/viewmodels/guessingViewModel";
 import { useEffect, useState } from "react";
 import Fuse from "fuse.js";
-
-function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
-    if (!query) return [];
-    const results = fuse.search(query, { limit: 20 });
-    return results.map((result: any) => result.item);
-}
-
-function createFuse(animeList: AnimeItemDTO[]): Fuse<AnimeItemDTO> {
-    return new Fuse(
-        animeList,
-        {
-            keys: [
-                { name: "title", weight: 0.7 },
-                { name: "alias", weight: 0.3 },
-            ],
-            threshold: 0.3,
-            ignoreLocation: true,
-        }
-    );
-}
-
-async function makeGuessRequest(animeId: string, guessNumber: number, refAnimeId: string) {
-    try{
-        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/endless/guess/" + animeId  + "?guessNumber=" + guessNumber + "&refAnimeId=" + refAnimeId, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        if (!response.ok) {
-            console.error("Failed to make guess:", response.statusText);
-            return;
-        }
-        const guessResult: GuessResultDTO = await response.json();
-        return guessResult;
-    } catch (error) {
-        console.error("Error making guess:", error);
-    }
-}
-
-function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[]): AnimeItemDTO[] {
-    const guessedAnimeIds = new Set(guessList.map(guess => guess.anime.id));
-    return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
-}
 
 function fecthAnimeToGuess(): Promise<RandomAnimeDTO | null> {
     return fetch(import.meta.env.VITE_API_URL + "/api/animes/endless")
@@ -104,7 +61,14 @@ export function useEndlessModePageViewModel() {
         isFilteringLoading,
         guessList,
         onAnimeSelect: async (animeId: string) => {
-            const guessResult = await makeGuessRequest(animeId, guessList.length + 1, animeStore.animeToGuess?.id || "");
+            const guessResult = await makeGuessRequest({
+                animeId,
+                guessNumber: guessList.length + 1,
+                endpoint: "/api/animes/endless/guess",
+                queryParams: {
+                    refAnimeId: animeStore.animeToGuess?.id || "",
+                },
+            });
             if(guessResult) {
                 animeStore.addEndlessGuessToListAsFirst(guessResult);
                 setGuessList(animeStore.getEndlessGuessList());

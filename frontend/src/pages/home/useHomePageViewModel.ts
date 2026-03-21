@@ -1,4 +1,5 @@
 import { useAnimeStore, type AnimeItemDTO, type GuessResultDTO } from "@/stores/animeStore";
+import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from "@/viewmodels/guessingViewModel";
 import { useEffect, useState } from "react";
 
 async function fetchAnimeStats(animeId: string): Promise<Record<string, number>> {
@@ -12,50 +13,6 @@ async function fetchAnimeStats(animeId: string): Promise<Record<string, number>>
     }
 }
 import Fuse from "fuse.js";
-
-function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
-    if (!query) return [];
-    const results = fuse.search(query, { limit: 20 });
-    return results.map((result: any) => result.item);
-}
-
-function createFuse(animeList: AnimeItemDTO[]): Fuse<AnimeItemDTO> {
-    return new Fuse(
-        animeList,
-        {
-            keys: [
-                { name: "title", weight: 0.7 },
-                { name: "alias", weight: 0.3 },
-            ],
-            threshold: 0.3,
-            ignoreLocation: true,
-        }
-    );
-}
-
-async function makeGuessRequest(animeId: string, guessNumber: number) {
-    try{
-        const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes/guess/" + animeId + "?guessNumber=" + guessNumber, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        if (!response.ok) {
-            console.error("Failed to make guess:", response.statusText);
-            return;
-        }
-        const guessResult: GuessResultDTO = await response.json();
-        return guessResult;
-    } catch (error) {
-        console.error("Error making guess:", error);
-    }
-}
-
-function makeGuessableList(animeList: AnimeItemDTO[], guessList: GuessResultDTO[]): AnimeItemDTO[] {
-    const guessedAnimeIds = new Set(guessList.map(guess => guess.anime.id));
-    return animeList.filter(anime => !guessedAnimeIds.has(anime.id));
-}
 
 async function fetchCurrentAnimeDate(): Promise<string | null> {
     try {
@@ -125,7 +82,11 @@ export function useHomePageViewModel() {
         isFilteringLoading,
         guessList,
         onAnimeSelect: async (animeId: string) => {
-            const guessResult = await makeGuessRequest(animeId, guessList.length + 1);
+            const guessResult = await makeGuessRequest({
+                animeId,
+                guessNumber: guessList.length + 1,
+                endpoint: "/api/animes/guess",
+            });
             if(guessResult) {
                 animeStore.addGuessToListAsFirst(guessResult);
                 setGuessList(animeStore.getGuessList());
