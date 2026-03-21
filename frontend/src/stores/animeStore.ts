@@ -51,7 +51,8 @@ interface AnimeStore {
     foundAnime: AnimeItemDTO | null;
     currentAnimeDate: string | null;
     animeToGuess: RandomAnimeDTO | null;
-    getGuessList: () => GuessResultDTO[];
+    getGuessList: () => GuessResultDTO[]
+    initGuessListIfNeeded: () => void;
     getEndlessGuessList: () => GuessResultDTO[];
     setAnimeList: (animes: AnimeItemDTO[]) => void;
     addGuessToListAsFirst: (guess: GuessResultDTO) => void;
@@ -75,12 +76,12 @@ export const useAnimeStore: any = create<AnimeStore>()(
             foundAnime: null,
             currentAnimeDate: null,
             animeToGuess: null,
-            getGuessList: () => {
+            getGuessList: () => useAnimeStore.getState().guessList,
+            initGuessListIfNeeded: () => {
                 const today = new Date().toDateString();
-                if(useAnimeStore.getState().guessDate !== today) {
+                if(!useAnimeStore.getState().guessDate || useAnimeStore.getState().guessDate !== today) {
                     set({ guessList: [], guessDate: today, foundAnime: null, currentAnimeDate: null });
-                    return [];
-                } else {return useAnimeStore.getState().guessList; }
+                }
             },
             getEndlessGuessList: () => {
                 return useAnimeStore.getState().endlessGuessList;

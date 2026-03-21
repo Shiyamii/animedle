@@ -1,13 +1,12 @@
-import { useEndlessModePageViewModel } from "./useEndlessModePageViewModel";
+import { useDailyGuessingPageViewModel } from "./useDailyGuessingPageViewModel";
 import { AutocompleteTextInput } from "@/components/AutoComplete";
 import GuessTable from "@/components/GuessTable";
-import { Button } from "@/components/ui/button";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import useConfetti from '@/hooks/useConfetti.ts';
 import { useTranslation } from "react-i18next";
 import { ModeMenu } from "@/components/ModeMenu";
 
-function EndlessPage() {
+function DailyGuessingPage() {
     const { t } = useTranslation();
     const {
         filtredAnimeList,
@@ -17,8 +16,8 @@ function EndlessPage() {
         guessList,
         onAnimeSelect,
         foundAnime,
-        startNewGame
-    } = useEndlessModePageViewModel();
+        guessStats,
+    } = useDailyGuessingPageViewModel();
 
     useConfetti(!!foundAnime);
 
@@ -35,9 +34,6 @@ function EndlessPage() {
                             <div className="my-4 max-w-lg">
                                 <h2 className="text-2xl font-semibold">{t("home.congratulations")}</h2>
                                 <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>
-                                <div className="flex items-center justify-center">
-                                    <Button className="mt-4" onClick={() => startNewGame()}>{t("endless.playAgain")}</Button>
-                                </div>
                             </div>
                         ) : (
                             <>
@@ -55,14 +51,14 @@ function EndlessPage() {
                         )
                     }
                     {guessList.length > 0 && (
-                        <GuessTable guesses={guessList}/>
+                        <GuessTable guesses={guessList} guessStats={guessStats}/>
                     )}
                 </div>
-                
+
 
             </div>
         </TooltipProvider>
     )
 }
 
-export default EndlessPage;
+export default DailyGuessingPage;

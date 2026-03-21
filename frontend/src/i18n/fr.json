@@ -40,6 +40,9 @@
     }
   },
   "home": {
+    "menuTitle": "Choisir un mode",
+    "dailyButton": "Daily Guessing",
+    "endlessButton": "Endless",
     "startTitle": "Devinez l'anime du jour !",
     "start": "Commencer",
     "congratulations": "Félicitations ! Vous avez trouvé l'anime :",
@@ -61,6 +64,11 @@
     "season": "Saison",
     "score": "Score",
     "guessesCount" : "Nombre de tentatives : {{count}}"
+  },
+  "endless": {
+    "currentStreak": "Série en cours : {{count}}",
+    "bestStreak": "Meilleure série : {{count}}",
+    "playAgain": "Rejouer"
   },
   "admin": {
     "title": "Administration",

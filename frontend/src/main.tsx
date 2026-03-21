@@ -4,6 +4,7 @@ import './index.css'
 import './i18n/i18n'
 import RootLayout from '@/layouts/RootLayout.tsx'
 import HomePage from '@/pages/home/HomePage.tsx'
+import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx'
 import { AuthPage } from '@/pages/auth/AuthPage.tsx'
 import AccountPage from '@/pages/account/AccountPage.tsx'
 import { ProtectedRoute, GuestRoute, AdminRoute } from '@/components/ProtectedRoute.tsx'
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
+            },
+            {
+                path: "/daily",
+                element: <DailyGuessingPage />,
             },
             {
                 element: <GuestRoute />,

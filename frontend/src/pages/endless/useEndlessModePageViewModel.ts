@@ -18,6 +18,10 @@ function fecthAnimeToGuess(): Promise<RandomAnimeDTO | null> {
         });
 }
 
+function isAnimeAlreadyGuessed(animeId: string, guessList: GuessResultDTO[]): boolean {
+    return guessList.some(guess => guess.anime.id === animeId);
+}
+
 export function useEndlessModePageViewModel() {
     const animeStore = useAnimeStore();
     const [isGuessingStarted, setIsGuessingStarted] = useState(false);
@@ -39,7 +43,17 @@ export function useEndlessModePageViewModel() {
                     animeStore.setAnimeToGuess(anime);
                 }
             });
+            setFoundAnime(null);
+            setGuessList([]);
+            animeStore.clearEndlessGuessList();
         }
+        else{
+            if(isAnimeAlreadyGuessed(animeToGuess.id, animeStore.getEndlessGuessList())) {
+                const goodGuess = (animeStore.getEndlessGuessList() as GuessResultDTO[]).find(guess => guess.anime.id === animeToGuess.id) || null;
+                setFoundAnime(goodGuess ? goodGuess.anime : null);
+            }
+        }
+        
     }, []);
 
     useEffect(() => {
