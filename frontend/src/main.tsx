@@ -8,6 +8,7 @@ import { AuthPage } from '@/pages/auth/AuthPage.tsx'
 import AccountPage from '@/pages/account/AccountPage.tsx'
 import { ProtectedRoute, GuestRoute, AdminRoute } from '@/components/ProtectedRoute.tsx'
 import { AdminPage } from '@/pages/admin/AdminPage.tsx'
+import EndlessPage from '@/pages/endless/EndlessModePage.tsx'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
@@ -25,6 +26,15 @@ const router = createBrowserRouter([
                     {
                         path: "/login",
                         element: <AuthPage />,
+                    },
+                ],
+            },
+            {
+                element: <GuestRoute />,
+                children: [
+                    {
+                        path: "/endless",
+                        element: <EndlessPage />,
                     },
                 ],
             },

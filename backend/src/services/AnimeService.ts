@@ -88,6 +88,11 @@ export interface CreateAdminAnimeDTO {
     score: number;
 }
 
+
+export interface RandomAnimeDTO {
+    id: string;
+}
+
 export class AnimeService {
     private static instance: AnimeService;
 
@@ -245,10 +250,12 @@ export class AnimeService {
         };
     }
 
-    /**
-     * This fonction choses a random anime and set it's as today's goal anime. It should be called once a day, at midnight.
-     */
-    public async updateGoalAnime(): Promise<AnimeEntity> {
+    public async getRandomAnime(): Promise<RandomAnimeDTO> {
+        const selectedAnime = await this.generateRandomAnime();
+        return { id: selectedAnime._id?.toHexString() ?? "" };
+    }
+
+    private async generateRandomAnime(): Promise<AnimeEntity> {
         const animes = await this.repository.findAll();
         if (animes.length === 0) {
             console.warn("No animes found in the database to update the goal anime.");
@@ -256,6 +263,14 @@ export class AnimeService {
         }
         const randomIndex = Math.floor(Math.random() * animes.length);
         const selectedAnime = animes[randomIndex];
+        return selectedAnime;
+    }
+
+    /**
+     * This fonction choses a random anime and set it's as today's goal anime. It should be called once a day, at midnight.
+     */
+    public async updateGoalAnime(): Promise<AnimeEntity> {
+        const selectedAnime = await this.generateRandomAnime();
         await this.currentAnimeRepository.saveCurrentAnime(selectedAnime);
         return selectedAnime;
     }
@@ -285,6 +300,15 @@ export class AnimeService {
             throw new Error("Current anime or guessed anime not found");
         }
         return this.compareAnimes(currentAnime, guessedAnime, guessNumber);
+    }
+
+    public async guessAnimeEndless(id: string, guessNumber: number, refAnimeId: string): Promise<GuessResultDTO> {
+        const refAnime = await this.repository.findById(refAnimeId);
+        const guessedAnime = await this.repository.findById(id);   
+        if (!refAnime || !guessedAnime) {
+            throw new Error("Reference anime or guessed anime not found");
+        }
+        return this.compareAnimes(refAnime, guessedAnime, guessNumber);
     }
 
     // Compare two dates in "Season Year" format (e.g., "Spring 2023")
