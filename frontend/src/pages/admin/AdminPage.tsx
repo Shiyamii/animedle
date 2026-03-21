@@ -2,10 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { useAdminViewModel } from './useAdminViewModel';
 import { AdminAnimesTab } from './AdminAnimesTab';
 import { AdminDailyTab } from './AdminDailyTab';
+import { AdminStatsTab } from './AdminStatsTab';
 import { AnimeFormDialog } from './AnimeFormDialog';
 import { DeleteConfirmDialog } from './DeleteConfirmDialog';
 
-const TABS = ['animes', 'daily'] as const;
+const TABS = ['animes', 'daily', 'stats'] as const;
 
 export function AdminPage() {
     const { t } = useTranslation();
@@ -35,6 +36,7 @@ export function AdminPage() {
 
                 {activeTab === 'animes' && <AdminAnimesTab vm={vm} />}
                 {activeTab === 'daily' && <AdminDailyTab vm={vm} />}
+                {activeTab === 'stats' && <AdminStatsTab vm={vm} />}
             </div>
 
             <AnimeFormDialog vm={vm} />

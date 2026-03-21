@@ -1,5 +1,5 @@
 import { AnimeEntity, AnimeImagesWebpEntity, AnimeTitleEntity, AnimeRepository } from "./AnimeRepositories";
-import { CurrentAnimeRepository } from "./CurrentAnimeRepositories";
+import { AnimeStatsDTO, CurrentAnimeRepository } from "./CurrentAnimeRepositories";
 
 export interface AnimeItemDTO {
     id: string;
@@ -59,6 +59,26 @@ export interface GuessResultDTO {
     guessNumber: number;
 }
 
+
+export interface AdminStatsTodayDTO {
+    anime: AdminAnimeDTO | null;
+    date: string | null;
+    totalGuesses: number;
+    totalWins: number;
+    winDistribution: Record<string, number>;
+}
+
+export interface AdminStatsGlobalDTO {
+    totalDays: number;
+    totalGuesses: number;
+    totalWins: number;
+    winDistribution: Record<string, number>;
+}
+
+export interface AdminStatsDTO {
+    today: AdminStatsTodayDTO;
+    global: AdminStatsGlobalDTO;
+}
 
 export interface AdminAnimeDTO {
     id: string;
@@ -299,7 +319,58 @@ export class AnimeService {
         if (!currentAnime || !guessedAnime) {
             throw new Error("Current anime or guessed anime not found");
         }
-        return this.compareAnimes(currentAnime, guessedAnime, guessNumber);
+        const result = this.compareAnimes(currentAnime, guessedAnime, guessNumber);
+        await this.currentAnimeRepository.recordGuess(id);
+        if (result.isCorrect) {
+            await this.currentAnimeRepository.recordWin(guessNumber);
+        }
+        return result;
+    }
+
+    public async getAnimeStats(animeIds: string[]): Promise<AnimeStatsDTO[]> {
+        return this.currentAnimeRepository.getStatsByAnimeIds(animeIds);
+    }
+
+    public async getAdminStats(): Promise<AdminStatsDTO> {
+        const history = await this.currentAnimeRepository.getAllHistory();
+        const today = history[0] ?? null;
+        const todayTotalGuesses = today
+            ? Object.values(today.guesses ?? {}).reduce((a, b) => a + b, 0)
+            : 0;
+
+        let globalTotalGuesses = 0;
+        let globalTotalWins = 0;
+        const globalWinDist: Record<string, number> = {};
+
+        for (const doc of history) {
+            globalTotalGuesses += Object.values(doc.guesses ?? {}).reduce((a, b) => a + b, 0);
+            globalTotalWins += doc.totalWins ?? 0;
+            for (const [k, v] of Object.entries(doc.winDistribution ?? {})) {
+                globalWinDist[k] = (globalWinDist[k] ?? 0) + (v as number);
+            }
+        }
+
+        return {
+            today: {
+                anime: today?.anime ? this.toAdminDTO(today.anime as AnimeEntity) : null,
+                date: today?.date?.toISOString() ?? null,
+                totalGuesses: todayTotalGuesses,
+                totalWins: today?.totalWins ?? 0,
+                winDistribution: today?.winDistribution ?? {},
+            },
+            global: {
+                totalDays: history.length,
+                totalGuesses: globalTotalGuesses,
+                totalWins: globalTotalWins,
+                winDistribution: globalWinDist,
+            },
+        };
+    }
+
+    public async getCurrentAnimeDate(): Promise<string | null> {
+        await this.getCurrentAnime(); // déclenche le reset quotidien si nécessaire
+        const current = await this.currentAnimeRepository.getCurrentAnime();
+        return current?.date?.toISOString() ?? null;
     }
 
     public async guessAnimeEndless(id: string, guessNumber: number, refAnimeId: string): Promise<GuessResultDTO> {

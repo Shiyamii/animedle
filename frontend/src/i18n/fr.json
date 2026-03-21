@@ -59,13 +59,15 @@
     "genres": "Genres",
     "episodes": "Épisodes",
     "season": "Saison",
-    "score": "Score"
+    "score": "Score",
+    "guessesCount" : "Nombre de tentatives : {{count}}"
   },
   "admin": {
     "title": "Administration",
     "tabs": {
       "animes": "Gestion des animes",
-      "daily": "Anime du jour"
+      "daily": "Anime du jour",
+      "stats": "Statistiques"
     },
     "animes": {
       "count_one": "{{count}} anime",
@@ -113,6 +115,27 @@
       "cancel": "Annuler",
       "confirmBtn": "Supprimer",
       "deleting": "Suppression..."
+    },
+    "stats": {
+      "title": "Statistiques",
+      "refresh": "Actualiser",
+      "noData": "Aucune donnée.",
+      "attempt_one": "{{count}} essai",
+      "attempt_other": "{{count}} essais",
+      "today": {
+        "title": "Statistiques du jour",
+        "noAnime": "Aucun anime défini.",
+        "totalGuesses": "Tentatives",
+        "totalWins": "Victoires",
+        "winDistribution": "Distribution des victoires"
+      },
+      "global": {
+        "title": "Statistiques générales",
+        "totalDays": "Jours joués",
+        "totalGuesses": "Total tentatives",
+        "totalWins": "Total victoires",
+        "winDistribution": "Distribution globale des victoires"
+      }
     },
     "daily": {
       "current": "Anime actuel",

@@ -65,7 +65,8 @@
     "title": "Administration",
     "tabs": {
       "animes": "Anime management",
-      "daily": "Daily anime"
+      "daily": "Daily anime",
+      "stats": "Statistics"
     },
     "animes": {
       "count_one": "{{count}} anime",
@@ -113,6 +114,27 @@
       "cancel": "Cancel",
       "confirmBtn": "Delete",
       "deleting": "Deleting..."
+    },
+    "stats": {
+      "title": "Statistics",
+      "refresh": "Refresh",
+      "noData": "No data.",
+      "attempt_one": "{{count}} try",
+      "attempt_other": "{{count}} tries",
+      "today": {
+        "title": "Today's statistics",
+        "noAnime": "No anime defined.",
+        "totalGuesses": "Guesses",
+        "totalWins": "Wins",
+        "winDistribution": "Win distribution"
+      },
+      "global": {
+        "title": "Overall statistics",
+        "totalDays": "Days played",
+        "totalGuesses": "Total guesses",
+        "totalWins": "Total wins",
+        "winDistribution": "Global win distribution"
+      }
     },
     "daily": {
       "current": "Current anime",

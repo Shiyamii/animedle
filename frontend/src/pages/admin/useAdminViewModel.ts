@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -15,6 +15,26 @@ export interface AdminAnimeDTO {
     studio: string;
     source: string;
     score: number;
+}
+
+export interface AdminStatsTodayDTO {
+    anime: AdminAnimeDTO | null;
+    date: string | null;
+    totalGuesses: number;
+    totalWins: number;
+    winDistribution: Record<string, number>;
+}
+
+export interface AdminStatsGlobalDTO {
+    totalDays: number;
+    totalGuesses: number;
+    totalWins: number;
+    winDistribution: Record<string, number>;
+}
+
+export interface AdminStatsDTO {
+    today: AdminStatsTodayDTO;
+    global: AdminStatsGlobalDTO;
 }
 
 export interface AnimeFormData {
@@ -47,7 +67,10 @@ export function useAdminViewModel() {
     const [animes, setAnimes] = useState<AdminAnimeDTO[]>([]);
     const [currentAnime, setCurrentAnime] = useState<AdminAnimeDTO | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [activeTab, setActiveTab] = useState<'animes' | 'daily'>('animes');
+    const [activeTab, setActiveTab] = useState<'animes' | 'daily' | 'stats'>('animes');
+    const [stats, setStats] = useState<AdminStatsDTO | null>(null);
+    const [isLoadingStats, setIsLoadingStats] = useState(false);
+    const statsFetched = useRef(false);
     const [showForm, setShowForm] = useState(false);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [form, setForm] = useState<AnimeFormData>(defaultForm);
@@ -72,10 +95,28 @@ export function useAdminViewModel() {
         setCurrentAnime(data);
     }, []);
 
+    const loadStats = useCallback(async () => {
+        setIsLoadingStats(true);
+        try {
+            const res = await fetch(`${API_URL}/api/admin/stats`, { credentials: 'include' });
+            const data = await res.json();
+            setStats(data);
+        } finally {
+            setIsLoadingStats(false);
+        }
+    }, []);
+
     useEffect(() => {
         loadAnimes();
         loadCurrentAnime();
     }, [loadAnimes, loadCurrentAnime]);
+
+    useEffect(() => {
+        if (activeTab === 'stats' && !statsFetched.current) {
+            statsFetched.current = true;
+            loadStats();
+        }
+    }, [activeTab, loadStats]);
 
     const openCreateForm = () => {
         setEditingId(null);
@@ -245,5 +286,8 @@ export function useAdminViewModel() {
         handleDelete,
         handleSetRandom,
         handleSetSpecific,
+        stats,
+        isLoadingStats,
+        loadStats,
     };
 }

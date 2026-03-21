@@ -1,8 +1,11 @@
 import confetti from 'canvas-confetti'
+import { useEffect } from 'react'
 
 const useConfetti = (fire: boolean) => {
 
-    const fireConfetti = () => {
+    useEffect(() => {
+        if (!fire) return
+
         const end = Date.now() + 1000 // 1 seconds
         const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"]
 
@@ -30,12 +33,7 @@ const useConfetti = (fire: boolean) => {
         }
 
         frame()
-    }
-
-
-    if (fire) {
-        fireConfetti()
-    }
+    }, [fire])
 
 }
 
