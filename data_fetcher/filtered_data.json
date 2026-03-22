@@ -6,7 +6,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/47347l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Award Winning", "Drama", "Suspense"],
+    "genres": [
+      "Action",
+      "Award Winning",
+      "Drama",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -34,7 +39,8 @@
     "season_start": "2013-04-07T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Manga",
-    "score": 8.57
+    "score": 8.57,
+    "mal_id": 16498
   },
   {
     "images_webp": {
@@ -43,7 +49,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1079/138100l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Supernatural", "Suspense"],
+    "genres": [
+      "Supernatural",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -63,7 +72,8 @@
     "season_start": "2006-10-04T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 8.62
+    "score": 8.62,
+    "mal_id": 1535
   },
   {
     "images_webp": {
@@ -72,7 +82,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/76049l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy"],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -96,7 +109,8 @@
     "season_start": "2015-10-05T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Web manga",
-    "score": 8.48
+    "score": 8.48,
+    "mal_id": 30276
   },
   {
     "images_webp": {
@@ -105,7 +119,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/99889l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Award Winning", "Supernatural"],
+    "genres": [
+      "Action",
+      "Award Winning",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -129,7 +147,8 @@
     "season_start": "2019-04-06T00:00:00+00:00",
     "studio": "ufotable",
     "source": "Manga",
-    "score": 8.41
+    "score": 8.41,
+    "mal_id": 38000
   },
   {
     "images_webp": {
@@ -138,7 +157,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1208/94745l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -174,7 +198,8 @@
     "season_start": "2009-04-05T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 9.11
+    "score": 9.11,
+    "mal_id": 5114
   },
   {
     "images_webp": {
@@ -183,7 +208,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/39717l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -207,7 +237,8 @@
     "season_start": "2012-07-08T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Light novel",
-    "score": 7.22
+    "score": 7.22,
+    "mal_id": 11757
   },
   {
     "images_webp": {
@@ -216,7 +247,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78745l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action"],
+    "genres": [
+      "Action"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -236,7 +269,8 @@
     "season_start": "2016-04-03T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 7.83
+    "score": 7.83,
+    "mal_id": 31964
   },
   {
     "images_webp": {
@@ -245,7 +279,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1141/142503l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -265,7 +303,8 @@
     "season_start": "2002-10-03T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 8.02
+    "score": 8.02,
+    "mal_id": 20
   },
   {
     "images_webp": {
@@ -274,7 +313,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/87048l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama"],
+    "genres": [
+      "Award Winning",
+      "Drama"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -294,7 +336,8 @@
     "season_start": "2016-08-26T00:00:00+00:00",
     "studio": "CoMix Wave Films",
     "source": "Original",
-    "score": 8.83
+    "score": 8.82,
+    "mal_id": 32281
   },
   {
     "images_webp": {
@@ -303,7 +346,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1498/134443l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Horror",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -331,7 +379,8 @@
     "season_start": "2014-07-04T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 7.79
+    "score": 7.79,
+    "mal_id": 22319
   },
   {
     "images_webp": {
@@ -340,7 +389,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1171/109222l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Award Winning", "Supernatural"],
+    "genres": [
+      "Action",
+      "Award Winning",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -368,7 +421,8 @@
     "season_start": "2020-10-03T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Manga",
-    "score": 8.51
+    "score": 8.51,
+    "mal_id": 40748
   },
   {
     "images_webp": {
@@ -377,7 +431,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1337/99013l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -401,7 +459,8 @@
     "season_start": "2011-10-02T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 9.03
+    "score": 9.03,
+    "mal_id": 11061
   },
   {
     "images_webp": {
@@ -410,7 +469,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1122/96435l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama"],
+    "genres": [
+      "Award Winning",
+      "Drama"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -434,7 +496,8 @@
     "season_start": "2016-09-17T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Manga",
-    "score": 8.93
+    "score": 8.93,
+    "mal_id": 28851
   },
   {
     "images_webp": {
@@ -443,7 +506,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1074/111944l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Fantasy", "Ecchi"],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -467,7 +534,8 @@
     "season_start": "2014-04-09T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Light novel",
-    "score": 8.04
+    "score": 8.03,
+    "mal_id": 19815
   },
   {
     "images_webp": {
@@ -476,7 +544,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1522/128039l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Fantasy", "Suspense"],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -500,11 +572,12 @@
       }
     ],
     "demographic_type": null,
-    "episodes": 66,
+    "episodes": 85,
     "season_start": "2016-04-04T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Light novel",
-    "score": 8.24
+    "score": 8.24,
+    "mal_id": 31240
   },
   {
     "images_webp": {
@@ -513,7 +586,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1032/135088l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Award Winning", "Drama", "Sci-Fi"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -533,7 +610,8 @@
     "season_start": "2006-10-06T00:00:00+00:00",
     "studio": "Sunrise",
     "source": "Original",
-    "score": 8.71
+    "score": 8.71,
+    "mal_id": 1575
   },
   {
     "images_webp": {
@@ -542,7 +620,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/138851l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -562,7 +644,8 @@
     "season_start": "1999-10-20T00:00:00+00:00",
     "studio": "Toei Animation",
     "source": "Manga",
-    "score": 8.73
+    "score": 8.73,
+    "mal_id": 21
   },
   {
     "images_webp": {
@@ -571,7 +654,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1935/127974l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Sci-Fi", "Suspense"],
+    "genres": [
+      "Drama",
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -587,7 +674,8 @@
     "season_start": "2011-04-06T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Visual novel",
-    "score": 9.07
+    "score": 9.07,
+    "mal_id": 9253
   },
   {
     "images_webp": {
@@ -596,7 +684,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/77957l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Mystery", "Suspense"],
+    "genres": [
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -624,7 +715,8 @@
     "season_start": "2016-01-08T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 8.3
+    "score": 8.3,
+    "mal_id": 31043
   },
   {
     "images_webp": {
@@ -633,7 +725,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/22128l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -653,7 +748,8 @@
     "season_start": "2008-10-02T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 8.04
+    "score": 8.04,
+    "mal_id": 4224
   },
   {
     "images_webp": {
@@ -682,7 +778,8 @@
     "season_start": "2015-05-15T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 7.69
+    "score": 7.69,
+    "mal_id": 28069
   },
   {
     "images_webp": {
@@ -691,7 +788,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/65409l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -711,7 +812,8 @@
     "season_start": "2014-10-05T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 7.6
+    "score": 7.6,
+    "mal_id": 23755
   },
   {
     "images_webp": {
@@ -720,7 +822,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/80356l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Supernatural"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -744,7 +850,8 @@
     "season_start": "2016-07-11T00:00:00+00:00",
     "studio": "Bones",
     "source": "Web manga",
-    "score": 8.49
+    "score": 8.49,
+    "mal_id": 32182
   },
   {
     "images_webp": {
@@ -753,7 +860,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/79597l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Award Winning", "Fantasy"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -777,7 +888,8 @@
     "season_start": "2001-07-20T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Original",
-    "score": 8.77
+    "score": 8.77,
+    "mal_id": 199
   },
   {
     "images_webp": {
@@ -786,7 +898,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1429/95946l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -810,7 +925,8 @@
     "season_start": "2014-07-07T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Manga",
-    "score": 7.48
+    "score": 7.48,
+    "mal_id": 22199
   },
   {
     "images_webp": {
@@ -819,7 +935,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1830/118780l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Mystery", "Suspense"],
+    "genres": [
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -839,7 +958,8 @@
     "season_start": "2019-01-11T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "Manga",
-    "score": 8.47
+    "score": 8.47,
+    "mal_id": 37779
   },
   {
     "images_webp": {
@@ -848,7 +968,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1895/142748l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Comedy", "Fantasy"],
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -872,7 +996,8 @@
     "season_start": "2016-01-14T00:00:00+00:00",
     "studio": "Studio Deen",
     "source": "Light novel",
-    "score": 8.09
+    "score": 8.09,
+    "mal_id": 30831
   },
   {
     "images_webp": {
@@ -881,7 +1006,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/111115l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Fantasy"],
+    "genres": [
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -897,7 +1025,8 @@
     "season_start": "2010-04-03T00:00:00+00:00",
     "studio": "P.A. Works",
     "source": "Original",
-    "score": 8.05
+    "score": 8.05,
+    "mal_id": 6547
   },
   {
     "images_webp": {
@@ -906,7 +1035,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1886/128266l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Supernatural"],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -922,7 +1054,8 @@
     "season_start": "2014-01-05T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 7.94
+    "score": 7.94,
+    "mal_id": 20507
   },
   {
     "images_webp": {
@@ -931,7 +1064,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/76014l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Sports"],
+    "genres": [
+      "Sports"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -959,7 +1094,8 @@
     "season_start": "2014-04-06T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Manga",
-    "score": 8.43
+    "score": 8.43,
+    "mal_id": 20583
   },
   {
     "images_webp": {
@@ -968,7 +1104,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/68547l.webp"
     },
     "anime_format": "Special",
-    "genres": ["Action", "Comedy"],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -996,7 +1135,8 @@
     "season_start": "2014-11-09T00:00:00+00:00",
     "studio": "Lerche",
     "source": "Manga",
-    "score": 7.44
+    "score": 7.44,
+    "mal_id": 28405
   },
   {
     "images_webp": {
@@ -1005,7 +1145,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/33465l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Supernatural", "Suspense"],
+    "genres": [
+      "Action",
+      "Supernatural",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1029,7 +1173,8 @@
     "season_start": "2011-10-09T00:00:00+00:00",
     "studio": "asread.",
     "source": "Manga",
-    "score": 7.38
+    "score": 7.38,
+    "mal_id": 10620
   },
   {
     "images_webp": {
@@ -1038,7 +1183,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1541/147774l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Supernatural"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1054,7 +1203,8 @@
     "season_start": "2004-10-05T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 7.99
+    "score": 7.99,
+    "mal_id": 269
   },
   {
     "images_webp": {
@@ -1063,7 +1213,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/73178l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Horror", "Sci-Fi", "Suspense"],
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1095,7 +1250,8 @@
     "season_start": "2014-10-09T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 8.32
+    "score": 8.32,
+    "mal_id": 22535
   },
   {
     "images_webp": {
@@ -1104,7 +1260,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1301/93586l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1128,7 +1288,8 @@
     "season_start": "2018-10-04T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "Light novel",
-    "score": 8.23
+    "score": 8.23,
+    "mal_id": 37450
   },
   {
     "images_webp": {
@@ -1137,7 +1298,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75195l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Supernatural"],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1161,7 +1325,8 @@
     "season_start": "2011-04-17T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 7.47
+    "score": 7.47,
+    "mal_id": 9919
   },
   {
     "images_webp": {
@@ -1170,7 +1335,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1295/106551l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1194,7 +1362,8 @@
     "season_start": "2019-01-12T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 8.4
+    "score": 8.4,
+    "mal_id": 37999
   },
   {
     "images_webp": {
@@ -1203,7 +1372,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/108941l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Avant Garde", "Award Winning", "Drama", "Sci-Fi", "Suspense"],
+    "genres": [
+      "Avant Garde",
+      "Award Winning",
+      "Drama",
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1227,7 +1402,8 @@
     "season_start": "1995-10-04T00:00:00+00:00",
     "studio": "Gainax",
     "source": "Original",
-    "score": 8.37
+    "score": 8.37,
+    "mal_id": 30
   },
   {
     "images_webp": {
@@ -1236,7 +1412,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/40409l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Supernatural"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1276,7 +1456,8 @@
     "season_start": "2012-10-06T00:00:00+00:00",
     "studio": "David Production",
     "source": "Manga",
-    "score": 7.87
+    "score": 7.87,
+    "mal_id": 14719
   },
   {
     "images_webp": {
@@ -1285,7 +1466,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102576l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Comedy"],
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1301,7 +1485,8 @@
     "season_start": "2019-07-05T00:00:00+00:00",
     "studio": "TMS Entertainment",
     "source": "Manga",
-    "score": 8.26
+    "score": 8.26,
+    "mal_id": 38691
   },
   {
     "images_webp": {
@@ -1310,7 +1495,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1704/106947l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Supernatural"],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1342,7 +1530,8 @@
     "season_start": "2020-10-16T00:00:00+00:00",
     "studio": "ufotable",
     "source": "Manga",
-    "score": 8.54
+    "score": 8.54,
+    "mal_id": 40456
   },
   {
     "images_webp": {
@@ -1351,17 +1540,24 @@
       "large_image_url": "https://myanimelist.net/images/anime/1441/122795l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Award Winning", "Comedy"],
-    "titles": {
-      "type": "Default",
-      "title": "Spy x Family"
-    },
+    "genres": [
+      "Action",
+      "Award Winning",
+      "Comedy"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Spy x Family"
+      }
+    ],
     "demographic_type": "Shounen",
     "episodes": 50,
     "season_start": "2022-04-09T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Manga",
-    "score": 8.43
+    "score": 8.42,
+    "mal_id": 50265
   },
   {
     "images_webp": {
@@ -1370,7 +1566,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1806/126216l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1390,7 +1589,8 @@
     "season_start": "2022-10-12T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Manga",
-    "score": 8.43
+    "score": 8.43,
+    "mal_id": 44511
   },
   {
     "images_webp": {
@@ -1399,7 +1599,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1614/90408l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Sci-Fi"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1415,7 +1619,8 @@
     "season_start": "2018-01-13T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Original",
-    "score": 7.2
+    "score": 7.2,
+    "mal_id": 35849
   },
   {
     "images_webp": {
@@ -1424,7 +1629,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1490/101365l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1444,7 +1654,8 @@
     "season_start": "2019-01-09T00:00:00+00:00",
     "studio": "Kinema Citrus",
     "source": "Light novel",
-    "score": 7.91
+    "score": 7.91,
+    "mal_id": 35790
   },
   {
     "images_webp": {
@@ -1453,7 +1664,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1795/95088l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama"],
+    "genres": [
+      "Drama"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1469,7 +1682,8 @@
     "season_start": "2018-01-11T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Light novel",
-    "score": 8.69
+    "score": 8.69,
+    "mal_id": 33352
   },
   {
     "images_webp": {
@@ -1478,7 +1692,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/71553l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Fantasy", "Suspense"],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1494,7 +1712,8 @@
     "season_start": "2015-01-10T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Original",
-    "score": 8.13
+    "score": 8.13,
+    "mal_id": 28223
   },
   {
     "images_webp": {
@@ -1503,7 +1722,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1826/147276l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama"],
+    "genres": [
+      "Drama"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1519,7 +1740,8 @@
     "season_start": "2015-07-05T00:00:00+00:00",
     "studio": "P.A. Works",
     "source": "Original",
-    "score": 7.76
+    "score": 7.76,
+    "mal_id": 28999
   },
   {
     "images_webp": {
@@ -1528,7 +1750,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/18179l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1544,7 +1770,8 @@
     "season_start": "2009-10-12T00:00:00+00:00",
     "studio": "Satelight",
     "source": "Manga",
-    "score": 7.57
+    "score": 7.57,
+    "mal_id": 6702
   },
   {
     "images_webp": {
@@ -1553,7 +1780,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/19644l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Award Winning", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Award Winning",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1569,7 +1800,8 @@
     "season_start": "1998-04-03T00:00:00+00:00",
     "studio": "Sunrise",
     "source": "Original",
-    "score": 8.75
+    "score": 8.75,
+    "mal_id": 1
   },
   {
     "images_webp": {
@@ -1578,7 +1810,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1444/148976l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Gourmet", "Ecchi"],
+    "genres": [
+      "Gourmet",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1606,7 +1841,8 @@
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Manga",
-    "score": 8.11
+    "score": 8.11,
+    "mal_id": 28171
   },
   {
     "images_webp": {
@@ -1615,7 +1851,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/42051l.webp"
     },
     "anime_format": "OVA",
-    "genres": ["Horror", "Mystery", "Suspense"],
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1647,7 +1887,8 @@
     "season_start": "2012-05-26T00:00:00+00:00",
     "studio": "P.A. Works",
     "source": "Novel",
-    "score": 7.25
+    "score": 7.25,
+    "mal_id": 11701
   },
   {
     "images_webp": {
@@ -1656,17 +1897,24 @@
       "large_image_url": "https://myanimelist.net/images/anime/1500/103005l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Drama"],
-    "titles": {
-      "type": "Default",
-      "title": "Vinland Saga"
-    },
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Vinland Saga"
+      }
+    ],
     "demographic_type": "Seinen",
     "episodes": 48,
     "season_start": "2019-07-08T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Manga",
-    "score": 8.78
+    "score": 8.78,
+    "mal_id": 37521
   },
   {
     "images_webp": {
@@ -1675,7 +1923,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/79697l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Supernatural"],
+    "genres": [
+      "Drama",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1703,7 +1954,8 @@
     "season_start": "2011-04-15T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Original",
-    "score": 8.29
+    "score": 8.29,
+    "mal_id": 9989
   },
   {
     "images_webp": {
@@ -1712,7 +1964,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1945/136600l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1728,7 +1984,8 @@
     "season_start": "2015-07-07T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Light novel",
-    "score": 7.9
+    "score": 7.9,
+    "mal_id": 29803
   },
   {
     "images_webp": {
@@ -1737,7 +1994,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/138723l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Award Winning", "Drama", "Fantasy", "Romance"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1757,7 +2020,8 @@
     "season_start": "2004-11-20T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Novel",
-    "score": 8.67
+    "score": 8.67,
+    "mal_id": 431
   },
   {
     "images_webp": {
@@ -1766,7 +2030,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1172/148981l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1794,7 +2062,8 @@
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 7.53
+    "score": 7.53,
+    "mal_id": 28121
   },
   {
     "images_webp": {
@@ -1803,7 +2072,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1464/111943l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy", "Ecchi"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1831,7 +2105,8 @@
     "season_start": "2013-10-04T00:00:00+00:00",
     "studio": "Trigger",
     "source": "Original",
-    "score": 8.03
+    "score": 8.03,
+    "mal_id": 18679
   },
   {
     "images_webp": {
@@ -1840,7 +2115,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/50177l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Supernatural"],
+    "genres": [
+      "Comedy",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1864,7 +2142,8 @@
     "season_start": "2013-04-04T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Light novel",
-    "score": 7.7
+    "score": 7.7,
+    "mal_id": 15809
   },
   {
     "images_webp": {
@@ -1873,7 +2152,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/78311l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Horror", "Suspense", "Ecchi"],
+    "genres": [
+      "Action",
+      "Horror",
+      "Suspense",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1905,7 +2189,8 @@
     "season_start": "2010-07-05T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 7.06
+    "score": 7.06,
+    "mal_id": 8074
   },
   {
     "images_webp": {
@@ -1914,7 +2199,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/86578l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Mystery", "Suspense"],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1942,7 +2231,8 @@
     "season_start": "2017-07-01T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Manga",
-    "score": 7.21
+    "score": 7.21,
+    "mal_id": 34933
   },
   {
     "images_webp": {
@@ -1951,7 +2241,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1069/123309l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -1975,7 +2269,8 @@
     "season_start": "2018-10-02T00:00:00+00:00",
     "studio": "8bit",
     "source": "Manga",
-    "score": 8.13
+    "score": 8.13,
+    "mal_id": 37430
   },
   {
     "images_webp": {
@@ -1984,7 +2279,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1695/111486l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Romance"],
+    "genres": [
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2004,7 +2301,8 @@
     "season_start": "2021-01-10T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "Manga",
-    "score": 8.18
+    "score": 8.18,
+    "mal_id": 42897
   },
   {
     "images_webp": {
@@ -2013,7 +2311,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/88336l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2029,7 +2330,8 @@
     "season_start": "2017-10-03T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 8.14
+    "score": 8.14,
+    "mal_id": 34572
   },
   {
     "images_webp": {
@@ -2038,7 +2340,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/5123l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Award Winning", "Sci-Fi"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2078,7 +2384,8 @@
     "season_start": "2007-04-01T00:00:00+00:00",
     "studio": "Gainax",
     "source": "Original",
-    "score": 8.64
+    "score": 8.64,
+    "mal_id": 2001
   },
   {
     "images_webp": {
@@ -2087,7 +2394,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1530/117776l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Drama", "Fantasy", "Ecchi"],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2111,7 +2423,8 @@
     "season_start": "2021-01-11T00:00:00+00:00",
     "studio": "Studio Bind",
     "source": "Light novel",
-    "score": 8.33
+    "score": 8.33,
+    "mal_id": 39535
   },
   {
     "images_webp": {
@@ -2120,7 +2433,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/111940l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Romance", "Supernatural", "Ecchi"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Romance",
+      "Supernatural",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2140,7 +2459,8 @@
     "season_start": "2012-01-06T00:00:00+00:00",
     "studio": "TNK",
     "source": "Light novel",
-    "score": 7.31
+    "score": 7.31,
+    "mal_id": 11617
   },
   {
     "images_webp": {
@@ -2149,7 +2469,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75815l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Award Winning", "Drama", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Award Winning",
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2177,7 +2503,8 @@
     "season_start": "2003-10-04T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 8.12
+    "score": 8.12,
+    "mal_id": 121
   },
   {
     "images_webp": {
@@ -2186,7 +2513,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1780/121555l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Drama", "Horror", "Romance", "Suspense"],
+    "genres": [
+      "Action",
+      "Drama",
+      "Horror",
+      "Romance",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2214,7 +2547,8 @@
     "season_start": "2004-07-25T00:00:00+00:00",
     "studio": "Arms",
     "source": "Manga",
-    "score": 7.46
+    "score": 7.46,
+    "mal_id": 226
   },
   {
     "images_webp": {
@@ -2223,7 +2557,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1786/120117l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2251,7 +2588,8 @@
     "season_start": "2013-04-05T00:00:00+00:00",
     "studio": "Brain's Base",
     "source": "Light novel",
-    "score": 8
+    "score": 8,
+    "mal_id": 14813
   },
   {
     "images_webp": {
@@ -2260,7 +2598,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/117644l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2276,7 +2617,8 @@
     "season_start": "2011-10-02T00:00:00+00:00",
     "studio": "ufotable",
     "source": "Light novel",
-    "score": 8.26
+    "score": 8.26,
+    "mal_id": 10087
   },
   {
     "images_webp": {
@@ -2285,7 +2627,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/86830l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Suspense"],
+    "genres": [
+      "Drama",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2317,7 +2662,8 @@
     "season_start": "2017-07-12T00:00:00+00:00",
     "studio": "Lerche",
     "source": "Light novel",
-    "score": 7.83
+    "score": 7.83,
+    "mal_id": 35507
   },
   {
     "images_webp": {
@@ -2326,7 +2672,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/92364l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2350,7 +2701,8 @@
     "season_start": "1986-02-26T00:00:00+00:00",
     "studio": "Toei Animation",
     "source": "Manga",
-    "score": 7.98
+    "score": 7.98,
+    "mal_id": 223
   },
   {
     "images_webp": {
@@ -2359,7 +2711,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1071/149486l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2375,7 +2731,8 @@
     "season_start": "2008-04-07T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 7.86
+    "score": 7.86,
+    "mal_id": 3588
   },
   {
     "images_webp": {
@@ -2384,7 +2741,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1355/147277l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Adventure", "Award Winning", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Award Winning",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2408,7 +2770,47 @@
     "season_start": "1997-07-12T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Original",
-    "score": 8.67
+    "score": 8.67,
+    "mal_id": 164
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1015/138006.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1015/138006t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1015/138006l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Drama",
+      "Fantasy"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Sousou no Frieren"
+      },
+      {
+        "type": "Synonym",
+        "title": "Frieren at the Funeral"
+      },
+      {
+        "type": "Synonym",
+        "title": "Frieren The Slayer"
+      },
+      {
+        "type": "English",
+        "title": "Frieren: Beyond Journey's End"
+      }
+    ],
+    "demographic_type": "Shounen",
+    "episodes": 38,
+    "season_start": "2023-09-29T00:00:00+00:00",
+    "studio": "Madhouse",
+    "source": "Manga",
+    "score": 9.27,
+    "mal_id": 52991
   },
   {
     "images_webp": {
@@ -2417,7 +2819,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/86733l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Drama", "Fantasy", "Mystery", "Sci-Fi"],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Mystery",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2433,7 +2841,8 @@
     "season_start": "2017-07-07T00:00:00+00:00",
     "studio": "Kinema Citrus",
     "source": "Web manga",
-    "score": 8.63
+    "score": 8.62,
+    "mal_id": 34599
   },
   {
     "images_webp": {
@@ -2442,7 +2851,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1905/142840l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2474,7 +2886,8 @@
     "season_start": "2012-10-04T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Light novel",
-    "score": 7.7
+    "score": 7.7,
+    "mal_id": 14741
   },
   {
     "images_webp": {
@@ -2483,7 +2896,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/142015l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Mystery", "Sci-Fi", "Suspense"],
+    "genres": [
+      "Action",
+      "Mystery",
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2503,40 +2921,8 @@
     "season_start": "2012-10-12T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Original",
-    "score": 8.33
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1015/138006.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1015/138006t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1015/138006l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Adventure", "Drama", "Fantasy"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Sousou no Frieren"
-      },
-      {
-        "type": "Synonym",
-        "title": "Frieren at the Funeral"
-      },
-      {
-        "type": "Synonym",
-        "title": "Frieren The Slayer"
-      },
-      {
-        "type": "English",
-        "title": "Frieren: Beyond Journey's End"
-      }
-    ],
-    "demographic_type": "Shounen",
-    "episodes": 38,
-    "season_start": "2023-09-29T00:00:00+00:00",
-    "studio": "Madhouse",
-    "source": "Manga",
-    "score": 9.28
+    "score": 8.33,
+    "mal_id": 13601
   },
   {
     "images_webp": {
@@ -2545,7 +2931,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1664/103275l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2569,7 +2959,8 @@
     "season_start": "2019-07-06T00:00:00+00:00",
     "studio": "David Production",
     "source": "Manga",
-    "score": 7.72
+    "score": 7.72,
+    "mal_id": 38671
   },
   {
     "images_webp": {
@@ -2578,7 +2969,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/55225l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Award Winning", "Drama", "Suspense"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2606,7 +3001,8 @@
     "season_start": "2011-01-07T00:00:00+00:00",
     "studio": "Shaft",
     "source": "Original",
-    "score": 8.38
+    "score": 8.38,
+    "mal_id": 9756
   },
   {
     "images_webp": {
@@ -2615,7 +3011,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1179/119897l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Romance"],
+    "genres": [
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2639,7 +3037,8 @@
     "season_start": "2022-01-09T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "Manga",
-    "score": 8.13
+    "score": 8.13,
+    "mal_id": 48736
   },
   {
     "images_webp": {
@@ -2648,7 +3047,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1804/95033l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2664,7 +3066,8 @@
     "season_start": "2007-10-05T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Visual novel",
-    "score": 7.99
+    "score": 7.99,
+    "mal_id": 2167
   },
   {
     "images_webp": {
@@ -2673,7 +3076,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/85434l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Slice of Life", "Supernatural"],
+    "genres": [
+      "Slice of Life",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2697,7 +3103,8 @@
     "season_start": "2017-01-12T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Manga",
-    "score": 7.9
+    "score": 7.9,
+    "mal_id": 33206
   },
   {
     "images_webp": {
@@ -2706,7 +3113,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/79409l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Mystery"],
+    "genres": [
+      "Action",
+      "Mystery"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2734,7 +3144,8 @@
     "season_start": "2016-04-07T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 7.8
+    "score": 7.8,
+    "mal_id": 31478
   },
   {
     "images_webp": {
@@ -2743,7 +3154,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/148979l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Drama", "Fantasy"],
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2767,7 +3182,8 @@
     "season_start": "2015-04-04T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Manga",
-    "score": 7.49
+    "score": 7.49,
+    "mal_id": 26243
   },
   {
     "images_webp": {
@@ -2776,7 +3192,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1839/122012l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Drama"],
+    "genres": [
+      "Action",
+      "Drama"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2792,36 +3211,8 @@
     "season_start": "2021-04-11T00:00:00+00:00",
     "studio": "LIDENFILMS",
     "source": "Manga",
-    "score": 7.82
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/6/25254.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/6/25254t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/6/25254l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Kaichou wa Maid-sama!"
-      },
-      {
-        "type": "Synonym",
-        "title": "Class President is a Maid!"
-      },
-      {
-        "type": "English",
-        "title": "Maid Sama!"
-      }
-    ],
-    "demographic_type": "Shoujo",
-    "episodes": 26,
-    "season_start": "2010-04-02T00:00:00+00:00",
-    "studio": "J.C.Staff",
-    "source": "Manga",
-    "score": 7.99
+    "score": 7.82,
+    "mal_id": 42249
   },
   {
     "images_webp": {
@@ -2830,7 +3221,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1121/119044l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Supernatural"],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2854,7 +3248,41 @@
     "season_start": "2021-12-24T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Manga",
-    "score": 8.37
+    "score": 8.37,
+    "mal_id": 48561
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/6/25254.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/6/25254t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/6/25254l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Kaichou wa Maid-sama!"
+      },
+      {
+        "type": "Synonym",
+        "title": "Class President is a Maid!"
+      },
+      {
+        "type": "English",
+        "title": "Maid Sama!"
+      }
+    ],
+    "demographic_type": "Shoujo",
+    "episodes": 26,
+    "season_start": "2010-04-02T00:00:00+00:00",
+    "studio": "J.C.Staff",
+    "source": "Manga",
+    "score": 7.99,
+    "mal_id": 7054
   },
   {
     "images_webp": {
@@ -2863,7 +3291,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1170/121597l.webp"
     },
     "anime_format": "TV Special",
-    "genres": ["Mystery", "Romance", "Supernatural", "Ecchi"],
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Supernatural",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2887,7 +3320,8 @@
     "season_start": "2012-12-31T00:00:00+00:00",
     "studio": "Shaft",
     "source": "Light novel",
-    "score": 7.91
+    "score": 7.91,
+    "mal_id": 15689
   },
   {
     "images_webp": {
@@ -2896,7 +3330,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76803l.webp"
     },
     "anime_format": "Special",
-    "genres": ["Sports"],
+    "genres": [
+      "Sports"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2920,7 +3356,8 @@
     "season_start": "2013-02-22T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Manga",
-    "score": 7.79
+    "score": 7.79,
+    "mal_id": 16916
   },
   {
     "images_webp": {
@@ -2929,7 +3366,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/89973l.webp"
     },
     "anime_format": "ONA",
-    "genres": ["Action", "Avant Garde", "Horror", "Supernatural"],
+    "genres": [
+      "Action",
+      "Avant Garde",
+      "Horror",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2949,7 +3391,8 @@
     "season_start": "2018-01-05T00:00:00+00:00",
     "studio": "Science SARU",
     "source": "Manga",
-    "score": 7.74
+    "score": 7.74,
+    "mal_id": 35120
   },
   {
     "images_webp": {
@@ -2958,7 +3401,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1110/147278l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Award Winning", "Supernatural"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -2982,7 +3429,8 @@
     "season_start": "1988-04-16T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Original",
-    "score": 8.25
+    "score": 8.25,
+    "mal_id": 523
   },
   {
     "images_webp": {
@@ -2991,7 +3439,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/43643l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3015,7 +3466,8 @@
     "season_start": "2012-10-09T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 8.04
+    "score": 8.04,
+    "mal_id": 13759
   },
   {
     "images_webp": {
@@ -3024,7 +3476,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1719/95621l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3040,7 +3496,8 @@
     "season_start": "2018-10-07T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Light novel",
-    "score": 7.41
+    "score": 7.41,
+    "mal_id": 37349
   },
   {
     "images_webp": {
@@ -3049,7 +3506,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/71992l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3085,7 +3545,8 @@
     "season_start": "2006-04-05T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 8.16
+    "score": 8.16,
+    "mal_id": 853
   },
   {
     "images_webp": {
@@ -3094,7 +3555,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75299l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Sci-Fi", "Supernatural", "Suspense"],
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Supernatural",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3114,7 +3580,8 @@
     "season_start": "2011-04-17T00:00:00+00:00",
     "studio": "Manglobe",
     "source": "Manga",
-    "score": 7.13
+    "score": 7.13,
+    "mal_id": 6880
   },
   {
     "images_webp": {
@@ -3123,17 +3590,23 @@
       "large_image_url": "https://myanimelist.net/images/anime/1818/126435l.webp"
     },
     "anime_format": "ONA",
-    "genres": ["Action", "Sci-Fi"],
-    "titles": {
-      "type": "Default",
-      "title": "Cyberpunk: Edgerunners"
-    },
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Cyberpunk: Edgerunners"
+      }
+    ],
     "demographic_type": null,
     "episodes": 20,
     "season_start": "2022-09-13T00:00:00+00:00",
     "studio": "Trigger",
     "source": "Game",
-    "score": 8.62
+    "score": 8.62,
+    "mal_id": 42310
   },
   {
     "images_webp": {
@@ -3142,7 +3615,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/100467l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3166,7 +3643,8 @@
     "season_start": "2019-01-07T00:00:00+00:00",
     "studio": "Tezuka Productions",
     "source": "Manga",
-    "score": 8.26
+    "score": 8.26,
+    "mal_id": 37520
   },
   {
     "images_webp": {
@@ -3175,7 +3653,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1973/142750l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3203,7 +3683,8 @@
     "season_start": "2016-07-04T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Manga",
-    "score": 8.41
+    "score": 8.41,
+    "mal_id": 33255
   },
   {
     "images_webp": {
@@ -3212,7 +3693,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/75587l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3236,7 +3720,89 @@
     "season_start": "2014-01-11T00:00:00+00:00",
     "studio": "Shaft",
     "source": "Manga",
-    "score": 7.55
+    "score": 7.55,
+    "mal_id": 18897
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1404/98182.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1404/98182t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1404/98182l.webp"
+    },
+    "anime_format": "Movie",
+    "genres": [
+      "Avant Garde",
+      "Drama",
+      "Sci-Fi",
+      "Suspense"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni"
+      },
+      {
+        "type": "Synonym",
+        "title": "Shinseiki Evangelion Gekijouban: The End of Evangelion"
+      },
+      {
+        "type": "Synonym",
+        "title": "EoE"
+      },
+      {
+        "type": "English",
+        "title": "Neon Genesis Evangelion: The End of Evangelion"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 1,
+    "season_start": "1997-07-19T00:00:00+00:00",
+    "studio": "Gainax",
+    "source": "Original",
+    "score": 8.57,
+    "mal_id": 32
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1801/142390.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1801/142390t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1801/142390l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Ore dake Level Up na Ken"
+      },
+      {
+        "type": "Synonym",
+        "title": "Na Honjaman Level Up"
+      },
+      {
+        "type": "Synonym",
+        "title": "나 혼자만 레벨업"
+      },
+      {
+        "type": "Synonym",
+        "title": "I Level Up Alone"
+      },
+      {
+        "type": "English",
+        "title": "Solo Leveling"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 25,
+    "season_start": "2024-01-07T00:00:00+00:00",
+    "studio": "A-1 Pictures",
+    "source": "Web manga",
+    "score": 8.18,
+    "mal_id": 52299
   },
   {
     "images_webp": {
@@ -3245,7 +3811,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/71772l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Mystery", "Supernatural"],
+    "genres": [
+      "Action",
+      "Mystery",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3281,40 +3851,8 @@
     "season_start": "2010-01-08T00:00:00+00:00",
     "studio": "Brain's Base",
     "source": "Light novel",
-    "score": 8.09
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1404/98182.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1404/98182t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1404/98182l.webp"
-    },
-    "anime_format": "Movie",
-    "genres": ["Avant Garde", "Drama", "Sci-Fi", "Suspense"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni"
-      },
-      {
-        "type": "Synonym",
-        "title": "Shinseiki Evangelion Gekijouban: The End of Evangelion"
-      },
-      {
-        "type": "Synonym",
-        "title": "EoE"
-      },
-      {
-        "type": "English",
-        "title": "Neon Genesis Evangelion: The End of Evangelion"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 1,
-    "season_start": "1997-07-19T00:00:00+00:00",
-    "studio": "Gainax",
-    "source": "Original",
-    "score": 8.57
+    "score": 8.09,
+    "mal_id": 6746
   },
   {
     "images_webp": {
@@ -3323,7 +3861,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/50521l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Mystery", "Slice of Life"],
+    "genres": [
+      "Mystery",
+      "Slice of Life"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3355,44 +3896,8 @@
     "season_start": "2012-04-23T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Novel",
-    "score": 8.05
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1801/142390.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1801/142390t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1801/142390l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Ore dake Level Up na Ken"
-      },
-      {
-        "type": "Synonym",
-        "title": "Na Honjaman Level Up"
-      },
-      {
-        "type": "Synonym",
-        "title": "나 혼자만 레벨업"
-      },
-      {
-        "type": "Synonym",
-        "title": "I Level Up Alone"
-      },
-      {
-        "type": "English",
-        "title": "Solo Leveling"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 25,
-    "season_start": "2024-01-07T00:00:00+00:00",
-    "studio": "A-1 Pictures",
-    "source": "Web manga",
-    "score": 8.18
+    "score": 8.05,
+    "mal_id": 12189
   },
   {
     "images_webp": {
@@ -3401,7 +3906,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1902/128382l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3429,7 +3937,8 @@
     "season_start": "2020-07-11T00:00:00+00:00",
     "studio": "TMS Entertainment",
     "source": "Manga",
-    "score": 6.85
+    "score": 6.85,
+    "mal_id": 40839
   },
   {
     "images_webp": {
@@ -3438,7 +3947,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1370/135212l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Comedy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3458,7 +3971,8 @@
     "season_start": "2004-05-20T00:00:00+00:00",
     "studio": "Manglobe",
     "source": "Original",
-    "score": 8.52
+    "score": 8.52,
+    "mal_id": 205
   },
   {
     "images_webp": {
@@ -3467,7 +3981,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1819/97947l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3495,7 +4012,8 @@
     "season_start": "2019-01-11T00:00:00+00:00",
     "studio": "Tezuka Productions",
     "source": "Manga",
-    "score": 7.62
+    "score": 7.62,
+    "mal_id": 38101
   },
   {
     "images_webp": {
@@ -3504,7 +4022,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1880/101146l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3524,7 +4047,8 @@
     "season_start": "2019-07-19T00:00:00+00:00",
     "studio": "CoMix Wave Films",
     "source": "Original",
-    "score": 8.27
+    "score": 8.27,
+    "mal_id": 38826
   },
   {
     "images_webp": {
@@ -3533,7 +4057,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1993/93837l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3565,7 +4093,8 @@
     "season_start": "2018-10-07T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Light novel",
-    "score": 7.57
+    "score": 7.57,
+    "mal_id": 36474
   },
   {
     "images_webp": {
@@ -3574,7 +4103,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1417/117422l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Mystery", "Suspense"],
+    "genres": [
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3602,7 +4134,8 @@
     "season_start": "2014-07-11T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Original",
-    "score": 8.08
+    "score": 8.08,
+    "mal_id": 23283
   },
   {
     "images_webp": {
@@ -3611,7 +4144,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/80010l.webp"
     },
     "anime_format": "OVA",
-    "genres": ["Action", "Drama", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3627,7 +4164,8 @@
     "season_start": "2012-07-26T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Original",
-    "score": 6.87
+    "score": 6.87,
+    "mal_id": 13411
   },
   {
     "images_webp": {
@@ -3636,7 +4174,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1768/93291l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3664,7 +4205,8 @@
     "season_start": "2018-09-01T00:00:00+00:00",
     "studio": "Studio VOLN",
     "source": "Novel",
-    "score": 8.55
+    "score": 8.55,
+    "mal_id": 36098
   },
   {
     "images_webp": {
@@ -3673,7 +4215,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/39779l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3705,7 +4250,8 @@
     "season_start": "2012-10-02T00:00:00+00:00",
     "studio": "Brain's Base",
     "source": "Manga",
-    "score": 7.45
+    "score": 7.45,
+    "mal_id": 14227
   },
   {
     "images_webp": {
@@ -3714,7 +4260,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1467/137783l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Mystery", "Supernatural"],
+    "genres": [
+      "Action",
+      "Mystery",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3742,7 +4292,8 @@
     "season_start": "2008-10-03T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 7.65
+    "score": 7.65,
+    "mal_id": 4898
   },
   {
     "images_webp": {
@@ -3751,7 +4302,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/112161l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Ecchi"],
+    "genres": [
+      "Comedy",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3771,7 +4325,8 @@
     "season_start": "2015-07-11T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Manga",
-    "score": 7.58
+    "score": 7.58,
+    "mal_id": 30240
   },
   {
     "images_webp": {
@@ -3780,7 +4335,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/82149l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3800,7 +4358,8 @@
     "season_start": "2016-07-02T00:00:00+00:00",
     "studio": "TMS Entertainment",
     "source": "Web manga",
-    "score": 7.96
+    "score": 7.96,
+    "mal_id": 30015
   },
   {
     "images_webp": {
@@ -3809,7 +4368,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1847/120234l.webp"
     },
     "anime_format": "TV Special",
-    "genres": ["Action", "Fantasy", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3825,7 +4388,8 @@
     "season_start": "2021-12-31T00:00:00+00:00",
     "studio": "8bit",
     "source": "Light novel",
-    "score": 7.66
+    "score": 7.66,
+    "mal_id": 48375
   },
   {
     "images_webp": {
@@ -3834,7 +4398,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/44844l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy", "Romance", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Romance",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3850,7 +4419,8 @@
     "season_start": "2013-04-06T00:00:00+00:00",
     "studio": "AIC PLUS+",
     "source": "Light novel",
-    "score": 7.14
+    "score": 7.14,
+    "mal_id": 15583
   },
   {
     "images_webp": {
@@ -3859,7 +4429,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1702/106229l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Drama", "Fantasy", "Mystery"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Mystery"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3887,7 +4463,41 @@
     "season_start": "2020-04-02T00:00:00+00:00",
     "studio": "Telecom Animation Film",
     "source": "Web manga",
-    "score": 7.55
+    "score": 7.55,
+    "mal_id": 40221
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1812/134736.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1812/134736t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1812/134736l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Award Winning",
+      "Drama"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "[Oshi no Ko]"
+      },
+      {
+        "type": "Synonym",
+        "title": "My Star"
+      },
+      {
+        "type": "English",
+        "title": "[Oshi No Ko]"
+      }
+    ],
+    "demographic_type": "Seinen",
+    "episodes": 35,
+    "season_start": "2023-04-12T00:00:00+00:00",
+    "studio": "Doga Kobo",
+    "source": "Manga",
+    "score": 8.54,
+    "mal_id": 52034
   },
   {
     "images_webp": {
@@ -3896,7 +4506,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76120l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3924,36 +4536,8 @@
     "season_start": "2009-04-03T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "4-koma manga",
-    "score": 7.87
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1812/134736.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1812/134736t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1812/134736l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Award Winning", "Drama"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "[Oshi no Ko]"
-      },
-      {
-        "type": "Synonym",
-        "title": "My Star"
-      },
-      {
-        "type": "English",
-        "title": "[Oshi No Ko]"
-      }
-    ],
-    "demographic_type": "Seinen",
-    "episodes": 35,
-    "season_start": "2023-04-12T00:00:00+00:00",
-    "studio": "Doga Kobo",
-    "source": "Manga",
-    "score": 8.54
+    "score": 7.87,
+    "mal_id": 5680
   },
   {
     "images_webp": {
@@ -3962,7 +4546,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/84004l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -3978,7 +4566,8 @@
     "season_start": "2013-10-05T00:00:00+00:00",
     "studio": "Satelight",
     "source": "Light novel",
-    "score": 7.9
+    "score": 7.9,
+    "mal_id": 17265
   },
   {
     "images_webp": {
@@ -3987,7 +4576,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1410/112994l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4023,7 +4615,8 @@
     "season_start": "2007-03-03T00:00:00+00:00",
     "studio": "CoMix Wave Films",
     "source": "Original",
-    "score": 7.55
+    "score": 7.55,
+    "mal_id": 1689
   },
   {
     "images_webp": {
@@ -4032,7 +4625,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/76493l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy", "Romance", "Ecchi"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Romance",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4064,7 +4662,8 @@
     "season_start": "2015-10-03T00:00:00+00:00",
     "studio": "SILVER LINK.",
     "source": "Light novel",
-    "score": 7.41
+    "score": 7.41,
+    "mal_id": 30296
   },
   {
     "images_webp": {
@@ -4073,17 +4672,23 @@
       "large_image_url": "https://myanimelist.net/images/anime/1713/145599l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Suspense"],
-    "titles": {
-      "type": "Default",
-      "title": "Beastars"
-    },
+    "genres": [
+      "Drama",
+      "Suspense"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Beastars"
+      }
+    ],
     "demographic_type": "Shounen",
-    "episodes": 36,
+    "episodes": 48,
     "season_start": "2019-10-10T00:00:00+00:00",
     "studio": "Orange",
     "source": "Manga",
-    "score": 7.79
+    "score": 7.79,
+    "mal_id": 39195
   },
   {
     "images_webp": {
@@ -4092,7 +4697,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/52091l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4108,7 +4716,8 @@
     "season_start": "2013-10-04T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 7.74
+    "score": 7.74,
+    "mal_id": 17895
   },
   {
     "images_webp": {
@@ -4117,7 +4726,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/74606l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4145,7 +4759,8 @@
     "season_start": "2015-07-05T00:00:00+00:00",
     "studio": "Toei Animation",
     "source": "Manga",
-    "score": 7.47
+    "score": 7.47,
+    "mal_id": 30694
   },
   {
     "images_webp": {
@@ -4154,7 +4769,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78783l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4170,7 +4789,8 @@
     "season_start": "2016-04-16T00:00:00+00:00",
     "studio": "Lay-duce",
     "source": "Manga",
-    "score": 7.83
+    "score": 7.83,
+    "mal_id": 31741
   },
   {
     "images_webp": {
@@ -4179,7 +4799,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1864/93518l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4199,7 +4822,8 @@
     "season_start": "2018-04-13T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Web manga",
-    "score": 7.92
+    "score": 7.92,
+    "mal_id": 35968
   },
   {
     "images_webp": {
@@ -4208,7 +4832,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/63205l.webp"
     },
     "anime_format": "Special",
-    "genres": ["Action", "Supernatural"],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4232,7 +4859,8 @@
     "season_start": "2014-07-02T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Light novel",
-    "score": 7.61
+    "score": 7.61,
+    "mal_id": 23385
   },
   {
     "images_webp": {
@@ -4241,7 +4869,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/51463l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Horror", "Mystery", "Suspense"],
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4265,7 +4897,8 @@
     "season_start": "2013-07-05T00:00:00+00:00",
     "studio": "Lerche",
     "source": "Visual novel",
-    "score": 7.19
+    "score": 7.19,
+    "mal_id": 16592
   },
   {
     "images_webp": {
@@ -4274,7 +4907,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1584/143719l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Supernatural"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4290,7 +4927,8 @@
     "season_start": "2024-10-04T00:00:00+00:00",
     "studio": "Science SARU",
     "source": "Manga",
-    "score": 8.43
+    "score": 8.43,
+    "mal_id": 57334
   },
   {
     "images_webp": {
@@ -4299,7 +4937,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/81149l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Award Winning", "Sports"],
+    "genres": [
+      "Award Winning",
+      "Sports"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4315,7 +4956,8 @@
     "season_start": "2016-10-06T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Original",
-    "score": 7.9
+    "score": 7.9,
+    "mal_id": 32995
   },
   {
     "images_webp": {
@@ -4324,7 +4966,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/83709l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4344,7 +4989,8 @@
     "season_start": "2017-01-05T00:00:00+00:00",
     "studio": "SILVER LINK.",
     "source": "Manga",
-    "score": 6.75
+    "score": 6.75,
+    "mal_id": 33487
   },
   {
     "images_webp": {
@@ -4353,7 +4999,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1722/107269l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4381,7 +5030,8 @@
     "season_start": "2020-07-06T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Web manga",
-    "score": 7.07
+    "score": 7.07,
+    "mal_id": 41353
   },
   {
     "images_webp": {
@@ -4390,7 +5040,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1408/114012l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Horror", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Horror",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4406,7 +5060,8 @@
     "season_start": "1988-07-16T00:00:00+00:00",
     "studio": "Tokyo Movie Shinsha",
     "source": "Manga",
-    "score": 8.16
+    "score": 8.16,
+    "mal_id": 47
   },
   {
     "images_webp": {
@@ -4415,7 +5070,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/82890l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4439,7 +5097,8 @@
     "season_start": "2017-01-06T00:00:00+00:00",
     "studio": "Nut",
     "source": "Light novel",
-    "score": 7.96
+    "score": 7.96,
+    "mal_id": 32615
   },
   {
     "images_webp": {
@@ -4448,7 +5107,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1638/119321l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Comedy", "Fantasy"],
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4476,7 +5139,8 @@
     "season_start": "2019-08-30T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 8.4
+    "score": 8.4,
+    "mal_id": 38040
   },
   {
     "images_webp": {
@@ -4485,7 +5149,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1597/112995l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama", "Romance"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4513,7 +5181,8 @@
     "season_start": "2013-05-31T00:00:00+00:00",
     "studio": "CoMix Wave Films",
     "source": "Original",
-    "score": 7.85
+    "score": 7.85,
+    "mal_id": 16782
   },
   {
     "images_webp": {
@@ -4522,7 +5191,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/66083l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4546,7 +5218,8 @@
     "season_start": "2014-07-07T00:00:00+00:00",
     "studio": "Doga Kobo",
     "source": "4-koma manga",
-    "score": 7.81
+    "score": 7.81,
+    "mal_id": 23289
   },
   {
     "images_webp": {
@@ -4555,7 +5228,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/64813l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Romance"],
+    "genres": [
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4579,7 +5254,8 @@
     "season_start": "2014-07-08T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Manga",
-    "score": 7.63
+    "score": 7.63,
+    "mal_id": 21995
   },
   {
     "images_webp": {
@@ -4588,7 +5264,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1899/117237l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4612,7 +5290,8 @@
     "season_start": "2021-10-07T00:00:00+00:00",
     "studio": "OLM",
     "source": "Manga",
-    "score": 7.79
+    "score": 7.79,
+    "mal_id": 48926
   },
   {
     "images_webp": {
@@ -4621,7 +5300,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1906/121592l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action"],
+    "genres": [
+      "Action"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4637,7 +5318,8 @@
     "season_start": "2006-04-09T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 8.03
+    "score": 8.03,
+    "mal_id": 889
   },
   {
     "images_webp": {
@@ -4646,7 +5328,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1126/108573l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4670,7 +5355,8 @@
     "season_start": "2020-07-04T00:00:00+00:00",
     "studio": "SILVER LINK.",
     "source": "Light novel",
-    "score": 7.31
+    "score": 7.31,
+    "mal_id": 40496
   },
   {
     "images_webp": {
@@ -4679,7 +5365,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/30667l.webp"
     },
     "anime_format": "Special",
-    "genres": ["Action", "Horror", "Supernatural"],
+    "genres": [
+      "Action",
+      "Horror",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4707,7 +5397,8 @@
     "season_start": "2011-07-27T00:00:00+00:00",
     "studio": "Graphinica",
     "source": "Manga",
-    "score": 7.11
+    "score": 7.11,
+    "mal_id": 11077
   },
   {
     "images_webp": {
@@ -4716,7 +5407,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1502/124384l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4740,32 +5434,8 @@
     "season_start": "2009-10-07T00:00:00+00:00",
     "studio": "Production I.G",
     "source": "Manga",
-    "score": 8.01
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/4/40977.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/4/40977t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/4/40977l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Action", "Suspense"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Btooom!"
-      },
-      {
-        "type": "English",
-        "title": "BTOOOM!"
-      }
-    ],
-    "demographic_type": "Seinen",
-    "episodes": 12,
-    "season_start": "2012-10-04T00:00:00+00:00",
-    "studio": "Madhouse",
-    "source": "Manga",
-    "score": 7.26
+    "score": 8.01,
+    "mal_id": 6045
   },
   {
     "images_webp": {
@@ -4774,7 +5444,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102179l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4794,69 +5468,37 @@
     "season_start": "2019-06-15T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "Light novel",
-    "score": 8.59
+    "score": 8.59,
+    "mal_id": 38329
   },
   {
     "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/4/72750.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/4/72750t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/4/72750l.webp"
+      "image_url": "https://myanimelist.net/images/anime/4/40977.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/4/40977t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/4/40977l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
-        "title": "Plastic Memories"
-      },
-      {
-        "type": "Synonym",
-        "title": "Plamemo"
+        "title": "Btooom!"
       },
       {
         "type": "English",
-        "title": "Plastic Memories"
+        "title": "BTOOOM!"
       }
     ],
-    "demographic_type": null,
-    "episodes": 13,
-    "season_start": "2015-04-05T00:00:00+00:00",
-    "studio": "Doga Kobo",
-    "source": "Original",
-    "score": 7.91
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1085/90759.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1085/90759t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1085/90759l.webp"
-    },
-    "anime_format": "Movie",
-    "genres": ["Drama", "Fantasy", "Romance"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "No Game No Life: Zero"
-      },
-      {
-        "type": "Synonym",
-        "title": "NGNL Zero"
-      },
-      {
-        "type": "Synonym",
-        "title": "NGNL the Movie"
-      },
-      {
-        "type": "English",
-        "title": "No Game, No Life: Zero"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 1,
-    "season_start": "2017-07-15T00:00:00+00:00",
+    "demographic_type": "Seinen",
+    "episodes": 12,
+    "season_start": "2012-10-04T00:00:00+00:00",
     "studio": "Madhouse",
-    "source": "Light novel",
-    "score": 8.16
+    "source": "Manga",
+    "score": 7.26,
+    "mal_id": 14345
   },
   {
     "images_webp": {
@@ -4865,7 +5507,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1075/131925l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Supernatural"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4889,7 +5535,80 @@
     "season_start": "2023-04-01T00:00:00+00:00",
     "studio": "MAPPA",
     "source": "Manga",
-    "score": 8.09
+    "score": 8.09,
+    "mal_id": 46569
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/4/72750.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/4/72750t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/4/72750l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Plastic Memories"
+      },
+      {
+        "type": "Synonym",
+        "title": "Plamemo"
+      },
+      {
+        "type": "English",
+        "title": "Plastic Memories"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 13,
+    "season_start": "2015-04-05T00:00:00+00:00",
+    "studio": "Doga Kobo",
+    "source": "Original",
+    "score": 7.92,
+    "mal_id": 27775
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1085/90759.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1085/90759t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1085/90759l.webp"
+    },
+    "anime_format": "Movie",
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "No Game No Life: Zero"
+      },
+      {
+        "type": "Synonym",
+        "title": "NGNL Zero"
+      },
+      {
+        "type": "Synonym",
+        "title": "NGNL the Movie"
+      },
+      {
+        "type": "English",
+        "title": "No Game, No Life: Zero"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 1,
+    "season_start": "2017-07-15T00:00:00+00:00",
+    "studio": "Madhouse",
+    "source": "Light novel",
+    "score": 8.16,
+    "mal_id": 33674
   },
   {
     "images_webp": {
@@ -4898,7 +5617,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1292/94693l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Mystery", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Mystery",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4914,7 +5637,8 @@
     "season_start": "2014-04-08T00:00:00+00:00",
     "studio": "Kinema Citrus",
     "source": "Light novel",
-    "score": 7.07
+    "score": 7.07,
+    "mal_id": 20787
   },
   {
     "images_webp": {
@@ -4923,7 +5647,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/18793l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Mystery", "Suspense"],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4939,7 +5667,8 @@
     "season_start": "2004-04-07T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Manga",
-    "score": 8.89
+    "score": 8.89,
+    "mal_id": 19
   },
   {
     "images_webp": {
@@ -4948,7 +5677,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/137929l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Award Winning", "Comedy", "Mystery", "Sci-Fi"],
+    "genres": [
+      "Award Winning",
+      "Comedy",
+      "Mystery",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -4972,7 +5706,8 @@
     "season_start": "2006-04-03T00:00:00+00:00",
     "studio": "Kyoto Animation",
     "source": "Light novel",
-    "score": 7.82
+    "score": 7.82,
+    "mal_id": 849
   },
   {
     "images_webp": {
@@ -4981,7 +5716,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1987/117507l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Sci-Fi"],
+    "genres": [
+      "Drama",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5005,7 +5743,8 @@
     "season_start": "2021-04-11T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Light novel",
-    "score": 8.34
+    "score": 8.34,
+    "mal_id": 41457
   },
   {
     "images_webp": {
@@ -5014,7 +5753,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1736/93138l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action"],
+    "genres": [
+      "Action"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5038,7 +5779,8 @@
     "season_start": "2018-08-03T00:00:00+00:00",
     "studio": "Bones",
     "source": "Manga",
-    "score": 7.52
+    "score": 7.52,
+    "mal_id": 36896
   },
   {
     "images_webp": {
@@ -5047,7 +5789,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1021/95670l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance"],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5075,7 +5820,8 @@
     "season_start": "2019-01-12T00:00:00+00:00",
     "studio": "Diomedéa",
     "source": "Manga",
-    "score": 6.61
+    "score": 6.61,
+    "mal_id": 37982
   },
   {
     "images_webp": {
@@ -5084,7 +5830,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1258/126929l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Sports"],
+    "genres": [
+      "Sports"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5100,7 +5848,8 @@
     "season_start": "2022-10-09T00:00:00+00:00",
     "studio": "8bit",
     "source": "Manga",
-    "score": 8.12
+    "score": 8.12,
+    "mal_id": 49596
   },
   {
     "images_webp": {
@@ -5109,7 +5858,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/76222l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5133,7 +5886,8 @@
     "season_start": "2015-07-04T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Light novel",
-    "score": 7.68
+    "score": 7.68,
+    "mal_id": 28907
   },
   {
     "images_webp": {
@@ -5142,7 +5896,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/67795l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy",
+      "Romance",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5158,7 +5918,8 @@
     "season_start": "2014-10-08T00:00:00+00:00",
     "studio": "Seven Arcs Pictures",
     "source": "Manga",
-    "score": 7.03
+    "score": 7.03,
+    "mal_id": 25157
   },
   {
     "images_webp": {
@@ -5167,7 +5928,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1599/112267l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5187,7 +5953,8 @@
     "season_start": "2011-09-17T00:00:00+00:00",
     "studio": "Brain's Base",
     "source": "Manga",
-    "score": 8.26
+    "score": 8.26,
+    "mal_id": 10408
   },
   {
     "images_webp": {
@@ -5196,7 +5963,14 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/20680l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Romance", "Ecchi"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy",
+      "Romance",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5216,7 +5990,8 @@
     "season_start": "2006-07-03T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 7.2
+    "score": 7.2,
+    "mal_id": 1195
   },
   {
     "images_webp": {
@@ -5225,7 +6000,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/35721l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Slice of Life", "Supernatural"],
+    "genres": [
+      "Award Winning",
+      "Slice of Life",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5249,7 +6028,8 @@
     "season_start": "2012-07-21T00:00:00+00:00",
     "studio": "Studio Chizu",
     "source": "Original",
-    "score": 8.56
+    "score": 8.56,
+    "mal_id": 12355
   },
   {
     "images_webp": {
@@ -5258,7 +6038,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1557/123313l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5282,7 +6066,8 @@
     "season_start": "2017-02-18T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Original",
-    "score": 7.56
+    "score": 7.56,
+    "mal_id": 31765
   },
   {
     "images_webp": {
@@ -5291,7 +6076,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1900/110097l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5319,7 +6107,8 @@
     "season_start": "2021-04-11T00:00:00+00:00",
     "studio": "Telecom Animation Film",
     "source": "Web manga",
-    "score": 7.18
+    "score": 7.18,
+    "mal_id": 42361
   },
   {
     "images_webp": {
@@ -5328,7 +6117,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1302/94882l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5348,7 +6139,8 @@
     "season_start": "2018-07-14T00:00:00+00:00",
     "studio": "Zero-G",
     "source": "Manga",
-    "score": 8.45
+    "score": 8.45,
+    "mal_id": 37105
   },
   {
     "images_webp": {
@@ -5357,7 +6149,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/73700l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Mystery", "Romance", "Supernatural"],
+    "genres": [
+      "Comedy",
+      "Mystery",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5389,7 +6186,8 @@
     "season_start": "2015-04-12T00:00:00+00:00",
     "studio": "LIDENFILMS",
     "source": "Manga",
-    "score": 7.52
+    "score": 7.52,
+    "mal_id": 28677
   },
   {
     "images_webp": {
@@ -5398,7 +6196,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1/2432l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Award Winning", "Drama", "Romance", "Sci-Fi"],
+    "genres": [
+      "Award Winning",
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5438,7 +6241,8 @@
     "season_start": "2006-07-15T00:00:00+00:00",
     "studio": "Madhouse",
     "source": "Novel",
-    "score": 8.09
+    "score": 8.09,
+    "mal_id": 2236
   },
   {
     "images_webp": {
@@ -5447,7 +6251,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/30097l.webp"
     },
     "anime_format": "OVA",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5483,7 +6290,8 @@
     "season_start": "2011-09-22T00:00:00+00:00",
     "studio": "AIC Build",
     "source": "Light novel",
-    "score": 6.71
+    "score": 6.71,
+    "mal_id": 10897
   },
   {
     "images_webp": {
@@ -5492,7 +6300,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77324l.webp"
     },
     "anime_format": "TV Special",
-    "genres": ["Sci-Fi", "Suspense"],
+    "genres": [
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5516,7 +6327,8 @@
     "season_start": "2015-12-03T00:00:00+00:00",
     "studio": "White Fox",
     "source": "Visual novel",
-    "score": 8.26
+    "score": 8.27,
+    "mal_id": 32188
   },
   {
     "images_webp": {
@@ -5525,7 +6337,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/75106l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Ecchi"],
+    "genres": [
+      "Comedy",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5549,7 +6364,8 @@
     "season_start": "2015-07-04T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Light novel",
-    "score": 7.21
+    "score": 7.21,
+    "mal_id": 29786
   },
   {
     "images_webp": {
@@ -5558,7 +6374,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/1448/127956l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5574,7 +6392,8 @@
     "season_start": "2022-10-09T00:00:00+00:00",
     "studio": "CloverWorks",
     "source": "4-koma manga",
-    "score": 8.73
+    "score": 8.73,
+    "mal_id": 47917
   },
   {
     "images_webp": {
@@ -5583,7 +6402,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/108722l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance"],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5611,7 +6433,8 @@
     "season_start": "2020-10-03T00:00:00+00:00",
     "studio": "Seven Arcs",
     "source": "Manga",
-    "score": 7.84
+    "score": 7.84,
+    "mal_id": 41389
   },
   {
     "images_webp": {
@@ -5620,7 +6443,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77356l.webp"
     },
     "anime_format": "OVA",
-    "genres": ["Avant Garde", "Comedy", "Sci-Fi", "Suspense"],
+    "genres": [
+      "Avant Garde",
+      "Comedy",
+      "Sci-Fi",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5644,36 +6472,8 @@
     "season_start": "2000-04-26T00:00:00+00:00",
     "studio": "Gainax",
     "source": "Original",
-    "score": 8.04
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/6/51107.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/6/51107t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/6/51107l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Sports"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Free!"
-      },
-      {
-        "type": "Synonym",
-        "title": "フリー！"
-      },
-      {
-        "type": "English",
-        "title": "Free! - Iwatobi Swim Club"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 37,
-    "season_start": "2013-07-04T00:00:00+00:00",
-    "studio": "Kyoto Animation",
-    "source": "Original",
-    "score": 7.32
+    "score": 8.04,
+    "mal_id": 227
   },
   {
     "images_webp": {
@@ -5682,7 +6482,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1091/128729l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5702,7 +6506,40 @@
     "season_start": "2022-10-05T00:00:00+00:00",
     "studio": "Nexus",
     "source": "Light novel",
-    "score": 8.22
+    "score": 8.22,
+    "mal_id": 48316
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/6/51107.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/6/51107t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/6/51107l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Sports"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Free!"
+      },
+      {
+        "type": "Synonym",
+        "title": "フリー！"
+      },
+      {
+        "type": "English",
+        "title": "Free! - Iwatobi Swim Club"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 37,
+    "season_start": "2013-07-04T00:00:00+00:00",
+    "studio": "Kyoto Animation",
+    "source": "Original",
+    "score": 7.32,
+    "mal_id": 18507
   },
   {
     "images_webp": {
@@ -5711,7 +6548,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/79164l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Horror",
+      "Suspense"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5731,168 +6573,8 @@
     "season_start": "2016-04-08T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Original",
-    "score": 7.28
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1649/93412.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1649/93412t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1649/93412l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Isekai Maou to Shoukan Shoujo no Dorei Majutsu"
-      },
-      {
-        "type": "Synonym",
-        "title": "The Otherworldly Demon King and the Summoner Girls' Slave Magic"
-      },
-      {
-        "type": "English",
-        "title": "How Not to Summon a Demon Lord"
-      },
-      {
-        "type": "French",
-        "title": "How Not to Summon a Demon Lord"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 22,
-    "season_start": "2018-07-05T00:00:00+00:00",
-    "studio": "Ajia-do",
-    "source": "Light novel",
-    "score": 6.81
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1285/111316.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1285/111316t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1285/111316l.webp"
-    },
-    "anime_format": "ONA",
-    "genres": ["Fantasy"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Arifureta Shokugyou de Sekai Saikyou: Prologue"
-      },
-      {
-        "type": "Synonym",
-        "title": "Arifureta Shokugyou de Sekai Saikyou Episode 0"
-      },
-      {
-        "type": "English",
-        "title": "Arifureta: From Commonplace to World's Strongest - Prologue"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 42,
-    "season_start": "2020-03-19T00:00:00+00:00",
-    "studio": "asread.",
-    "source": "Light novel",
-    "score": 6.69
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1485/141208.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1485/141208t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1485/141208l.webp"
-    },
-    "anime_format": "Movie",
-    "genres": ["Drama"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Hotaru no Haka"
-      },
-      {
-        "type": "Synonym",
-        "title": "Tombstone for Fireflies"
-      },
-      {
-        "type": "English",
-        "title": "Grave of the Fireflies"
-      },
-      {
-        "type": "French",
-        "title": "Le Tombeau des Lucioles"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 1,
-    "season_start": "1988-04-16T00:00:00+00:00",
-    "studio": "Studio Ghibli",
-    "source": "Novel",
-    "score": 8.54
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/8/85593.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/8/85593t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/8/85593l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Action", "Fantasy"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Rokudenashi Majutsu Koushi to Akashic Records"
-      },
-      {
-        "type": "Synonym",
-        "title": "RokuAka"
-      },
-      {
-        "type": "English",
-        "title": "Akashic Records of Bastard Magic Instructor"
-      },
-      {
-        "type": "French",
-        "title": "Akashic Records of Bastard Magic Instructor"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 12,
-    "season_start": "2017-04-04T00:00:00+00:00",
-    "studio": "LIDENFILMS",
-    "source": "Light novel",
-    "score": 7.11
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/5/19570.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/5/19570t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/5/19570l.webp"
-    },
-    "anime_format": "TV",
-    "genres": ["Action", "Mystery"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Darker than Black: Kuro no Keiyakusha"
-      },
-      {
-        "type": "Synonym",
-        "title": "DTB"
-      },
-      {
-        "type": "English",
-        "title": "Darker than Black"
-      },
-      {
-        "type": "French",
-        "title": "Darker than Black"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 41,
-    "season_start": "2007-04-06T00:00:00+00:00",
-    "studio": "Bones",
-    "source": "Original",
-    "score": 8.04
+    "score": 7.28,
+    "mal_id": 28623
   },
   {
     "images_webp": {
@@ -5901,7 +6583,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1708/138033l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Mystery"],
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5925,7 +6610,190 @@
     "season_start": "2023-10-22T00:00:00+00:00",
     "studio": "OLM",
     "source": "Light novel",
-    "score": 8.85
+    "score": 8.85,
+    "mal_id": 54492
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1649/93412.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1649/93412t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1649/93412l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy",
+      "Romance",
+      "Ecchi"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Isekai Maou to Shoukan Shoujo no Dorei Majutsu"
+      },
+      {
+        "type": "Synonym",
+        "title": "The Otherworldly Demon King and the Summoner Girls' Slave Magic"
+      },
+      {
+        "type": "English",
+        "title": "How Not to Summon a Demon Lord"
+      },
+      {
+        "type": "French",
+        "title": "How Not to Summon a Demon Lord"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 22,
+    "season_start": "2018-07-05T00:00:00+00:00",
+    "studio": "Ajia-do",
+    "source": "Light novel",
+    "score": 6.81,
+    "mal_id": 37210
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1285/111316.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1285/111316t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1285/111316l.webp"
+    },
+    "anime_format": "ONA",
+    "genres": [
+      "Fantasy"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Arifureta Shokugyou de Sekai Saikyou: Prologue"
+      },
+      {
+        "type": "Synonym",
+        "title": "Arifureta Shokugyou de Sekai Saikyou Episode 0"
+      },
+      {
+        "type": "English",
+        "title": "Arifureta: From Commonplace to World's Strongest - Prologue"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 42,
+    "season_start": "2020-03-19T00:00:00+00:00",
+    "studio": "asread.",
+    "source": "Light novel",
+    "score": 6.69,
+    "mal_id": 46971
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1485/141208.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1485/141208t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1485/141208l.webp"
+    },
+    "anime_format": "Movie",
+    "genres": [
+      "Drama"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Hotaru no Haka"
+      },
+      {
+        "type": "Synonym",
+        "title": "Tombstone for Fireflies"
+      },
+      {
+        "type": "English",
+        "title": "Grave of the Fireflies"
+      },
+      {
+        "type": "French",
+        "title": "Le Tombeau des Lucioles"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 1,
+    "season_start": "1988-04-16T00:00:00+00:00",
+    "studio": "Studio Ghibli",
+    "source": "Novel",
+    "score": 8.54,
+    "mal_id": 578
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/8/85593.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/8/85593t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/8/85593l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Rokudenashi Majutsu Koushi to Akashic Records"
+      },
+      {
+        "type": "Synonym",
+        "title": "RokuAka"
+      },
+      {
+        "type": "English",
+        "title": "Akashic Records of Bastard Magic Instructor"
+      },
+      {
+        "type": "French",
+        "title": "Akashic Records of Bastard Magic Instructor"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 12,
+    "season_start": "2017-04-04T00:00:00+00:00",
+    "studio": "LIDENFILMS",
+    "source": "Light novel",
+    "score": 7.11,
+    "mal_id": 32951
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/5/19570.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/5/19570t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/5/19570l.webp"
+    },
+    "anime_format": "TV",
+    "genres": [
+      "Action",
+      "Mystery"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Darker than Black: Kuro no Keiyakusha"
+      },
+      {
+        "type": "Synonym",
+        "title": "DTB"
+      },
+      {
+        "type": "English",
+        "title": "Darker than Black"
+      },
+      {
+        "type": "French",
+        "title": "Darker than Black"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 41,
+    "season_start": "2007-04-06T00:00:00+00:00",
+    "studio": "Bones",
+    "source": "Original",
+    "score": 8.04,
+    "mal_id": 2025
   },
   {
     "images_webp": {
@@ -5934,7 +6802,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75104l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Fantasy", "Romance", "Ecchi"],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5958,7 +6831,8 @@
     "season_start": "2015-07-08T00:00:00+00:00",
     "studio": "Lerche",
     "source": "Manga",
-    "score": 6.92
+    "score": 6.92,
+    "mal_id": 30307
   },
   {
     "images_webp": {
@@ -5967,7 +6841,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/64225l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Adventure", "Fantasy", "Romance"],
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -5991,7 +6869,8 @@
     "season_start": "2014-10-07T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 8.04
+    "score": 8.04,
+    "mal_id": 25013
   },
   {
     "images_webp": {
@@ -6000,7 +6879,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/86468l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy", "Romance", "Ecchi"],
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Ecchi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6020,7 +6903,8 @@
     "season_start": "2017-04-09T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Light novel",
-    "score": 6.31
+    "score": 6.31,
+    "mal_id": 32901
   },
   {
     "images_webp": {
@@ -6029,7 +6913,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1447/99827l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6057,7 +6945,8 @@
     "season_start": "2019-04-06T00:00:00+00:00",
     "studio": "TMS Entertainment",
     "source": "Manga",
-    "score": 8.2
+    "score": 8.2,
+    "mal_id": 38680
   },
   {
     "images_webp": {
@@ -6066,7 +6955,10 @@
       "large_image_url": "https://myanimelist.net/images/anime/1941/98123l.webp"
     },
     "anime_format": "OVA",
-    "genres": ["Action", "Comedy"],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6098,7 +6990,8 @@
     "season_start": "1994-01-21T00:00:00+00:00",
     "studio": "J.C.Staff",
     "source": "Manga",
-    "score": 7.4
+    "score": 7.41,
+    "mal_id": 1913
   },
   {
     "images_webp": {
@@ -6107,7 +7000,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/39665l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Supernatural"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Supernatural"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6127,7 +7024,8 @@
     "season_start": "2012-07-08T00:00:00+00:00",
     "studio": "SILVER LINK.",
     "source": "Light novel",
-    "score": 7.72
+    "score": 7.72,
+    "mal_id": 11887
   },
   {
     "images_webp": {
@@ -6136,7 +7034,9 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/33257l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Comedy"],
+    "genres": [
+      "Comedy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6156,7 +7056,8 @@
     "season_start": "2012-01-10T00:00:00+00:00",
     "studio": "Sunrise",
     "source": "Web manga",
-    "score": 8.23
+    "score": 8.23,
+    "mal_id": 11843
   },
   {
     "images_webp": {
@@ -6165,7 +7066,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1491/134498l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6189,32 +7095,8 @@
     "season_start": "2014-12-06T00:00:00+00:00",
     "studio": "Studio Pierrot",
     "source": "Manga",
-    "score": 7.79
-  },
-  {
-    "images_webp": {
-      "image_url": "https://myanimelist.net/images/anime/1254/134212.webp",
-      "small_image_url": "https://myanimelist.net/images/anime/1254/134212t.webp",
-      "large_image_url": "https://myanimelist.net/images/anime/1254/134212l.webp"
-    },
-    "anime_format": "Movie",
-    "genres": ["Avant Garde", "Award Winning", "Drama", "Horror", "Suspense"],
-    "titles": [
-      {
-        "type": "Default",
-        "title": "Perfect Blue"
-      },
-      {
-        "type": "English",
-        "title": "Perfect Blue"
-      }
-    ],
-    "demographic_type": null,
-    "episodes": 1,
-    "season_start": "1998-02-28T00:00:00+00:00",
-    "studio": "Madhouse",
-    "source": "Novel",
-    "score": 8.55
+    "score": 7.79,
+    "mal_id": 16870
   },
   {
     "images_webp": {
@@ -6223,7 +7105,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1218/135107l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6239,7 +7125,40 @@
     "season_start": "2023-04-08T00:00:00+00:00",
     "studio": "A-1 Pictures",
     "source": "Manga",
-    "score": 7.61
+    "score": 7.61,
+    "mal_id": 52211
+  },
+  {
+    "images_webp": {
+      "image_url": "https://myanimelist.net/images/anime/1254/134212.webp",
+      "small_image_url": "https://myanimelist.net/images/anime/1254/134212t.webp",
+      "large_image_url": "https://myanimelist.net/images/anime/1254/134212l.webp"
+    },
+    "anime_format": "Movie",
+    "genres": [
+      "Avant Garde",
+      "Award Winning",
+      "Drama",
+      "Horror",
+      "Suspense"
+    ],
+    "titles": [
+      {
+        "type": "Default",
+        "title": "Perfect Blue"
+      },
+      {
+        "type": "English",
+        "title": "Perfect Blue"
+      }
+    ],
+    "demographic_type": null,
+    "episodes": 1,
+    "season_start": "1998-02-28T00:00:00+00:00",
+    "studio": "Madhouse",
+    "source": "Novel",
+    "score": 8.55,
+    "mal_id": 437
   },
   {
     "images_webp": {
@@ -6248,7 +7167,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1415/102477l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Romance", "Sci-Fi"],
+    "genres": [
+      "Drama",
+      "Romance",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6264,7 +7187,8 @@
     "season_start": "2016-07-04T00:00:00+00:00",
     "studio": "Telecom Animation Film",
     "source": "Manga",
-    "score": 7.63
+    "score": 7.63,
+    "mal_id": 32729
   },
   {
     "images_webp": {
@@ -6273,7 +7197,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/138727l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Award Winning", "Fantasy"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6297,7 +7225,8 @@
     "season_start": "2008-07-19T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Original",
-    "score": 7.96
+    "score": 7.96,
+    "mal_id": 2890
   },
   {
     "images_webp": {
@@ -6306,7 +7235,13 @@
       "large_image_url": "https://myanimelist.net/images/anime/1579/140483l.webp"
     },
     "anime_format": "Movie",
-    "genres": ["Adventure", "Award Winning", "Comedy", "Drama", "Fantasy"],
+    "genres": [
+      "Adventure",
+      "Award Winning",
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6330,7 +7265,8 @@
     "season_start": "1989-07-29T00:00:00+00:00",
     "studio": "Studio Ghibli",
     "source": "Novel",
-    "score": 8.23
+    "score": 8.24,
+    "mal_id": 512
   },
   {
     "images_webp": {
@@ -6339,7 +7275,12 @@
       "large_image_url": "https://myanimelist.net/images/anime/1787/140239l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6383,7 +7324,8 @@
     "season_start": "1997-04-01T00:00:00+00:00",
     "studio": "OLM",
     "source": "Game",
-    "score": 7.42
+    "score": 7.42,
+    "mal_id": 527
   },
   {
     "images_webp": {
@@ -6392,7 +7334,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/88476l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Drama", "Fantasy", "Romance"],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6420,7 +7366,8 @@
     "season_start": "2017-10-08T00:00:00+00:00",
     "studio": "Wit Studio",
     "source": "Manga",
-    "score": 8.05
+    "score": 8.05,
+    "mal_id": 35062
   },
   {
     "images_webp": {
@@ -6429,7 +7376,11 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/73274l.webp"
     },
     "anime_format": "TV",
-    "genres": ["Action", "Comedy", "Sci-Fi"],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Sci-Fi"
+    ],
     "titles": [
       {
         "type": "Default",
@@ -6457,6 +7408,7 @@
     "season_start": "2006-04-04T00:00:00+00:00",
     "studio": "Sunrise",
     "source": "Manga",
-    "score": 8.93
+    "score": 8.93,
+    "mal_id": 918
   }
 ]

@@ -15,6 +15,24 @@ type Anime = {
   score: number | null;
 };
 
+type CharacterFromJson = {
+  images_webp: unknown;
+  name: string;
+};
+
+type CharacterJson = {
+  [key: string]: CharacterFromJson;
+};
+
+type Character = {
+  images_webp: unknown;
+  name: string;
+  anime_id: string;
+  anime_titles: JikanTitle[];
+  anime_genres: string[];
+  demographic_type: string | null;
+};
+
 type JikanTitle = {
   type: string;
   title: string;
@@ -47,19 +65,64 @@ const AnimeSchema = new Schema<Anime>(
   },
 );
 
+const CharacterSchema = new Schema<Character>(
+  {
+    images_webp: { type: Schema.Types.Mixed, required: true },
+    name: { type: String, required: true },
+    anime_id: { type: String, required: true },
+    anime_titles: {
+      type: [
+        {
+          type: { type: String, required: true },
+          title: { type: String, required: true },
+        },
+      ],
+      required: true,
+    },
+    anime_genres: { type: [String], required: true },
+    demographic_type: { type: String, default: null },
+  },
+  {
+    versionKey: false,
+  }
+);
+
 const AnimeModel =
   mongoose.models.Anime || mongoose.model<Anime>('Anime', AnimeSchema);
 
-const DEFAULT_MONGO_URI = 'mongodb://127.0.0.1:27017/animedle?authSource=admin';
+const CharacterModel =
+  mongoose.models.Character || mongoose.model<Character>('Character', CharacterSchema);
 
-const FORCE_DELETE_AND_RECREATE = false; // Mettre à true pour forcer la suppression et la recréation de la collection
+
+const DEFAULT_MONGO_URI = 'mongodb://admin:adminpassword@localhost:27017/animedle?authSource=admin';
+
+const FORCE_DELETE_AND_RECREATE = true; // Mettre à true pour forcer la suppression et la recréation de la collection
 
 async function isDatabaseEmpty(): Promise<boolean> {
   const count = await AnimeModel.countDocuments();
   return count === 0;
 }
 
-async function saveAnimeToMongo(animes: Anime[]) {
+// Insert an anime into MongoDB and return the inserted document's ID
+async function addMangaAnimeToMongo(anime: Anime) : Promise<string> {
+  const newAnime = new AnimeModel(anime);
+  await newAnime.save();
+  return newAnime._id.toString();
+}
+
+async function insertMangaWithCharacter(anime: Anime, character: CharacterFromJson) : Promise<void> {
+  const animeId = await addMangaAnimeToMongo(anime);
+  const characterDoc = new CharacterModel({
+    ...character,
+    anime_id: animeId,
+    anime_titles: anime.titles,
+    anime_genres: anime.genres,
+    demographic_type: anime.demographic_type,
+  });
+  await characterDoc.save();
+}
+
+async function saveAnimeToMongo(animes: Anime[], characters: CharacterJson) {
   const mongoUri = process.env.MONGO_URI ?? DEFAULT_MONGO_URI;
   const forceDelete = process.env.FORCE_DELETE_AND_RECREATE || FORCE_DELETE_AND_RECREATE;
 
@@ -67,7 +130,16 @@ async function saveAnimeToMongo(animes: Anime[]) {
   const isEmpty = await isDatabaseEmpty();
   if (isEmpty || forceDelete) {
     await AnimeModel.deleteMany({});
-    await AnimeModel.insertMany(animes, { ordered: false });
+    await CharacterModel.deleteMany({});
+    if(mongoose.connection.db )
+      await mongoose.connection.db.dropCollection('current_animes').catch(() => {});
+    for (const anime of animes) {
+      if(!anime.mal_id) continue;
+      const character = characters[anime.mal_id];
+      if (character) {
+        await insertMangaWithCharacter(anime, character);
+      } 
+    }
   } else {
     console.log("No insertion needed, database is already populated.");
   }
@@ -98,10 +170,12 @@ function replaceDateBySeasonDate(anime: Anime): Anime {
 
 //fecth file "filtered_data.json" and insert it to mongoDB
 async function insertFilteredDataToMongo() {
-  const rawData = fs.readFileSync('filtered_data.json', 'utf-8');
-  const filtered: Anime[] = JSON.parse(rawData);
+  const rawDataAnime = fs.readFileSync('filtered_data.json', 'utf-8');
+  const rawDataCharacter = fs.readFileSync('filtered_characters.json', 'utf-8');
+  const filtered: Anime[] = JSON.parse(rawDataAnime);
   const filteredWithSeasonDate = filtered.map(replaceDateBySeasonDate);
-  await saveAnimeToMongo(filteredWithSeasonDate);
+  const characters: CharacterJson = JSON.parse(rawDataCharacter);
+  await saveAnimeToMongo(filteredWithSeasonDate, characters);
   console.log(`Insertion terminée.`);
 }
 
