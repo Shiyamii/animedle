@@ -34,6 +34,17 @@ type JikanRelation = {
   }>;
 };
 
+type JikanCharacter = {
+  character: {
+    mal_id: number;
+    url: string;
+    images: { webp: unknown };
+    name: string;
+  },
+  role: string;
+  favorites: number;
+}
+
 type AnimeRelatedList = {
   first: number;
   relatedIds: number[];
@@ -55,6 +66,10 @@ type JikanAnimeResponse = JikanResponse & {
   data: JikanAnime;
 }
 
+type JikanCharacterResponse = JikanResponse & {
+  data: JikanCharacter[];
+}
+
 
 type JikanRelationsResponse = JikanResponse &{
   data: JikanRelation[];
@@ -74,6 +89,12 @@ type FilteredAnime = {
   score: number | null;
 };
 
+type FilteredCharacter = {
+  mal_id: number;
+  name: string;
+  images_webp: unknown;
+}; 
+
 ///////////////////////////////////
 // Constantes et Schéma Mongoose //
 ///////////////////////////////////
@@ -81,8 +102,6 @@ type FilteredAnime = {
 const TARGET_ANIME_COUNT = 200;
 const PAGE_SIZE = 25;
 const MAX_RETRIES = 5;
-
-
 
 const fetchedAnimeCache = new Map<number, JikanAnime>();
 
@@ -142,6 +161,11 @@ async function fetchAnime(id: number): Promise<JikanAnime> {
   const response = await fetchFromJikan<JikanAnimeResponse>(url);
   fetchedAnimeCache.set(id, response.data);
   return response.data;
+}
+
+async function fetchCharacterData(animeId: number): Promise<JikanCharacterResponse> {
+  const url = `https://api.jikan.moe/v4/anime/${animeId}/characters`;
+  return fetchFromJikan<JikanCharacterResponse>(url);
 }
 
 //////////////////////////
@@ -244,7 +268,23 @@ async function getAnime(id: number): Promise<JikanAnime> {
   return mainAnime;
 }
 
+async function getCharacters(animeId: number) : Promise<JikanCharacter[]> {
+  const characterResponse = await fetchCharacterData(animeId);
+  return characterResponse.data;
+}
 
+async function getMainCharacter(animeId: number): Promise<FilteredCharacter | null> {
+  const characters = await getCharacters(animeId);
+  const mainCharacter = characters.filter((char) => char.role === 'Main').sort((a, b) => b.favorites - a.favorites)[0];
+  if (!mainCharacter) {
+    return null;
+  }
+  return {
+    mal_id: mainCharacter.character.mal_id,
+    name: mainCharacter.character.name,
+    images_webp: mainCharacter.character.images.webp,
+  };
+}
 
 async function fetchAndFilterAnimeData() {
   // Récupérer jusqu'à 200 animes via pagination
@@ -277,13 +317,34 @@ async function fetchAndFilterAnimeData() {
     studio: anime.studios[0]?.name ?? null,
     source: anime.source,
     score: anime.score,
+    mal_id: anime.mal_id,
   }));
 
   fs.writeFileSync('filtered_data.json', JSON.stringify(filtered, null, 2), 'utf-8');
+
+  fecthAndFilterCharacterData(filtered).catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+
   console.log(`Filtrage terminé. ${filtered.length} animes enregistrés dans filtered_data.json.`);
   console.log(`Nombre ID visité : ${visitedAnimeIds.size}`);
 }
 
+async function fecthAndFilterCharacterData(animes: FilteredAnime[]) {
+  const charactersData: Record<number, FilteredCharacter | null> = {};
+
+  for (const anime of animes) {
+    if (anime.mal_id) {
+      const mainCharacter = await getMainCharacter(anime.mal_id);
+      charactersData[anime.mal_id] = mainCharacter;
+      log(`Personnage principal de l'anime ID ${anime.mal_id} récupéré.`);
+    }
+  }
+
+  fs.writeFileSync('filtered_characters.json', JSON.stringify(charactersData, null, 2), 'utf-8');
+  console.log(`Récupération des personnages terminée. Données enregistrées dans filtered_characters.json.`);
+}
 
 fetchAndFilterAnimeData().catch((error) => {
   console.error(error);

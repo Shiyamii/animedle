@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx filterdata.ts && tsx insertData.ts",
+    "start": "tsx filterdata.ts",
     "start:insert": "tsx insertData.ts",
     "typecheck": "tsc --noEmit"
   },
