@@ -27,8 +27,8 @@ function HomePage() {
 
                     {
                         !!foundAnime ? (
-                            <div className="my-4 max-w-lg">
-                                <h2 className="text-2xl font-semibold">{t("home.congratulations")}</h2>
+                            <div className="my-4 max-w-lg text-center">
+                                <h2 className="text-2xl font-semibold text-primary">{t("home.congratulations")}</h2>
                                 <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>
                             </div>
                         ) : (
