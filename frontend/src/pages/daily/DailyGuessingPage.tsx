@@ -31,7 +31,7 @@ function DailyGuessingPage() {
                     className='w-full flex flex-col items-center max-w-6xl bg-card text-card-foreground rounded-xl p-8 shadow-md border border-border mt-2'>
 
                     {
-                        !!foundAnime ? (
+                        foundAnime ? (
                             <div className="my-4 max-w-lg text-center">
                                 <h2 className="text-2xl font-semibold text-primary">{t("home.congratulations")}</h2>
                                 <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>
