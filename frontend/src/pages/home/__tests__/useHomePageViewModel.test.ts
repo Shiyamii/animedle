@@ -11,9 +11,16 @@ const { mockLoadAnimeList, mockAddGuessToListAsFirst, mockGetGuessList, mockAnim
 
     const mockAnimeStore = {
         animeList: [] as AnimeItemDTO[],
+        guessList: [] as GuessResultDTO[],
+        foundAnime: null as AnimeItemDTO | null,
+        currentAnimeDate: null as string | null,
         loadAnimeList: mockLoadAnimeList,
         getGuessList: mockGetGuessList,
         addGuessToListAsFirst: mockAddGuessToListAsFirst,
+        resetGame: vi.fn(),
+        initGuessListIfNeeded: vi.fn(),
+        setFoundAnime: vi.fn(),
+        setCurrentAnimeDate: vi.fn(),
     };
 
     return { mockLoadAnimeList, mockAddGuessToListAsFirst, mockGetGuessList, mockAnimeStore };
@@ -59,6 +66,9 @@ describe('useHomePageViewModel', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         mockAnimeStore.animeList = [];
+        mockAnimeStore.guessList = [];
+        mockAnimeStore.foundAnime = null;
+        mockAnimeStore.currentAnimeDate = null;
         mockGetGuessList.mockReturnValue([]);
         mockLoadAnimeList.mockResolvedValue(undefined);
         vi.stubGlobal('fetch', vi.fn());
@@ -94,11 +104,11 @@ describe('useHomePageViewModel', () => {
             expect(mockLoadAnimeList).not.toHaveBeenCalled();
         });
 
-        it('récupère la guessList depuis le store au montage', () => {
+        it('récupère la guessList depuis le store au montage', async () => {
             const existing = [makeGuessResult('1', false)];
-            mockGetGuessList.mockReturnValue(existing);
+            mockAnimeStore.guessList = existing;
             const { result } = renderHook(() => useHomePageViewModel());
-            expect(result.current.guessList).toEqual(existing);
+            await waitFor(() => expect(result.current.guessList).toEqual(existing));
         });
     });
 
@@ -125,7 +135,7 @@ describe('useHomePageViewModel', () => {
 
         it('exclut les animes déjà devinés de la liste filtrée', async () => {
             mockAnimeStore.animeList = [makeAnime('1', 'Naruto'), makeAnime('2', 'Bleach')];
-            mockGetGuessList.mockReturnValue([makeGuessResult('1', false)]);
+            mockAnimeStore.guessList = [makeGuessResult('1', false)];
 
             const { result } = renderHook(() => useHomePageViewModel());
             act(() => { result.current.setInputValue('Naruto'); });
@@ -152,7 +162,7 @@ describe('useHomePageViewModel', () => {
             await act(async () => { await result.current.onAnimeSelect('1'); });
 
             expect(fetch).toHaveBeenCalledWith(
-                'http://localhost:3000/api/animes/guess/1',
+                'http://localhost:3000/api/animes/guess/1?guessNumber=1',
                 expect.objectContaining({ method: 'POST' })
             );
         });

@@ -357,9 +357,6 @@ describe('useAdminViewModel', () => {
 
     describe('handleSetSpecific', () => {
         it('n\'envoie rien si selectedAnimeId est vide', async () => {
-            vi.mocked(fetch)
-                .mockResolvedValue({ ok: true, json: async () => null } as Response);
-
             const { result } = renderHook(() => useAdminViewModel());
             await waitFor(() => expect(result.current.isLoading).toBe(false));
 
