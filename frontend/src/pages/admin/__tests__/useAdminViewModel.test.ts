@@ -18,6 +18,7 @@ function makeAdminAnime(overrides: Partial<AdminAnimeDTO> = {}): AdminAnimeDTO {
         studio: 'MAPPA',
         source: 'Manga',
         score: 8.5,
+        enabled: true,
         ...overrides,
     };
 }

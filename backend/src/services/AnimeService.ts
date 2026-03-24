@@ -93,6 +93,7 @@ export interface AdminAnimeDTO {
     studio: string;
     source: string;
     score: number;
+    enabled: boolean;
 }
 
 export interface CreateAdminAnimeDTO {
@@ -132,7 +133,7 @@ export class AnimeService {
     }
 
     async getAnimeList(): Promise<AnimeItemDTO[]> {
-        const entities = await this.repository.findAll();
+        const entities = await this.repository.findAllEnabled();
         return entities.map(entity => this.toItemDTO(entity));
     }
 
@@ -167,6 +168,7 @@ export class AnimeService {
             studio: entity.studio,
             source: entity.source,
             score: entity.score,
+            enabled: entity.enabled !== false,
         };
     }
 
@@ -194,6 +196,7 @@ export class AnimeService {
             studio: data.studio,
             source: data.source,
             score: data.score,
+            enabled: true
         });
         return this.toAdminDTO(entity);
     }
@@ -218,6 +221,20 @@ export class AnimeService {
 
     async deleteAnime(id: string): Promise<boolean> {
         return this.repository.delete(id);
+    }
+
+    async toggleAnimeEnabled(id: string, enabled: boolean): Promise<AdminAnimeDTO | null> {
+        const entity = await this.repository.update(id, { enabled });
+        if (!entity) return null;
+
+        if (!enabled) {
+            const current = await this.currentAnimeRepository.getCurrentAnime();
+            if (current?.anime?._id?.toHexString() === id) {
+                await this.updateGoalAnime();
+            }
+        }
+
+        return this.toAdminDTO(entity);
     }
 
     async setCurrentAnimeById(id: string): Promise<AdminAnimeDTO | null> {
@@ -276,7 +293,7 @@ export class AnimeService {
     }
 
     private async generateRandomAnime(): Promise<AnimeEntity> {
-        const animes = await this.repository.findAll();
+        const animes = await this.repository.findAllEnabled();
         if (animes.length === 0) {
             console.warn("No animes found in the database to update the goal anime.");
             throw new Error("No animes found to update the goal anime.");

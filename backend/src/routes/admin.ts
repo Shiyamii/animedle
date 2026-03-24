@@ -58,6 +58,15 @@ router.get("/admin/stats", async (c) => {
     return c.json(stats);
 });
 
+router.patch("/admin/animes/:id/enabled", async (c) => {
+    const id = c.req.param("id");
+    const { enabled } = await c.req.json<{ enabled: boolean }>();
+    if (typeof enabled !== "boolean") return c.json({ error: "Paramètre 'enabled' requis (booléen)" }, 400);
+    const anime = await animeService.toggleAnimeEnabled(id, enabled);
+    if (!anime) return c.json({ error: "Anime non trouvé" }, 404);
+    return c.json(anime);
+});
+
 router.delete("/admin/animes/:id", async (c) => {
     const id = c.req.param("id");
     const deleted = await animeService.deleteAnime(id);

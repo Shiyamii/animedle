@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { Pencil, Trash2, Plus } from 'lucide-react';
+import { Pencil, Trash2, Plus, Eye, EyeOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { type AdminAnimeDTO, type useAdminViewModel } from './useAdminViewModel';
 
-function AnimeRow({ anime, onEdit, onDelete }: { anime: AdminAnimeDTO; onEdit: () => void; onDelete: () => void }) {
+function AnimeRow({ anime, onEdit, onDelete, onToggleEnabled }: { anime: AdminAnimeDTO; onEdit: () => void; onDelete: () => void; onToggleEnabled: () => void }) {
     const { t } = useTranslation();
 
     return (
-        <tr className="border-b border-border hover:bg-muted/40 transition-colors">
+        <tr className={`border-b border-border hover:bg-muted/40 transition-colors ${!anime.enabled ? 'opacity-50' : ''}`}>
             <td className="px-4 py-2">
                 <img
                     src={anime.imageUrl}
@@ -16,12 +16,28 @@ function AnimeRow({ anime, onEdit, onDelete }: { anime: AdminAnimeDTO; onEdit: (
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
             </td>
-            <td className="px-4 py-2 font-medium text-sm max-w-48 truncate">{anime.title}</td>
+            <td className="px-4 py-2 font-medium text-sm max-w-48 truncate">
+                <div className="flex items-center gap-2">
+                    {anime.title}
+                    {!anime.enabled && (
+                        <span className="text-xs font-normal px-1.5 py-0.5 rounded bg-muted text-muted-foreground border border-border">
+                            {t('admin.animes.disabled')}
+                        </span>
+                    )}
+                </div>
+            </td>
             <td className="px-4 py-2 text-sm text-muted-foreground">{anime.anime_format || '—'}</td>
             <td className="px-4 py-2 text-sm text-muted-foreground">{anime.studio || '—'}</td>
             <td className="px-4 py-2 text-sm text-muted-foreground">{anime.score || '—'}</td>
             <td className="px-4 py-2">
                 <div className="flex items-center gap-2">
+                    <button
+                        onClick={onToggleEnabled}
+                        className={`p-1.5 rounded-md transition-colors ${anime.enabled ? 'hover:bg-muted text-muted-foreground hover:text-foreground' : 'hover:bg-muted text-muted-foreground hover:text-foreground'}`}
+                        title={anime.enabled ? t('admin.animes.disable') : t('admin.animes.enable')}
+                    >
+                        {anime.enabled ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
                     <button
                         onClick={onEdit}
                         className="p-1.5 rounded-md hover:bg-accent text-muted-foreground hover:text-foreground transition-colors"
@@ -80,6 +96,7 @@ export function AdminAnimesTab({ vm }: { vm: ReturnType<typeof useAdminViewModel
                                     anime={anime}
                                     onEdit={() => vm.openEditForm(anime)}
                                     onDelete={() => vm.confirmDelete(anime.id)}
+                                    onToggleEnabled={() => vm.handleToggleEnabled(anime.id, !anime.enabled)}
                                 />
                             ))}
                         </tbody>

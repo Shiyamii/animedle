@@ -15,6 +15,7 @@ export interface AdminAnimeDTO {
     studio: string;
     source: string;
     score: number;
+    enabled: boolean;
 }
 
 export interface AdminStatsTodayDTO {
@@ -77,6 +78,7 @@ export function useAdminViewModel() {
     const [error, setError] = useState<string | null>(null);
     const [selectedAnimeId, setSelectedAnimeId] = useState('');
     const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
+    const [disableConfirmAnimeId, setDisableConfirmAnimeId] = useState<string | null>(null);
 
     const loadAnimes = useCallback(async () => {
         setIsLoading(true);
@@ -212,6 +214,41 @@ export function useAdminViewModel() {
         }
     };
 
+    const handleToggleEnabled = async (id: string, enabled: boolean) => {
+        if (!enabled && currentAnime?.id === id) {
+            setDisableConfirmAnimeId(id);
+            return;
+        }
+        await doToggleEnabled(id, enabled);
+    };
+
+    const doToggleEnabled = async (id: string, enabled: boolean) => {
+        setIsLoading(true);
+        try {
+            const res = await fetch(`${API_URL}/api/admin/animes/${id}/enabled`, {
+                method: 'PATCH',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ enabled }),
+            });
+            if (res.ok) {
+                await loadAnimes();
+                await loadCurrentAnime();
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const confirmDisable = async () => {
+        if (!disableConfirmAnimeId) return;
+        const id = disableConfirmAnimeId;
+        setDisableConfirmAnimeId(null);
+        await doToggleEnabled(id, false);
+    };
+
+    const cancelDisable = () => setDisableConfirmAnimeId(null);
+
     const confirmDelete = (id: string) => setDeleteConfirmId(id);
     const cancelDelete = () => setDeleteConfirmId(null);
 
@@ -273,6 +310,10 @@ export function useAdminViewModel() {
         selectedAnimeId,
         setSelectedAnimeId,
         deleteConfirmId,
+        disableConfirmAnimeId,
+        handleToggleEnabled,
+        confirmDisable,
+        cancelDisable,
         openCreateForm,
         openEditForm,
         closeForm,
