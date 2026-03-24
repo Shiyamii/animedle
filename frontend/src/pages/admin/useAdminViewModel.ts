@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -64,8 +64,12 @@ const defaultForm: AnimeFormData = {
     score: '',
 };
 
+export type EnabledFilter = 'all' | 'enabled' | 'disabled';
+
 export function useAdminViewModel() {
     const [animes, setAnimes] = useState<AdminAnimeDTO[]>([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [enabledFilter, setEnabledFilter] = useState<EnabledFilter>('all');
     const [currentAnime, setCurrentAnime] = useState<AdminAnimeDTO | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<'animes' | 'daily' | 'stats'>('animes');
@@ -79,6 +83,16 @@ export function useAdminViewModel() {
     const [selectedAnimeId, setSelectedAnimeId] = useState('');
     const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
     const [disableConfirmAnimeId, setDisableConfirmAnimeId] = useState<string | null>(null);
+
+    const filteredAnimes = useMemo(() => {
+        const q = searchQuery.trim().toLowerCase();
+        return animes.filter(anime => {
+            if (enabledFilter === 'enabled' && !anime.enabled) return false;
+            if (enabledFilter === 'disabled' && anime.enabled) return false;
+            if (q && !anime.title.toLowerCase().includes(q)) return false;
+            return true;
+        });
+    }, [animes, searchQuery, enabledFilter]);
 
     const loadAnimes = useCallback(async () => {
         setIsLoading(true);
@@ -299,6 +313,11 @@ export function useAdminViewModel() {
 
     return {
         animes,
+        filteredAnimes,
+        searchQuery,
+        setSearchQuery,
+        enabledFilter,
+        setEnabledFilter,
         currentAnime,
         isLoading,
         activeTab,

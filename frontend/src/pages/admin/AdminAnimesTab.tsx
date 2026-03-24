@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Pencil, Trash2, Plus, Eye, EyeOff } from 'lucide-react';
+import { Pencil, Trash2, Plus, Eye, EyeOff, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { type AdminAnimeDTO, type useAdminViewModel } from './useAdminViewModel';
+import { type AdminAnimeDTO, type EnabledFilter, type useAdminViewModel } from './useAdminViewModel';
 
 function AnimeRow({ anime, onEdit, onDelete, onToggleEnabled }: { anime: AdminAnimeDTO; onEdit: () => void; onDelete: () => void; onToggleEnabled: () => void }) {
     const { t } = useTranslation();
@@ -58,15 +58,22 @@ function AnimeRow({ anime, onEdit, onDelete, onToggleEnabled }: { anime: AdminAn
     );
 }
 
+const FILTER_OPTIONS: EnabledFilter[] = ['all', 'enabled', 'disabled'];
+const FILTER_KEYS: Record<EnabledFilter, string> = {
+    all: 'admin.animes.filterAll',
+    enabled: 'admin.animes.filterEnabled',
+    disabled: 'admin.animes.filterDisabled',
+};
+
 export function AdminAnimesTab({ vm }: { vm: ReturnType<typeof useAdminViewModel> }) {
     const { t } = useTranslation();
-    const { animes, isLoading } = vm;
+    const { filteredAnimes, isLoading } = vm;
 
     return (
         <div>
             <div className="flex justify-between items-center mb-4">
                 <p className="text-sm text-muted-foreground">
-                    {t('admin.animes.count', { count: animes.length })}
+                    {t('admin.animes.count', { count: filteredAnimes.length })}
                 </p>
                 <Button onClick={vm.openCreateForm} size="sm" className="flex items-center gap-2">
                     <Plus className="w-4 h-4" />
@@ -74,7 +81,31 @@ export function AdminAnimesTab({ vm }: { vm: ReturnType<typeof useAdminViewModel
                 </Button>
             </div>
 
-            {isLoading && animes.length === 0 ? (
+            <div className="flex items-center gap-2 mb-4">
+                <div className="relative flex-1">
+                    <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+                    <input
+                        type="text"
+                        value={vm.searchQuery}
+                        onChange={e => vm.setSearchQuery(e.target.value)}
+                        placeholder={t('admin.animes.searchPlaceholder')}
+                        className="w-full pl-8 pr-3 py-1.5 text-sm bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                </div>
+                <div className="flex items-center gap-1">
+                    {FILTER_OPTIONS.map(option => (
+                        <button
+                            key={option}
+                            onClick={() => vm.setEnabledFilter(option)}
+                            className={`px-3 py-1.5 text-sm rounded-md transition-colors ${vm.enabledFilter === option ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground hover:text-foreground'}`}
+                        >
+                            {t(FILTER_KEYS[option])}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {isLoading && filteredAnimes.length === 0 ? (
                 <p className="text-sm text-muted-foreground text-center py-8">{t('admin.animes.loading')}</p>
             ) : (
                 <div className="border border-border rounded-lg overflow-hidden">
@@ -90,7 +121,7 @@ export function AdminAnimesTab({ vm }: { vm: ReturnType<typeof useAdminViewModel
                             </tr>
                         </thead>
                         <tbody>
-                            {animes.map(anime => (
+                            {filteredAnimes.map(anime => (
                                 <AnimeRow
                                     key={anime.id}
                                     anime={anime}

@@ -84,6 +84,10 @@
       "disabled": "Disabled",
       "disable": "Disable",
       "enable": "Enable",
+      "searchPlaceholder": "Search an anime...",
+      "filterAll": "All",
+      "filterEnabled": "Enabled",
+      "filterDisabled": "Disabled",
       "table": {
         "image": "Image",
         "title": "Title",

@@ -85,6 +85,10 @@
       "disabled": "Désactivé",
       "disable": "Désactiver",
       "enable": "Activer",
+      "searchPlaceholder": "Rechercher un anime...",
+      "filterAll": "Tous",
+      "filterEnabled": "Activés",
+      "filterDisabled": "Désactivés",
       "table": {
         "image": "Image",
         "title": "Titre",
