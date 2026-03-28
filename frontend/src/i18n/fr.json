@@ -82,6 +82,13 @@
       "count_other": "{{count}} animes",
       "add": "Ajouter un anime",
       "loading": "Chargement...",
+      "disabled": "Désactivé",
+      "disable": "Désactiver",
+      "enable": "Activer",
+      "searchPlaceholder": "Rechercher un anime...",
+      "filterAll": "Tous",
+      "filterEnabled": "Activés",
+      "filterDisabled": "Désactivés",
       "table": {
         "image": "Image",
         "title": "Titre",
@@ -123,6 +130,13 @@
       "cancel": "Annuler",
       "confirmBtn": "Supprimer",
       "deleting": "Suppression..."
+    },
+    "disable": {
+      "title": "Désactiver l'anime du jour",
+      "warningCurrentAnime": "«\u00a0{{title}}\u00a0» est l'anime du jour. Le désactiver va immédiatement sélectionner un nouvel anime du jour au hasard.",
+      "cancel": "Annuler",
+      "confirmBtn": "Désactiver quand même",
+      "disabling": "Désactivation..."
     },
     "stats": {
       "title": "Statistiques",

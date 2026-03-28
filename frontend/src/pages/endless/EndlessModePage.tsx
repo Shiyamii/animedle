@@ -29,9 +29,8 @@ function EndlessPage() {
                     <ModeMenu orientation="horizontal" />
                 </div>
                 <div className='mt-6 w-full flex flex-col items-center max-w-6xl bg-card text-card-foreground rounded-xl p-8 shadow-md border border-border'>
-
                     {
-                        !!foundAnime ? (
+                        foundAnime ? (
                             <div className="my-4 max-w-lg">
                                 <h2 className="text-2xl font-semibold">{t("home.congratulations")}</h2>
                                 <p className="mt-2 text-center text-xl font-bold">{foundAnime.title}</p>

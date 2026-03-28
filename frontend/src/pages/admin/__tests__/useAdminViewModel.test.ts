@@ -18,6 +18,7 @@ function makeAdminAnime(overrides: Partial<AdminAnimeDTO> = {}): AdminAnimeDTO {
         studio: 'MAPPA',
         source: 'Manga',
         score: 8.5,
+        enabled: true,
         ...overrides,
     };
 }
@@ -356,9 +357,6 @@ describe('useAdminViewModel', () => {
 
     describe('handleSetSpecific', () => {
         it('n\'envoie rien si selectedAnimeId est vide', async () => {
-            vi.mocked(fetch)
-                .mockResolvedValue({ ok: true, json: async () => null } as Response);
-
             const { result } = renderHook(() => useAdminViewModel());
             await waitFor(() => expect(result.current.isLoading).toBe(false));
 

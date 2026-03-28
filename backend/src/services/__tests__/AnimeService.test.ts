@@ -11,6 +11,7 @@ vi.mock('@/lib/db', () => ({
 
 const mocks = vi.hoisted(() => ({
     findAll: vi.fn(),
+    findAllEnabled: vi.fn(),
     findById: vi.fn(),
     create: vi.fn(),
     update: vi.fn(),
@@ -22,6 +23,7 @@ const mocks = vi.hoisted(() => ({
 vi.mock('@/services/AnimeRepositories', () => ({
     AnimeRepository: class {
         findAll = mocks.findAll;
+        findAllEnabled = mocks.findAllEnabled;
         findById = mocks.findById;
         create = mocks.create;
         update = mocks.update;
@@ -34,6 +36,10 @@ vi.mock('@/services/CurrentAnimeRepositories', () => ({
         saveCurrentAnime = mocks.saveCurrentAnime;
         getCurrentAnime = mocks.getCurrentAnime;
         deleteCurrentAnime = vi.fn();
+        recordGuess = vi.fn().mockResolvedValue(undefined);
+        recordWin = vi.fn().mockResolvedValue(undefined);
+        getStatsByAnimeIds = vi.fn().mockResolvedValue([]);
+        getAllHistory = vi.fn().mockResolvedValue([]);
     },
 }));
 
@@ -61,6 +67,7 @@ function makeEntity(overrides: Partial<AnimeEntity> = {}): AnimeEntity {
         studio: 'MAPPA',
         source: 'Manga',
         score: 8.5,
+        enabled: true,
         ...overrides,
     };
 }
@@ -127,7 +134,7 @@ describe('AnimeService', () => {
     describe('getAnimeList', () => {
         it('retourne la liste des animes mappés en AnimeItemDTO', async () => {
             const entity = makeEntity();
-            mocks.findAll.mockResolvedValue([entity]);
+            mocks.findAllEnabled.mockResolvedValue([entity]);
 
             const result = await getService().getAnimeList();
 
@@ -141,7 +148,7 @@ describe('AnimeService', () => {
         });
 
         it('retourne un tableau vide quand le dépôt est vide', async () => {
-            mocks.findAll.mockResolvedValue([]);
+            mocks.findAllEnabled.mockResolvedValue([]);
             expect(await getService().getAnimeList()).toEqual([]);
         });
 
@@ -149,7 +156,7 @@ describe('AnimeService', () => {
             // Sans titre Default, le premier titre est utilisé comme titre principal.
             // getAliases retourne tous les titres non-Default, donc il figure aussi dans alias.
             const entity = makeEntity({ titles: [{ type: 'Japanese', title: 'タイトル' }] });
-            mocks.findAll.mockResolvedValue([entity]);
+            mocks.findAllEnabled.mockResolvedValue([entity]);
 
             const [item] = await getService().getAnimeList();
             expect(item.title).toBe('タイトル');
@@ -272,7 +279,7 @@ describe('AnimeService', () => {
     describe('updateGoalAnime', () => {
         it('sélectionne un anime au hasard et le sauvegarde comme anime du jour', async () => {
             const entities = [makeEntity(), makeEntity(), makeEntity()];
-            mocks.findAll.mockResolvedValue(entities);
+            mocks.findAllEnabled.mockResolvedValue(entities);
             mocks.saveCurrentAnime.mockResolvedValue(undefined);
 
             const result = await getService().updateGoalAnime();
@@ -282,7 +289,7 @@ describe('AnimeService', () => {
         });
 
         it('lève une erreur si aucun anime n\'est en base', async () => {
-            mocks.findAll.mockResolvedValue([]);
+            mocks.findAllEnabled.mockResolvedValue([]);
             await expect(getService().updateGoalAnime()).rejects.toThrow(
                 'No animes found to update the goal anime.'
             );
@@ -292,7 +299,7 @@ describe('AnimeService', () => {
     describe('setCurrentAnimeRandom', () => {
         it('délègue à updateGoalAnime et retourne un AdminAnimeDTO', async () => {
             const entity = makeEntity();
-            mocks.findAll.mockResolvedValue([entity]);
+            mocks.findAllEnabled.mockResolvedValue([entity]);
             mocks.saveCurrentAnime.mockResolvedValue(undefined);
 
             const result = await getService().setCurrentAnimeRandom();

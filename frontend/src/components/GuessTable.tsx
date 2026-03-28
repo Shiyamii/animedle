@@ -65,17 +65,17 @@ export default function GuessTable({ guesses, guessStats = {} }: { guesses: Gues
   return (
     <div className="w-full overflow-x-auto rounded-md border">
       <Table className="min-w-[800px]">
-        <TableHeader>
+        <TableHeader className="bg-primary/8">
           <TableRow>
-            <TableHead className="text-center">{t("guessTable.anime")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.format")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.demographic")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.studio")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.source")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.genres")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.episodes")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.season")}</TableHead>
-            <TableHead className="text-center">{t("guessTable.score")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.anime")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.format")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.demographic")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.studio")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.source")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.genres")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.episodes")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.season")}</TableHead>
+            <TableHead className="text-center text-primary font-semibold">{t("guessTable.score")}</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

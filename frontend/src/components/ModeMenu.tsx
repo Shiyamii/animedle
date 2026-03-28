@@ -32,7 +32,6 @@ export function ModeMenu({ orientation = "vertical", className }: ModeMenuProps)
                 <CalendarDays className="size-5" />
                 <span>{t("home.dailyButton")}</span>
             </NavLink>
-
             <NavLink
                 to="/endless"
                 className={({ isActive }) => cn(

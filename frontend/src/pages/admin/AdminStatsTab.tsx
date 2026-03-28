@@ -76,13 +76,13 @@ export function AdminStatsTab({ vm }: { vm: ReturnType<typeof useAdminViewModel>
                 )}
 
                 <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground">{t('admin.stats.today.totalGuesses')}</p>
-                        <p className="text-2xl font-bold">{stats?.today.totalGuesses ?? 0}</p>
+                    <div className="bg-primary/8 border border-primary/20 rounded-lg p-3">
+                        <p className="text-xs text-primary/70">{t('admin.stats.today.totalGuesses')}</p>
+                        <p className="text-2xl font-bold text-primary">{stats?.today.totalGuesses ?? 0}</p>
                     </div>
-                    <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground">{t('admin.stats.today.totalWins')}</p>
-                        <p className="text-2xl font-bold">{stats?.today.totalWins ?? 0}</p>
+                    <div className="bg-green-500/8 border border-green-500/20 rounded-lg p-3">
+                        <p className="text-xs text-green-600 dark:text-green-400">{t('admin.stats.today.totalWins')}</p>
+                        <p className="text-2xl font-bold text-green-600 dark:text-green-400">{stats?.today.totalWins ?? 0}</p>
                     </div>
                 </div>
 
@@ -97,17 +97,17 @@ export function AdminStatsTab({ vm }: { vm: ReturnType<typeof useAdminViewModel>
                 <h3 className="font-medium text-sm">{t('admin.stats.global.title')}</h3>
 
                 <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground">{t('admin.stats.global.totalDays')}</p>
-                        <p className="text-2xl font-bold">{stats?.global.totalDays ?? 0}</p>
+                    <div className="bg-secondary/15 border border-secondary/25 rounded-lg p-3">
+                        <p className="text-xs text-secondary-foreground/60 dark:text-white">{t('admin.stats.global.totalDays')}</p>
+                        <p className="text-2xl font-bold text-secondary-foreground/80 dark:text-white">{stats?.global.totalDays ?? 0}</p>
                     </div>
-                    <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground">{t('admin.stats.global.totalGuesses')}</p>
-                        <p className="text-2xl font-bold">{stats?.global.totalGuesses ?? 0}</p>
+                    <div className="bg-primary/8 border border-primary/20 rounded-lg p-3">
+                        <p className="text-xs text-primary/70">{t('admin.stats.global.totalGuesses')}</p>
+                        <p className="text-2xl font-bold text-primary">{stats?.global.totalGuesses ?? 0}</p>
                     </div>
-                    <div className="bg-muted/50 rounded-lg p-3">
-                        <p className="text-xs text-muted-foreground">{t('admin.stats.global.totalWins')}</p>
-                        <p className="text-2xl font-bold">{stats?.global.totalWins ?? 0}</p>
+                    <div className="bg-green-500/8 border border-green-500/20 rounded-lg p-3">
+                        <p className="text-xs text-green-600 dark:text-green-400">{t('admin.stats.global.totalWins')}</p>
+                        <p className="text-2xl font-bold text-green-600 dark:text-green-400">{stats?.global.totalWins ?? 0}</p>
                     </div>
                 </div>
 

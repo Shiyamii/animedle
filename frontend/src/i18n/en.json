@@ -81,6 +81,13 @@
       "count_other": "{{count}} animes",
       "add": "Add anime",
       "loading": "Loading...",
+      "disabled": "Disabled",
+      "disable": "Disable",
+      "enable": "Enable",
+      "searchPlaceholder": "Search an anime...",
+      "filterAll": "All",
+      "filterEnabled": "Enabled",
+      "filterDisabled": "Disabled",
       "table": {
         "image": "Image",
         "title": "Title",
@@ -122,6 +129,13 @@
       "cancel": "Cancel",
       "confirmBtn": "Delete",
       "deleting": "Deleting..."
+    },
+    "disable": {
+      "title": "Disable daily anime",
+      "warningCurrentAnime": "\"{{title}}\" is today's daily anime. Disabling it will immediately select a new random daily anime.",
+      "cancel": "Cancel",
+      "confirmBtn": "Disable anyway",
+      "disabling": "Disabling..."
     },
     "stats": {
       "title": "Statistics",

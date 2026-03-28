@@ -1,8 +1,10 @@
 {
   "name": "backend",
+  "type": "module",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "start": "bun run src/index.ts",
+    "build": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@vitest/coverage-v8": "^4.1.0",
+    "typescript": "^5.0.0",
     "vitest": "^4.1.0"
   }
 }

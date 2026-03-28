@@ -5,6 +5,7 @@ import { AdminDailyTab } from './AdminDailyTab';
 import { AdminStatsTab } from './AdminStatsTab';
 import { AnimeFormDialog } from './AnimeFormDialog';
 import { DeleteConfirmDialog } from './DeleteConfirmDialog';
+import { DisableAnimeConfirmDialog } from './DisableAnimeConfirmDialog';
 
 const TABS = ['animes', 'daily', 'stats'] as const;
 
@@ -41,6 +42,7 @@ export function AdminPage() {
 
             <AnimeFormDialog vm={vm} />
             <DeleteConfirmDialog vm={vm} />
+            <DisableAnimeConfirmDialog vm={vm} />
         </div>
     );
 }

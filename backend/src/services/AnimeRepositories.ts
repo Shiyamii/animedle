@@ -13,6 +13,7 @@ export interface AnimeEntity {
   studio: string;
   source: string;
   score: number;
+  enabled: boolean;
 }
 
 const AnimeSchema = new Schema<AnimeEntity>(
@@ -34,7 +35,8 @@ const AnimeSchema = new Schema<AnimeEntity>(
     season_start: { type: String, default: null },
     studio: { type: String, default: null },
     source: { type: String, default: null },
-    score: { type: Number, default: null }
+    score: { type: Number, default: null },
+    enabled: { type: Boolean, default: true },
   },
   {
     versionKey: false,
@@ -68,6 +70,11 @@ export class AnimeRepository {
     async findAll(): Promise<AnimeEntity[]> {
         await ensureMongooseConnection();
         return this.model.find({}).lean<AnimeEntity[]>().exec();
+    }
+
+    async findAllEnabled(): Promise<AnimeEntity[]> {
+        await ensureMongooseConnection();
+        return this.model.find({ enabled: { $ne: false } }).lean<AnimeEntity[]>().exec();
     }
 
     async findById(id: string): Promise<AnimeEntity | null> {

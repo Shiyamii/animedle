@@ -29,7 +29,7 @@ app.basePath("/api");
 app.use("/api/*", cors({
   origin: frontendUrl,
   allowHeaders: ["Content-Type", "Authorization"],
-  allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
 }));
 

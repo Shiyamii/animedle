@@ -65,7 +65,7 @@ export function useDailyGuessingPageViewModel() {
         setIsFilteringLoading(true);
         setFiltredAnimeList(filterAnimeList(fuse, inputValue));
         setIsFilteringLoading(false);
-    }, [inputValue]);
+    }, [inputValue, fuse]);
 
     useEffect(() => {
         if (foundAnime) {
