@@ -40,19 +40,34 @@ export interface DailyCharacterDetailsDTO {
 export interface DailyCharacterGuessResultDTO {
     isCorrect: boolean;
     guessNumber: number;
-    /** Indices débloqués selon `guessNumber` et `hintTiers` (personnage mystère = `getCurrentCharacter`). */
+    guessedAnimeId: string;
+    /** Indices texte (démographie, genres) selon `guessNumber` et `hintTiers`. L’image est gérée à part (flou côté UI). */
     hints: DailyCharacterHintsDTO;
+}
+
+/** Réponse de `GET .../characters/daily/hint-config` — paliers et image du personnage du jour. */
+export interface DailyCharacterHintConfigDTO {
+    hintTiers: DailyCharacterHintTier[];
+    /** Nombre d’essais après lesquels le flou de l’image est entièrement retiré (progressif). */
+    imageBlur: {
+        totalGuessesUntilClear: number;
+    };
+    mysteryImageUrl: string;
+    /** Nom du personnage du jour (indice de départ, sans config). */
+    mysteryCharacterName: string;
 }
 
 export class CharacterService {
     private static instance: CharacterService;
 
-    /** Paliers par défaut : après 4 essais → image ; 5 essais de plus → démographie ; 3 de plus → genres. */
+    /** Paliers texte par défaut (l’image est affichée dès le départ avec flou, voir `imageBlurTotalGuesses`). */
     public static readonly DEFAULT_HINT_TIERS: DailyCharacterHintTier[] = [
-        { afterGuessCount: 4, revealAttributes: ["imageUrl"] },
         { afterGuessCount: 9, revealAttributes: ["demographicType"] },
         { afterGuessCount: 12, revealAttributes: ["animeGenres"] },
     ];
+
+    /** Après autant d’essais, le flou appliqué à l’image mystère est nul (réduction linéaire à chaque essai). */
+    public static readonly DEFAULT_IMAGE_BLUR_TOTAL_GUESSES = 10;
 
     private repository: CharacterRepository;
     private currentCharacterRepository: CurrentCharacterRepository;
@@ -63,11 +78,15 @@ export class CharacterService {
      */
     public hintTiers: DailyCharacterHintTier[];
 
+    /** Modifiable comme `hintTiers` ; exposé via `getDailyCharacterHintConfig`. */
+    public imageBlurTotalGuesses: number;
+
     constructor() {
         this.repository = new CharacterRepository();
         this.currentCharacterRepository = new CurrentCharacterRepository();
         this.animeService = AnimeService.getInstance();
         this.hintTiers = [...CharacterService.DEFAULT_HINT_TIERS];
+        this.imageBlurTotalGuesses = CharacterService.DEFAULT_IMAGE_BLUR_TOTAL_GUESSES;
     }
 
     public static getInstance(): CharacterService {
@@ -140,9 +159,7 @@ export class CharacterService {
                 continue;
             }
             for (const key of tier.revealAttributes) {
-                if (key === "imageUrl") {
-                    hints.imageUrl = this.getCharacterImageUrl(ref);
-                } else if (key === "demographicType") {
+                if (key === "demographicType") {
                     hints.demographicType = ref.demographic_type;
                 } else if (key === "animeGenres") {
                     hints.animeGenres = [...ref.anime_genres];
@@ -150,6 +167,29 @@ export class CharacterService {
             }
         }
         return hints;
+    }
+
+    /** Tous les indices texte (victoire). */
+    private buildFullHints(ref: CharacterEntity): DailyCharacterHintsDTO {
+        return {
+            demographicType: ref.demographic_type,
+            animeGenres: [...ref.anime_genres],
+        };
+    }
+
+    public async getDailyCharacterHintConfig(): Promise<DailyCharacterHintConfigDTO> {
+        const ref = await this.getCurrentCharacter();
+        return {
+            hintTiers: this.hintTiers.map((tier) => ({
+                afterGuessCount: tier.afterGuessCount,
+                revealAttributes: [...tier.revealAttributes],
+            })),
+            imageBlur: {
+                totalGuessesUntilClear: Math.max(1, this.imageBlurTotalGuesses),
+            },
+            mysteryImageUrl: this.getCharacterImageUrl(ref),
+            mysteryCharacterName: ref.name,
+        };
     }
 
     public async getDailyCharacters(): Promise<DailyCharacterItemDTO[]> {
@@ -196,7 +236,8 @@ export class CharacterService {
         return {
             isCorrect: animeMatch,
             guessNumber,
-            hints: this.buildHintsForGuess(ref, guessNumber),
+            guessedAnimeId,
+            hints: animeMatch ? this.buildFullHints(ref) : this.buildHintsForGuess(ref, guessNumber),
         };
     }
 

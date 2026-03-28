@@ -42,6 +42,7 @@
   "home": {
     "menuTitle": "Choose a mode",
     "dailyButton": "Daily Guessing",
+    "characterButton": "Character",
     "endlessButton": "Endless",
     "startTitle": "Guess today's anime!",
     "start": "Start",
@@ -52,6 +53,28 @@
     "placeholder": "Start typing...",
     "noResults": "No results found.",
     "loading": "Loading..."
+  },
+  "character": {
+    "hintsTitle": "Hints",
+    "hintsEmpty": "Hints unlock as you play.",
+    "guessTitle": "Guess the anime for today's character!",
+    "guessesTitle": "Your guesses",
+    "hintScheduleTitle": "Hint schedule",
+    "scheduleCardTitle": "How hints unlock",
+    "hintImageBlurSchedule": "Character image: fully blurred at first; blur is removed a little after each guess, fully sharp after {{count}} guesses.",
+    "hintAttributeAt": "{{labels}} — from guess #{{turn}}",
+    "hintAttributeJoin": ", ",
+    "hintLabelImage": "Image",
+    "mysteryImageLabel": "Silhouette",
+    "hintSlotEmpty": "—",
+    "spoilerTap": "Tap to reveal",
+    "dailyNameLabel": "Today's character",
+    "difficultySettings": "Difficulty & display",
+    "difficultySettingsDesc": "Adjust spoilers and image difficulty. Settings are saved on this device.",
+    "settingSpoilersTitle": "Spoiler overlays (demographic & genres)",
+    "settingSpoilersDesc": "When enabled, unlocked hints stay covered until you tap. When disabled, they are shown as soon as they unlock.",
+    "settingHardImageTitle": "Hard mode (grayscale)",
+    "settingHardImageDesc": "Renders the character image in black and white (still combined with blur progress)."
   },
   "guessTable": {
     "anime": "Anime",

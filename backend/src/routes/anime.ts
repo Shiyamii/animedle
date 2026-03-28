@@ -66,6 +66,15 @@ router.get("/animes/stats", async (c) => {
     return c.json(stats);
 });
 
+router.get("/animes/characters/daily/hint-config", async (c) => {
+    try {
+        const config = await characterService.getDailyCharacterHintConfig();
+        return c.json(config);
+    } catch {
+        return c.json({ error: "Failed to load character hint config" }, 500);
+    }
+});
+
 router.post("/animes/characters/daily/guess/:id", async (c) => {
     const id = c.req.param("id");
     const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);

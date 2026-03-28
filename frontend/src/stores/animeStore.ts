@@ -39,6 +39,18 @@ export interface GuessResultDTO {
   guessNumber: number;
 }
 
+
+export interface CharacterGuessResultDTO {
+  isCorrect: boolean;
+  guessedAnimeId: string;
+  guessNumber: number;
+  hints: {
+    imageUrl?: string;
+    demographicType?: string | null;
+    animeGenres?: string[];
+  };
+}
+
 export interface RandomAnimeDTO {
     id: string;
 }
@@ -51,16 +63,24 @@ interface AnimeStore {
     foundAnime: AnimeItemDTO | null;
     currentAnimeDate: string | null;
     animeToGuess: RandomAnimeDTO | null;
+    characterGuessList: CharacterGuessResultDTO[];
+    characterGuessDate: string | null;
+    characterFoundAnime: AnimeItemDTO | null;
     getGuessList: () => GuessResultDTO[]
     initGuessListIfNeeded: () => void;
     getEndlessGuessList: () => GuessResultDTO[];
+    getCharacterGuessList: () => CharacterGuessResultDTO[];
+    initCharacterGuessListIfNeeded: () => void;
     setAnimeList: (animes: AnimeItemDTO[]) => void;
     addGuessToListAsFirst: (guess: GuessResultDTO) => void;
     addEndlessGuessToListAsFirst: (guess: GuessResultDTO) => void;
+    addCharacterGuessToListAsFirst: (guess: CharacterGuessResultDTO) => void;
     setGuessDate: (date: string | null) => void;
     setFoundAnime: (anime: AnimeItemDTO | null) => void;
     setCurrentAnimeDate: (date: string | null) => void;
+    setCharacterFoundAnime: (anime: AnimeItemDTO | null) => void;
     resetGame: () => void;
+    resetCharacterGame: () => void;
     loadAnimeList: () => Promise<void>;
     setAnimeToGuess: (anime: RandomAnimeDTO) => void;
     clearEndlessGuessList: () => void;
@@ -76,6 +96,9 @@ export const useAnimeStore: any = create<AnimeStore>()(
             foundAnime: null,
             currentAnimeDate: null,
             animeToGuess: null,
+            characterGuessList: [],
+            characterGuessDate: null,
+            characterFoundAnime: null,
             getGuessList: () => useAnimeStore.getState().guessList,
             initGuessListIfNeeded: () => {
                 const today = new Date().toDateString();
@@ -86,13 +109,32 @@ export const useAnimeStore: any = create<AnimeStore>()(
             getEndlessGuessList: () => {
                 return useAnimeStore.getState().endlessGuessList;
             },
+            getCharacterGuessList: () => useAnimeStore.getState().characterGuessList,
+            initCharacterGuessListIfNeeded: () => {
+                const today = new Date().toDateString();
+                if (
+                    !useAnimeStore.getState().characterGuessDate
+                    || useAnimeStore.getState().characterGuessDate !== today
+                ) {
+                    set({
+                        characterGuessList: [],
+                        characterGuessDate: today,
+                        characterFoundAnime: null,
+                    });
+                }
+            },
             setAnimeList: (animes) => set({ animeList: animes }),
             addGuessToListAsFirst: (guess) => set((state) => ({ guessList: [guess, ...state.guessList] })),
             addEndlessGuessToListAsFirst: (guess) => set((state) => ({ endlessGuessList: [guess, ...state.endlessGuessList] })),
+            addCharacterGuessToListAsFirst: (guess) =>
+                set((state) => ({ characterGuessList: [guess, ...state.characterGuessList] })),
             setGuessDate: (date) => set({ guessDate: date }),
             setFoundAnime: (anime) => set({ foundAnime: anime }),
             setCurrentAnimeDate: (date) => set({ currentAnimeDate: date }),
             resetGame: () => set({ guessList: [], guessDate: null, foundAnime: null, currentAnimeDate: null }),
+            setCharacterFoundAnime: (anime) => set({ characterFoundAnime: anime }),
+            resetCharacterGame: () =>
+                set({ characterGuessList: [], characterGuessDate: null, characterFoundAnime: null }),
             loadAnimeList: async () => {
                 try {
                     const response = await fetch(import.meta.env.VITE_API_URL + "/api/animes");
@@ -117,6 +159,9 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 currentAnimeDate: state.currentAnimeDate,
                 endlessGuessList: state.endlessGuessList,
                 animeToGuess: state.animeToGuess,
+                characterGuessList: state.characterGuessList,
+                characterGuessDate: state.characterGuessDate,
+                characterFoundAnime: state.characterFoundAnime,
             })
         }
     )

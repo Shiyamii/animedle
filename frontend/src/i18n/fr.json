@@ -42,6 +42,7 @@
   "home": {
     "menuTitle": "Choisir un mode",
     "dailyButton": "Daily Guessing",
+    "characterButton": "Personnage",
     "endlessButton": "Endless",
     "startTitle": "Devinez l'anime du jour !",
     "start": "Commencer",
@@ -52,6 +53,28 @@
     "placeholder": "Commencez à taper...",
     "noResults": "Aucun résultat trouvé.",
     "loading": "Chargement..."
+  },
+  "character": {
+    "hintsTitle": "Indices",
+    "hintsEmpty": "Les indices se débloquent en jouant.",
+    "guessTitle": "Devinez l'anime du personnage du jour !",
+    "guessesTitle": "Vos essais",
+    "hintScheduleTitle": "Calendrier des indices",
+    "scheduleCardTitle": "Comment se débloquent les indices",
+    "hintImageBlurSchedule": "Image du personnage : flou maximal au départ ; le flou diminue à chaque essai, image nette après {{count}} essais.",
+    "hintAttributeAt": "{{labels}} — à partir de l'essai n°{{turn}}",
+    "hintAttributeJoin": ", ",
+    "hintLabelImage": "Image",
+    "mysteryImageLabel": "Silhouette",
+    "hintSlotEmpty": "—",
+    "spoilerTap": "Appuyer pour révéler",
+    "dailyNameLabel": "Personnage du jour",
+    "difficultySettings": "Difficulté et affichage",
+    "difficultySettingsDesc": "Spoilers et image : les réglages sont enregistrés sur cet appareil.",
+    "settingSpoilersTitle": "Spoilers (démographie et genres)",
+    "settingSpoilersDesc": "Si activé, les indices débloqués restent masqués jusqu’au clic. Si désactivé, ils s’affichent dès qu’ils sont disponibles.",
+    "settingHardImageTitle": "Mode difficile (noir et blanc)",
+    "settingHardImageDesc": "Affiche l’image du personnage en noir et blanc (en plus du flou progressif)."
   },
   "guessTable": {
     "anime": "Anime",
