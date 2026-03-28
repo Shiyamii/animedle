@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { CalendarDays, Infinity, User } from "lucide-react";
+import { CalendarDays, Infinity, Orbit, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
@@ -53,6 +53,17 @@ export function ModeMenu({ orientation = "vertical", className }: ModeMenuProps)
             >
                 <User className="size-5" />
                 <span>{t("home.characterButton")}</span>
+            </NavLink>
+            <NavLink
+                to="/character-endless"
+                className={({ isActive }) => cn(
+                    "flex items-center gap-2 rounded-md border border-border bg-background px-4 py-3 font-semibold text-foreground transition hover:bg-accent",
+                    itemClass,
+                    isActive && "bg-accent"
+                )}
+            >
+                <Orbit className="size-5" />
+                <span>{t("home.characterEndlessButton")}</span>
             </NavLink>
         </div>
     );

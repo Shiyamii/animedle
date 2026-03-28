@@ -13,10 +13,12 @@ Insertion des données : Samy D. - Tamas P.
 Anime Guessing : Tamas P.
 - Systeme guessing : Tamas P.
 - Cron de l'anime du jour : Tamas P.
+- Mode endless : Tamas P.
 
 Character Guessing : Tamas P.
 - Systeme guessing : Tamas P.
 - Cron du personnage du jour : Tamas P.
+- Mode endless : Tamas P.
 
 Déploiement : Tamas P.
 - Dockerisation : Tamas P.

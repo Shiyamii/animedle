@@ -6,6 +6,7 @@ import RootLayout from '@/layouts/RootLayout.tsx'
 import HomePage from '@/pages/home/HomePage.tsx'
 import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx'
 import CharacterGuessingPage from '@/pages/character/CharacterGuessingPage.tsx'
+import CharacterEndlessPage from '@/pages/character/CharacterEndlessPage.tsx'
 import { AuthPage } from '@/pages/auth/AuthPage.tsx'
 import AccountPage from '@/pages/account/AccountPage.tsx'
 import { ProtectedRoute, GuestRoute, AdminRoute } from '@/components/ProtectedRoute.tsx'
@@ -30,21 +31,21 @@ const router = createBrowserRouter([
                 path: "/character",
                 element: <CharacterGuessingPage />,
             },
+            
+            {
+                path: "/endless",
+                element: <EndlessPage />,
+            },
+            {
+                path: "/character-endless",
+                element: <CharacterEndlessPage />,
+            },
             {
                 element: <GuestRoute />,
                 children: [
                     {
                         path: "/login",
                         element: <AuthPage />,
-                    },
-                ],
-            },
-            {
-                element: <GuestRoute />,
-                children: [
-                    {
-                        path: "/endless",
-                        element: <EndlessPage />,
                     },
                 ],
             },

@@ -45,6 +45,13 @@ export interface DailyCharacterGuessResultDTO {
     hints: DailyCharacterHintsDTO;
 }
 
+/** Réponse de `GET .../characters/endless` — cible + visuels (règles = même `hint-config` daily). */
+export interface CharacterEndlessTargetDTO {
+    id: string;
+    mysteryImageUrl: string;
+    mysteryCharacterName: string;
+}
+
 /** Réponse de `GET .../characters/daily/hint-config` — paliers et image du personnage du jour. */
 export interface DailyCharacterHintConfigDTO {
     hintTiers: DailyCharacterHintTier[];
@@ -177,8 +184,7 @@ export class CharacterService {
         };
     }
 
-    public async getDailyCharacterHintConfig(): Promise<DailyCharacterHintConfigDTO> {
-        const ref = await this.getCurrentCharacter();
+    private buildHintConfigFromEntity(ref: CharacterEntity): DailyCharacterHintConfigDTO {
         return {
             hintTiers: this.hintTiers.map((tier) => ({
                 afterGuessCount: tier.afterGuessCount,
@@ -190,6 +196,40 @@ export class CharacterService {
             mysteryImageUrl: this.getCharacterImageUrl(ref),
             mysteryCharacterName: ref.name,
         };
+    }
+
+    public async getDailyCharacterHintConfig(): Promise<DailyCharacterHintConfigDTO> {
+        const ref = await this.getCurrentCharacter();
+        return this.buildHintConfigFromEntity(ref);
+    }
+
+    /** Cible endless : image + nom du personnage tiré au hasard (`id` = anime à deviner). */
+    public async getRandomCharacterEndlessTarget(): Promise<CharacterEndlessTargetDTO | null> {
+        try {
+            const entity = await this.generateRandomCharacter();
+            return {
+                id: entity.anime_id,
+                mysteryImageUrl: this.getCharacterImageUrl(entity),
+                mysteryCharacterName: entity.name,
+            };
+        } catch {
+            return null;
+        }
+    }
+
+    /**
+     * Devinette endless : compare à un personnage fixé par `refAnimeId` (sans toucher au personnage du jour).
+     */
+    public async guessEndlessCharacter(
+        guessedAnimeId: string,
+        guessNumber: number,
+        refAnimeId: string,
+    ): Promise<DailyCharacterGuessResultDTO> {
+        const ref = await this.repository.findOneByAnimeId(refAnimeId);
+        if (!ref) {
+            throw new Error("Reference character not found");
+        }
+        return this.buildGuessResult(ref, guessedAnimeId, guessNumber);
     }
 
     public async getDailyCharacters(): Promise<DailyCharacterItemDTO[]> {

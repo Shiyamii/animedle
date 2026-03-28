@@ -43,6 +43,7 @@
     "menuTitle": "Choose a mode",
     "dailyButton": "Daily Guessing",
     "characterButton": "Character",
+    "characterEndlessButton": "Character (endless)",
     "endlessButton": "Endless",
     "startTitle": "Guess today's anime!",
     "start": "Start",
@@ -67,6 +68,8 @@
     "hintLabelImage": "Image",
     "mysteryImageLabel": "Silhouette",
     "hintSlotEmpty": "—",
+    "revealedInGuesses_one": "Revealed in {{count}} guess",
+    "revealedInGuesses_other": "Revealed in {{count}} guesses",
     "spoilerTap": "Tap to reveal",
     "dailyNameLabel": "Today's character",
     "difficultySettings": "Difficulty & display",
@@ -74,7 +77,9 @@
     "settingSpoilersTitle": "Spoiler overlays (demographic & genres)",
     "settingSpoilersDesc": "When enabled, unlocked hints stay covered until you tap. When disabled, they are shown as soon as they unlock.",
     "settingHardImageTitle": "Hard mode (grayscale)",
-    "settingHardImageDesc": "Renders the character image in black and white (still combined with blur progress)."
+    "settingHardImageDesc": "Renders the character image in black and white (still combined with blur progress).",
+    "endlessGuessTitle": "Guess the anime for this character (endless)",
+    "endlessNameLabel": "Character to find"
   },
   "guessTable": {
     "anime": "Anime",

@@ -1,5 +1,10 @@
 import Fuse from "fuse.js";
-import type { AnimeItemDTO, CharacterGuessResultDTO, GuessResultDTO } from "@/stores/animeStore";
+import type {
+    AnimeItemDTO,
+    CharacterEndlessTargetDTO,
+    CharacterGuessResultDTO,
+    GuessResultDTO,
+} from "@/stores/animeStore";
 
 export function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
     if (!query) return [];
@@ -87,6 +92,44 @@ export async function fetchCharacterDailyHintConfig(): Promise<CharacterDailyHin
     } catch (error) {
         console.error("Error fetching character hint config:", error);
         return null;
+    }
+}
+
+export async function fetchCharacterEndlessTarget(): Promise<CharacterEndlessTargetDTO | null> {
+    try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/animes/characters/endless`);
+        if (!response.ok) {
+            console.error("Failed to fetch character endless target:", response.statusText);
+            return null;
+        }
+        return (await response.json()) as CharacterEndlessTargetDTO;
+    } catch (error) {
+        console.error("Error fetching character endless target:", error);
+        return null;
+    }
+}
+
+export async function makeCharacterEndlessGuessRequest(
+    animeId: string,
+    guessNumber: number,
+    refAnimeId: string,
+): Promise<CharacterGuessResultDTO | undefined> {
+    try {
+        const params = new URLSearchParams({
+            guessNumber: String(guessNumber),
+            refAnimeId,
+        });
+        const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/animes/characters/endless/guess/${animeId}?${params.toString()}`,
+            { method: "POST", headers: { "Content-Type": "application/json" } },
+        );
+        if (!response.ok) {
+            console.error("Failed to make character endless guess:", response.statusText);
+            return;
+        }
+        return (await response.json()) as CharacterGuessResultDTO;
+    } catch (error) {
+        console.error("Error making character endless guess:", error);
     }
 }
 

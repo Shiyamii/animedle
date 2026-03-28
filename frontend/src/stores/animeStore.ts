@@ -55,7 +55,14 @@ export interface RandomAnimeDTO {
     id: string;
 }
 
-interface AnimeStore {
+/** Cible `GET /api/animes/characters/endless` (règles d’indices = daily hint-config). */
+export interface CharacterEndlessTargetDTO {
+    id: string;
+    mysteryImageUrl: string;
+    mysteryCharacterName: string;
+}
+
+export interface AnimeStore {
     animeList: AnimeItemDTO[];
     guessList: GuessResultDTO[];
     endlessGuessList: GuessResultDTO[];
@@ -66,15 +73,21 @@ interface AnimeStore {
     characterGuessList: CharacterGuessResultDTO[];
     characterGuessDate: string | null;
     characterFoundAnime: AnimeItemDTO | null;
+    characterEndlessGuessList: CharacterGuessResultDTO[];
+    characterEndlessTarget: RandomAnimeDTO | null;
     getGuessList: () => GuessResultDTO[]
     initGuessListIfNeeded: () => void;
     getEndlessGuessList: () => GuessResultDTO[];
     getCharacterGuessList: () => CharacterGuessResultDTO[];
+    getCharacterEndlessGuessList: () => CharacterGuessResultDTO[];
     initCharacterGuessListIfNeeded: () => void;
     setAnimeList: (animes: AnimeItemDTO[]) => void;
     addGuessToListAsFirst: (guess: GuessResultDTO) => void;
     addEndlessGuessToListAsFirst: (guess: GuessResultDTO) => void;
     addCharacterGuessToListAsFirst: (guess: CharacterGuessResultDTO) => void;
+    addCharacterEndlessGuessToListAsFirst: (guess: CharacterGuessResultDTO) => void;
+    clearCharacterEndlessGuessList: () => void;
+    setCharacterEndlessTarget: (target: CharacterEndlessTargetDTO | null) => void;
     setGuessDate: (date: string | null) => void;
     setFoundAnime: (anime: AnimeItemDTO | null) => void;
     setCurrentAnimeDate: (date: string | null) => void;
@@ -99,6 +112,8 @@ export const useAnimeStore: any = create<AnimeStore>()(
             characterGuessList: [],
             characterGuessDate: null,
             characterFoundAnime: null,
+            characterEndlessGuessList: [],
+            characterEndlessTarget: null,
             getGuessList: () => useAnimeStore.getState().guessList,
             initGuessListIfNeeded: () => {
                 const today = new Date().toDateString();
@@ -110,6 +125,7 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 return useAnimeStore.getState().endlessGuessList;
             },
             getCharacterGuessList: () => useAnimeStore.getState().characterGuessList,
+            getCharacterEndlessGuessList: () => useAnimeStore.getState().characterEndlessGuessList,
             initCharacterGuessListIfNeeded: () => {
                 const today = new Date().toDateString();
                 if (
@@ -128,6 +144,12 @@ export const useAnimeStore: any = create<AnimeStore>()(
             addEndlessGuessToListAsFirst: (guess) => set((state) => ({ endlessGuessList: [guess, ...state.endlessGuessList] })),
             addCharacterGuessToListAsFirst: (guess) =>
                 set((state) => ({ characterGuessList: [guess, ...state.characterGuessList] })),
+            addCharacterEndlessGuessToListAsFirst: (guess) =>
+                set((state) => ({
+                    characterEndlessGuessList: [guess, ...state.characterEndlessGuessList],
+                })),
+            clearCharacterEndlessGuessList: () => set({ characterEndlessGuessList: [] }),
+            setCharacterEndlessTarget: (target) => set({ characterEndlessTarget: target }),
             setGuessDate: (date) => set({ guessDate: date }),
             setFoundAnime: (anime) => set({ foundAnime: anime }),
             setCurrentAnimeDate: (date) => set({ currentAnimeDate: date }),
@@ -162,6 +184,8 @@ export const useAnimeStore: any = create<AnimeStore>()(
                 characterGuessList: state.characterGuessList,
                 characterGuessDate: state.characterGuessDate,
                 characterFoundAnime: state.characterFoundAnime,
+                characterEndlessGuessList: state.characterEndlessGuessList,
+                characterEndlessTarget: state.characterEndlessTarget,
             })
         }
     )

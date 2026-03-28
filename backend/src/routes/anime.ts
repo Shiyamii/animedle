@@ -75,6 +75,32 @@ router.get("/animes/characters/daily/hint-config", async (c) => {
     }
 });
 
+router.get("/animes/characters/endless", async (c) => {
+    const target = await characterService.getRandomCharacterEndlessTarget();
+    if (!target) {
+        return c.json({ error: "No character found" }, 404);
+    }
+    return c.json(target);
+});
+
+router.post("/animes/characters/endless/guess/:id", async (c) => {
+    const id = c.req.param("id");
+    const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);
+    const refAnimeId = c.req.query("refAnimeId") || "";
+    if (isNaN(guessNumber) || guessNumber < 1) {
+        return c.json({ error: "Invalid guess number" }, 400);
+    }
+    if (!refAnimeId) {
+        return c.json({ error: "refAnimeId required" }, 400);
+    }
+    try {
+        const result = await characterService.guessEndlessCharacter(id, guessNumber, refAnimeId);
+        return c.json(result);
+    } catch {
+        return c.json({ error: "Guess failed" }, 404);
+    }
+});
+
 router.post("/animes/characters/daily/guess/:id", async (c) => {
     const id = c.req.param("id");
     const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);

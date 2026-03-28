@@ -43,6 +43,7 @@
     "menuTitle": "Choisir un mode",
     "dailyButton": "Daily Guessing",
     "characterButton": "Personnage",
+    "characterEndlessButton": "Personnage (endless)",
     "endlessButton": "Endless",
     "startTitle": "Devinez l'anime du jour !",
     "start": "Commencer",
@@ -67,6 +68,8 @@
     "hintLabelImage": "Image",
     "mysteryImageLabel": "Silhouette",
     "hintSlotEmpty": "—",
+    "revealedInGuesses_one": "Révélé dans {{count}} essai",
+    "revealedInGuesses_other": "Révélé dans {{count}} essais",
     "spoilerTap": "Appuyer pour révéler",
     "dailyNameLabel": "Personnage du jour",
     "difficultySettings": "Difficulté et affichage",
@@ -74,7 +77,9 @@
     "settingSpoilersTitle": "Spoilers (démographie et genres)",
     "settingSpoilersDesc": "Si activé, les indices débloqués restent masqués jusqu’au clic. Si désactivé, ils s’affichent dès qu’ils sont disponibles.",
     "settingHardImageTitle": "Mode difficile (noir et blanc)",
-    "settingHardImageDesc": "Affiche l’image du personnage en noir et blanc (en plus du flou progressif)."
+    "settingHardImageDesc": "Affiche l’image du personnage en noir et blanc (en plus du flou progressif).",
+    "endlessGuessTitle": "Devinez l’anime de ce personnage (endless)",
+    "endlessNameLabel": "Personnage à trouver"
   },
   "guessTable": {
     "anime": "Anime",
