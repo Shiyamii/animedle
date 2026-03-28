@@ -1,4 +1,4 @@
-import { useAnimeStore, type AnimeItemDTO, type AnimeStore, type CharacterGuessResultDTO } from "@/stores/animeStore";
+import { useAnimeStore, type AnimeItemDTO, type CharacterGuessResultDTO } from "@/stores/animeStore";
 import {
     createFuse,
     fetchCharacterDailyHintConfig,
@@ -13,11 +13,8 @@ import { useEffect, useMemo, useState } from "react";
 
 export function useCharacterEndlessPageViewModel() {
     const animeStore = useAnimeStore();
-    const animeList = useAnimeStore((s: AnimeStore) => s.animeList);
-    const characterEndlessTarget = useAnimeStore((s: AnimeStore) => s.characterEndlessTarget);
-
     const [inputValue, setInputValue] = useState("");
-    const [fuse, setFuse] = useState<Fuse<AnimeItemDTO>>(createFuse(animeList));
+    const [fuse, setFuse] = useState<Fuse<AnimeItemDTO>>(createFuse(animeStore.animeList));
     const [filtredAnimeList, setFiltredAnimeList] = useState<AnimeItemDTO[]>([]);
     const [isFilteringLoading, setIsFilteringLoading] = useState(false);
     const [guessList, setGuessList] = useState<CharacterGuessResultDTO[]>([]);
@@ -27,15 +24,12 @@ export function useCharacterEndlessPageViewModel() {
     > | null>(null);
 
     useEffect(() => {
+        animeStore.loadAnimeList();
         fetchCharacterDailyHintConfig().then((c) => {
             if (c) {
                 setRulesConfig({ hintTiers: c.hintTiers, imageBlur: c.imageBlur });
             }
         });
-    }, []);
-
-    useEffect(() => {
-        animeStore.loadAnimeList();
         let target = useAnimeStore.getState().characterEndlessTarget;
         if (target && !target.mysteryImageUrl) {
             animeStore.setCharacterEndlessTarget(null);
@@ -53,10 +47,10 @@ export function useCharacterEndlessPageViewModel() {
         } else {
             setGuessList(useAnimeStore.getState().getCharacterEndlessGuessList());
         }
-    }, [animeStore]);
+    }, []);
 
     const hintConfig = useMemo((): CharacterDailyHintConfigDTO | null => {
-        const target = characterEndlessTarget;
+        const target = animeStore.characterEndlessTarget;
         if (!rulesConfig || !target?.mysteryImageUrl) {
             return null;
         }
@@ -66,11 +60,11 @@ export function useCharacterEndlessPageViewModel() {
             mysteryImageUrl: target.mysteryImageUrl,
             mysteryCharacterName: target.mysteryCharacterName,
         };
-    }, [rulesConfig, characterEndlessTarget]);
+    }, [rulesConfig, animeStore.characterEndlessTarget]);
 
     useEffect(() => {
-        setFuse(createFuse(makeGuessableListForCharacter(animeList, guessList)));
-    }, [animeList, guessList]);
+        setFuse(createFuse(makeGuessableListForCharacter(animeStore.animeList, guessList)));
+    }, [animeStore.animeList, guessList]);
 
     useEffect(() => {
         setIsFilteringLoading(true);
@@ -85,12 +79,12 @@ export function useCharacterEndlessPageViewModel() {
         if (!win) {
             return null;
         }
-        return animeList.find((a: AnimeItemDTO) => a.id === win.guessedAnimeId) ?? null;
-    }, [guessList, animeList]);
+        return animeStore.animeList.find((a: AnimeItemDTO) => a.id === win.guessedAnimeId) ?? null;
+    }, [guessList, animeStore.animeList]);
 
     return {
         hintConfig,
-        animeList,
+        animeList: animeStore.animeList,
         filtredAnimeList,
         inputValue,
         setInputValue,
