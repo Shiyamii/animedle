@@ -10,9 +10,13 @@ Insertion des données : Samy D. - Tamas P.
 - Espace Admin : Titouan L.
 - Refont visuelle : Titouan L.
 
-Coeur du Animdle : Tamas P.
+Anime Guessing : Tamas P.
 - Systeme guessing : Tamas P.
 - Cron de l'anime du jour : Tamas P.
+
+Character Guessing : Tamas P.
+- Systeme guessing : Tamas P.
+- Cron du personnage du jour : Tamas P.
 
 Déploiement : Tamas P.
 - Dockerisation : Tamas P.

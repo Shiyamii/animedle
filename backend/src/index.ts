@@ -7,6 +7,7 @@ import adminRoutes from '@/routes/admin';
 import loadDotenv from "@/lib/dotenv-loader";
 import { AnimeService } from "@/services/AnimeService";
 import cron from "node-cron";
+import { CharacterService } from "./services/CharacterService";
 
 loadDotenv();
 
@@ -15,9 +16,11 @@ const app = new Hono<{ Variables: AuthType }>({
 });
 
 const animeService = AnimeService.getInstance();
+const characterService = CharacterService.getInstance();
 cron.schedule('0 0 * * *', async () => {
   console.log('Exécution de updateGoalAnime à 00:00 UTC')
   await animeService.updateGoalAnime()
+  await characterService.updateGoalCharacter()
 }, {
   timezone: "UTC"
 })
