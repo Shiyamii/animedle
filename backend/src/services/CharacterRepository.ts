@@ -1,0 +1,72 @@
+import { ensureMongooseConnection } from '@/lib/db';
+import mongoose, { Model, Schema, Types } from 'mongoose';
+import { AnimeTitleEntity } from './AnimeRepositories';
+
+export interface CharacterEntity {
+    _id?: Types.ObjectId;
+    images_webp: unknown;
+    name: string;
+    anime_id: string;
+    anime_titles: AnimeTitleEntity[];
+    anime_genres: string[];
+    demographic_type: string | null;
+}
+
+const CharacterSchema = new Schema<CharacterEntity>(
+    {
+        images_webp: { type: Schema.Types.Mixed, required: true },
+        name: { type: String, required: true },
+        anime_id: { type: String, required: true },
+        anime_titles: {
+            type: [
+                {
+                    type: { type: String, required: true },
+                    title: { type: String, required: true },
+                },
+            ],
+            required: true,
+        },
+        anime_genres: { type: [String], required: true },
+        demographic_type: { type: String, default: null },
+    },
+    {
+        versionKey: false,
+        collection: "characters",
+    },
+);
+
+const CharacterModel: Model<CharacterEntity> =
+    (mongoose.models.Character as Model<CharacterEntity> | undefined) ??
+    mongoose.model<CharacterEntity>('Character', CharacterSchema);
+
+export class CharacterRepository {
+    private model: Model<CharacterEntity>;
+
+    constructor() {
+        this.model = CharacterModel;
+    }
+
+    async findAll(): Promise<CharacterEntity[]> {
+        await ensureMongooseConnection();
+        return this.model.find({}).lean<CharacterEntity[]>().exec();
+    }
+
+    async findById(id: string): Promise<CharacterEntity | null> {
+        await ensureMongooseConnection();
+        return this.model.findOne({ _id: id }).lean<CharacterEntity>().exec();
+    }
+
+    async findOneByAnimeId(animeId: string): Promise<CharacterEntity | null> {
+        await ensureMongooseConnection();
+        return this.model.findOne({ anime_id: animeId }).lean<CharacterEntity>().exec();
+    }
+}
+
+export interface CurrentCharacterEntity {
+    _id?: Types.ObjectId;
+    character: CharacterEntity;
+    date: Date;
+    guesses: Record<string, number>;
+    totalWins: number;
+    winDistribution: Record<string, number>;
+}

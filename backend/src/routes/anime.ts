@@ -1,8 +1,10 @@
 import { Hono } from "hono";
 import { AnimeService } from "@/services/AnimeService";
+import { CharacterService } from "@/services/CharacterService";
 
 const router = new Hono({ strict: false });
 const animeService = AnimeService.getInstance();
+const characterService = CharacterService.getInstance();
 
 router.get("/animes", async (c) => {
     const animes = await animeService.getAnimeList();
@@ -62,6 +64,19 @@ router.get("/animes/stats", async (c) => {
     }
     const stats = await animeService.getAnimeStats(ids);
     return c.json(stats);
+});
+
+router.post("/animes/characters/daily/guess/:id", async (c) => {
+    const id = c.req.param("id");
+    const guessNumber = parseInt(c.req.query("guessNumber") || "1", 10);
+    if (isNaN(guessNumber) || guessNumber < 1) {
+        return c.json({ error: "Invalid guess number" }, 400);
+    }
+    const character = await characterService.guessDailyCharacter(id, guessNumber);
+    if (!character) {
+        return c.json({ error: "Character not found" }, 404);
+    }
+    return c.json(character);
 });
 
 
