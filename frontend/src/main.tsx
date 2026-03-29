@@ -1,78 +1,78 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import './i18n/i18n'
-import RootLayout from '@/layouts/RootLayout.tsx'
-import HomePage from '@/pages/home/HomePage.tsx'
-import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx'
-import CharacterGuessingPage from '@/pages/character/CharacterGuessingPage.tsx'
-import CharacterEndlessPage from '@/pages/character/CharacterEndlessPage.tsx'
-import { AuthPage } from '@/pages/auth/AuthPage.tsx'
-import AccountPage from '@/pages/account/AccountPage.tsx'
-import { ProtectedRoute, GuestRoute, AdminRoute } from '@/components/ProtectedRoute.tsx'
-import { AdminPage } from '@/pages/admin/AdminPage.tsx'
-import EndlessPage from '@/pages/endless/EndlessModePage.tsx'
-import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import './i18n/i18n';
+import { createBrowserRouter } from 'react-router';
+import { RouterProvider } from 'react-router/dom';
+import { AdminRoute, GuestRoute, ProtectedRoute } from '@/components/ProtectedRoute.tsx';
+import RootLayout from '@/layouts/RootLayout.tsx';
+import AccountPage from '@/pages/account/AccountPage.tsx';
+import { AdminPage } from '@/pages/admin/AdminPage.tsx';
+import { AuthPage } from '@/pages/auth/AuthPage.tsx';
+import CharacterEndlessPage from '@/pages/character/CharacterEndlessPage.tsx';
+import CharacterGuessingPage from '@/pages/character/CharacterGuessingPage.tsx';
+import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx';
+import EndlessPage from '@/pages/endless/EndlessModePage.tsx';
+import HomePage from '@/pages/home/HomePage.tsx';
 
 const router = createBrowserRouter([
-    {
-        element: <RootLayout />,
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/daily',
+        element: <DailyGuessingPage />,
+      },
+      {
+        path: '/character',
+        element: <CharacterGuessingPage />,
+      },
+
+      {
+        path: '/endless',
+        element: <EndlessPage />,
+      },
+      {
+        path: '/character-endless',
+        element: <CharacterEndlessPage />,
+      },
+      {
+        element: <GuestRoute />,
         children: [
-            {
-                path: "/",
-                element: <HomePage />,
-            },
-            {
-                path: "/daily",
-                element: <DailyGuessingPage />,
-            },
-            {
-                path: "/character",
-                element: <CharacterGuessingPage />,
-            },
-            
-            {
-                path: "/endless",
-                element: <EndlessPage />,
-            },
-            {
-                path: "/character-endless",
-                element: <CharacterEndlessPage />,
-            },
-            {
-                element: <GuestRoute />,
-                children: [
-                    {
-                        path: "/login",
-                        element: <AuthPage />,
-                    },
-                ],
-            },
-            {
-                element: <ProtectedRoute />,
-                children: [
-                    {
-                        path: "/account",
-                        element: <AccountPage />,
-                    },
-                ],
-            },
-            {
-                element: <AdminRoute />,
-                children: [
-                    {
-                        path: "/admin",
-                        element: <AdminPage />,
-                    },
-                ],
-            },
+          {
+            path: '/login',
+            element: <AuthPage />,
+          },
         ],
-    },
+      },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: '/account',
+            element: <AccountPage />,
+          },
+        ],
+      },
+      {
+        element: <AdminRoute />,
+        children: [
+          {
+            path: '/admin',
+            element: <AdminPage />,
+          },
+        ],
+      },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-        <RouterProvider router={router}/>
-    </StrictMode>,
-)
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
+);

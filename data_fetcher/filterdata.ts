@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
-import fs from 'fs';
 import { log } from 'console';
+import fs from 'fs';
+import fetch from 'node-fetch';
 
 ///////////////////////////
 /// Types et Interfaces ///
@@ -40,38 +40,34 @@ type JikanCharacter = {
     url: string;
     images: { webp: unknown };
     name: string;
-  },
+  };
   role: string;
   favorites: number;
-}
+};
 
 type AnimeRelatedList = {
   first: number;
   relatedIds: number[];
-}
-
-type JikanResponse = {
 };
 
+type JikanResponse = {};
 
 type JikanAnimePaginatedResponse = JikanResponse & {
   data: JikanAnime[];
   pagination?: {
     has_next_page?: boolean;
   };
-}
-
+};
 
 type JikanAnimeResponse = JikanResponse & {
   data: JikanAnime;
-}
+};
 
 type JikanCharacterResponse = JikanResponse & {
   data: JikanCharacter[];
-}
+};
 
-
-type JikanRelationsResponse = JikanResponse &{
+type JikanRelationsResponse = JikanResponse & {
   data: JikanRelation[];
 };
 
@@ -93,7 +89,7 @@ type FilteredCharacter = {
   mal_id: number;
   name: string;
   images_webp: unknown;
-}; 
+};
 
 ///////////////////////////////////
 // Constantes et Schéma Mongoose //
@@ -133,25 +129,23 @@ async function fetchFromJikan<T extends JikanResponse>(url: string): Promise<T> 
 
     const waitMs = 1000 * attempt;
     // Log uniquement les tentatives de retry qui attendent plus d'une seconde pour éviter de surcharger les logs
-    if(waitMs > 1000) 
-      console.log(`API ${response.status}, nouvelle tentative dans ${waitMs}ms...`);
+    if (waitMs > 1000) {
+    }
     await sleep(waitMs);
   }
 
   throw new Error(`Échec inattendu lors de la récupération de l'URL: ${url}`);
-    
 }
 
-async function fetchAnimePage(page: number): Promise<JikanAnimePaginatedResponse> {
+function fetchAnimePage(page: number): Promise<JikanAnimePaginatedResponse> {
   const url = `https://api.jikan.moe/v4/anime?order_by=scored_by&limit=${PAGE_SIZE}&sort=desc&page=${page}`;
   return fetchFromJikan<JikanAnimePaginatedResponse>(url);
 }
 
-async function fetchAnimeRelations(id: number): Promise<JikanRelationsResponse> {
+function fetchAnimeRelations(id: number): Promise<JikanRelationsResponse> {
   const url = `https://api.jikan.moe/v4/anime/${id}/relations`;
   return fetchFromJikan<JikanRelationsResponse>(url);
 }
-
 
 async function fetchAnime(id: number): Promise<JikanAnime> {
   if (fetchedAnimeCache.has(id)) {
@@ -163,7 +157,7 @@ async function fetchAnime(id: number): Promise<JikanAnime> {
   return response.data;
 }
 
-async function fetchCharacterData(animeId: number): Promise<JikanCharacterResponse> {
+function fetchCharacterData(animeId: number): Promise<JikanCharacterResponse> {
   const url = `https://api.jikan.moe/v4/anime/${animeId}/characters`;
   return fetchFromJikan<JikanCharacterResponse>(url);
 }
@@ -180,11 +174,15 @@ async function fetchCharacterData(animeId: number): Promise<JikanCharacterRespon
  * @param relation Le type de relation à suivre (par défaut "all", mais peut être "Sequel" ou "Prequel" pour filtrer)
  * @returns Un tableau d'IDs MAL de tous les animes liés selon les relations spécifiées, incluant l'anime de départ
  */
-async function getAllRelationsOfAnime(id: number, visited = new Set<number>(), relation = "all"): Promise<AnimeRelatedList> {
+async function getAllRelationsOfAnime(
+  id: number,
+  visited = new Set<number>(),
+  relation = 'all',
+): Promise<AnimeRelatedList> {
   if (visited.has(id)) {
     return { first: id, relatedIds: [] };
   }
-  
+
   const anime = await fetchAnime(id);
   if (anime.type === 'Movie') {
     return { first: id, relatedIds: [] };
@@ -193,43 +191,52 @@ async function getAllRelationsOfAnime(id: number, visited = new Set<number>(), r
 
   const relationsResponse = await fetchAnimeRelations(id);
   const relatedAnimes = relationsResponse.data;
-  let allRelatedIds = [];
+  const allRelatedIds: number[] = [];
   let first = id;
 
-  if (relation === "Prequel" || relation === "all") {
-    const prequelIds = relatedAnimes.filter((rel) => rel.relation === 'Prequel').flatMap((rel) => rel.entry.filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id)).map((entry) => entry.mal_id));
+  if (relation === 'Prequel' || relation === 'all') {
+    const prequelIds = relatedAnimes
+      .filter((rel) => rel.relation === 'Prequel')
+      .flatMap((rel) =>
+        rel.entry
+          .filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id))
+          .map((entry) => entry.mal_id),
+      );
     for (const prequelId of prequelIds) {
       if (visited.has(prequelId)) {
         continue;
       }
       const anime = await fetchAnime(prequelId);
       if (anime.type === 'Movie') {
-        continue
+        continue;
       }
-      const prequels = await getAllRelationsOfAnime(prequelId, visited, "Prequel");
+      const prequels = await getAllRelationsOfAnime(prequelId, visited, 'Prequel');
       first = prequels.first;
       allRelatedIds.push(...prequels.relatedIds);
     }
-
   }
-  if (relation === "Sequel" || relation === "all") {
-    const sequelsIds = relatedAnimes.filter((rel) => rel.relation === 'Sequel').flatMap((rel) => rel.entry.filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id)).map((entry) => entry.mal_id));
+  if (relation === 'Sequel' || relation === 'all') {
+    const sequelsIds = relatedAnimes
+      .filter((rel) => rel.relation === 'Sequel')
+      .flatMap((rel) =>
+        rel.entry
+          .filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id))
+          .map((entry) => entry.mal_id),
+      );
 
     for (const sequelId of sequelsIds) {
       if (visited.has(sequelId)) {
         continue;
       }
       const anime = await fetchAnime(sequelId);
-      if(!anime) {
-        console.log(anime, sequelId);
+      if (!anime) {
       }
       if (anime.type === 'Movie') {
-        continue
+        continue;
       }
-      const subRelatedIds = (await getAllRelationsOfAnime(sequelId, visited, "Sequel")).relatedIds;
+      const subRelatedIds = (await getAllRelationsOfAnime(sequelId, visited, 'Sequel')).relatedIds;
       allRelatedIds.push(...subRelatedIds);
     }
-      
   }
 
   return { first: first, relatedIds: [id, ...allRelatedIds] };
@@ -250,7 +257,9 @@ async function getAnime(id: number): Promise<JikanAnime> {
   const allRelations = await getAllRelationsOfAnime(id, new Set<number>());
 
   // Ajouter les Id visité dans le set global pour éviter de les re-parcourir dans d'autres appels
-  allRelations.relatedIds.forEach((relatedId) => visitedAnimeIds.add(relatedId));
+  for (const relatedId of allRelations.relatedIds) {
+    visitedAnimeIds.add(relatedId);
+  }
 
   let totalEpisodes = mainEpisodes;
   for (const relatedId of allRelations.relatedIds) {
@@ -263,12 +272,14 @@ async function getAnime(id: number): Promise<JikanAnime> {
   const mainAnime = await fetchAnime(allRelations.first);
   mainAnime.episodes = totalEpisodes > 0 ? totalEpisodes : mainAnime.episodes;
   // Garder que les titres principaux, synonymes, francais et angalis
-  mainAnime.titles = mainAnime.titles.filter((title) => ['Default', 'Synonym', 'English', 'French'].includes(title.type)); 
-  mainAnime.titles
+  mainAnime.titles = mainAnime.titles.filter((title) =>
+    ['Default', 'Synonym', 'English', 'French'].includes(title.type),
+  );
+  mainAnime.titles;
   return mainAnime;
 }
 
-async function getCharacters(animeId: number) : Promise<JikanCharacter[]> {
+async function getCharacters(animeId: number): Promise<JikanCharacter[]> {
   const characterResponse = await fetchCharacterData(animeId);
   return characterResponse.data;
 }
@@ -322,13 +333,9 @@ async function fetchAndFilterAnimeData() {
 
   fs.writeFileSync('filtered_data.json', JSON.stringify(filtered, null, 2), 'utf-8');
 
-  fecthAndFilterCharacterData(filtered).catch((error) => {
-    console.error(error);
+  fecthAndFilterCharacterData(filtered).catch((_error) => {
     process.exitCode = 1;
   });
-
-  console.log(`Filtrage terminé. ${filtered.length} animes enregistrés dans filtered_data.json.`);
-  console.log(`Nombre ID visité : ${visitedAnimeIds.size}`);
 }
 
 async function fecthAndFilterCharacterData(animes: FilteredAnime[]) {
@@ -343,10 +350,8 @@ async function fecthAndFilterCharacterData(animes: FilteredAnime[]) {
   }
 
   fs.writeFileSync('filtered_characters.json', JSON.stringify(charactersData, null, 2), 'utf-8');
-  console.log(`Récupération des personnages terminée. Données enregistrées dans filtered_characters.json.`);
 }
 
-fetchAndFilterAnimeData().catch((error) => {
-  console.error(error);
+fetchAndFilterAnimeData().catch((_error) => {
   process.exitCode = 1;
 });

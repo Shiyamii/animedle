@@ -1,13 +1,13 @@
-import { Hono } from "hono";
-import { cors } from "hono/cors";
-import type { AuthType } from "@/lib/auth"
-import authRoutes from '@/routes/auth';
-import animeRoutes from '@/routes/anime';
+import { Hono } from 'hono';
+import { cors } from 'hono/cors';
+import cron from 'node-cron';
+import type { AuthType } from '@/lib/auth';
+import loadDotenv from '@/lib/dotenv-loader';
 import adminRoutes from '@/routes/admin';
-import loadDotenv from "@/lib/dotenv-loader";
-import { AnimeService } from "@/services/AnimeService";
-import cron from "node-cron";
-import { CharacterService } from "./services/CharacterService";
+import animeRoutes from '@/routes/anime';
+import authRoutes from '@/routes/auth';
+import { AnimeService } from '@/services/AnimeService';
+import { CharacterService } from './services/CharacterService';
 
 loadDotenv();
 
@@ -17,31 +17,34 @@ const app = new Hono<{ Variables: AuthType }>({
 
 const animeService = AnimeService.getInstance();
 const characterService = CharacterService.getInstance();
-cron.schedule('0 0 * * *', async () => {
-  console.log('Exécution de updateGoalAnime à 00:00 UTC')
-  await animeService.updateGoalAnime()
-  await characterService.updateGoalCharacter()
-}, {
-  timezone: "UTC"
-})
+cron.schedule(
+  '0 0 * * *',
+  async () => {
+    await animeService.updateGoalAnime();
+    await characterService.updateGoalCharacter();
+  },
+  {
+    timezone: 'UTC',
+  },
+);
 
-const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
 
-
-app.basePath("/api");
-app.use("/api/*", cors({
-  origin: frontendUrl,
-  allowHeaders: ["Content-Type", "Authorization"],
-  allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  credentials: true,
-}));
+app.basePath('/api');
+app.use(
+  '/api/*',
+  cors({
+    origin: frontendUrl,
+    allowHeaders: ['Content-Type', 'Authorization'],
+    allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  }),
+);
 
 const routes = [authRoutes, animeRoutes, adminRoutes] as Hono[];
 
 routes.forEach((route: Hono) => {
-  app.route("/api/", route);
+  app.route('/api/', route);
 });
-
-console.log(`Server is running on port 3000`);
 
 export default app;

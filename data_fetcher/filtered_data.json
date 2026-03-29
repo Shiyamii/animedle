@@ -6,12 +6,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/47347l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Action", "Award Winning", "Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -49,10 +44,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1079/138100l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -82,10 +74,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/76049l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -119,11 +108,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/99889l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -157,12 +142,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1208/94745l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -208,12 +188,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/39717l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -247,9 +222,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78745l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
@@ -279,11 +252,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1141/142503l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -313,10 +282,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/87048l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -346,12 +312,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1498/134443l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -389,11 +350,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1171/109222l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -431,11 +388,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1337/99013l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -469,10 +422,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1122/96435l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -506,11 +456,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1074/111944l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -544,11 +490,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1522/128039l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Fantasy", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -586,11 +528,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1032/135088l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -620,11 +558,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/138851l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -654,11 +588,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1935/127974l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -684,10 +614,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/77957l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -725,10 +652,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/22128l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -788,11 +712,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/65409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -822,11 +742,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/80356l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -860,11 +776,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/79597l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -898,10 +810,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1429/95946l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -935,10 +844,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1830/118780l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -968,11 +874,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1895/142748l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1006,10 +908,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1244/111115l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1035,10 +934,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1886/128266l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1064,9 +960,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/76014l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -1104,10 +998,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/68547l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -1145,11 +1036,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/33465l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Action", "Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1183,11 +1070,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1541/147774l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1213,12 +1096,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/73178l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Horror",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Action", "Horror", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1260,11 +1138,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1301/93586l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1298,10 +1172,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75195l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1335,10 +1206,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1295/106551l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -1372,13 +1240,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/108941l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Avant Garde",
-      "Award Winning",
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Award Winning", "Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1412,11 +1274,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/40409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1466,10 +1324,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102576l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Comedy"
-    ],
+    "genres": ["Adventure", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -1495,10 +1350,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1704/106947l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1540,11 +1392,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1441/122795l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Comedy"
-    ],
+    "genres": ["Action", "Award Winning", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -1566,10 +1414,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1806/126216l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1599,11 +1444,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1614/90408l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -1629,12 +1470,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1490/101365l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1664,9 +1500,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1795/95088l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
@@ -1692,11 +1526,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/71553l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Fantasy", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1722,9 +1552,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1826/147276l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
@@ -1750,11 +1578,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/18179l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1780,11 +1604,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/19644l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Award Winning",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Award Winning", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -1810,10 +1630,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1444/148976l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Gourmet",
-      "Ecchi"
-    ],
+    "genres": ["Gourmet", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -1851,11 +1668,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/42051l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Horror",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Horror", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -1897,11 +1710,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1500/103005l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama"
-    ],
+    "genres": ["Action", "Adventure", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -1923,10 +1732,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/79697l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -1964,11 +1770,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1945/136600l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -1994,13 +1796,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/138723l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Adventure", "Award Winning", "Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -2030,11 +1826,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1172/148981l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2072,12 +1864,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1464/111943l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2115,10 +1902,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/50177l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -2152,12 +1936,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/78311l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Horror",
-      "Suspense",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Horror", "Suspense", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2199,11 +1978,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/86578l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2241,11 +2016,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1069/123309l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2279,9 +2050,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1695/111486l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -2311,10 +2080,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/88336l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2340,11 +2106,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/5123l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Sci-Fi"
-    ],
+    "genres": ["Adventure", "Award Winning", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -2394,12 +2156,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1530/117776l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Ecchi"
-    ],
+    "genres": ["Adventure", "Drama", "Fantasy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2433,13 +2190,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/111940l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Romance",
-      "Supernatural",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Romance", "Supernatural", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -2469,13 +2220,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/75815l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Award Winning",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Award Winning", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2513,13 +2258,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1780/121555l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama",
-      "Horror",
-      "Romance",
-      "Suspense"
-    ],
+    "genres": ["Action", "Drama", "Horror", "Romance", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2557,10 +2296,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1786/120117l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -2598,10 +2334,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/117644l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2627,10 +2360,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/86830l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2672,12 +2402,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1887/92364l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2711,11 +2436,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1071/149486l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2741,12 +2462,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1355/147277l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2780,12 +2496,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1015/138006l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -2819,13 +2530,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/86733l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Adventure", "Drama", "Fantasy", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -2851,10 +2556,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1905/142840l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -2896,12 +2598,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1314/142015l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Action", "Mystery", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -2931,11 +2628,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1664/103275l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -2969,11 +2662,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/11/55225l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Award Winning", "Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3011,9 +2700,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1179/119897l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3047,10 +2734,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1804/95033l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3076,10 +2760,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/85434l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Slice of Life",
-      "Supernatural"
-    ],
+    "genres": ["Slice of Life", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3113,10 +2794,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/79409l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery"
-    ],
+    "genres": ["Action", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -3154,11 +2832,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/148979l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3192,10 +2866,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1839/122012l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Drama"
-    ],
+    "genres": ["Action", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -3221,10 +2892,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1121/119044l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3258,10 +2926,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/25254l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3291,12 +2956,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1170/121597l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Mystery",
-      "Romance",
-      "Supernatural",
-      "Ecchi"
-    ],
+    "genres": ["Mystery", "Romance", "Supernatural", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -3330,9 +2990,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76803l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -3366,12 +3024,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/89973l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Action",
-      "Avant Garde",
-      "Horror",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Avant Garde", "Horror", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3401,11 +3054,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1110/147278l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Supernatural"
-    ],
+    "genres": ["Adventure", "Award Winning", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3439,10 +3088,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/43643l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3476,11 +3122,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1719/95621l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3506,10 +3148,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/71992l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3555,12 +3194,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75299l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Sci-Fi",
-      "Supernatural",
-      "Suspense"
-    ],
+    "genres": ["Action", "Sci-Fi", "Supernatural", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3590,10 +3224,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1818/126435l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Action",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -3615,11 +3246,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1879/100467l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3653,9 +3280,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1973/142750l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -3693,10 +3318,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/75587l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3730,12 +3352,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1404/98182l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Avant Garde",
-      "Drama",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Drama", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -3769,11 +3386,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1801/142390l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -3811,11 +3424,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/71772l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Mystery", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -3861,10 +3470,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/50521l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Slice of Life"
-    ],
+    "genres": ["Mystery", "Slice of Life"],
     "titles": [
       {
         "type": "Default",
@@ -3906,10 +3512,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1902/128382l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -3947,11 +3550,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1370/135212l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -3981,10 +3580,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1819/97947l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4022,12 +3618,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1880/101146l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4057,11 +3648,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1993/93837l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4103,10 +3690,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1417/117422l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4144,11 +3728,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/80010l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Action",
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -4174,10 +3754,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1768/93291l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4215,10 +3792,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/39779l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4260,11 +3834,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1467/137783l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Mystery", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4302,10 +3872,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1286/112161l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -4335,10 +3902,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/82149l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4368,11 +3932,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1847/120234l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -4398,12 +3958,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/13/44844l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Fantasy", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -4429,13 +3984,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1702/106229l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Drama",
-      "Fantasy",
-      "Mystery"
-    ],
+    "genres": ["Action", "Adventure", "Drama", "Fantasy", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -4473,10 +4022,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1812/134736l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Drama"
-    ],
+    "genres": ["Award Winning", "Drama"],
     "titles": [
       {
         "type": "Default",
@@ -4506,9 +4052,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/76120l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -4546,11 +4090,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/84004l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4576,10 +4116,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1410/112994l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4625,12 +4162,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/76493l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -4672,10 +4204,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1713/145599l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4697,10 +4226,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/52091l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4726,12 +4252,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/74606l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4769,11 +4290,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/78783l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -4799,10 +4316,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1864/93518l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4832,10 +4346,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/63205l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4869,11 +4380,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/51463l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Horror",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Horror", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -4907,11 +4414,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1584/143719l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Comedy", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -4937,10 +4440,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/81149l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Sports"
-    ],
+    "genres": ["Award Winning", "Sports"],
     "titles": [
       {
         "type": "Default",
@@ -4966,10 +4466,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/83709l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -4999,10 +4496,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1722/107269l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5040,11 +4534,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1408/114012l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Horror",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Horror", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -5070,10 +4560,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/82890l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5107,11 +4594,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1638/119321l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5149,11 +4632,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1597/112995l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5191,10 +4670,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/66083l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5228,9 +4704,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/64813l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Romance"
-    ],
+    "genres": ["Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5264,9 +4738,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1899/117237l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -5300,9 +4772,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1906/121592l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
@@ -5328,10 +4798,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1126/108573l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5365,11 +4832,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/30667l.webp"
     },
     "anime_format": "Special",
-    "genres": [
-      "Action",
-      "Horror",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Horror", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5407,10 +4870,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1502/124384l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5444,11 +4904,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/102179l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5478,10 +4934,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/40977l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Suspense"
-    ],
+    "genres": ["Action", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -5507,11 +4960,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1075/131925l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Supernatural"
-    ],
+    "genres": ["Action", "Adventure", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5545,11 +4994,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/4/72750l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -5579,11 +5024,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1085/90759l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5617,11 +5058,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1292/94693l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -5647,11 +5084,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/18793l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery",
-      "Suspense"
-    ],
+    "genres": ["Drama", "Mystery", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -5677,12 +5110,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1470/137929l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Award Winning",
-      "Comedy",
-      "Mystery",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Comedy", "Mystery", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -5716,10 +5144,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1987/117507l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -5753,9 +5178,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1736/93138l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action"
-    ],
+    "genres": ["Action"],
     "titles": [
       {
         "type": "Default",
@@ -5789,10 +5212,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1021/95670l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance"
-    ],
+    "genres": ["Drama", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -5830,9 +5250,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1258/126929l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -5858,11 +5276,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/76222l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -5896,13 +5310,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/67795l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -5928,12 +5336,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1599/112267l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -5963,14 +5366,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/20680l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -6000,11 +5396,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/35721l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Slice of Life",
-      "Supernatural"
-    ],
+    "genres": ["Award Winning", "Slice of Life", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -6038,11 +5430,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1557/123313l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Adventure", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -6076,10 +5464,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1900/110097l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6117,9 +5502,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1302/94882l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -6149,12 +5532,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/73700l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Mystery",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Comedy", "Mystery", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -6196,12 +5574,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1/2432l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Award Winning",
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Award Winning", "Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -6251,10 +5624,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/30097l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6300,10 +5670,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77324l.webp"
     },
     "anime_format": "TV Special",
-    "genres": [
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -6337,10 +5704,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/75106l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -6374,9 +5738,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1448/127956l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -6402,10 +5764,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1613/108722l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance"
-    ],
+    "genres": ["Comedy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6443,12 +5802,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/7/77356l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Avant Garde",
-      "Comedy",
-      "Sci-Fi",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Comedy", "Sci-Fi", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -6482,11 +5836,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1091/128729l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6516,9 +5866,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/6/51107l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Sports"
-    ],
+    "genres": ["Sports"],
     "titles": [
       {
         "type": "Default",
@@ -6548,12 +5896,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/12/79164l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Action", "Fantasy", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -6583,10 +5926,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1708/138033l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Mystery"
-    ],
+    "genres": ["Drama", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -6620,13 +5960,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1649/93412l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -6660,9 +5994,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1285/111316l.webp"
     },
     "anime_format": "ONA",
-    "genres": [
-      "Fantasy"
-    ],
+    "genres": ["Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6692,9 +6024,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1485/141208l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Drama"
-    ],
+    "genres": ["Drama"],
     "titles": [
       {
         "type": "Default",
@@ -6728,10 +6058,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/8/85593l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -6765,10 +6092,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/5/19570l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Mystery"
-    ],
+    "genres": ["Action", "Mystery"],
     "titles": [
       {
         "type": "Default",
@@ -6802,12 +6126,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/75104l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Fantasy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Fantasy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -6841,11 +6160,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/9/64225l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -6879,11 +6194,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/86468l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy",
-      "Romance",
-      "Ecchi"
-    ],
+    "genres": ["Comedy", "Romance", "Ecchi"],
     "titles": [
       {
         "type": "Default",
@@ -6913,11 +6224,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1447/99827l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -6955,10 +6262,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1941/98123l.webp"
     },
     "anime_format": "OVA",
-    "genres": [
-      "Action",
-      "Comedy"
-    ],
+    "genres": ["Action", "Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -7000,11 +6304,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/2/39665l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Supernatural"
-    ],
+    "genres": ["Drama", "Romance", "Supernatural"],
     "titles": [
       {
         "type": "Default",
@@ -7034,9 +6334,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/33257l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Comedy"
-    ],
+    "genres": ["Comedy"],
     "titles": [
       {
         "type": "Default",
@@ -7066,12 +6364,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1491/134498l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Action", "Adventure", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -7105,11 +6398,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1218/135107l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7135,13 +6424,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1254/134212l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Avant Garde",
-      "Award Winning",
-      "Drama",
-      "Horror",
-      "Suspense"
-    ],
+    "genres": ["Avant Garde", "Award Winning", "Drama", "Horror", "Suspense"],
     "titles": [
       {
         "type": "Default",
@@ -7167,11 +6450,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1415/102477l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Romance",
-      "Sci-Fi"
-    ],
+    "genres": ["Drama", "Romance", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",
@@ -7197,11 +6476,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1331/138727l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7235,13 +6510,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1579/140483l.webp"
     },
     "anime_format": "Movie",
-    "genres": [
-      "Adventure",
-      "Award Winning",
-      "Comedy",
-      "Drama",
-      "Fantasy"
-    ],
+    "genres": ["Adventure", "Award Winning", "Comedy", "Drama", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7275,12 +6544,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/1787/140239l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Adventure",
-      "Comedy",
-      "Fantasy"
-    ],
+    "genres": ["Action", "Adventure", "Comedy", "Fantasy"],
     "titles": [
       {
         "type": "Default",
@@ -7334,11 +6598,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/3/88476l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Drama",
-      "Fantasy",
-      "Romance"
-    ],
+    "genres": ["Drama", "Fantasy", "Romance"],
     "titles": [
       {
         "type": "Default",
@@ -7376,11 +6636,7 @@
       "large_image_url": "https://myanimelist.net/images/anime/10/73274l.webp"
     },
     "anime_format": "TV",
-    "genres": [
-      "Action",
-      "Comedy",
-      "Sci-Fi"
-    ],
+    "genres": ["Action", "Comedy", "Sci-Fi"],
     "titles": [
       {
         "type": "Default",

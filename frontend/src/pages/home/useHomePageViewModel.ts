@@ -1,1 +1,1 @@
-export { useDailyGuessingPageViewModel as useHomePageViewModel } from "@/pages/daily/useDailyGuessingPageViewModel";
+export { useDailyGuessingPageViewModel as useHomePageViewModel } from '@/pages/daily/useDailyGuessingPageViewModel';

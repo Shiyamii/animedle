@@ -1,6 +1,6 @@
-import { ensureMongooseConnection } from "@/lib/db";
-import mongoose, { Model, Schema, Types } from "mongoose";
-import { CharacterEntity } from "./CharacterRepository";
+import mongoose, { type Model, Schema, type Types } from 'mongoose';
+import { ensureMongooseConnection } from '@/lib/db';
+import type { CharacterEntity } from './CharacterRepository';
 
 export interface CurrentCharacterEntity {
   _id?: Types.ObjectId;
@@ -37,13 +37,13 @@ const CurrentCharacterSchema = new Schema<CurrentCharacterEntity>(
   },
   {
     versionKey: false,
-    collection: "current_characters",
+    collection: 'current_characters',
   },
 );
 
 const CurrentCharacterModel: Model<CurrentCharacterEntity> =
   (mongoose.models.CurrentCharacter as Model<CurrentCharacterEntity> | undefined) ??
-  mongoose.model<CurrentCharacterEntity>("CurrentCharacter", CurrentCharacterSchema);
+  mongoose.model<CurrentCharacterEntity>('CurrentCharacter', CurrentCharacterSchema);
 
 export class CurrentCharacterRepository {
   private model: Model<CurrentCharacterEntity>;
@@ -68,19 +68,13 @@ export class CurrentCharacterRepository {
 
   async recordGuess(characterId: string): Promise<void> {
     await ensureMongooseConnection();
-    await this.model.findOneAndUpdate(
-      {},
-      { $inc: { [`guesses.${characterId}`]: 1 } },
-      { sort: { date: -1 } },
-    ).exec();
+    await this.model.findOneAndUpdate({}, { $inc: { [`guesses.${characterId}`]: 1 } }, { sort: { date: -1 } }).exec();
   }
 
   async recordWin(guessNumber: number): Promise<void> {
     await ensureMongooseConnection();
-    await this.model.findOneAndUpdate(
-      {},
-      { $inc: { totalWins: 1, [`winDistribution.${guessNumber}`]: 1 } },
-      { sort: { date: -1 } },
-    ).exec();
+    await this.model
+      .findOneAndUpdate({}, { $inc: { totalWins: 1, [`winDistribution.${guessNumber}`]: 1 } }, { sort: { date: -1 } })
+      .exec();
   }
 }

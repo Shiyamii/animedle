@@ -1,5 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
 import fs from 'fs';
+import mongoose, { Schema } from 'mongoose';
 
 type Anime = {
   mal_id?: number;
@@ -38,7 +38,6 @@ type JikanTitle = {
   title: string;
 };
 
-
 const AnimeSchema = new Schema<Anime>(
   {
     images_webp: { type: Schema.Types.Mixed, required: true },
@@ -58,7 +57,7 @@ const AnimeSchema = new Schema<Anime>(
     season_start: { type: String, default: null },
     studio: { type: String, default: null },
     source: { type: String, default: null },
-    score: { type: Number, default: null }
+    score: { type: Number, default: null },
   },
   {
     versionKey: false,
@@ -84,15 +83,12 @@ const CharacterSchema = new Schema<Character>(
   },
   {
     versionKey: false,
-  }
+  },
 );
 
-const AnimeModel =
-  mongoose.models.Anime || mongoose.model<Anime>('Anime', AnimeSchema);
+const AnimeModel = mongoose.models.Anime || mongoose.model<Anime>('Anime', AnimeSchema);
 
-const CharacterModel =
-  mongoose.models.Character || mongoose.model<Character>('Character', CharacterSchema);
-
+const CharacterModel = mongoose.models.Character || mongoose.model<Character>('Character', CharacterSchema);
 
 const DEFAULT_MONGO_URI = 'mongodb://admin:adminpassword@localhost:27017/animedle?authSource=admin';
 
@@ -104,13 +100,13 @@ async function isDatabaseEmpty(): Promise<boolean> {
 }
 
 // Insert an anime into MongoDB and return the inserted document's ID
-async function addMangaAnimeToMongo(anime: Anime) : Promise<string> {
+async function addMangaAnimeToMongo(anime: Anime): Promise<string> {
   const newAnime = new AnimeModel(anime);
   await newAnime.save();
   return newAnime._id.toString();
 }
 
-async function insertMangaWithCharacter(anime: Anime, character: CharacterFromJson) : Promise<void> {
+async function insertMangaWithCharacter(anime: Anime, character: CharacterFromJson): Promise<void> {
   const animeId = await addMangaAnimeToMongo(anime);
   const characterDoc = new CharacterModel({
     ...character,
@@ -131,42 +127,42 @@ async function saveAnimeToMongo(animes: Anime[], characters: CharacterJson) {
   if (isEmpty || forceDelete) {
     await AnimeModel.deleteMany({});
     await CharacterModel.deleteMany({});
-    if(mongoose.connection.db )
+    if (mongoose.connection.db) {
       await mongoose.connection.db.dropCollection('current_animes').catch(() => {});
+    }
     for (const anime of animes) {
-      if(!anime.mal_id) continue;
+      if (!anime.mal_id) {
+        continue;
+      }
       const character = characters[anime.mal_id];
       if (character) {
         await insertMangaWithCharacter(anime, character);
-      } 
+      }
     }
   } else {
-    console.log("No insertion needed, database is already populated.");
   }
   await mongoose.disconnect();
-
-  console.log(`MongoDB: ${animes.length} animes enregistrés.`);
 }
 
 function replaceDateBySeasonDate(anime: Anime): Anime {
-  if (!anime.season_start) return anime;
+  if (!anime.season_start) {
+    return anime;
+  }
   const date = new Date(anime.season_start);
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   let season: string;
   if (month >= 3 && month <= 5) {
-    season = "Spring";
+    season = 'Spring';
   } else if (month >= 6 && month <= 8) {
-    season = "Summer";
-  }
-  else if (month >= 9 && month <= 11) {
-    season = "Fall";
+    season = 'Summer';
+  } else if (month >= 9 && month <= 11) {
+    season = 'Fall';
   } else {
-    season = "Winter";
+    season = 'Winter';
   }
   return { ...anime, season_start: `${season} ${year}` };
 }
-
 
 //fecth file "filtered_data.json" and insert it to mongoDB
 async function insertFilteredDataToMongo() {
@@ -176,10 +172,8 @@ async function insertFilteredDataToMongo() {
   const filteredWithSeasonDate = filtered.map(replaceDateBySeasonDate);
   const characters: CharacterJson = JSON.parse(rawDataCharacter);
   await saveAnimeToMongo(filteredWithSeasonDate, characters);
-  console.log(`Insertion terminée.`);
 }
 
-insertFilteredDataToMongo().catch((error) => {
-  console.error(error);
+insertFilteredDataToMongo().catch((_error) => {
   process.exitCode = 1;
 });

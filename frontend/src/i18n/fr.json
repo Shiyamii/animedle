@@ -91,7 +91,7 @@
     "episodes": "Épisodes",
     "season": "Saison",
     "score": "Score",
-    "guessesCount" : "Nombre de tentatives : {{count}}"
+    "guessesCount": "Nombre de tentatives : {{count}}"
   },
   "endless": {
     "currentStreak": "Série en cours : {{count}}",
