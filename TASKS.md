@@ -6,11 +6,19 @@ Fetch des données : Samy D. - Tamas P.
 Insertion des données : Samy D. - Tamas P.
 - Adaptation du format des données : Tamas P.
 
-Authentification : Titouan L.
+- Authentification : Titouan L.
+- Espace Admin : Titouan L.
+- Refont visuelle : Titouan L.
 
-Coeur du Animdle : Tamas P.
+Anime Guessing : Tamas P.
 - Systeme guessing : Tamas P.
 - Cron de l'anime du jour : Tamas P.
+- Mode endless : Tamas P.
+
+Character Guessing : Tamas P.
+- Systeme guessing : Tamas P.
+- Cron du personnage du jour : Tamas P.
+- Mode endless : Tamas P.
 
 Déploiement : Tamas P.
 - Dockerisation : Tamas P.

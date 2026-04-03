@@ -1,12 +1,12 @@
 import { Hono } from 'hono';
-import { auth, AuthType } from '@/lib/auth';
+import { type AuthType, auth } from '@/lib/auth';
 
 const router = new Hono<{ Bindings: AuthType }>({
-    strict: false,
-})
+  strict: false,
+});
 
 router.on(['POST', 'GET'], '/auth/*', (c) => {
-    return auth.handler(c.req.raw)
-})
+  return auth.handler(c.req.raw);
+});
 
 export default router;

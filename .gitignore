@@ -26,3 +26,8 @@ dist-ssr
 # Env
 .env
 .env.*
+
+.agent
+.agents
+.claude
+CLAUDE.md

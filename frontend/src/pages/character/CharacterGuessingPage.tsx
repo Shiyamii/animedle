@@ -1,0 +1,100 @@
+import { useTranslation } from 'react-i18next';
+import { AutocompleteTextInput } from '@/components/AutoComplete';
+import { CharacterGuessRows } from '@/components/character/CharacterGuessRows';
+import { CharacterHintsPanel } from '@/components/character/CharacterHintsPanel';
+import { MYSTERY_IMAGE_MAX_BLUR_PX } from '@/components/character/characterGuessingUtils';
+import { ModeMenu } from '@/components/ModeMenu';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import useConfetti from '@/hooks/useConfetti.ts';
+import { useCharacterDifficultyStore } from '@/stores/characterDifficultyStore';
+import { useCharacterGuessingPageViewModel } from './useCharacterGuessingPageViewModel';
+
+function CharacterGuessingPage() {
+  const { t } = useTranslation();
+  const {
+    hintConfig,
+    animeList,
+    filtredAnimeList,
+    inputValue,
+    setInputValue,
+    isFilteringLoading,
+    guessList,
+    hints,
+    foundAnime,
+    onAnimeSelect,
+  } = useCharacterGuessingPageViewModel();
+
+  const useSpoilerOverlays = useCharacterDifficultyStore((s) => s.useSpoilerOverlays);
+  const hardImageMode = useCharacterDifficultyStore((s) => s.hardImageMode);
+
+  const spoilerModeForHints = useSpoilerOverlays && !foundAnime;
+
+  useConfetti(!!foundAnime);
+
+  const completedGuesses = guessList.length;
+  const totalBlurGuesses = hintConfig?.imageBlur.totalGuessesUntilClear ?? 10;
+  const blurProgress = foundAnime
+    ? 0
+    : (MYSTERY_IMAGE_MAX_BLUR_PX * Math.max(0, totalBlurGuesses - Math.min(completedGuesses, totalBlurGuesses))) /
+      Math.max(1, totalBlurGuesses);
+
+  const imageFilters: string[] = [];
+  if (!foundAnime) {
+    if (blurProgress > 0) {
+      imageFilters.push(`blur(${blurProgress}px)`);
+    }
+    if (hardImageMode) {
+      imageFilters.push('grayscale(1)');
+    }
+  }
+  const imageFilterStyle = imageFilters.length > 0 ? imageFilters.join(' ') : undefined;
+
+  const mysteryName = hintConfig?.mysteryCharacterName?.trim() ?? '';
+
+  return (
+    <TooltipProvider delayDuration={200}>
+      <div className="flex min-h-svh w-full flex-col flex-wrap items-center justify-center">
+        <div className="mt-24 w-full max-w-6xl rounded-xl border border-border bg-card p-4 text-card-foreground shadow-md">
+          <ModeMenu orientation="horizontal" />
+        </div>
+        <div className="mt-2 flex w-full max-w-6xl flex-col gap-8 rounded-xl border border-border bg-card p-8 text-card-foreground shadow-md">
+          <CharacterHintsPanel
+            hintConfig={hintConfig}
+            hints={hints}
+            spoilerModeForHints={spoilerModeForHints}
+            imageFilterStyle={imageFilterStyle}
+            mysteryName={mysteryName}
+            nameLabelKey="character.dailyNameLabel"
+            completedGuesses={guessList.length}
+          />
+
+          <section className="flex flex-col items-center gap-4">
+            {foundAnime ? (
+              <div className="max-w-lg text-center">
+                <h2 className="font-semibold text-2xl text-primary">{t('home.congratulations')}</h2>
+                <p className="mt-2 font-bold text-xl">{foundAnime.title}</p>
+              </div>
+            ) : (
+              <>
+                <h1 className="font-bold text-2xl text-primary">{t('character.guessTitle')}</h1>
+                <div className="flex w-full max-w-lg flex-col items-center gap-4">
+                  <AutocompleteTextInput
+                    values={filtredAnimeList}
+                    inputValue={inputValue}
+                    setInputValue={setInputValue}
+                    isFilteringLoading={isFilteringLoading}
+                    onSelect={onAnimeSelect}
+                  />
+                </div>
+              </>
+            )}
+          </section>
+
+          <CharacterGuessRows guessList={guessList} animeList={animeList} />
+        </div>
+      </div>
+    </TooltipProvider>
+  );
+}
+
+export default CharacterGuessingPage;

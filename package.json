@@ -15,14 +15,26 @@
     "dev:frontend": "cd frontend && bun run dev",
     "build": "cd frontend && bun run build && cd ../backend && bun run build",
     "insert-data": "bun run start:insert",
-    "install:all": "bun install"
+    "install:all": "bun install",
+    "format": "biome check --write .",
+    "format:staged": "biome check . --write --staged",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.9",
     "@types/node": "^25.3.3",
     "cross-env": "^10.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "shadcn": "^4.1.0",
     "typescript": "^5.9.2"
   },
   "dependencies": {
     "concurrently": "^9.2.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,json,css}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
   }
 }

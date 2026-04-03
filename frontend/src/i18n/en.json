@@ -1,0 +1,209 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "email": "Email"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "name": "Name",
+    "password": "Password",
+    "loginButton": "Sign in",
+    "registerButton": "Sign up",
+    "noAccount": "No account yet?",
+    "alreadyAccount": "Already have an account?",
+    "errorLogin": "Login error",
+    "errorRegister": "Registration error"
+  },
+  "account": {
+    "title": "My account",
+    "signOut": "Sign out",
+    "notConnected": "Not connected",
+    "profile": {
+      "title": "Profile",
+      "username": "Username",
+      "generateAvatar": "Generate avatar",
+      "save": "Save",
+      "success": "Profile updated!",
+      "errorUpdate": "Update error"
+    },
+    "password": {
+      "title": "Change password",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "change": "Change password",
+      "success": "Password changed!",
+      "errorMismatch": "Passwords do not match",
+      "errorChange": "Error changing password"
+    }
+  },
+  "home": {
+    "menuTitle": "Choose a mode",
+    "dailyButton": "Daily Guessing",
+    "characterButton": "Character",
+    "characterEndlessButton": "Character (endless)",
+    "endlessButton": "Endless",
+    "startTitle": "Guess today's anime!",
+    "start": "Start",
+    "congratulations": "Congratulations! You found the anime:",
+    "guessTitle": "Guess today's anime!"
+  },
+  "autocomplete": {
+    "placeholder": "Start typing...",
+    "noResults": "No results found.",
+    "loading": "Loading..."
+  },
+  "character": {
+    "hintsTitle": "Hints",
+    "hintsEmpty": "Hints unlock as you play.",
+    "guessTitle": "Guess the anime for today's character!",
+    "guessesTitle": "Your guesses",
+    "hintScheduleTitle": "Hint schedule",
+    "scheduleCardTitle": "How hints unlock",
+    "hintImageBlurSchedule": "Character image: fully blurred at first; blur is removed a little after each guess, fully sharp after {{count}} guesses.",
+    "hintAttributeAt": "{{labels}} — from guess #{{turn}}",
+    "hintAttributeJoin": ", ",
+    "hintLabelImage": "Image",
+    "mysteryImageLabel": "Silhouette",
+    "hintSlotEmpty": "—",
+    "revealedInGuesses_one": "Revealed in {{count}} guess",
+    "revealedInGuesses_other": "Revealed in {{count}} guesses",
+    "spoilerTap": "Tap to reveal",
+    "dailyNameLabel": "Today's character",
+    "difficultySettings": "Difficulty & display",
+    "difficultySettingsDesc": "Adjust spoilers and image difficulty. Settings are saved on this device.",
+    "settingSpoilersTitle": "Spoiler overlays (demographic & genres)",
+    "settingSpoilersDesc": "When enabled, unlocked hints stay covered until you tap. When disabled, they are shown as soon as they unlock.",
+    "settingHardImageTitle": "Hard mode (grayscale)",
+    "settingHardImageDesc": "Renders the character image in black and white (still combined with blur progress).",
+    "endlessGuessTitle": "Guess the anime for this character (endless)",
+    "endlessNameLabel": "Character to find"
+  },
+  "guessTable": {
+    "anime": "Anime",
+    "format": "Format",
+    "demographic": "Demographic",
+    "studio": "Studio",
+    "source": "Source",
+    "genres": "Genres",
+    "episodes": "Episodes",
+    "season": "Season",
+    "score": "Score"
+  },
+  "endless": {
+    "currentStreak": "Current streak: {{count}}",
+    "bestStreak": "Best streak: {{count}}",
+    "playAgain": "Play again"
+  },
+  "admin": {
+    "title": "Administration",
+    "tabs": {
+      "animes": "Anime management",
+      "daily": "Daily anime",
+      "stats": "Statistics"
+    },
+    "animes": {
+      "count_one": "{{count}} anime",
+      "count_other": "{{count}} animes",
+      "add": "Add anime",
+      "loading": "Loading...",
+      "disabled": "Disabled",
+      "disable": "Disable",
+      "enable": "Enable",
+      "searchPlaceholder": "Search an anime...",
+      "filterAll": "All",
+      "filterEnabled": "Enabled",
+      "filterDisabled": "Disabled",
+      "table": {
+        "image": "Image",
+        "title": "Title",
+        "format": "Format",
+        "studio": "Studio",
+        "score": "Score",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "titleCreate": "Add anime",
+      "titleEdit": "Edit anime",
+      "imageUrl": "MyAnimeList image URL",
+      "imageUrlHint": "Small and large variants will be derived automatically.",
+      "imageUrlPlaceholder": "https://cdn.myanimelist.net/images/anime/4/19756.webp",
+      "titles": "Titles",
+      "addTitle": "Add",
+      "titleTypePlaceholder": "Type (e.g. Default)",
+      "titleValuePlaceholder": "Title",
+      "format": "Format",
+      "demographic": "Demographic",
+      "episodes": "Episodes",
+      "score": "Score",
+      "seasonStart": "Start season",
+      "seasonStartPlaceholder": "Spring 2023",
+      "studio": "Studio",
+      "studioPlaceholder": "MAPPA",
+      "source": "Source",
+      "genres": "Genres",
+      "genresHint": "Separated by commas.",
+      "genresPlaceholder": "Action, Adventure, Fantasy",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "delete": {
+      "title": "Delete anime",
+      "confirm": "Delete \"{{title}}\"? This action is irreversible.",
+      "cancel": "Cancel",
+      "confirmBtn": "Delete",
+      "deleting": "Deleting..."
+    },
+    "disable": {
+      "title": "Disable daily anime",
+      "warningCurrentAnime": "\"{{title}}\" is today's daily anime. Disabling it will immediately select a new random daily anime.",
+      "cancel": "Cancel",
+      "confirmBtn": "Disable anyway",
+      "disabling": "Disabling..."
+    },
+    "stats": {
+      "title": "Statistics",
+      "refresh": "Refresh",
+      "noData": "No data.",
+      "attempt_one": "{{count}} try",
+      "attempt_other": "{{count}} tries",
+      "today": {
+        "title": "Today's statistics",
+        "noAnime": "No anime defined.",
+        "totalGuesses": "Guesses",
+        "totalWins": "Wins",
+        "winDistribution": "Win distribution"
+      },
+      "global": {
+        "title": "Overall statistics",
+        "totalDays": "Days played",
+        "totalGuesses": "Total guesses",
+        "totalWins": "Total wins",
+        "winDistribution": "Global win distribution"
+      }
+    },
+    "daily": {
+      "current": "Current anime",
+      "noCurrent": "No anime defined.",
+      "random": "Random anime",
+      "randomDesc": "Selects a random anime as today's anime.",
+      "randomBtn": "Random",
+      "manual": "Choose manually",
+      "manualDesc": "Sets a specific anime as today's anime.",
+      "selectPlaceholder": "Select an anime...",
+      "setBtn": "Set"
+    }
+  },
+  "userWidget": {
+    "signIn": "Sign in",
+    "myAccount": "My account",
+    "settings": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "signOut": "Sign out"
+  }
+}

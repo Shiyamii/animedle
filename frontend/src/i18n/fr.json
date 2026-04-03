@@ -1,0 +1,210 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "saving": "Enregistrement...",
+    "email": "Email"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "name": "Nom",
+    "password": "Mot de passe",
+    "loginButton": "Se connecter",
+    "registerButton": "S'inscrire",
+    "noAccount": "Pas encore de compte ?",
+    "alreadyAccount": "Déjà un compte ?",
+    "errorLogin": "Erreur de connexion",
+    "errorRegister": "Erreur d'inscription"
+  },
+  "account": {
+    "title": "Mon compte",
+    "signOut": "Se déconnecter",
+    "notConnected": "Non connecté",
+    "profile": {
+      "title": "Profil",
+      "username": "Nom d'utilisateur",
+      "generateAvatar": "Générer un avatar",
+      "save": "Enregistrer",
+      "success": "Profil mis à jour !",
+      "errorUpdate": "Erreur lors de la mise à jour"
+    },
+    "password": {
+      "title": "Changer le mot de passe",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "confirm": "Confirmer le nouveau mot de passe",
+      "change": "Changer le mot de passe",
+      "success": "Mot de passe modifié !",
+      "errorMismatch": "Les mots de passe ne correspondent pas",
+      "errorChange": "Erreur lors du changement de mot de passe"
+    }
+  },
+  "home": {
+    "menuTitle": "Choisir un mode",
+    "dailyButton": "Daily Guessing",
+    "characterButton": "Personnage",
+    "characterEndlessButton": "Personnage (endless)",
+    "endlessButton": "Endless",
+    "startTitle": "Devinez l'anime du jour !",
+    "start": "Commencer",
+    "congratulations": "Félicitations ! Vous avez trouvé l'anime :",
+    "guessTitle": "Devinez l'anime du jour !"
+  },
+  "autocomplete": {
+    "placeholder": "Commencez à taper...",
+    "noResults": "Aucun résultat trouvé.",
+    "loading": "Chargement..."
+  },
+  "character": {
+    "hintsTitle": "Indices",
+    "hintsEmpty": "Les indices se débloquent en jouant.",
+    "guessTitle": "Devinez l'anime du personnage du jour !",
+    "guessesTitle": "Vos essais",
+    "hintScheduleTitle": "Calendrier des indices",
+    "scheduleCardTitle": "Comment se débloquent les indices",
+    "hintImageBlurSchedule": "Image du personnage : flou maximal au départ ; le flou diminue à chaque essai, image nette après {{count}} essais.",
+    "hintAttributeAt": "{{labels}} — à partir de l'essai n°{{turn}}",
+    "hintAttributeJoin": ", ",
+    "hintLabelImage": "Image",
+    "mysteryImageLabel": "Silhouette",
+    "hintSlotEmpty": "—",
+    "revealedInGuesses_one": "Révélé dans {{count}} essai",
+    "revealedInGuesses_other": "Révélé dans {{count}} essais",
+    "spoilerTap": "Appuyer pour révéler",
+    "dailyNameLabel": "Personnage du jour",
+    "difficultySettings": "Difficulté et affichage",
+    "difficultySettingsDesc": "Spoilers et image : les réglages sont enregistrés sur cet appareil.",
+    "settingSpoilersTitle": "Spoilers (démographie et genres)",
+    "settingSpoilersDesc": "Si activé, les indices débloqués restent masqués jusqu’au clic. Si désactivé, ils s’affichent dès qu’ils sont disponibles.",
+    "settingHardImageTitle": "Mode difficile (noir et blanc)",
+    "settingHardImageDesc": "Affiche l’image du personnage en noir et blanc (en plus du flou progressif).",
+    "endlessGuessTitle": "Devinez l’anime de ce personnage (endless)",
+    "endlessNameLabel": "Personnage à trouver"
+  },
+  "guessTable": {
+    "anime": "Anime",
+    "format": "Format",
+    "demographic": "Démographie",
+    "studio": "Studio",
+    "source": "Source",
+    "genres": "Genres",
+    "episodes": "Épisodes",
+    "season": "Saison",
+    "score": "Score",
+    "guessesCount": "Nombre de tentatives : {{count}}"
+  },
+  "endless": {
+    "currentStreak": "Série en cours : {{count}}",
+    "bestStreak": "Meilleure série : {{count}}",
+    "playAgain": "Rejouer"
+  },
+  "admin": {
+    "title": "Administration",
+    "tabs": {
+      "animes": "Gestion des animes",
+      "daily": "Anime du jour",
+      "stats": "Statistiques"
+    },
+    "animes": {
+      "count_one": "{{count}} anime",
+      "count_other": "{{count}} animes",
+      "add": "Ajouter un anime",
+      "loading": "Chargement...",
+      "disabled": "Désactivé",
+      "disable": "Désactiver",
+      "enable": "Activer",
+      "searchPlaceholder": "Rechercher un anime...",
+      "filterAll": "Tous",
+      "filterEnabled": "Activés",
+      "filterDisabled": "Désactivés",
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "format": "Format",
+        "studio": "Studio",
+        "score": "Score",
+        "actions": "Actions"
+      }
+    },
+    "form": {
+      "titleCreate": "Ajouter un anime",
+      "titleEdit": "Modifier l'anime",
+      "imageUrl": "URL image MyAnimeList",
+      "imageUrlHint": "Les variantes small et large seront dérivées automatiquement.",
+      "imageUrlPlaceholder": "https://cdn.myanimelist.net/images/anime/4/19756.webp",
+      "titles": "Titres",
+      "addTitle": "Ajouter",
+      "titleTypePlaceholder": "Type (ex: Default)",
+      "titleValuePlaceholder": "Titre",
+      "format": "Format",
+      "demographic": "Démographique",
+      "episodes": "Épisodes",
+      "score": "Score",
+      "seasonStart": "Saison de début",
+      "seasonStartPlaceholder": "Spring 2023",
+      "studio": "Studio",
+      "studioPlaceholder": "MAPPA",
+      "source": "Source",
+      "genres": "Genres",
+      "genresHint": "Séparés par des virgules.",
+      "genresPlaceholder": "Action, Adventure, Fantasy",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "saving": "Sauvegarde..."
+    },
+    "delete": {
+      "title": "Supprimer l'anime",
+      "confirm": "Supprimer «\u00a0{{title}}\u00a0»\u00a0? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "confirmBtn": "Supprimer",
+      "deleting": "Suppression..."
+    },
+    "disable": {
+      "title": "Désactiver l'anime du jour",
+      "warningCurrentAnime": "«\u00a0{{title}}\u00a0» est l'anime du jour. Le désactiver va immédiatement sélectionner un nouvel anime du jour au hasard.",
+      "cancel": "Annuler",
+      "confirmBtn": "Désactiver quand même",
+      "disabling": "Désactivation..."
+    },
+    "stats": {
+      "title": "Statistiques",
+      "refresh": "Actualiser",
+      "noData": "Aucune donnée.",
+      "attempt_one": "{{count}} essai",
+      "attempt_other": "{{count}} essais",
+      "today": {
+        "title": "Statistiques du jour",
+        "noAnime": "Aucun anime défini.",
+        "totalGuesses": "Tentatives",
+        "totalWins": "Victoires",
+        "winDistribution": "Distribution des victoires"
+      },
+      "global": {
+        "title": "Statistiques générales",
+        "totalDays": "Jours joués",
+        "totalGuesses": "Total tentatives",
+        "totalWins": "Total victoires",
+        "winDistribution": "Distribution globale des victoires"
+      }
+    },
+    "daily": {
+      "current": "Anime actuel",
+      "noCurrent": "Aucun anime défini.",
+      "random": "Anime aléatoire",
+      "randomDesc": "Sélectionne un anime au hasard comme anime du jour.",
+      "randomBtn": "Aléatoire",
+      "manual": "Choisir manuellement",
+      "manualDesc": "Définit un anime spécifique comme anime du jour.",
+      "selectPlaceholder": "Sélectionner un anime...",
+      "setBtn": "Définir"
+    }
+  },
+  "userWidget": {
+    "signIn": "Se connecter",
+    "myAccount": "Mon compte",
+    "settings": "Paramètres",
+    "language": "Langue",
+    "theme": "Thème",
+    "signOut": "Se déconnecter"
+  }
+}
