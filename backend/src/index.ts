@@ -61,6 +61,14 @@ export default app;
 
 // Démarre le serveur HTTP si ce fichier est le point d'entrée principal
 if (import.meta.main) {
-  Bun.serve({ fetch: app.fetch, port: 3000 });
+  Bun.serve({ 
+    fetch: app.fetch, 
+    port: 3000,
+    websocket: {
+      message(ws, message) {},
+      open(ws) {},
+      close(ws) {},
+    }
+  });
   console.log("Backend listening on http://localhost:3000");
 }

@@ -11,18 +11,28 @@ type ProposalMsg = { type: "proposal"; colors: string[]; from: string };
 type JoinMsg = { type: "join"; roomId: string };
 type JoinedMsg = { type: "joined"; roomId: string };
 type WelcomeMsg = { type: "welcome" };
+type StartMsg = { type: "start" };
 type ErrorMsg = { type: "error"; error: string };
-type WSMsg = ProposalMsg | JoinMsg | JoinedMsg | WelcomeMsg | ErrorMsg;
+type WSMsg = ProposalMsg | JoinMsg | JoinedMsg | WelcomeMsg | StartMsg | ErrorMsg;
 
 export default function ChallengePage() {
+  // Pour lire les paramètres d'URL
+  const location = typeof window !== 'undefined' ? window.location : { search: '' };
   const user = useUserStore((s) => s.user);
-  const [roomId, setRoomId] = useState("");
-  const [joinedRoom, setJoinedRoom] = useState<string | null>(null);
+  // Si gameid dans l'URL, on l'utilise pour auto-join
+  const searchParams = new URLSearchParams(location.search);
+  const urlGameId = searchParams.get("gameid") || "";
+  const [roomId, setRoomId] = useState(urlGameId);
+  const [joinedRoom, setJoinedRoom] = useState<string | null>(urlGameId ? urlGameId : null);
+    // Log de tous les messages WebSocket (reçus/envoyés)
+    const [wsLog, setWsLog] = useState<string[]>([]);
   const [isHost, setIsHost] = useState(false);
   const [animeLimit, setAnimeLimit] = useState(5);
   const [colors, setColors] = useState<string[][]>([]); // Tableau des couleurs reçues
   const wsRef = useRef<WebSocket | null>(null);
   const [gameStarted, setGameStarted] = useState(false);
+  const [isWsOpen, setIsWsOpen] = useState(false);
+  const [hasJoinedRoom, setHasJoinedRoom] = useState(false);
 
 
   // Connexion WS
@@ -31,14 +41,18 @@ export default function ChallengePage() {
     const ws = new WebSocket(WS_URL);
     wsRef.current = ws;
     ws.onopen = () => {
-      ws.send(JSON.stringify({ type: "join", roomId: joinedRoom }));
+      setIsWsOpen(true);
+      const joinMsg = { type: "join", roomId: joinedRoom };
+      ws.send(JSON.stringify(joinMsg));
+      setWsLog((log) => [...log, `[SEND] ${JSON.stringify(joinMsg)}`]);
     };
     ws.onmessage = (event) => {
+      setWsLog((log) => [...log, `[RECV] ${event.data}`]);
       const msg: WSMsg = JSON.parse(event.data);
       if (msg.type === "proposal") {
         setColors((prev) => [...prev, msg.colors]);
       } else if (msg.type === "joined") {
-        setIsHost(true); // À améliorer si plusieurs users
+        setHasJoinedRoom(true);
       } else if (msg.type === "start") {
         setGameStarted(true);
       }
@@ -48,12 +62,19 @@ export default function ChallengePage() {
     };
     ws.onclose = () => {
       wsRef.current = null;
+      setIsWsOpen(false);
+      setHasJoinedRoom(false);
     };
     return () => ws.close();
   }, [joinedRoom]);
   // Fonction pour démarrer la partie (réservée à l'hôte)
   const handleStartGame = () => {
-    wsRef.current?.send(JSON.stringify({ type: "start" }));
+    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom) {
+      return;
+    }
+    const startMsg = { type: "start" };
+    wsRef.current.send(JSON.stringify(startMsg));
+    setWsLog((log) => [...log, `[SEND] ${JSON.stringify(startMsg)}`]);
   };
 
   // Création d'une room
@@ -62,6 +83,10 @@ export default function ChallengePage() {
     setRoomId(id);
     setIsHost(true);
     setJoinedRoom(id);
+    setGameStarted(false);
+    setColors([]);
+    setHasJoinedRoom(false);
+    setWsLog([]);
   };
 
   // Rejoindre une room
@@ -69,14 +94,18 @@ export default function ChallengePage() {
     if (roomId.trim()) {
       setIsHost(false);
       setJoinedRoom(roomId.trim());
+      setGameStarted(false);
+      setColors([]);
+      setHasJoinedRoom(false);
+      setWsLog([]);
     }
   };
 
   // Envoi d'une proposition (dummy, à relier au guessing réel)
   const sendProposal = (colors: string[]) => {
-    wsRef.current?.send(
-      JSON.stringify({ type: "proposal", colors, from: user?.name || "anon" })
-    );
+    const msg = { type: "proposal", colors, from: user?.name || "anon" };
+    wsRef.current?.send(JSON.stringify(msg));
+    setWsLog((log) => [...log, `[SEND] ${JSON.stringify(msg)}`]);
   };
 
   // UI
@@ -85,6 +114,11 @@ export default function ChallengePage() {
   return (
     <div className="max-w-xl mx-auto p-4 flex flex-col gap-6">
       <h1 className="text-2xl font-bold mb-2">Challenge multijoueur</h1>
+      {/* Log WebSocket/chat */}
+      <div className="bg-gray-100 border rounded p-2 mb-2 max-h-40 overflow-y-auto text-xs">
+        <div className="font-semibold mb-1">Log WebSocket</div>
+        {wsLog.length === 0 ? <div className="text-gray-400">Aucun message</div> : wsLog.map((l, i) => <div key={i}>{l}</div>)}
+      </div>
       {!joinedRoom ? (
         <div className="flex flex-col gap-2">
           <div>
@@ -120,7 +154,7 @@ export default function ChallengePage() {
             )}
           </div>
           {isHost && !gameStarted && (
-            <Button color="primary" onClick={handleStartGame}>Démarrer la partie</Button>
+            <Button disabled={!isWsOpen || !hasJoinedRoom} onClick={handleStartGame}>Démarrer la partie</Button>
           )}
           {gameStarted && <div className="text-green-600 font-bold">La partie a commencé !</div>}
           {/* Zone guessing (à relier au vrai composant) */}

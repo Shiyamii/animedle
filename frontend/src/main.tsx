@@ -15,6 +15,7 @@ import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx';
 import EndlessPage from '@/pages/endless/EndlessModePage.tsx';
 import HomePage from '@/pages/home/HomePage.tsx';
 import ChallengePage from './pages/challenge/ChallengePage';
+import RoomLogPage from './pages/challenge/RoomLogPage';
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,11 @@ const router = createBrowserRouter([
           },
           {
             path: '/challenge',
-            element: <ChallengePage />,
+            element: <ChallengePage />, 
+          },
+          {
+            path: '/challenge/log',
+            element: <RoomLogPage />,
           },
         ],
       },
