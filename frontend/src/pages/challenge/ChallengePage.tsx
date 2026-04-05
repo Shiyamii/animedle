@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import Fuse from 'fuse.js';
 import { useAnimeStore } from '@/stores/animeStore';
@@ -233,6 +234,17 @@ export default function ChallengePage() {
     wsRef.current.send(JSON.stringify(startMsg));
     setWsLog((log) => [...log, `[SEND] ${JSON.stringify(startMsg)}`]);
   };
+
+    // Détection automatique si la partie est déjà commencée lors du join
+  useEffect(() => {
+    if (!joinedRoom) return;
+    fetch(`${Backend_url}/api/room/${joinedRoom}/status`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.started) setGameStarted(true);
+      })
+      .catch(() => {});
+  }, [joinedRoom]);
 
   // Création d'une room
   const handleCreate = () => {
