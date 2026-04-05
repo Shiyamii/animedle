@@ -25,19 +25,23 @@ export class WSClient {
 
   joinRoom(roomId: string) {
     this.send({ type: "join", roomId });
+    console.debug(`[WS INFO] Joining room ${roomId}...`);
   }
 
   sendProposal(colors: string[], from?: string) {
     this.send({ type: "proposal", colors, from });
+    console.debug(`[WS INFO] Sending proposal: ${colors.join(", ")}`);
   }
 
   onMessage(cb: (msg: WSMessage) => void) {
     this.listeners.push(cb);
+    console.debug(`[WS INFO] Added new message listener, total: ${this.listeners.length}`);
   }
 
     send(msg: WSMessage) {
     if (this.ws && this.ws.readyState === 1) {
       this.ws.send(JSON.stringify(msg));
+      console.debug(`[WS INFO] Sent message:`, msg);
     }
   }
 }

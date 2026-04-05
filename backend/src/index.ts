@@ -9,9 +9,8 @@ import authRoutes from '@/routes/auth';
 import { AnimeService } from '@/services/AnimeService';
 import { CharacterService } from './services/CharacterService';
 
-// Start WebSocket server for multiplayer
 
-import challengeWsRouter from './routes/challenge-ws';
+import './wsHandlers';
 
 loadDotenv();
 
@@ -51,24 +50,4 @@ routes.forEach((route: Hono) => {
   app.route('/api/', route);
 });
 
-
-
-
-// Route WebSocket challenge
-app.route('/', challengeWsRouter);
-
 export default app;
-
-// Démarre le serveur HTTP si ce fichier est le point d'entrée principal
-if (import.meta.main) {
-  Bun.serve({ 
-    fetch: app.fetch, 
-    port: 3000,
-    websocket: {
-      message(ws, message) {},
-      open(ws) {},
-      close(ws) {},
-    }
-  });
-  console.log("Backend listening on http://localhost:3000");
-}
