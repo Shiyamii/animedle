@@ -1,9 +1,8 @@
 
 import { Hono } from 'hono';
-import { RoomService } from '../services/RoomService';
+import { roomService } from '../services/roomServiceInstance';
 
 const roomRoutes = new Hono();
-const roomService = new RoomService();
 
 roomRoutes.get('/room/:roomId/animes', (c) => {
   const roomId = c.req.param('roomId');
@@ -14,13 +13,13 @@ roomRoutes.get('/room/:roomId/animes', (c) => {
 roomRoutes.get('/room/:roomId/progression', (c) => {
   const roomId = c.req.param('roomId');
   const user = c.req.query('user');
-  console.log('[DEBUG] /room/:roomId/progression called', { roomId, user });
+
   try {
     if (!user) {
       console.log('[DEBUG] Missing user param');
       return c.json({ error: 'Missing user' }, 400);
     }
-    const progress = roomService.roomProgress?.get(roomId)?.[user];
+    const progress = roomService.getPlayerProgress(roomId, user);
     console.log('[DEBUG] Progression found:', progress);
     if (!progress) {
       console.log('[DEBUG] Progress not found for user', user);
@@ -37,7 +36,7 @@ roomRoutes.get('/room/:roomId/remaining', (c) => {
   const roomId = c.req.param('roomId');
   const user = c.req.query('user');
   if (!user) return c.json({ error: 'Missing user' }, 400);
-  const progress = roomService.roomProgress?.get(roomId)?.[user];
+  const progress = roomService.getPlayerProgress(roomId, user);
   const animes = roomService.getRoomAnimes(roomId) || [];
   if (!progress) return c.json({ error: 'Not found' }, 404);
   const remaining = Math.max(0, animes.length - (progress.currentAnimeIdx || 0));

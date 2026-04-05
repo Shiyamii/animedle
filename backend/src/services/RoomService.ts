@@ -18,7 +18,24 @@ class RoomService {
     this.roomProgress = new Map();
   }
 
+  getPlayerProgress(roomId, playerName) {
+    console.log(`[DEBUG] Getting progress for player ${playerName} in room ${roomId}`);
+    console.log(`[DEBUG] Current roomProgress state:`, this.roomProgress);
+    return this.roomProgress?.get(roomId)?.[playerName];
+  }
+  setPlayerProgress(roomId, playerName, progress) {
+    if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
+    const roomProg = this.roomProgress.get(roomId);
+    roomProg[playerName] = progress;
+    // Force la mise à jour de la Map pour garantir la cohérence
+    this.roomProgress.set(roomId, roomProg);
+    console.log(`[DEBUG] setPlayerProgress: roomId=${roomId}, playerName=${playerName}, progress=`, progress);
+  }
+
   joinRoom(ws, roomId) {
+
+    console.log(`[WS INFO] Client joining room ${roomId}`);
+    console.log(`[WS INFO] Current user name: ${ws.data}`);
     let room = this.rooms.get(roomId);
     if (!room) {
       room = new Set();
@@ -27,16 +44,7 @@ class RoomService {
     room.add(ws);
     this.socketToRoom.set(ws, roomId);
     const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
-    // Init progression pour ce joueur dans la room
-    if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
-    const progress = this.roomProgress.get(roomId);
-    if (!progress[name]) {
-      progress[name] = {
-        currentAnimeIdx: 0,
-        guessesByAnime: {},
-        foundCharacters: [],
-      };
-    }
+
     // Envoie la liste complète des joueurs à la personne qui vient de rejoindre
     const playerNames = Array.from(room).map(client => client.data && client.data.name ? client.data.name : 'Anonyme');
     try {
@@ -102,16 +110,19 @@ class RoomService {
       if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
       for (const ws of room) {
         const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
-        this.roomProgress.get(roomId)[name] = {
+        this.setPlayerProgress(roomId, name, {
           currentAnimeIdx: 0,
           guessesByAnime: {},
           foundCharacters: [],
-        };
+        });
+        console.log(`[WS INFO] Resetting player progress for ${name} in room ${roomId}`);
       }
+    for (const ws of room) {
+      const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
+      console.log(`[WS INFO] Progression for player ${name} in room ${roomId} after reset:`, this.getPlayerProgress(roomId, name));
     }
-    // (Ne plus envoyer la liste des animes ni la progression ici, tout passe par l'API REST)
-    // Broadcast start event
-    // Envoyer à tous les joueurs, y compris l'hôte
+    }
+
     this.broadcastToRoom(
       roomId,
       JSON.stringify({ type: 'start' })

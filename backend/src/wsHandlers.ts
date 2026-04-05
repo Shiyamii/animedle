@@ -1,7 +1,5 @@
 // wsHandlers.ts
-import { RoomService } from './services/RoomService';
-
-const roomService = new RoomService();
+import { roomService } from './services/roomServiceInstance';
 
 Bun.serve({
     port: 3001,
