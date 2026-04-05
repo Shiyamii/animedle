@@ -18,6 +18,10 @@ class RoomService {
     this.roomProgress = new Map();
   }
 
+  private getPlayerKeyFromSocket(ws) {
+    return (ws.data && (ws.data.userId || ws.data.name)) || 'Anonyme';
+  }
+
   getPlayerProgress(roomId, playerName) {
     console.log(`[DEBUG] Getting progress for player ${playerName} in room ${roomId}`);
     console.log(`[DEBUG] Current roomProgress state:`, this.roomProgress);
@@ -109,8 +113,9 @@ class RoomService {
     if (room) {
       if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
       for (const ws of room) {
-        const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
-        this.setPlayerProgress(roomId, name, {
+        const playerKey = this.getPlayerKeyFromSocket(ws);
+        const name = ws.data && ws.data.name ? ws.data.name : playerKey;
+        this.setPlayerProgress(roomId, playerKey, {
           currentAnimeIdx: 0,
           guessesByAnime: {},
           foundCharacters: [],
@@ -118,8 +123,9 @@ class RoomService {
         console.log(`[WS INFO] Resetting player progress for ${name} in room ${roomId}`);
       }
     for (const ws of room) {
-      const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
-      console.log(`[WS INFO] Progression for player ${name} in room ${roomId} after reset:`, this.getPlayerProgress(roomId, name));
+      const playerKey = this.getPlayerKeyFromSocket(ws);
+      const name = ws.data && ws.data.name ? ws.data.name : playerKey;
+      console.log(`[WS INFO] Progression for player ${name} in room ${roomId} after reset:`, this.getPlayerProgress(roomId, playerKey));
     }
     }
 
@@ -134,35 +140,36 @@ class RoomService {
   handleProposal(ws, guess, animeIdx) {
     const roomId = this.getRoomId(ws);
     if (!roomId) return;
-    const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
+    const playerKey = this.getPlayerKeyFromSocket(ws);
+    const name = ws.data && ws.data.name ? ws.data.name : playerKey;
     if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
     const progress = this.roomProgress.get(roomId);
-    if (!progress[name]) {
-      progress[name] = {
+    if (!progress[playerKey]) {
+      progress[playerKey] = {
         currentAnimeIdx: 0,
         guessesByAnime: {},
         foundCharacters: [],
       };
     }
     // Ajoute le guess à la bonne liste
-    if (!progress[name].guessesByAnime[animeIdx]) progress[name].guessesByAnime[animeIdx] = [];
-    progress[name].guessesByAnime[animeIdx].push(guess);
+    if (!progress[playerKey].guessesByAnime[animeIdx]) progress[playerKey].guessesByAnime[animeIdx] = [];
+    progress[playerKey].guessesByAnime[animeIdx].push(guess);
     // Si le guess est correct, ajoute le perso trouvé et avance
     const animes = this.roomAnimes.get(roomId) || [];
     if (guess && guess.isCorrect && animes[animeIdx]) {
-      progress[name].foundCharacters.push({
+      progress[playerKey].foundCharacters.push({
         id: animes[animeIdx].characterId,
         name: animes[animeIdx].characterName,
         imageUrl: animes[animeIdx].characterImageUrl,
       });
-      progress[name].currentAnimeIdx = animeIdx + 1;
+      progress[playerKey].currentAnimeIdx = animeIdx + 1;
     }
     // Envoie la progression à ce joueur
     ws.send(JSON.stringify({
       type: 'progression',
-      guessesByAnime: progress[name].guessesByAnime,
-      currentAnimeIdx: progress[name].currentAnimeIdx,
-      foundCharacters: progress[name].foundCharacters,
+      guessesByAnime: progress[playerKey].guessesByAnime,
+      currentAnimeIdx: progress[playerKey].currentAnimeIdx,
+      foundCharacters: progress[playerKey].foundCharacters,
     }));
   }
 

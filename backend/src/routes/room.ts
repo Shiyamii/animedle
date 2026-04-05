@@ -23,20 +23,32 @@ roomRoutes.get('/room/:roomId/animes', (c) => {
 
 roomRoutes.get('/room/:roomId/progression', (c) => {
   const roomId = c.req.param('roomId');
+  const userId = c.req.query('userId');
   const user = c.req.query('user');
+  const playerKey = userId || user;
 
   try {
-    if (!user) {
+    if (!playerKey) {
       console.log('[DEBUG] Missing user param');
-      return c.json({ error: 'Missing user' }, 400);
+      return c.json({ error: 'Missing userId or user' }, 400);
     }
-    const progress = roomService.getPlayerProgress(roomId, user);
+    const progress = roomService.getPlayerProgress(roomId, playerKey);
     console.log('[DEBUG] Progression found:', progress);
     if (!progress) {
-      console.log('[DEBUG] Progress not found for user', user);
+      console.log('[DEBUG] Progress not found for user', playerKey);
       return c.json({ error: 'Not found' }, 404);
     }
-    return c.json(progress);
+
+    const correctGuessesHistory = Object.keys(progress.guessesByAnime || {})
+      .map((animeIdx) => Number(animeIdx))
+      .sort((a, b) => a - b)
+      .map((animeIdx) => (progress.guessesByAnime?.[animeIdx] || []).find((guess: any) => guess?.isCorrect))
+      .filter((guess: any) => !!guess);
+
+    return c.json({
+      ...progress,
+      correctGuessesHistory,
+    });
   } catch (err) {
     console.error('[ERROR] Exception in /room/:roomId/progression', err);
     return c.json({ error: 'Internal server error' }, 500);
@@ -45,9 +57,11 @@ roomRoutes.get('/room/:roomId/progression', (c) => {
 
 roomRoutes.get('/room/:roomId/remaining', (c) => {
   const roomId = c.req.param('roomId');
+  const userId = c.req.query('userId');
   const user = c.req.query('user');
-  if (!user) return c.json({ error: 'Missing user' }, 400);
-  const progress = roomService.getPlayerProgress(roomId, user);
+  const playerKey = userId || user;
+  if (!playerKey) return c.json({ error: 'Missing userId or user' }, 400);
+  const progress = roomService.getPlayerProgress(roomId, playerKey);
   const animes = roomService.getRoomAnimes(roomId) || [];
   if (!progress) return c.json({ error: 'Not found' }, 404);
   const remaining = Math.max(0, animes.length - (progress.currentAnimeIdx || 0));

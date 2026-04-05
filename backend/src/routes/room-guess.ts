@@ -9,10 +9,12 @@ const animeService = AnimeService.getInstance();
 // POST /api/room/:roomId/guess
 roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   const roomId = c.req.param('roomId');
-  const { user, animeId } = await c.req.json();
-  if (!user || !animeId) return c.json({ error: 'Missing user or animeId' }, 400);
+  const { userId, user, animeId } = await c.req.json();
+  const playerKey = userId || user;
+  const playerName = user || userId;
+  if (!playerKey || !animeId) return c.json({ error: 'Missing userId/user or animeId' }, 400);
   // Récupère la progression du joueur depuis l'instance partagée de roomService
-  const progress = roomService.getPlayerProgress(roomId, user);
+  const progress = roomService.getPlayerProgress(roomId, playerKey);
   if (!progress) return c.json({ error: 'Not found' }, 404);
   const currentIdx = progress.currentAnimeIdx || 0;
   const animes = roomService.getRoomAnimes(roomId) || [];
@@ -20,7 +22,9 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   if (!refAnime) return c.json({ error: 'No anime to guess' }, 400);
   console.log('[CHALLENGE_GUESS] incoming', {
     roomId,
+    userId,
     user,
+    playerKey,
     currentIdx,
     receivedAnimeId: animeId,
     expectedAnimeId: refAnime.id,
@@ -55,10 +59,11 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
             continue;
           }
 
-          if (ws.data && ws.data.name === user) {
+          const wsPlayerKey = ws.data?.userId || ws.data?.name;
+          if (wsPlayerKey === playerKey) {
             ws.send(JSON.stringify({ type: 'win' }));
           } else {
-            ws.send(JSON.stringify({ type: 'loose', winner: user }));
+            ws.send(JSON.stringify({ type: 'loose', winner: playerName }));
           }
         }
       }

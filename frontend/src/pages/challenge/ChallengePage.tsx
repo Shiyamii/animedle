@@ -20,6 +20,7 @@ export default function ChallengePage() {
     setInputValue,
     filteredAnimeList,
     isFilteringLoading,
+    correctGuessesHistory,
     guessesByAnime,
     currentAnimeIdx,
     gameStarted,
@@ -130,6 +131,13 @@ export default function ChallengePage() {
                 {remaining !== null && (
                   <div className="mb-2 text-sm font-semibold">
                     {remaining > 0 ? `Animes restants a deviner : ${remaining}` : 'Partie terminee !'}
+                  </div>
+                )}
+
+                {correctGuessesHistory.length > 0 && (
+                  <div className="w-full">
+                    <h3 className="mb-2 font-semibold text-sm">Historique des animes trouves</h3>
+                    <GuessTable guesses={correctGuessesHistory} />
                   </div>
                 )}
 

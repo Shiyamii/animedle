@@ -63,6 +63,7 @@ function normalizeGuessesByAnime(value: Record<string, GuessResultDTO[]>): { [an
 export function useChallengePageViewModel() {
   const animeStore = useAnimeStore();
   const user = useUserStore((s) => s.user);
+  const playerKey = user?.id || user?.name;
   const backendUrl = import.meta.env.VITE_API_URL || '';
   const wsRef = useRef<WebSocket | null>(null);
 
@@ -86,12 +87,12 @@ export function useChallengePageViewModel() {
   const [players, setPlayers] = useState<string[]>([]);
 
   const fetchRemaining = useCallback(async () => {
-    if (!joinedRoom || !user?.name || !gameStarted) {
+    if (!joinedRoom || !playerKey || !gameStarted) {
       return;
     }
 
     try {
-      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/remaining?user=${encodeURIComponent(user.name)}`);
+      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/remaining?userId=${encodeURIComponent(playerKey)}`);
       if (!res.ok) {
         return;
       }
@@ -100,15 +101,15 @@ export function useChallengePageViewModel() {
     } catch {
       // no-op
     }
-  }, [joinedRoom, user?.name, gameStarted, backendUrl]);
+  }, [joinedRoom, playerKey, gameStarted, backendUrl]);
 
   const fetchProgression = useCallback(async () => {
-    if (!joinedRoom || !user?.name) {
+    if (!joinedRoom || !playerKey) {
       return;
     }
 
     try {
-      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/progression?user=${encodeURIComponent(user.name)}`);
+      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/progression?userId=${encodeURIComponent(playerKey)}`);
       if (!res.ok) {
         return;
       }
@@ -118,7 +119,7 @@ export function useChallengePageViewModel() {
     } catch {
       // no-op
     }
-  }, [joinedRoom, user?.name, backendUrl]);
+  }, [joinedRoom, playerKey, backendUrl]);
 
   const currentRoundGuessedAnimeIds = useMemo(() => {
     return new Set((guessesByAnime[currentAnimeIdx] || []).map((guess) => guess.anime.id));
@@ -137,6 +138,14 @@ export function useChallengePageViewModel() {
     return filterAnimeList(fuse, inputValue);
   }, [inputValue, fuse]);
 
+  const correctGuessesHistory = useMemo(() => {
+    return Object.entries(guessesByAnime)
+      .map(([animeIdx, guesses]) => ({ animeIdx: Number(animeIdx), guesses }))
+      .sort((a, b) => a.animeIdx - b.animeIdx)
+      .map(({ guesses }) => guesses.find((guess) => guess.isCorrect))
+      .filter((guess): guess is GuessResultDTO => !!guess);
+  }, [guessesByAnime]);
+
   const isFilteringLoading = false;
 
   useEffect(() => {
@@ -151,7 +160,7 @@ export function useChallengePageViewModel() {
 
     ws.onopen = () => {
       setIsWsOpen(true);
-      const joinMsg = { type: 'join', roomId: joinedRoom, name: user.name };
+      const joinMsg = { type: 'join', roomId: joinedRoom, name: user.name, userId: user.id };
       ws.send(JSON.stringify(joinMsg));
       setWsLog((log) => [...log, `[SEND] ${JSON.stringify(joinMsg)}`]);
       setPlayers([user.name]);
@@ -215,7 +224,7 @@ export function useChallengePageViewModel() {
       closed = true;
       ws.close();
     };
-  }, [joinedRoom, user?.name, currentAnimeIdx, fetchProgression, fetchRemaining]);
+  }, [joinedRoom, user?.name, user?.id, currentAnimeIdx, fetchProgression, fetchRemaining]);
 
   useEffect(() => {
     if (!joinedRoom) {
@@ -333,7 +342,7 @@ export function useChallengePageViewModel() {
       return;
     }
 
-    if (!user?.name) {
+    if (!playerKey || !user?.name) {
       setWsLog((log) => [...log, '[ERROR] Guess blocked: no user']);
       return;
     }
@@ -348,7 +357,7 @@ export function useChallengePageViewModel() {
       response = await fetch(`${backendUrl}/api/room/${joinedRoom}/guess`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user: user.name, animeId }),
+        body: JSON.stringify({ userId: playerKey, user: user.name, animeId }),
       });
     } catch (error) {
       setWsLog((log) => [...log, `[ERROR] Guess request crashed: ${String(error)}`]);
@@ -382,6 +391,7 @@ export function useChallengePageViewModel() {
     setInputValue,
     filteredAnimeList,
     isFilteringLoading,
+    correctGuessesHistory,
     guessesByAnime,
     currentAnimeIdx,
     gameStarted,

@@ -23,7 +23,10 @@ Bun.serve({
                 return;
             }
             if (data.type === 'join' && typeof data.roomId === 'string') {
-                ws.data = { name: typeof data.name === 'string' ? data.name : undefined };
+                ws.data = {
+                    name: typeof data.name === 'string' ? data.name : undefined,
+                    userId: typeof data.userId === 'string' ? data.userId : undefined,
+                };
                 roomService.joinRoom(ws, data.roomId);
                 ws.send(JSON.stringify({ type: 'joined', roomId: data.roomId }));
                 ws.send(JSON.stringify({ type: 'info', message: `Joined room ${data.roomId}` }));
