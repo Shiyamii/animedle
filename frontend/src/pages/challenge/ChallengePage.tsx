@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import Fuse from 'fuse.js';
+import { useAnimeStore } from '@/stores/animeStore';
 import { useUserStore } from "@/stores/userStore";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -37,12 +39,21 @@ export default function ChallengePage() {
   const [joinedRoom, setJoinedRoom] = useState<string | null>(urlGameId ? urlGameId : null);
   const [remaining, setRemaining] = useState<number | null>(null);
   const [wsLog, setWsLog] = useState<string[]>([]);
-  const [isHost, setIsHost] = useState(false);
+  const [isHost, setIsHost] = useState(() => {
+    // Restaure le rôle d'hôte depuis le localStorage si présent
+    if (typeof window !== 'undefined') {
+      const hostRoom = localStorage.getItem('challenge_host_room');
+      if (hostRoom && hostRoom === urlGameId) return true;
+    }
+    return false;
+  });
   const [animeLimit, setAnimeLimit] = useState(5);
   const [animeList, setAnimeList] = useState<any[]>([]); // Liste des 5 animes de la room (à remplir via API)
   const [inputValue, setInputValue] = useState('');
+  const animeStore = useAnimeStore();
   const [filteredAnimeList, setFilteredAnimeList] = useState<any[]>([]);
   const [isFilteringLoading, setIsFilteringLoading] = useState(false);
+  const [fuse, setFuse] = useState<Fuse<any> | null>(null);
   const [guessesByAnime, setGuessesByAnime] = useState<{ [animeIdx: number]: any[] }>({}); // guesses par anime
   const [currentAnimeIdx, setCurrentAnimeIdx] = useState(0); // index de l'anime courant
   const [foundCharacters, setFoundCharacters] = useState<{ id: string, name: string, imageUrl?: string }[]>([]); // persos trouvés par l'utilisateur
@@ -159,6 +170,43 @@ export default function ChallengePage() {
       .then(data => setAnimeList(data.animes || []));
   }, [joinedRoom]);
 
+  // Charge la liste complète des animes pour l'autocomplétion (comme daily)
+  useEffect(() => {
+    if (animeStore.animeList.length === 0) {
+      animeStore.loadAnimeList().then(() => {
+        setFuse(new Fuse(animeStore.animeList, {
+          keys: [
+            { name: 'title', weight: 0.7 },
+            { name: 'alias', weight: 0.3 },
+          ],
+          threshold: 0.3,
+          ignoreLocation: true,
+        }));
+      });
+    } else {
+      setFuse(new Fuse(animeStore.animeList, {
+        keys: [
+          { name: 'title', weight: 0.7 },
+          { name: 'alias', weight: 0.3 },
+        ],
+        threshold: 0.3,
+        ignoreLocation: true,
+      }));
+    }
+  }, [animeStore.animeList]);
+
+  // Filtrage pour l'autocomplétion
+  useEffect(() => {
+    if (!fuse || !inputValue) {
+      setFilteredAnimeList([]);
+      return;
+    }
+    setIsFilteringLoading(true);
+    const results = fuse.search(inputValue, { limit: 20 });
+    setFilteredAnimeList(results.map((r: any) => r.item));
+    setIsFilteringLoading(false);
+  }, [inputValue, fuse]);
+
   // Charge la progression du joueur via API (uniquement si la partie a commencé)
   const fetchProgression = useCallback(() => {
     if (!joinedRoom || !user || !user.name || !gameStarted) return;
@@ -196,6 +244,12 @@ export default function ChallengePage() {
     setColors([]);
     setHasJoinedRoom(false);
     setWsLog([]);
+    // Stocke le rôle d'hôte pour cette room
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('challenge_host_room', id);
+      // Redirige vers l'URL avec le code de la room
+      window.location.href = `${window.location.pathname}?gameid=${id}`;
+    }
   };
 
   // Fonction pour copier le lien d'invitation (doit être dans le composant pour accéder à joinedRoom)
@@ -217,40 +271,44 @@ export default function ChallengePage() {
       setColors([]);
       setHasJoinedRoom(false);
       setWsLog([]);
+      // Nettoie le rôle d'hôte si on rejoint une autre room
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('challenge_host_room');
+        // Redirige vers l'URL avec le code de la room
+        window.location.href = `${window.location.pathname}?gameid=${roomId.trim()}`;
+      }
     }
   };
 
-  // Envoi d'une proposition (API REST, comme daily)
+  // Envoi d'une proposition (validation locale, comme daily)
   const handleGuess = async (animeId: string) => {
-    if (!joinedRoom || !user?.name || !animeId) return;
-    try {
-      const res = await fetch(`${Backend_url}/api/room/${joinedRoom}/guess`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user: user.name, animeId })
-      });
-      if (!res.ok) return;
-      const guessResult = await res.json();
-      setGuessesByAnime((prev) => {
-        const arr = prev[currentAnimeIdx] ? [...prev[currentAnimeIdx]] : [];
-        arr.push(guessResult);
-        return { ...prev, [currentAnimeIdx]: arr };
-      });
-      setInputValue('');
-      // Si correct, avancer
-      if (guessResult.isCorrect && animeList[currentAnimeIdx]) {
-        setFoundCharacters((prev) => ([
-          ...prev,
-          {
-            id: animeList[currentAnimeIdx].characterId,
-            name: animeList[currentAnimeIdx].characterName,
-            imageUrl: animeList[currentAnimeIdx].characterImageUrl,
-          },
-        ]));
-        setCurrentAnimeIdx((idx) => idx + 1);
-      }
-    } catch (e) {
-      // Optionnel: gestion d'erreur
+    if (!animeList[currentAnimeIdx]) return;
+    const targetAnime = animeList[currentAnimeIdx];
+    const guessedAnime = animeStore.animeList.find((a: any) => a.id === animeId);
+    if (!guessedAnime) return;
+    const isCorrect = guessedAnime.id === targetAnime.id;
+    const guessResult = {
+      isCorrect,
+      anime: guessedAnime,
+      guessNumber: (guessesByAnime[currentAnimeIdx]?.length || 0) + 1,
+      // Ajoute ici d'autres champs si besoin pour l'affichage
+    };
+    setGuessesByAnime((prev) => {
+      const arr = prev[currentAnimeIdx] ? [...prev[currentAnimeIdx]] : [];
+      arr.push(guessResult);
+      return { ...prev, [currentAnimeIdx]: arr };
+    });
+    setInputValue('');
+    if (isCorrect) {
+      setFoundCharacters((prev) => ([
+        ...prev,
+        {
+          id: targetAnime.characterId,
+          name: targetAnime.characterName,
+          imageUrl: targetAnime.characterImageUrl,
+        },
+      ]));
+      setCurrentAnimeIdx((idx) => idx + 1);
     }
   };
 
