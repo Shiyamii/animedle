@@ -27,19 +27,30 @@ Bun.serve({
             if (data.type === 'join' && typeof data.roomId === 'string') {
                 ws.data = { name: typeof data.name === 'string' ? data.name : undefined };
                 roomService.joinRoom(ws, data.roomId);
+                ws.send(JSON.stringify({ type: 'joined', roomId: data.roomId }));
                 ws.send(JSON.stringify({ type: 'info', message: `Joined room ${data.roomId}` }));
             } else if (data.type === 'message' && typeof data.content === 'string') {
                 const roomId = roomService.getRoomId(ws);
                 const name = (ws.data && ws.data.name) || 'Anonyme';
-                    if (roomId) {
-                        roomService.broadcastToRoom(
-                            roomId,
-                            JSON.stringify({ type: 'message', from: roomId, content: data.content, name }),
-                            name // filtrage par nom
-                        );
-                    } else {
-                        ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
-                    }
+                if (roomId) {
+                    roomService.broadcastToRoom(
+                        roomId,
+                        JSON.stringify({ type: 'message', from: roomId, content: data.content, name }),
+                        name // filtrage par nom
+                    );
+                } else {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
+                }
+            } else if (data.type === 'start') {
+                const roomId = roomService.getRoomId(ws);
+                if (roomId) {
+                    roomService.broadcastToRoom(
+                        roomId,
+                        JSON.stringify({ type: 'start' })
+                    );
+                } else {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
+                }
             } else {
                 ws.send(JSON.stringify({ type: 'error', message: 'Unknown action' }));
             }

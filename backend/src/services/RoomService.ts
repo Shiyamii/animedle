@@ -16,6 +16,11 @@ export class RoomService {
     room.add(ws);
     this.socketToRoom.set(ws, roomId);
     const name = ws.data?.name || 'Anonyme';
+    // Envoie la liste complète des joueurs à la personne qui vient de rejoindre
+    const playerNames = Array.from(room).map(client => client.data?.name || 'Anonyme');
+    try {
+      ws.send(JSON.stringify({ type: 'players', players: playerNames }));
+    } catch (e) { console.error('WS send error:', e); }
     // Broadcast join event à tous sauf la personne qui vient de rejoindre
     this.broadcastToRoom(
       roomId,

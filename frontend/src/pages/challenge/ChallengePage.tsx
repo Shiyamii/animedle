@@ -4,16 +4,23 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import GuessTable from "@/components/GuessTable";
 
-// Utilise une variable d'environnement ou fallback sur localhost:3000
-const WS_URL = import.meta.env.VITE_BACKEND_WS_URL || `${window.location.protocol === "https:" ? "wss" : "ws"}://localhost:3000/ws/challenge`;
+const getWsUrl = () => {
+  const envUrl = import.meta.env.VITE_BACKEND_WS_URL;
+  if (envUrl) return envUrl;
+  const proto = window.location.protocol === "https:" ? "wss" : "ws";
+  return `${proto}://${window.location.hostname}:3001`;
+};
 
+const WS_URL = getWsUrl();
 type ProposalMsg = { type: "proposal"; colors: string[]; from: string };
-type JoinMsg = { type: "join"; roomId: string };
+type JoinMsg = { type: "join"; name: string };
+type LeaveMsg = { type: "leave"; name: string };
 type JoinedMsg = { type: "joined"; roomId: string };
+type PlayersMsg = { type: "players"; players: string[] };
 type WelcomeMsg = { type: "welcome" };
 type StartMsg = { type: "start" };
 type ErrorMsg = { type: "error"; error: string };
-type WSMsg = ProposalMsg | JoinMsg | JoinedMsg | WelcomeMsg | StartMsg | ErrorMsg;
+type WSMsg = ProposalMsg | JoinMsg | LeaveMsg | JoinedMsg | PlayersMsg | WelcomeMsg | StartMsg | ErrorMsg;
 
 export default function ChallengePage() {
   // Pour lire les paramètres d'URL
@@ -33,6 +40,7 @@ export default function ChallengePage() {
   const [gameStarted, setGameStarted] = useState(false);
   const [isWsOpen, setIsWsOpen] = useState(false);
   const [hasJoinedRoom, setHasJoinedRoom] = useState(false);
+  const [players, setPlayers] = useState<string[]>([]); // Liste des joueurs dans la room
 
 
   // Connexion WS
@@ -40,11 +48,14 @@ export default function ChallengePage() {
     if (!joinedRoom) return;
     const ws = new WebSocket(WS_URL);
     wsRef.current = ws;
+    let closed = false;
     ws.onopen = () => {
       setIsWsOpen(true);
-      const joinMsg = { type: "join", roomId: joinedRoom };
+      const joinMsg = { type: "join", roomId: joinedRoom, name: user.name };
       ws.send(JSON.stringify(joinMsg));
       setWsLog((log) => [...log, `[SEND] ${JSON.stringify(joinMsg)}`]);
+      // Ajoute le joueur local à la liste
+      setPlayers([user.name]);
     };
     ws.onmessage = (event) => {
       setWsLog((log) => [...log, `[RECV] ${event.data}`]);
@@ -53,8 +64,16 @@ export default function ChallengePage() {
         setColors((prev) => [...prev, msg.colors]);
       } else if (msg.type === "joined") {
         setHasJoinedRoom(true);
+      } else if (msg.type === "players") {
+        setPlayers(msg.players);
       } else if (msg.type === "start") {
         setGameStarted(true);
+      } else if (msg.type === "join") {
+        setPlayers((prev) => prev.includes(msg.name) ? prev : [...prev, msg.name]);
+        setWsLog((log) => [...log, `[INFO] ${msg.name} a rejoint la partie`]);
+      } else if (msg.type === "leave") {
+        setPlayers((prev) => prev.filter((n) => n !== msg.name));
+        setWsLog((log) => [...log, `[INFO] ${msg.name} a quitté la partie`]);
       }
     };
     ws.onerror = () => {
@@ -64,12 +83,17 @@ export default function ChallengePage() {
       wsRef.current = null;
       setIsWsOpen(false);
       setHasJoinedRoom(false);
+      setPlayers([]);
+      if (!closed) setWsLog((log) => [...log, `[INFO] Déconnecté du serveur`]);
     };
-    return () => ws.close();
-  }, [joinedRoom]);
-  // Fonction pour démarrer la partie (réservée à l'hôte)
+    return () => {
+      closed = true;
+      ws.close();
+    };
+  }, [joinedRoom, user.name]);
+  // Fonction pour démarrer la partie (réservée à l'hôte, min 2 joueurs)
   const handleStartGame = () => {
-    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom) {
+    if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom || players.length < 2) {
       return;
     }
     const startMsg = { type: "start" };
@@ -154,8 +178,16 @@ export default function ChallengePage() {
             )}
           </div>
           {isHost && !gameStarted && (
-            <Button disabled={!isWsOpen || !hasJoinedRoom} onClick={handleStartGame}>Démarrer la partie</Button>
+            <Button disabled={!isWsOpen || !hasJoinedRoom || players.length < 2} onClick={handleStartGame}>
+              Démarrer la partie {players.length < 2 ? "(min 2 joueurs)" : ""}
+            </Button>
           )}
+                    <div>
+                      <h2 className="font-semibold">Joueurs ({players.length})</h2>
+                      <ul className="text-xs mb-2">
+                        {players.map((p) => <li key={p}>{p}</li>)}
+                      </ul>
+                    </div>
           {gameStarted && <div className="text-green-600 font-bold">La partie a commencé !</div>}
           {/* Zone guessing (à relier au vrai composant) */}
           <GuessTable
