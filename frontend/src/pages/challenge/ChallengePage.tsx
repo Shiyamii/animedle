@@ -171,6 +171,7 @@ export default function ChallengePage() {
   }, [fetchProgression]);
   // Fonction pour démarrer la partie (réservée à l'hôte, min 2 joueurs)
   const handleStartGame = () => {
+    console.log('[DEBUG] handleStartGame called', { isWsOpen, hasJoinedRoom, players });
     if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom || players.length < 2) {
       return;
     }

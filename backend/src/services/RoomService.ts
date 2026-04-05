@@ -111,6 +111,7 @@ class RoomService {
     }
     // (Ne plus envoyer la liste des animes ni la progression ici, tout passe par l'API REST)
     // Broadcast start event
+    // Envoyer à tous les joueurs, y compris l'hôte
     this.broadcastToRoom(
       roomId,
       JSON.stringify({ type: 'start' })
