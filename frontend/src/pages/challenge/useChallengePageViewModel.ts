@@ -120,7 +120,15 @@ export function useChallengePageViewModel() {
     }
   }, [joinedRoom, user?.name, backendUrl]);
 
-  const fuse: Fuse<AnimeItemDTO> = useMemo(() => createFuse(animeStore.animeList), [animeStore.animeList]);
+  const currentRoundGuessedAnimeIds = useMemo(() => {
+    return new Set((guessesByAnime[currentAnimeIdx] || []).map((guess) => guess.anime.id));
+  }, [guessesByAnime, currentAnimeIdx]);
+
+  const guessableAnimeList = useMemo(() => {
+    return animeStore.animeList.filter((anime: AnimeItemDTO) => !currentRoundGuessedAnimeIds.has(anime.id));
+  }, [animeStore.animeList, currentRoundGuessedAnimeIds]);
+
+  const fuse: Fuse<AnimeItemDTO> = useMemo(() => createFuse(guessableAnimeList), [guessableAnimeList]);
 
   const filteredAnimeList = useMemo(() => {
     if (!inputValue) {
@@ -314,6 +322,11 @@ export function useChallengePageViewModel() {
 
   const handleGuess = async (animeId: string) => {
     setWsLog((log) => [...log, `[DEBUG] Selection animeId=${animeId}`]);
+
+    if (currentRoundGuessedAnimeIds.has(animeId)) {
+      setWsLog((log) => [...log, `[WARN] Duplicate guess blocked animeId=${animeId}`]);
+      return;
+    }
 
     if (!joinedRoom) {
       setWsLog((log) => [...log, '[ERROR] Guess blocked: no joined room']);

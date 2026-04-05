@@ -27,7 +27,13 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
     expectedAnimeTitle: refAnime.title,
   });
   // Compare la proposition à l'anime courant
-  const guessNumber = (progress.guessesByAnime?.[currentIdx]?.length || 0) + 1;
+  const currentRoundGuesses = progress.guessesByAnime?.[currentIdx] || [];
+  const isDuplicateGuess = currentRoundGuesses.some((guess: any) => guess?.anime?.id === animeId);
+  if (isDuplicateGuess) {
+    return c.json({ error: 'Anime already guessed for this round' }, 409);
+  }
+
+  const guessNumber = currentRoundGuesses.length + 1;
   const result = await compareGuessToAnime(animeId, refAnime.id, guessNumber, animeService);
   // Met à jour la progression
   if (!progress.guessesByAnime[currentIdx]) progress.guessesByAnime[currentIdx] = [];
