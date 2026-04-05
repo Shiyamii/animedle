@@ -6,6 +6,8 @@ import loadDotenv from '@/lib/dotenv-loader';
 import adminRoutes from '@/routes/admin';
 import animeRoutes from '@/routes/anime';
 import authRoutes from '@/routes/auth';
+import roomRoutes from '@/routes/room';
+import roomGuessRoutes from '@/routes/room-guess';
 import { AnimeService } from '@/services/AnimeService';
 import { CharacterService } from './services/CharacterService';
 
@@ -44,8 +46,8 @@ app.use(
   }),
 );
 
-const routes = [authRoutes, animeRoutes, adminRoutes] as Hono[];
 
+const routes = [authRoutes, animeRoutes, adminRoutes, roomRoutes, roomGuessRoutes] as Hono[];
 routes.forEach((route: Hono) => {
   app.route('/api/', route);
 });

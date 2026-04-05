@@ -50,6 +50,9 @@ Bun.serve({
                 } else {
                     ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
                 }
+            } else if (data.type === 'proposal') {
+                // data: { type: 'proposal', guess, animeIdx, from }
+                roomService.handleProposal(ws, data.guess, data.animeIdx);
             } else {
                 ws.send(JSON.stringify({ type: 'error', message: 'Unknown action' }));
             }
