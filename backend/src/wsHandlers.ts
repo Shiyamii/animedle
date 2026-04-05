@@ -43,11 +43,10 @@ Bun.serve({
                 }
             } else if (data.type === 'start') {
                 const roomId = roomService.getRoomId(ws);
+                // On attend que l'hôte envoie la limite d'animes (animeLimit)
+                const animeLimit = typeof data.animeLimit === 'number' && data.animeLimit > 0 ? data.animeLimit : 5;
                 if (roomId) {
-                    roomService.broadcastToRoom(
-                        roomId,
-                        JSON.stringify({ type: 'start' })
-                    );
+                    roomService.startGame(roomId, animeLimit);
                 } else {
                     ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
                 }

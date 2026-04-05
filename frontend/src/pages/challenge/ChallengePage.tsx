@@ -1,28 +1,28 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useUserStore } from "@/stores/userStore";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import GuessTable from "@/components/GuessTable";
 
-const getWsUrl = () => {
-  const envUrl = import.meta.env.VITE_BACKEND_WS_URL;
-  if (envUrl) return envUrl;
-  const proto = window.location.protocol === "https:" ? "wss" : "ws";
-  return `${proto}://${window.location.hostname}:3001`;
-};
-
-const WS_URL = getWsUrl();
-type ProposalMsg = { type: "proposal"; colors: string[]; from: string };
-type JoinMsg = { type: "join"; name: string };
-type LeaveMsg = { type: "leave"; name: string };
-type JoinedMsg = { type: "joined"; roomId: string };
-type PlayersMsg = { type: "players"; players: string[] };
-type WelcomeMsg = { type: "welcome" };
-type StartMsg = { type: "start" };
-type ErrorMsg = { type: "error"; error: string };
-type WSMsg = ProposalMsg | JoinMsg | LeaveMsg | JoinedMsg | PlayersMsg | WelcomeMsg | StartMsg | ErrorMsg;
 
 export default function ChallengePage() {
+  const getWsUrl = () => {
+    const envUrl = import.meta.env.VITE_BACKEND_WS_URL;
+    if (envUrl) return envUrl;
+    const proto = window.location.protocol === "https:" ? "wss" : "ws";
+    return `${proto}://${window.location.hostname}:3001`;
+  };
+  const WS_URL = getWsUrl();
+  type ProposalMsg = { type: "proposal"; colors: string[]; from: string };
+  type JoinMsg = { type: "join"; name: string };
+  type LeaveMsg = { type: "leave"; name: string };
+  type JoinedMsg = { type: "joined"; roomId: string };
+  type PlayersMsg = { type: "players"; players: string[] };
+  type WelcomeMsg = { type: "welcome" };
+  type StartMsg = { type: "start" };
+  type ErrorMsg = { type: "error"; error: string };
+  type WSMsg = ProposalMsg | JoinMsg | LeaveMsg | JoinedMsg | PlayersMsg | WelcomeMsg | StartMsg | ErrorMsg;
+
   // Pour lire les paramètres d'URL
   const location = typeof window !== 'undefined' ? window.location : { search: '' };
   const user = useUserStore((s) => s.user);
@@ -96,7 +96,7 @@ export default function ChallengePage() {
     if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom || players.length < 2) {
       return;
     }
-    const startMsg = { type: "start" };
+    const startMsg = { type: "start", animeLimit };
     wsRef.current.send(JSON.stringify(startMsg));
     setWsLog((log) => [...log, `[SEND] ${JSON.stringify(startMsg)}`]);
   };
@@ -112,6 +112,16 @@ export default function ChallengePage() {
     setHasJoinedRoom(false);
     setWsLog([]);
   };
+
+  // Fonction pour copier le lien d'invitation (doit être dans le composant pour accéder à joinedRoom)
+  const handleCopyInvite = useCallback(() => {
+    if (!joinedRoom) return;
+    const url = `${window.location.origin}${window.location.pathname}?gameid=${joinedRoom}`;
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(url);
+      setWsLog((log) => [...log, `[INFO] Lien copié: ${url}`]);
+    }
+  }, [joinedRoom, setWsLog]);
 
   // Rejoindre une room
   const handleJoin = () => {
@@ -162,6 +172,18 @@ export default function ChallengePage() {
       ) : (
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
+            <span className="font-semibold">Room:</span> <span>{joinedRoom || "-"}</span>
+            {joinedRoom ? (
+              <button
+                className="ml-2 px-2 py-1 text-xs bg-blue-100 rounded hover:bg-blue-200 border border-blue-300"
+                onClick={handleCopyInvite}
+                title="Copier le lien d'invitation"
+              >
+                Copier le lien d'invitation
+              </button>
+            ) : null}
+          </div>
+          <div className="flex items-center gap-2">
             <span className="font-semibold">Room:</span> <span>{joinedRoom}</span>
             {isHost && (
               <>
@@ -173,6 +195,7 @@ export default function ChallengePage() {
                   value={animeLimit}
                   onChange={e => setAnimeLimit(Number(e.target.value))}
                   className="w-16"
+                  disabled={gameStarted}
                 />
               </>
             )}
