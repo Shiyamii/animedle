@@ -1,24 +1,31 @@
 import { Hono } from 'hono';
-import { RoomService } from '../services/RoomService';
+import { roomService } from '../services/roomServiceInstance';
 import { AnimeService } from '../services/AnimeService';
 const { compareGuessToAnime } = require('../services/guessUtils');
 
 const roomGuessRoutes = new Hono();
-const roomService = new RoomService();
 const animeService = AnimeService.getInstance();
 
 // POST /api/room/:roomId/guess
-roomGuessRoutes.post('/:roomId/guess', async (c) => {
+roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   const roomId = c.req.param('roomId');
   const { user, animeId } = await c.req.json();
   if (!user || !animeId) return c.json({ error: 'Missing user or animeId' }, 400);
-  // Récupère la progression du joueur
-  const progress = roomService.roomProgress?.get(roomId)?.[user];
+  // Récupère la progression du joueur depuis l'instance partagée de roomService
+  const progress = roomService.getPlayerProgress(roomId, user);
   if (!progress) return c.json({ error: 'Not found' }, 404);
   const currentIdx = progress.currentAnimeIdx || 0;
   const animes = roomService.getRoomAnimes(roomId) || [];
   const refAnime = animes[currentIdx];
   if (!refAnime) return c.json({ error: 'No anime to guess' }, 400);
+  console.log('[CHALLENGE_GUESS] incoming', {
+    roomId,
+    user,
+    currentIdx,
+    receivedAnimeId: animeId,
+    expectedAnimeId: refAnime.id,
+    expectedAnimeTitle: refAnime.title,
+  });
   // Compare la proposition à l'anime courant
   const guessNumber = (progress.guessesByAnime?.[currentIdx]?.length || 0) + 1;
   const result = await compareGuessToAnime(animeId, refAnime.id, guessNumber, animeService);
