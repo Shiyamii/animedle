@@ -87,12 +87,14 @@ export default function ChallengePage() {
   // Connexion WS (uniquement pour guesses/couleurs)
   useEffect(() => {
     if (!joinedRoom || !user || !user.name) return;
+    console.debug('[DEBUG] Ouverture WebSocket pour room', joinedRoom, 'avec user', user.name);
     const ws = new WebSocket(WS_URL);
     wsRef.current = ws;
     let closed = false;
     ws.onopen = () => {
       setIsWsOpen(true);
       const joinMsg = { type: "join", roomId: joinedRoom, name: user.name };
+      console.debug('[DEBUG] Envoi du message JOIN', joinMsg);
       ws.send(JSON.stringify(joinMsg));
       setWsLog((log) => [...log, `[SEND] ${JSON.stringify(joinMsg)}`]);
       setPlayers([user.name]);
@@ -121,6 +123,8 @@ export default function ChallengePage() {
       } else if (msg.type === "players") {
         setPlayers(msg.players);
       } else if (msg.type === "start") {
+        console.debug('[DEBUG] Message WS "start" reçu, on démarre la partie');
+        setWsLog((log) => [...log, '[DEBUG] Message WS "start" reçu, on démarre la partie']);
         setGameStarted(true);
       } else if (msg.type === "join") {
         setPlayers((prev) => prev.includes(msg.name) ? prev : [...prev, msg.name]);
@@ -134,6 +138,7 @@ export default function ChallengePage() {
       alert("Erreur WebSocket");
     };
     ws.onclose = () => {
+      console.debug('[DEBUG] Fermeture WebSocket (leave) pour room', joinedRoom, 'user', user?.name);
       wsRef.current = null;
       setIsWsOpen(false);
       setHasJoinedRoom(false);
@@ -144,7 +149,7 @@ export default function ChallengePage() {
       closed = true;
       ws.close();
     };
-  }, [joinedRoom, user, currentAnimeIdx, animeList]);
+  }, [joinedRoom, user]);
 
   // Charge la liste des animes de la room via API
   useEffect(() => {
@@ -172,6 +177,7 @@ export default function ChallengePage() {
   // Fonction pour démarrer la partie (réservée à l'hôte, min 2 joueurs)
   const handleStartGame = () => {
     console.log('[DEBUG] handleStartGame called', { isWsOpen, hasJoinedRoom, players });
+    console.log('[DEBUG] WS Ref:', wsRef.current);
     if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom || players.length < 2) {
       return;
     }
