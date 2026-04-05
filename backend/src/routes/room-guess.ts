@@ -39,15 +39,20 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
       imageUrl: refAnime.characterImageUrl,
     });
     progress.currentAnimeIdx = currentIdx + 1;
-    // Si la partie est finie, envoie un message WS 'win' à l'utilisateur
+    // Si la partie est finie, envoie 'win' au gagnant et 'loose' aux autres joueurs.
     const animes = roomService.getRoomAnimes(roomId) || [];
     if (progress.currentAnimeIdx >= animes.length) {
-      // Trouve la socket de ce user dans la room
       const room = roomService.rooms.get(roomId);
       if (room) {
         for (const ws of room) {
-          if (ws.data && ws.data.name === user && ws.readyState === 1) {
+          if (ws.readyState !== 1) {
+            continue;
+          }
+
+          if (ws.data && ws.data.name === user) {
             ws.send(JSON.stringify({ type: 'win' }));
+          } else {
+            ws.send(JSON.stringify({ type: 'loose', winner: user }));
           }
         }
       }

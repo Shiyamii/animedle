@@ -5,25 +5,6 @@ import { AutocompleteTextInput } from '@/components/AutoComplete';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { useChallengePageViewModel } from './useChallengePageViewModel';
 
-function FoundCharactersHistory({ foundCharacters }: { foundCharacters: { id: string; name: string; imageUrl?: string }[] }) {
-  if (!foundCharacters.length) return null;
-  return (
-    <div className="flex items-center gap-2 mb-2">
-      <span className="font-semibold text-sm">Personnages trouves :</span>
-      {foundCharacters.map((c) => (
-        <div key={c.id} className="flex flex-col items-center">
-          {c.imageUrl ? (
-            <img src={c.imageUrl} alt={c.name} className="w-8 h-8 rounded-full object-cover border" />
-          ) : (
-            <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-xs">?</div>
-          )}
-          <span className="text-xs max-w-[60px] truncate">{c.name}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function ChallengePage() {
   const {
     user,
@@ -41,8 +22,9 @@ export default function ChallengePage() {
     isFilteringLoading,
     guessesByAnime,
     currentAnimeIdx,
-    foundCharacters,
     gameStarted,
+    gameOutcome,
+    winnerName,
     isWsOpen,
     hasJoinedRoom,
     players,
@@ -60,7 +42,6 @@ export default function ChallengePage() {
     <TooltipProvider>
       <div className="max-w-xl mx-auto p-4 flex flex-col gap-6">
         <h1 className="text-2xl font-bold mb-2">Challenge multijoueur</h1>
-        <FoundCharactersHistory foundCharacters={foundCharacters} />
 
         <div className="bg-gray-100 border rounded p-2 mb-2 max-h-40 overflow-y-auto text-xs">
           <div className="font-semibold mb-1">Log WebSocket</div>
@@ -127,6 +108,16 @@ export default function ChallengePage() {
             {gameStarted && (
               <>
                 <div className="text-green-600 font-bold">La partie a commence !</div>
+                {gameOutcome === 'win' && (
+                  <div className="rounded-md border border-emerald-400 bg-emerald-50 p-3 text-center font-semibold text-emerald-700">
+                    Victoire ! Tu as gagne la partie.
+                  </div>
+                )}
+                {gameOutcome === 'loose' && (
+                  <div className="rounded-md border border-rose-400 bg-rose-50 p-3 text-center font-semibold text-rose-700">
+                    Defaite ! {winnerName ? `${winnerName} a gagne.` : 'Un autre joueur a gagne.'}
+                  </div>
+                )}
                 <div className="flex gap-2 mb-2">
                   <button
                     className="px-2 py-1 text-xs bg-gray-200 rounded border border-gray-300 hover:bg-gray-300"
@@ -142,7 +133,7 @@ export default function ChallengePage() {
                   </div>
                 )}
 
-                {remaining && remaining > 0 ? (
+                {remaining === null || remaining > 0 ? (
                   <>
                     <AutocompleteTextInput
                       values={filteredAnimeList}
