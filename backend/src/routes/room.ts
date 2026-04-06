@@ -4,16 +4,12 @@ import { roomService } from '../services/roomServiceInstance';
 
 const roomRoutes = new Hono();
 
-
-// Endpoint pour savoir si la partie est déjà commencée (animes assignés à la room)
 roomRoutes.get('/room/:roomId/status', (c) => {
   const roomId = c.req.param('roomId');
-  // Si la room a une liste d'animes, la partie est considérée comme commencée
   const animes = roomService.getRoomAnimes(roomId);
   const started = !!(animes && animes.length > 0);
   return c.json({ started });
 });
-
 
 roomRoutes.get('/room/:roomId/animes', (c) => {
   const roomId = c.req.param('roomId');

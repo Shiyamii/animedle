@@ -1,10 +1,8 @@
-// wsHandlers.ts
 import { roomService } from './services/roomServiceInstance';
 
 Bun.serve({
     port: 3001,
     fetch(req, server) {
-        // Upgrade HTTP to WebSocket if possible
         if (server.upgrade(req)) {
             return undefined;
         }
@@ -36,14 +34,13 @@ Bun.serve({
                     roomService.broadcastToRoom(
                         roomId,
                         JSON.stringify({ type: 'message', from: roomId, content: data.content, name }),
-                        name // filtrage par nom
+                        name
                     );
                 } else {
                     ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
                 }
             } else if (data.type === 'start') {
                 const roomId = roomService.getRoomId(ws);
-                // On attend que l'hôte envoie la limite d'animes (animeLimit)
                 const animeLimit = typeof data.animeLimit === 'number' && data.animeLimit > 0 ? data.animeLimit : 5;
                 if (roomId) {
                     roomService.startGame(roomId, animeLimit);
@@ -51,7 +48,6 @@ Bun.serve({
                     ws.send(JSON.stringify({ type: 'error', message: 'Not in a room' }));
                 }
             } else if (data.type === 'proposal') {
-                // data: { type: 'proposal', guess, animeIdx, from }
                 roomService.handleProposal(ws, data.guess, data.animeIdx);
             } else {
                 ws.send(JSON.stringify({ type: 'error', message: 'Unknown action' }));

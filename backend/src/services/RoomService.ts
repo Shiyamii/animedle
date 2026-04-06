@@ -11,8 +11,6 @@ class RoomService {
     this.rooms = new Map();
     this.socketToRoom = new Map();
     this.roomAnimes = new Map();
-    // Nouvelle structure: progression par room et par joueur
-    // { [roomId]: { [playerName]: { currentAnimeIdx, guessesByAnime, foundCharacters } } }
     this.roomProgress = new Map();
   }
 
@@ -27,7 +25,6 @@ class RoomService {
     if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
     const roomProg = this.roomProgress.get(roomId);
     roomProg[playerName] = progress;
-    // Force la mise à jour de la Map pour garantir la cohérence
     this.roomProgress.set(roomId, roomProg);
   }
 
@@ -41,13 +38,10 @@ class RoomService {
     this.socketToRoom.set(ws, roomId);
     const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
 
-    // Envoie la liste complète des joueurs à la personne qui vient de rejoindre
     const playerNames = Array.from(room).map(client => client.data && client.data.name ? client.data.name : 'Anonyme');
     try {
       ws.send(JSON.stringify({ type: 'players', players: playerNames }));
     } catch (e) { console.error('WS send error:', e); }
-    // (Ne plus envoyer la liste des animes ni la progression ici, tout passe par l'API REST)
-    // Broadcast join event à tous sauf la personne qui vient de rejoindre
     this.broadcastToRoom(
       roomId,
       JSON.stringify({ type: 'join', name }),
@@ -66,7 +60,6 @@ class RoomService {
         }
       }
       const name = ws.data && ws.data.name ? ws.data.name : 'Anonyme';
-      // Broadcast leave event à tous sauf la personne qui quitte
       this.broadcastToRoom(
         roomId,
         JSON.stringify({ type: 'leave', name }),
@@ -97,7 +90,6 @@ class RoomService {
     const animes = shuffled.slice(0, animeLimit);
 
     this.roomAnimes.set(roomId, animes);
-    // Réinitialise la progression de tous les joueurs de la room
     const room = this.rooms.get(roomId);
     if (room) {
       if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
@@ -118,7 +110,6 @@ class RoomService {
     );
   }
 
-  // Gère la proposition d'un joueur (guess)
   handleProposal(ws, guess, animeIdx) {
     const roomId = this.getRoomId(ws);
     if (!roomId) return;
@@ -133,10 +124,8 @@ class RoomService {
         foundCharacters: [],
       };
     }
-    // Ajoute le guess à la bonne liste
     if (!progress[playerKey].guessesByAnime[animeIdx]) progress[playerKey].guessesByAnime[animeIdx] = [];
     progress[playerKey].guessesByAnime[animeIdx].push(guess);
-    // Si le guess est correct, ajoute le perso trouvé et avance
     const animes = this.roomAnimes.get(roomId) || [];
     if (guess && guess.isCorrect && animes[animeIdx]) {
       progress[playerKey].foundCharacters.push({
@@ -146,7 +135,6 @@ class RoomService {
       });
       progress[playerKey].currentAnimeIdx = animeIdx + 1;
     }
-    // Envoie la progression à ce joueur
     ws.send(JSON.stringify({
       type: 'progression',
       guessesByAnime: progress[playerKey].guessesByAnime,

@@ -6,21 +6,18 @@ const { compareGuessToAnime } = require('../services/guessUtils');
 const roomGuessRoutes = new Hono();
 const animeService = AnimeService.getInstance();
 
-// POST /api/room/:roomId/guess
 roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   const roomId = c.req.param('roomId');
   const { userId, user, animeId } = await c.req.json();
   const playerKey = userId || user;
   const playerName = user || userId;
   if (!playerKey || !animeId) return c.json({ error: 'Missing userId/user or animeId' }, 400);
-  // Récupère la progression du joueur depuis l'instance partagée de roomService
   const progress = roomService.getPlayerProgress(roomId, playerKey);
   if (!progress) return c.json({ error: 'Not found' }, 404);
   const currentIdx = progress.currentAnimeIdx || 0;
   const animes = roomService.getRoomAnimes(roomId) || [];
   const refAnime = animes[currentIdx];
   if (!refAnime) return c.json({ error: 'No anime to guess' }, 400);
-  // Compare la proposition à l'anime courant
   const currentRoundGuesses = progress.guessesByAnime?.[currentIdx] || [];
   const isDuplicateGuess = currentRoundGuesses.some((guess: any) => guess?.anime?.id === animeId);
   if (isDuplicateGuess) {
@@ -58,7 +55,6 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
     }
   }
 
-  // Met à jour la progression
   if (!progress.guessesByAnime[currentIdx]) progress.guessesByAnime[currentIdx] = [];
   progress.guessesByAnime[currentIdx].push(result);
   if (result.isCorrect) {

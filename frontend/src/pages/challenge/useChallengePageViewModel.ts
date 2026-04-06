@@ -139,7 +139,7 @@ export function useChallengePageViewModel() {
       const data = await res.json();
       setRemaining(data.remaining);
     } catch {
-      // no-op
+      void 0;
     }
   }, [joinedRoom, playerKey, gameStarted, backendUrl]);
 
@@ -157,7 +157,7 @@ export function useChallengePageViewModel() {
       setGuessesByAnime(normalizeGuessesByAnime(data.guessesByAnime || {}));
       setCurrentAnimeIdx(data.currentAnimeIdx || 0);
     } catch {
-      // no-op
+      void 0;
     }
   }, [joinedRoom, playerKey, backendUrl]);
 

@@ -3,7 +3,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useUserStore } from "../../stores/userStore";
 
-// Utilisation propre de l'URL backend WebSocket
 const getWsUrl = () => {
   const envUrl = import.meta.env.VITE_BACKEND_WS_URL;
   if (envUrl) return envUrl;
@@ -23,7 +22,6 @@ export default function RoomLogPage() {
   const userName = user?.name || "Anonyme";
   const wsRef = useRef<WebSocket | null>(null);
 
-  // Connexion WebSocket proprement, fermeture auto
   useEffect(() => {
     if (!joinedRoom) return;
     const ws = new WebSocket(getWsUrl());
@@ -49,14 +47,12 @@ export default function RoomLogPage() {
     return () => ws.close();
   }, [joinedRoom, userName]);
 
-  // Envoi d'un message (JSON ou texte)
   const handleSend = useCallback(() => {
     if (!wsRef.current || wsRef.current.readyState !== 1 || !sendMsg.trim()) return;
     let toSend = "";
     let displayContent = "";
     try {
       const parsed = JSON.parse(sendMsg);
-      // Ajoute le nom si absent
       if (!parsed.name) parsed.name = userName;
       toSend = JSON.stringify(parsed);
       displayContent = `[${parsed.name}] ${parsed.content ?? sendMsg}`;
@@ -69,7 +65,6 @@ export default function RoomLogPage() {
     setSendMsg("");
   }, [sendMsg, userName]);
 
-  // Rejoindre une room
   const handleJoin = useCallback(() => {
     if (roomId.trim()) {
       setJoinedRoom(roomId.trim());
@@ -77,7 +72,6 @@ export default function RoomLogPage() {
     }
   }, [roomId]);
 
-  // Quitter la room (fermer WS)
   const handleLeave = useCallback(() => {
     setJoinedRoom(null);
     setIsWsOpen(false);
@@ -135,7 +129,6 @@ export default function RoomLogPage() {
             } catch {}
           }
           if (entry.type === "send") {
-            // Affiche le nom de l'utilisateur pour les messages envoyés
             display = <><span className="font-bold text-green-700">{userName}</span> : {entry.content.replace(/^\[[^\]]+\]\s*/, "")}</>;
           }
           return (
