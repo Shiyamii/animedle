@@ -72,6 +72,32 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   if (!progress.guessesByAnime[currentIdx]) progress.guessesByAnime[currentIdx] = [];
   progress.guessesByAnime[currentIdx].push(result);
   if (result.isCorrect) {
+    const roomForFoundEvent = roomService.rooms.get(roomId);
+    if (roomForFoundEvent) {
+      for (const ws of roomForFoundEvent) {
+        if (ws.readyState !== 1) {
+          continue;
+        }
+
+        const wsPlayerKey = ws.data?.userId || ws.data?.name;
+        if (wsPlayerKey === playerKey) {
+          continue;
+        }
+
+        ws.send(
+          JSON.stringify({
+            type: 'challenge-found',
+            playerKey,
+            playerName,
+            animeIdx: currentIdx,
+            animeId: result.anime?.id || animeId,
+            animeTitle: result.anime?.title || animeId,
+            guessNumber,
+          }),
+        );
+      }
+    }
+
     progress.foundCharacters.push({
       id: refAnime.characterId,
       name: refAnime.characterName,

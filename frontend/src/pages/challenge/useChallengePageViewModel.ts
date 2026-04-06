@@ -22,6 +22,15 @@ type WSOpponentAttemptMsg = {
   animeTitle: string;
   guessNumber: number;
 };
+type WSOpponentFoundMsg = {
+  type: 'challenge-found';
+  playerKey: string;
+  playerName: string;
+  animeIdx: number;
+  animeId: string;
+  animeTitle: string;
+  guessNumber: number;
+};
 type WSJoinMsg = { type: 'join'; name: string };
 type WSLeaveMsg = { type: 'leave'; name: string };
 type WSJoinedMsg = { type: 'joined'; roomId: string };
@@ -30,7 +39,18 @@ type WSStartMsg = { type: 'start' };
 type WSWinMsg = { type: 'win' };
 type WSLooseMsg = { type: 'loose'; winner?: string };
 type WSErrorMsg = { type: 'error'; error: string };
-type WSMsg = WSProposalMsg | WSOpponentAttemptMsg | WSJoinMsg | WSLeaveMsg | WSJoinedMsg | WSPlayersMsg | WSStartMsg | WSWinMsg | WSLooseMsg | WSErrorMsg;
+type WSMsg =
+  | WSProposalMsg
+  | WSOpponentAttemptMsg
+  | WSOpponentFoundMsg
+  | WSJoinMsg
+  | WSLeaveMsg
+  | WSJoinedMsg
+  | WSPlayersMsg
+  | WSStartMsg
+  | WSWinMsg
+  | WSLooseMsg
+  | WSErrorMsg;
 type GameOutcome = 'win' | 'loose' | null;
 
 function getInitialUrlGameId(): string {
@@ -88,6 +108,9 @@ export function useChallengePageViewModel() {
   const [inputValue, setInputValue] = useState('');
   const [guessesByAnime, setGuessesByAnime] = useState<{ [animeIdx: number]: GuessResultDTO[] }>({});
   const [opponentAttemptsByAnime, setOpponentAttemptsByAnime] = useState<{
+    [animeIdx: number]: Array<{ playerKey: string; playerName: string; animeId: string; animeTitle: string; guessNumber: number }>;
+  }>({});
+  const [opponentFoundByAnime, setOpponentFoundByAnime] = useState<{
     [animeIdx: number]: Array<{ playerKey: string; playerName: string; animeId: string; animeTitle: string; guessNumber: number }>;
   }>({});
   const [currentAnimeIdx, setCurrentAnimeIdx] = useState(0);
@@ -168,6 +191,11 @@ export function useChallengePageViewModel() {
     [opponentAttemptsByAnime, currentAnimeIdx],
   );
 
+  const currentRoundOpponentFound = useMemo(
+    () => opponentFoundByAnime[currentAnimeIdx] || [],
+    [opponentFoundByAnime, currentAnimeIdx],
+  );
+
   const isFilteringLoading = false;
 
   useEffect(() => {
@@ -214,6 +242,21 @@ export function useChallengePageViewModel() {
           });
           return { ...prev, [msg.animeIdx]: arr };
         });
+      } else if (msg.type === 'challenge-found') {
+        if (!playerKey || msg.playerKey === playerKey) {
+          return;
+        }
+        setOpponentFoundByAnime((prev) => {
+          const arr = prev[msg.animeIdx] ? [...prev[msg.animeIdx]] : [];
+          arr.push({
+            playerKey: msg.playerKey,
+            playerName: msg.playerName,
+            animeId: msg.animeId,
+            animeTitle: msg.animeTitle,
+            guessNumber: msg.guessNumber,
+          });
+          return { ...prev, [msg.animeIdx]: arr };
+        });
       } else if (msg.type === 'joined') {
         setHasJoinedRoom(true);
       } else if (msg.type === 'players') {
@@ -224,6 +267,7 @@ export function useChallengePageViewModel() {
         setGameOutcome(null);
         setWinnerName(null);
         setOpponentAttemptsByAnime({});
+        setOpponentFoundByAnime({});
         fetchProgression().catch(() => {});
         fetchRemaining().catch(() => {});
       } else if (msg.type === 'win') {
@@ -440,6 +484,7 @@ export function useChallengePageViewModel() {
     hasJoinedRoom,
     players,
     currentRoundOpponentAttempts,
+    currentRoundOpponentFound,
     animeStore,
     fetchProgression,
     handleStartGame,
