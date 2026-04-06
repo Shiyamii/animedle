@@ -1,7 +1,8 @@
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import GuessTable from '@/components/GuessTable';
 import { AutocompleteTextInput } from '@/components/AutoComplete';
+import GuessTable from '@/components/GuessTable';
+import { ModeMenu } from '@/components/ModeMenu';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { useChallengePageViewModel } from './useChallengePageViewModel';
 
@@ -12,7 +13,6 @@ export default function ChallengePage() {
     setRoomId,
     joinedRoom,
     remaining,
-    wsLog,
     isHost,
     animeLimit,
     setAnimeLimit,
@@ -30,7 +30,6 @@ export default function ChallengePage() {
     isWsOpen,
     hasJoinedRoom,
     players,
-    fetchProgression,
     handleStartGame,
     handleCreate,
     handleCopyInvite,
@@ -38,143 +37,158 @@ export default function ChallengePage() {
     handleGuess,
   } = useChallengePageViewModel();
 
-  if (!user) return <div className="text-center text-red-500">Vous devez etre connecte pour jouer.</div>;
+  if (!user) {
+    return <div className="text-center text-red-500">Vous devez etre connecte pour jouer.</div>;
+  }
 
   return (
-    <TooltipProvider>
-      <div className="max-w-xl mx-auto p-4 flex flex-col gap-6">
-        <h1 className="text-2xl font-bold mb-2">Challenge multijoueur</h1>
-
-        <div className="bg-gray-100 border rounded p-2 mb-2 max-h-40 overflow-y-auto text-xs">
-          <div className="font-semibold mb-1">Log WebSocket</div>
-          {wsLog.length === 0 ? <div className="text-gray-400">Aucun message</div> : wsLog.map((l, i) => <div key={i}>{l}</div>)}
+    <TooltipProvider delayDuration={200}>
+      <div className="flex min-h-svh w-full flex-col items-center justify-center px-6 py-8">
+        <div className="w-full max-w-6xl rounded-xl border border-border bg-card p-4 text-card-foreground shadow-md">
+          <ModeMenu orientation="horizontal" />
         </div>
 
-        {!joinedRoom ? (
-          <div className="flex flex-col gap-2">
-            <div>
-              <Button onClick={handleCreate} className="mr-2">
-                Creer une partie
-              </Button>
-              <span>ou</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <Input placeholder="Code de la partie" value={roomId} onChange={(e) => setRoomId(e.target.value)} className="w-32" />
-              <Button onClick={handleJoin}>Rejoindre</Button>
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">Room:</span> <span>{joinedRoom || '-'}</span>
-              {joinedRoom ? (
-                <button
-                  className="ml-2 px-2 py-1 text-xs bg-blue-100 rounded hover:bg-blue-200 border border-blue-300"
-                  onClick={handleCopyInvite}
-                  title="Copier le lien d'invitation"
-                >
-                  Copier le lien d'invitation
-                </button>
-              ) : null}
-            </div>
+        <div className="mt-4 w-full max-w-6xl rounded-xl border border-border bg-card p-6 text-card-foreground shadow-md">
+          <h1 className="text-center font-bold text-2xl text-primary">Challenge multijoueur</h1>
 
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">Room:</span> <span>{joinedRoom}</span>
-              {isHost && (
-                <>
-                  <span className="ml-4">Limite d'animes:</span>
+          {!joinedRoom ? (
+            <div className="mx-auto mt-6 flex w-full max-w-xl flex-col gap-4">
+              <div className="rounded-lg border border-border bg-background p-4">
+                <h2 className="font-semibold text-lg">Creer une room</h2>
+                <p className="mt-1 text-muted-foreground text-sm">Lance une nouvelle partie et partage le lien avec ton adversaire.</p>
+                <Button onClick={handleCreate} className="mt-3 w-full">
+                  Creer une partie
+                </Button>
+              </div>
+
+              <div className="rounded-lg border border-border bg-background p-4">
+                <h2 className="font-semibold text-lg">Rejoindre une room</h2>
+                <p className="mt-1 text-muted-foreground text-sm">Entre le code de la room pour rejoindre une partie existante.</p>
+                <div className="mt-3 flex gap-2">
                   <Input
-                    type="number"
-                    min={1}
-                    max={10}
-                    value={animeLimit}
-                    onChange={(e) => setAnimeLimit(Number(e.target.value))}
-                    className="w-16"
-                    disabled={gameStarted}
+                    placeholder="Code de la partie"
+                    value={roomId}
+                    onChange={(e) => setRoomId(e.target.value)}
+                    className="w-full"
                   />
+                  <Button onClick={handleJoin}>Rejoindre</Button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="mt-6 flex flex-col gap-4">
+              <div className="rounded-lg border border-border bg-background p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <div className="font-semibold text-sm text-muted-foreground">Room</div>
+                    <div className="font-bold text-lg">{joinedRoom}</div>
+                  </div>
+                  <Button variant="outline" onClick={handleCopyInvite}>
+                    Copier le lien d'invitation
+                  </Button>
+                </div>
+
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  {isHost && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm">Limite d'animes</span>
+                      <Input
+                        type="number"
+                        min={1}
+                        max={10}
+                        value={animeLimit}
+                        onChange={(e) => setAnimeLimit(Number(e.target.value))}
+                        className="w-20"
+                        disabled={gameStarted}
+                      />
+                    </div>
+                  )}
+
+                  {isHost && !gameStarted && (
+                    <Button disabled={!isWsOpen || !hasJoinedRoom || players.length < 2} onClick={handleStartGame}>
+                      Demarrer la partie {players.length < 2 ? '(min 2 joueurs)' : ''}
+                    </Button>
+                  )}
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-border bg-background p-4">
+                <h2 className="font-semibold">Joueurs ({players.length})</h2>
+                <ul className="mt-2 flex flex-wrap gap-2 text-sm">
+                  {players.map((p) => (
+                    <li key={p} className="rounded-full border border-border px-3 py-1">
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {gameStarted && (
+                <>
+                  <div className="rounded-lg border border-border bg-background p-4">
+                    <div className="font-bold text-green-600">La partie a commence !</div>
+                    {gameOutcome === 'win' && (
+                      <div className="mt-3 rounded-md border border-emerald-400 bg-emerald-50 p-3 text-center font-semibold text-emerald-700 dark:bg-emerald-950/30">
+                        Victoire ! Tu as gagne la partie.
+                      </div>
+                    )}
+                    {gameOutcome === 'loose' && (
+                      <div className="mt-3 rounded-md border border-rose-400 bg-rose-50 p-3 text-center font-semibold text-rose-700 dark:bg-rose-950/30">
+                        Defaite ! {winnerName ? `${winnerName} a gagne.` : 'Un autre joueur a gagne.'}
+                      </div>
+                    )}
+
+                    {remaining !== null && (
+                      <div className="mt-3 font-semibold text-sm">
+                        {remaining > 0 ? `Animes restants a deviner : ${remaining}` : 'Partie terminee !'}
+                      </div>
+                    )}
+                  </div>
+
+                  {correctGuessesHistory.length > 0 && (
+                    <div className="rounded-lg border border-border bg-background p-4">
+                      <h3 className="mb-3 font-semibold">Historique des animes trouves</h3>
+                      <GuessTable guesses={correctGuessesHistory} showGuessNumber />
+                    </div>
+                  )}
+
+                  {currentRoundOpponentAttempts.length > 0 && (
+                    <div className="rounded-lg border border-border bg-background p-4">
+                      <h3 className="mb-3 font-semibold">Tentatives adverses sur cet anime</h3>
+                      <div className="flex flex-col gap-2">
+                        {currentRoundOpponentAttempts.map((attempt, index) => (
+                          <div
+                            key={`${attempt.playerKey}-${attempt.animeId}-${index}`}
+                            className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
+                          >
+                            <span className="font-medium">{attempt.animeTitle}</span>
+                            <span className="text-muted-foreground">Tentative {attempt.guessNumber} par {attempt.playerName}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {(remaining === null || remaining > 0) && (
+                    <div className="rounded-lg border border-border bg-background p-4">
+                      <h3 className="mb-3 font-semibold">Ton guess en cours</h3>
+                      <div className="mb-4">
+                        <AutocompleteTextInput
+                          values={filteredAnimeList}
+                          inputValue={inputValue}
+                          setInputValue={setInputValue}
+                          isFilteringLoading={isFilteringLoading}
+                          onSelect={handleGuess}
+                        />
+                      </div>
+                      <GuessTable guesses={guessesByAnime[currentAnimeIdx] || []} />
+                    </div>
+                  )}
                 </>
               )}
             </div>
-
-            {isHost && !gameStarted && (
-              <Button disabled={!isWsOpen || !hasJoinedRoom || players.length < 2} onClick={handleStartGame}>
-                Demarrer la partie {players.length < 2 ? '(min 2 joueurs)' : ''}
-              </Button>
-            )}
-
-            <div>
-              <h2 className="font-semibold">Joueurs ({players.length})</h2>
-              <ul className="text-xs mb-2">{players.map((p) => <li key={p}>{p}</li>)}</ul>
-            </div>
-
-            {gameStarted && (
-              <>
-                <div className="text-green-600 font-bold">La partie a commence !</div>
-                {gameOutcome === 'win' && (
-                  <div className="rounded-md border border-emerald-400 bg-emerald-50 p-3 text-center font-semibold text-emerald-700">
-                    Victoire ! Tu as gagne la partie.
-                  </div>
-                )}
-                {gameOutcome === 'loose' && (
-                  <div className="rounded-md border border-rose-400 bg-rose-50 p-3 text-center font-semibold text-rose-700">
-                    Defaite ! {winnerName ? `${winnerName} a gagne.` : 'Un autre joueur a gagne.'}
-                  </div>
-                )}
-                <div className="flex gap-2 mb-2">
-                  <button
-                    className="px-2 py-1 text-xs bg-gray-200 rounded border border-gray-300 hover:bg-gray-300"
-                    onClick={fetchProgression}
-                  >
-                    Mettre a jour la progression
-                  </button>
-                </div>
-
-                {remaining !== null && (
-                  <div className="mb-2 text-sm font-semibold">
-                    {remaining > 0 ? `Animes restants a deviner : ${remaining}` : 'Partie terminee !'}
-                  </div>
-                )}
-
-                {correctGuessesHistory.length > 0 && (
-                  <div className="w-full">
-                    <h3 className="mb-2 font-semibold text-sm">Historique des animes trouves</h3>
-                    <GuessTable guesses={correctGuessesHistory} showGuessNumber />
-                  </div>
-                )}
-
-                {currentRoundOpponentAttempts.length > 0 && (
-                  <div className="w-full rounded-md border bg-slate-50 p-3">
-                    <h3 className="mb-2 font-semibold text-sm">Historique adverse sur cet anime</h3>
-                    <div className="flex flex-col gap-1 text-sm">
-                      {currentRoundOpponentAttempts.map((attempt, index) => (
-                        <div key={`${attempt.playerKey}-${attempt.animeId}-${index}`} className="flex items-center justify-between rounded bg-white px-3 py-2 border">
-                          <span className="font-medium">{attempt.animeTitle}</span>
-                          <span className="text-xs text-muted-foreground">Tentative {attempt.guessNumber} par {attempt.playerName}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {remaining === null || remaining > 0 ? (
-                  <>
-                    <AutocompleteTextInput
-                      values={filteredAnimeList}
-                      inputValue={inputValue}
-                      setInputValue={setInputValue}
-                      isFilteringLoading={isFilteringLoading}
-                      onSelect={(animeId) => {
-                        console.log('[CHALLENGE_UI] onSelect animeId=', animeId);
-                        handleGuess(animeId);
-                      }}
-                    />
-                    <GuessTable guesses={guessesByAnime[currentAnimeIdx] || []} />
-                  </>
-                ) : null}
-              </>
-            )}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </TooltipProvider>
   );
