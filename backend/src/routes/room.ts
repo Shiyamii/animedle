@@ -29,13 +29,10 @@ roomRoutes.get('/room/:roomId/progression', (c) => {
 
   try {
     if (!playerKey) {
-      console.log('[DEBUG] Missing user param');
       return c.json({ error: 'Missing userId or user' }, 400);
     }
     const progress = roomService.getPlayerProgress(roomId, playerKey);
-    console.log('[DEBUG] Progression found:', progress);
     if (!progress) {
-      console.log('[DEBUG] Progress not found for user', playerKey);
       return c.json({ error: 'Not found' }, 404);
     }
 

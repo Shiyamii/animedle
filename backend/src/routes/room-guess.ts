@@ -20,16 +20,6 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
   const animes = roomService.getRoomAnimes(roomId) || [];
   const refAnime = animes[currentIdx];
   if (!refAnime) return c.json({ error: 'No anime to guess' }, 400);
-  console.log('[CHALLENGE_GUESS] incoming', {
-    roomId,
-    userId,
-    user,
-    playerKey,
-    currentIdx,
-    receivedAnimeId: animeId,
-    expectedAnimeId: refAnime.id,
-    expectedAnimeTitle: refAnime.title,
-  });
   // Compare la proposition à l'anime courant
   const currentRoundGuesses = progress.guessesByAnime?.[currentIdx] || [];
   const isDuplicateGuess = currentRoundGuesses.some((guess: any) => guess?.anime?.id === animeId);

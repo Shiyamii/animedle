@@ -12,7 +12,6 @@ Bun.serve({
     },
     websocket: {
         open(ws: WebSocket) {
-            console.log('[WS OPEN] Nouvelle connexion WebSocket');
         },
         message(ws: WebSocket, message: string | Buffer) {
             let data: any;
@@ -60,9 +59,6 @@ Bun.serve({
         },
         close(ws: WebSocket) {
             roomService.leaveRoom(ws);
-            console.log('[WS CLOSE] Connexion fermée');
         }
     }
 });
-
-console.log("WebSocket server running on ws://localhost:3001");

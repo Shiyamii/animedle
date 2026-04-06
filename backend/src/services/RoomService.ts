@@ -1,6 +1,4 @@
-// RoomService.js (remplace .ts par .js si besoin)
 const { AnimeService } = require("./AnimeService");
-const console = require("node:console");
 
 class RoomService {
 
@@ -23,8 +21,6 @@ class RoomService {
   }
 
   getPlayerProgress(roomId, playerName) {
-    console.log(`[DEBUG] Getting progress for player ${playerName} in room ${roomId}`);
-    console.log(`[DEBUG] Current roomProgress state:`, this.roomProgress);
     return this.roomProgress?.get(roomId)?.[playerName];
   }
   setPlayerProgress(roomId, playerName, progress) {
@@ -33,13 +29,9 @@ class RoomService {
     roomProg[playerName] = progress;
     // Force la mise à jour de la Map pour garantir la cohérence
     this.roomProgress.set(roomId, roomProg);
-    console.log(`[DEBUG] setPlayerProgress: roomId=${roomId}, playerName=${playerName}, progress=`, progress);
   }
 
   joinRoom(ws, roomId) {
-
-    console.log(`[WS INFO] Client joining room ${roomId}`);
-    console.log(`[WS INFO] Current user name: ${ws.data}`);
     let room = this.rooms.get(roomId);
     if (!room) {
       room = new Set();
@@ -61,7 +53,6 @@ class RoomService {
       JSON.stringify({ type: 'join', name }),
       name
     );
-    console.log(`[WS INFO] Client joined room ${roomId}`);
   }
 
   leaveRoom(ws) {
@@ -82,7 +73,6 @@ class RoomService {
         name
       );
       this.socketToRoom.delete(ws);
-      console.log(`[WS INFO] Client left room ${roomId}`);
     }
   }
 
@@ -106,7 +96,6 @@ class RoomService {
     const shuffled = animeList.sort(() => Math.random() - 0.5);
     const animes = shuffled.slice(0, animeLimit);
 
-    console.log(`[WS INFO] Starting game in room ${roomId} with anime limit ${animeLimit}`);
     this.roomAnimes.set(roomId, animes);
     // Réinitialise la progression de tous les joueurs de la room
     const room = this.rooms.get(roomId);
@@ -120,20 +109,13 @@ class RoomService {
           guessesByAnime: {},
           foundCharacters: [],
         });
-        console.log(`[WS INFO] Resetting player progress for ${name} in room ${roomId}`);
       }
-    for (const ws of room) {
-      const playerKey = this.getPlayerKeyFromSocket(ws);
-      const name = ws.data && ws.data.name ? ws.data.name : playerKey;
-      console.log(`[WS INFO] Progression for player ${name} in room ${roomId} after reset:`, this.getPlayerProgress(roomId, playerKey));
-    }
     }
 
     this.broadcastToRoom(
       roomId,
       JSON.stringify({ type: 'start' })
     );
-    console.log(`[WS INFO] Game started in room ${roomId} with animes:`, animes.map(a => a.title));
   }
 
   // Gère la proposition d'un joueur (guess)
