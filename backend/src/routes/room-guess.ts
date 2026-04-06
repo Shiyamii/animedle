@@ -39,6 +39,35 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
 
   const guessNumber = currentRoundGuesses.length + 1;
   const result = await compareGuessToAnime(animeId, refAnime.id, guessNumber, animeService);
+
+  if (!result.isCorrect) {
+    const room = roomService.rooms.get(roomId);
+    if (room) {
+      for (const ws of room) {
+        if (ws.readyState !== 1) {
+          continue;
+        }
+
+        const wsPlayerKey = ws.data?.userId || ws.data?.name;
+        if (wsPlayerKey === playerKey) {
+          continue;
+        }
+
+        ws.send(
+          JSON.stringify({
+            type: 'challenge-attempt',
+            playerKey,
+            playerName,
+            animeIdx: currentIdx,
+            animeId,
+            animeTitle: result.anime?.title || animeId,
+            guessNumber,
+          }),
+        );
+      }
+    }
+  }
+
   // Met à jour la progression
   if (!progress.guessesByAnime[currentIdx]) progress.guessesByAnime[currentIdx] = [];
   progress.guessesByAnime[currentIdx].push(result);
@@ -49,22 +78,43 @@ roomGuessRoutes.post('/room/:roomId/guess', async (c) => {
       imageUrl: refAnime.characterImageUrl,
     });
     progress.currentAnimeIdx = currentIdx + 1;
-    // Si la partie est finie, envoie 'win' au gagnant et 'loose' aux autres joueurs.
     const animes = roomService.getRoomAnimes(roomId) || [];
-    if (progress.currentAnimeIdx >= animes.length) {
-      const room = roomService.rooms.get(roomId);
-      if (room) {
-        for (const ws of room) {
-          if (ws.readyState !== 1) {
-            continue;
-          }
-
+    const room = roomService.rooms.get(roomId) as any;
+    const allPlayersFinished = room
+      ? Array.from(room).every((ws: any) => {
           const wsPlayerKey = ws.data?.userId || ws.data?.name;
-          if (wsPlayerKey === playerKey) {
-            ws.send(JSON.stringify({ type: 'win' }));
-          } else {
-            ws.send(JSON.stringify({ type: 'loose', winner: playerName }));
-          }
+          const playerProgress = roomService.getPlayerProgress(roomId, wsPlayerKey);
+          return !!playerProgress && (playerProgress.currentAnimeIdx || 0) >= animes.length;
+        })
+      : false;
+
+    if (room && allPlayersFinished) {
+      const playerResults = Array.from(room)
+        .map((ws: any) => {
+          const wsPlayerKey = ws.data?.userId || ws.data?.name;
+          const playerProgress = roomService.getPlayerProgress(roomId, wsPlayerKey);
+          const totalTries = Object.values(playerProgress?.guessesByAnime || {}).reduce(
+            (sum: number, guesses: any) => sum + ((guesses as any[])?.length || 0),
+            0,
+          );
+          return {
+            ws,
+            wsPlayerKey,
+            playerName: ws.data?.name || wsPlayerKey,
+            totalTries,
+          };
+        })
+        .filter((entry: any) => entry.ws.readyState === 1);
+
+      const winnerTries = Math.min(...playerResults.map((entry) => entry.totalTries));
+      const winners = playerResults.filter((entry) => entry.totalTries === winnerTries);
+      const winnerNames = winners.map((entry) => entry.playerName);
+
+      for (const entry of playerResults) {
+        if (winners.some((winner) => winner.wsPlayerKey === entry.wsPlayerKey)) {
+          entry.ws.send(JSON.stringify({ type: 'win', totalTries: entry.totalTries, winners: winnerNames }));
+        } else {
+          entry.ws.send(JSON.stringify({ type: 'loose', winner: winnerNames.join(', '), totalTries: entry.totalTries }));
         }
       }
     }

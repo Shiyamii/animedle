@@ -23,6 +23,7 @@ export default function ChallengePage() {
     correctGuessesHistory,
     guessesByAnime,
     currentAnimeIdx,
+    currentRoundOpponentAttempts,
     gameStarted,
     gameOutcome,
     winnerName,
@@ -137,7 +138,21 @@ export default function ChallengePage() {
                 {correctGuessesHistory.length > 0 && (
                   <div className="w-full">
                     <h3 className="mb-2 font-semibold text-sm">Historique des animes trouves</h3>
-                    <GuessTable guesses={correctGuessesHistory} />
+                    <GuessTable guesses={correctGuessesHistory} showGuessNumber />
+                  </div>
+                )}
+
+                {currentRoundOpponentAttempts.length > 0 && (
+                  <div className="w-full rounded-md border bg-slate-50 p-3">
+                    <h3 className="mb-2 font-semibold text-sm">Historique adverse sur cet anime</h3>
+                    <div className="flex flex-col gap-1 text-sm">
+                      {currentRoundOpponentAttempts.map((attempt, index) => (
+                        <div key={`${attempt.playerKey}-${attempt.animeId}-${index}`} className="flex items-center justify-between rounded bg-white px-3 py-2 border">
+                          <span className="font-medium">{attempt.animeTitle}</span>
+                          <span className="text-xs text-muted-foreground">Tentative {attempt.guessNumber} par {attempt.playerName}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
 

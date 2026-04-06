@@ -39,6 +39,11 @@ roomRoutes.get('/room/:roomId/progression', (c) => {
       return c.json({ error: 'Not found' }, 404);
     }
 
+    const triesByAnime = Object.fromEntries(
+      Object.entries(progress.guessesByAnime || {}).map(([animeIdx, guesses]) => [animeIdx, (guesses as any[]).length]),
+    );
+    const totalTries = Object.values(triesByAnime).reduce((sum, tries) => sum + tries, 0);
+
     const correctGuessesHistory = Object.keys(progress.guessesByAnime || {})
       .map((animeIdx) => Number(animeIdx))
       .sort((a, b) => a - b)
@@ -47,6 +52,8 @@ roomRoutes.get('/room/:roomId/progression', (c) => {
 
     return c.json({
       ...progress,
+      triesByAnime,
+      totalTries,
       correctGuessesHistory,
     });
   } catch (err) {

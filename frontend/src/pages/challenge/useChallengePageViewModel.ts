@@ -13,6 +13,15 @@ type RoomAnime = {
 };
 
 type WSProposalMsg = { type: 'proposal'; guess: GuessResultDTO };
+type WSOpponentAttemptMsg = {
+  type: 'challenge-attempt';
+  playerKey: string;
+  playerName: string;
+  animeIdx: number;
+  animeId: string;
+  animeTitle: string;
+  guessNumber: number;
+};
 type WSJoinMsg = { type: 'join'; name: string };
 type WSLeaveMsg = { type: 'leave'; name: string };
 type WSJoinedMsg = { type: 'joined'; roomId: string };
@@ -21,7 +30,7 @@ type WSStartMsg = { type: 'start' };
 type WSWinMsg = { type: 'win' };
 type WSLooseMsg = { type: 'loose'; winner?: string };
 type WSErrorMsg = { type: 'error'; error: string };
-type WSMsg = WSProposalMsg | WSJoinMsg | WSLeaveMsg | WSJoinedMsg | WSPlayersMsg | WSStartMsg | WSWinMsg | WSLooseMsg | WSErrorMsg;
+type WSMsg = WSProposalMsg | WSOpponentAttemptMsg | WSJoinMsg | WSLeaveMsg | WSJoinedMsg | WSPlayersMsg | WSStartMsg | WSWinMsg | WSLooseMsg | WSErrorMsg;
 type GameOutcome = 'win' | 'loose' | null;
 
 function getInitialUrlGameId(): string {
@@ -78,6 +87,9 @@ export function useChallengePageViewModel() {
   const [animeList, setAnimeList] = useState<RoomAnime[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [guessesByAnime, setGuessesByAnime] = useState<{ [animeIdx: number]: GuessResultDTO[] }>({});
+  const [opponentAttemptsByAnime, setOpponentAttemptsByAnime] = useState<{
+    [animeIdx: number]: Array<{ playerKey: string; playerName: string; animeId: string; animeTitle: string; guessNumber: number }>;
+  }>({});
   const [currentAnimeIdx, setCurrentAnimeIdx] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOutcome, setGameOutcome] = useState<GameOutcome>(null);
@@ -85,6 +97,11 @@ export function useChallengePageViewModel() {
   const [isWsOpen, setIsWsOpen] = useState(false);
   const [hasJoinedRoom, setHasJoinedRoom] = useState(false);
   const [players, setPlayers] = useState<string[]>([]);
+  const currentAnimeIdxRef = useRef(0);
+
+  useEffect(() => {
+    currentAnimeIdxRef.current = currentAnimeIdx;
+  }, [currentAnimeIdx]);
 
   const fetchRemaining = useCallback(async () => {
     if (!joinedRoom || !playerKey || !gameStarted) {
@@ -146,6 +163,11 @@ export function useChallengePageViewModel() {
       .filter((guess): guess is GuessResultDTO => !!guess);
   }, [guessesByAnime]);
 
+  const currentRoundOpponentAttempts = useMemo(
+    () => opponentAttemptsByAnime[currentAnimeIdx] || [],
+    [opponentAttemptsByAnime, currentAnimeIdx],
+  );
+
   const isFilteringLoading = false;
 
   useEffect(() => {
@@ -172,9 +194,25 @@ export function useChallengePageViewModel() {
 
       if (msg.type === 'proposal') {
         setGuessesByAnime((prev) => {
-          const arr = prev[currentAnimeIdx] ? [...prev[currentAnimeIdx]] : [];
+          const animeIdx = currentAnimeIdxRef.current;
+          const arr = prev[animeIdx] ? [...prev[animeIdx]] : [];
           arr.push(msg.guess);
-          return { ...prev, [currentAnimeIdx]: arr };
+          return { ...prev, [animeIdx]: arr };
+        });
+      } else if (msg.type === 'challenge-attempt') {
+        if (!playerKey || msg.playerKey === playerKey) {
+          return;
+        }
+        setOpponentAttemptsByAnime((prev) => {
+          const arr = prev[msg.animeIdx] ? [...prev[msg.animeIdx]] : [];
+          arr.push({
+            playerKey: msg.playerKey,
+            playerName: msg.playerName,
+            animeId: msg.animeId,
+            animeTitle: msg.animeTitle,
+            guessNumber: msg.guessNumber,
+          });
+          return { ...prev, [msg.animeIdx]: arr };
         });
       } else if (msg.type === 'joined') {
         setHasJoinedRoom(true);
@@ -185,6 +223,7 @@ export function useChallengePageViewModel() {
         setGameStarted(true);
         setGameOutcome(null);
         setWinnerName(null);
+        setOpponentAttemptsByAnime({});
         fetchProgression().catch(() => {});
         fetchRemaining().catch(() => {});
       } else if (msg.type === 'win') {
@@ -224,7 +263,7 @@ export function useChallengePageViewModel() {
       closed = true;
       ws.close();
     };
-  }, [joinedRoom, user?.name, user?.id, currentAnimeIdx, fetchProgression, fetchRemaining]);
+  }, [joinedRoom, user?.name, user?.id, playerKey, fetchProgression, fetchRemaining]);
 
   useEffect(() => {
     if (!joinedRoom) {
@@ -400,6 +439,7 @@ export function useChallengePageViewModel() {
     isWsOpen,
     hasJoinedRoom,
     players,
+    currentRoundOpponentAttempts,
     animeStore,
     fetchProgression,
     handleStartGame,
