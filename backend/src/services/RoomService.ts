@@ -1,19 +1,51 @@
-import { AnimeService } from './AnimeService';
+import { AnimeService, type GuessResultDTO } from './AnimeService';
+
+type WsData = {
+  name?: string;
+  userId?: string;
+};
+
+type SocketConnection = Bun.ServerWebSocket<WsData>;
+
+type GuessLike = {
+  isCorrect?: boolean;
+  anime?: {
+    id?: string;
+    title?: string;
+  };
+};
+
+function asGuessLike(value: unknown): GuessLike | undefined {
+  if (!value || typeof value !== 'object') return undefined;
+  return value as GuessLike;
+}
+
+type FoundCharacter = {
+  id: string;
+  name: string;
+  imageUrl: string;
+};
+
+type PlayerProgress = {
+  currentRoundIndex: number;
+  guessesByRound: Record<number, GuessLike[]>;
+  foundCharacters: FoundCharacter[];
+};
+
+type RoomProgress = Record<string, PlayerProgress>;
+
+type RoomAnime = {
+  id: string;
+  characterId: string;
+  characterName: string;
+  characterImageUrl: string;
+};
 
 export class RoomService {
-  private rooms: Map<string, Set<WebSocket>>;
-  private socketToRoom: Map<WebSocket, string>;
-  private roomAnimes: Map<string, any[]>;
-  private roomProgress: Map<
-    string,
-    {
-      [playerName: string]: {
-        currentRoundIndex: number;
-        guessesByRound: { [roundIndex: number]: any[] };
-        foundCharacters: any[];
-      };
-    }
-  >;
+  private rooms: Map<string, Set<SocketConnection>>;
+  private socketToRoom: Map<SocketConnection, string>;
+  private roomAnimes: Map<string, RoomAnime[]>;
+  private roomProgress: Map<string, RoomProgress>;
 
   constructor() {
     this.rooms = new Map();
@@ -22,21 +54,25 @@ export class RoomService {
     this.roomProgress = new Map();
   }
 
-  private getPlayerKeyFromSocket(socketConnection) {
-    return (socketConnection.data && (socketConnection.data.userId || socketConnection.data.name)) || 'Anonyme';
+  private getPlayerKeyFromSocket(socketConnection: SocketConnection): string {
+    return socketConnection.data?.userId || socketConnection.data?.name || 'Anonyme';
   }
 
-  getPlayerProgress(roomId, playerName) {
+  private ensureRoomProgress(roomId: string): RoomProgress {
+    if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
+    return this.roomProgress.get(roomId)!;
+  }
+
+  getPlayerProgress(roomId: string, playerName: string): PlayerProgress | undefined {
     return this.roomProgress?.get(roomId)?.[playerName];
   }
-  setPlayerProgress(roomId, playerName, progress) {
-    if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
-    const roomProg = this.roomProgress.get(roomId);
+
+  setPlayerProgress(roomId: string, playerName: string, progress: PlayerProgress): void {
+    const roomProg = this.ensureRoomProgress(roomId);
     roomProg[playerName] = progress;
-    this.roomProgress.set(roomId, roomProg);
   }
 
-  joinRoom(socketConnection, roomId) {
+  joinRoom(socketConnection: SocketConnection, roomId: string): void {
     let room = this.rooms.get(roomId);
     if (!room) {
       room = new Set();
@@ -44,11 +80,9 @@ export class RoomService {
     }
     room.add(socketConnection);
     this.socketToRoom.set(socketConnection, roomId);
-    const name = socketConnection.data && socketConnection.data.name ? socketConnection.data.name : 'Anonyme';
+    const name = socketConnection.data?.name || 'Anonyme';
 
-    const playerNames = Array.from(room).map((client) =>
-      client.data && client.data.name ? client.data.name : 'Anonyme',
-    );
+    const playerNames = Array.from(room).map((client) => client.data?.name || 'Anonyme');
     try {
       socketConnection.send(JSON.stringify({ type: 'players', players: playerNames }));
     } catch {
@@ -57,7 +91,7 @@ export class RoomService {
     this.broadcastToRoom(roomId, JSON.stringify({ type: 'join', name }), name);
   }
 
-  leaveRoom(socketConnection) {
+  leaveRoom(socketConnection: SocketConnection): void {
     const roomId = this.socketToRoom.get(socketConnection);
     if (roomId) {
       const room = this.rooms.get(roomId);
@@ -67,31 +101,31 @@ export class RoomService {
           this.rooms.delete(roomId);
         }
       }
-      const name = socketConnection.data && socketConnection.data.name ? socketConnection.data.name : 'Anonyme';
+      const name = socketConnection.data?.name || 'Anonyme';
       this.broadcastToRoom(roomId, JSON.stringify({ type: 'leave', name }), name);
       this.socketToRoom.delete(socketConnection);
     }
   }
 
-  broadcastToRoom(roomId, message, senderName) {
+  broadcastToRoom(roomId: string, message: string, senderName?: string): void {
     const room = this.rooms.get(roomId);
     if (!room) return;
     for (const participantSocket of room) {
-      if (senderName && participantSocket.data && participantSocket.data.name === senderName) continue;
+      if (senderName && participantSocket.data?.name === senderName) continue;
       if (participantSocket.readyState === 1) {
         participantSocket.send(message);
       }
     }
   }
 
-  getRoomId(socketConnection) {
+  getRoomId(socketConnection: SocketConnection): string | undefined {
     return this.socketToRoom.get(socketConnection);
   }
 
-  async startGame(roomId, animeLimit) {
+  async startGame(roomId: string, animeLimit: number): Promise<void> {
     const animeList = await AnimeService.getInstance().getAnimeList();
     const shuffled = animeList.sort(() => Math.random() - 0.5);
-    const animes = shuffled.slice(0, animeLimit);
+    const animes = shuffled.slice(0, animeLimit) as unknown as RoomAnime[];
 
     this.roomAnimes.set(roomId, animes);
     const room = this.rooms.get(roomId);
@@ -110,12 +144,16 @@ export class RoomService {
     this.broadcastToRoom(roomId, JSON.stringify({ type: 'start' }));
   }
 
-  handleProposal(socketConnection, guess, roundIndex) {
+  handleProposal(socketConnection: SocketConnection, guess: unknown, roundIndex: unknown): void {
+    if (typeof roundIndex !== 'number' || !Number.isInteger(roundIndex) || roundIndex < 0) return;
+
+    const guessLike = asGuessLike(guess);
+
     const roomId = this.getRoomId(socketConnection);
     if (!roomId) return;
     const playerKey = this.getPlayerKeyFromSocket(socketConnection);
-    if (!this.roomProgress.has(roomId)) this.roomProgress.set(roomId, {});
-    const progress = this.roomProgress.get(roomId);
+    const progress = this.ensureRoomProgress(roomId);
+
     if (!progress[playerKey]) {
       progress[playerKey] = {
         currentRoundIndex: 0,
@@ -124,9 +162,9 @@ export class RoomService {
       };
     }
     if (!progress[playerKey].guessesByRound[roundIndex]) progress[playerKey].guessesByRound[roundIndex] = [];
-    progress[playerKey].guessesByRound[roundIndex].push(guess);
+    if (guessLike) progress[playerKey].guessesByRound[roundIndex].push(guessLike);
     const animes = this.roomAnimes.get(roomId) || [];
-    if (guess && guess.isCorrect && animes[roundIndex]) {
+    if (guessLike?.isCorrect && animes[roundIndex]) {
       progress[playerKey].foundCharacters.push({
         id: animes[roundIndex].characterId,
         name: animes[roundIndex].characterName,
@@ -144,33 +182,32 @@ export class RoomService {
     );
   }
 
-  getRoomAnimes(roomId) {
+  getRoomAnimes(roomId: string): RoomAnime[] | undefined {
     return this.roomAnimes.get(roomId);
   }
 
-  getRoomStatus(roomId) {
+  getRoomStatus(roomId: string): { started: boolean } {
     const animes = this.getRoomAnimes(roomId);
     const started = !!(animes && animes.length > 0);
     return { started };
   }
 
-  getProgressWithStats(roomId, playerKey) {
+  getProgressWithStats(roomId: string, playerKey: string) {
     const progress = this.getPlayerProgress(roomId, playerKey);
     if (!progress) return null;
 
     const triesByAnime = Object.fromEntries(
-      Object.entries(progress.guessesByRound || {}).map(([roundIndex, guesses]) => [
-        roundIndex,
-        (guesses as any[]).length,
-      ]),
+      Object.entries(progress.guessesByRound || {}).map(([roundIndex, guesses]) => [roundIndex, guesses.length]),
     );
-    const totalTries = Object.values(triesByAnime).reduce((sum, tries) => sum + tries, 0);
+    const totalTries = Object.values(triesByAnime).reduce((sum, tries) => sum + Number(tries), 0);
 
     const correctGuessesHistory = Object.keys(progress.guessesByRound || {})
       .map((roundIndex) => Number(roundIndex))
       .sort((a, b) => a - b)
-      .map((roundIndex) => (progress.guessesByRound?.[roundIndex] || []).find((guess: any) => guess?.isCorrect))
-      .filter((guess: any) => !!guess);
+      .map((currentRoundIndex) =>
+        (progress.guessesByRound?.[currentRoundIndex] || []).find((attempt) => attempt?.isCorrect),
+      )
+      .filter((attempt) => !!attempt);
 
     return {
       ...progress,
@@ -180,7 +217,7 @@ export class RoomService {
     };
   }
 
-  getRemaining(roomId, playerKey) {
+  getRemaining(roomId: string, playerKey: string): { remaining: number } | null {
     const progress = this.getPlayerProgress(roomId, playerKey);
     const animes = this.getRoomAnimes(roomId) || [];
     if (!progress) return null;
@@ -188,7 +225,13 @@ export class RoomService {
     return { remaining };
   }
 
-  async handleRoomGuess(roomId, playerKey, playerName, guessedAnimeId, animeService) {
+  async handleRoomGuess(
+    roomId: string,
+    playerKey: string,
+    playerName: string,
+    guessedAnimeId: string,
+    animeService: AnimeService,
+  ): Promise<{ status: number; body: GuessResultDTO | { error: string } }> {
     const progress = this.getPlayerProgress(roomId, playerKey);
     if (!progress) return { status: 404, body: { error: 'Not found' } };
 
@@ -198,7 +241,7 @@ export class RoomService {
     if (!refAnime) return { status: 400, body: { error: 'No anime to guess' } };
 
     const currentRoundGuesses = progress.guessesByRound?.[currentRoundIndex] || [];
-    const isDuplicateGuess = currentRoundGuesses.some((guess: any) => guess?.anime?.id === guessedAnimeId);
+    const isDuplicateGuess = currentRoundGuesses.some((attempt) => attempt?.anime?.id === guessedAnimeId);
     if (isDuplicateGuess) {
       return { status: 409, body: { error: 'Anime already guessed for this round' } };
     }
@@ -229,7 +272,15 @@ export class RoomService {
     return { status: 200, body: result };
   }
 
-  notifyRoomAttempt(roomId, playerKey, playerName, roundIndex, guessedAnimeId, result, guessNumber) {
+  notifyRoomAttempt(
+    roomId: string,
+    playerKey: string,
+    playerName: string,
+    roundIndex: number,
+    guessedAnimeId: string,
+    result: GuessResultDTO,
+    guessNumber: number,
+  ): void {
     const room = this.rooms.get(roomId);
     if (!room) return;
 
@@ -252,7 +303,15 @@ export class RoomService {
     }
   }
 
-  notifyRoomFound(roomId, playerKey, playerName, roundIndex, foundAnimeId, result, guessNumber) {
+  notifyRoomFound(
+    roomId: string,
+    playerKey: string,
+    playerName: string,
+    roundIndex: number,
+    foundAnimeId: string,
+    result: GuessResultDTO,
+    guessNumber: number,
+  ): void {
     const room = this.rooms.get(roomId);
     if (!room) return;
 
@@ -275,13 +334,14 @@ export class RoomService {
     }
   }
 
-  resolveRoomWinnerIfFinished(roomId) {
-    const room = this.rooms.get(roomId) as any;
+  resolveRoomWinnerIfFinished(roomId: string): void {
+    const room = this.rooms.get(roomId);
     if (!room) return;
 
     const animes = this.getRoomAnimes(roomId) || [];
-    const allPlayersFinished = Array.from(room).every((socketConnection: any) => {
+    const allPlayersFinished = Array.from(room).every((socketConnection) => {
       const playerKey = socketConnection.data?.userId || socketConnection.data?.name;
+      if (!playerKey) return false;
       const playerProgress = this.getPlayerProgress(roomId, playerKey);
       return !!playerProgress && (playerProgress.currentRoundIndex || 0) >= animes.length;
     });
@@ -289,11 +349,12 @@ export class RoomService {
     if (!allPlayersFinished) return;
 
     const playerResults = Array.from(room)
-      .map((socketConnection: any) => {
+      .map((socketConnection) => {
         const playerKey = socketConnection.data?.userId || socketConnection.data?.name;
+        if (!playerKey) return null;
         const playerProgress = this.getPlayerProgress(roomId, playerKey);
         const totalTries = Object.values(playerProgress?.guessesByRound || {}).reduce(
-          (sum: number, guesses: any) => sum + ((guesses as any[])?.length || 0),
+          (sum: number, guesses) => sum + (guesses?.length || 0),
           0,
         );
         return {
@@ -303,7 +364,12 @@ export class RoomService {
           totalTries,
         };
       })
-      .filter((entry: any) => entry.socketConnection.readyState === 1);
+      .filter(
+        (
+          entry,
+        ): entry is { socketConnection: SocketConnection; playerKey: string; playerName: string; totalTries: number } =>
+          !!entry && entry.socketConnection.readyState === 1,
+      );
 
     if (playerResults.length === 0) return;
 
