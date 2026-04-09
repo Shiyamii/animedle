@@ -22,6 +22,7 @@ type WSOpponentAttemptMsg = {
   guessedAnimeId: string;
   guessedAnimeTitle: string;
   guessNumber: number;
+  attemptScore: number;
 };
 type WSOpponentFoundMsg = {
   type: 'challenge-found';
@@ -31,6 +32,7 @@ type WSOpponentFoundMsg = {
   foundAnimeId: string;
   foundAnimeTitle: string;
   guessNumber: number;
+  attemptScore: number;
 };
 type WSJoinMsg = { type: 'join'; name: string };
 type WSLeaveMsg = { type: 'leave'; name: string };
@@ -109,6 +111,7 @@ export function useChallengePageViewModel() {
       guessedAnimeId: string;
       guessedAnimeTitle: string;
       guessNumber: number;
+      attemptScore: number;
     }>;
   }>({});
   const [opponentFoundByRound, setOpponentFoundByRound] = useState<{
@@ -118,6 +121,7 @@ export function useChallengePageViewModel() {
       foundAnimeId: string;
       foundAnimeTitle: string;
       guessNumber: number;
+      attemptScore: number;
     }>;
   }>({});
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
@@ -260,6 +264,7 @@ export function useChallengePageViewModel() {
             guessedAnimeId: msg.guessedAnimeId,
             guessedAnimeTitle: msg.guessedAnimeTitle,
             guessNumber: msg.guessNumber,
+            attemptScore: msg.attemptScore,
           });
           return { ...prev, [msg.roundIndex]: arr };
         });
@@ -275,6 +280,7 @@ export function useChallengePageViewModel() {
             foundAnimeId: msg.foundAnimeId,
             foundAnimeTitle: msg.foundAnimeTitle,
             guessNumber: msg.guessNumber,
+            attemptScore: msg.attemptScore,
           });
           return { ...prev, [msg.roundIndex]: arr };
         });

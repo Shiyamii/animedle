@@ -4,6 +4,7 @@ import GuessTable from '@/components/GuessTable';
 import { ModeMenu } from '@/components/ModeMenu';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { useChallengePageViewModel } from './useChallengePageViewModel';
 
@@ -39,6 +40,23 @@ export default function ChallengePage() {
     handleJoin,
     handleGuess,
   } = useChallengePageViewModel();
+
+  const currentRoundLiveAttempts = [
+    ...currentRoundOpponentAttempts.map((attempt) => ({
+      key: `attempt-${attempt.playerKey}-${attempt.guessedAnimeId}-${attempt.guessNumber}`,
+      playerName: attempt.playerName,
+      animeTitle: attempt.guessedAnimeTitle,
+      guessNumber: attempt.guessNumber,
+      attemptScore: attempt.attemptScore,
+    })),
+    ...currentRoundOpponentFound.map((found) => ({
+      key: `found-${found.playerKey}-${found.foundAnimeId}-${found.guessNumber}`,
+      playerName: found.playerName,
+      animeTitle: t('challenge.liveGuessFoundAnime'),
+      guessNumber: found.guessNumber,
+      attemptScore: found.attemptScore,
+    })),
+  ].sort((left, right) => left.guessNumber - right.guessNumber || left.playerName.localeCompare(right.playerName));
 
   if (!user) {
     return <div className="text-center text-red-500">{t('challenge.mustBeLoggedIn')}</div>;
@@ -139,35 +157,40 @@ export default function ChallengePage() {
 
                   {(currentRoundOpponentAttempts.length > 0 || currentRoundOpponentFound.length > 0) && (
                     <div className="rounded-lg border border-border bg-background p-4">
-                      <h3 className="mb-3 font-semibold">{t('challenge.opponentAttemptsTitle')}</h3>
-                      <div className="flex flex-col gap-2">
-                        {currentRoundOpponentAttempts.map((attempt, index) => (
-                          <div
-                            key={`${attempt.playerKey}-${attempt.guessedAnimeId}-${index}`}
-                            className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                          >
-                            <span className="font-medium">{attempt.guessedAnimeTitle}</span>
-                            <span className="text-muted-foreground">
-                              {t('challenge.opponentAttemptBy', {
-                                player: attempt.playerName,
-                                count: attempt.guessNumber,
-                              })}
-                            </span>
-                          </div>
-                        ))}
-                        {currentRoundOpponentFound.map((found, index) => (
-                          <div
-                            key={`${found.playerKey}-${found.foundAnimeId}-found-${index}`}
-                            className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm"
-                          >
-                            <span className="font-medium">
-                              {t('challenge.opponentFoundGeneric', { player: found.playerName })}
-                            </span>
-                            <span className="text-muted-foreground">
-                              {t('challenge.opponentTryNumber', { count: found.guessNumber })}
-                            </span>
-                          </div>
-                        ))}
+                      <h3 className="mb-3 font-semibold">{t('challenge.liveGuessesTitle')}</h3>
+                      <div className="w-full overflow-x-auto rounded-md border">
+                        <Table className="min-w-[720px]">
+                          <TableHeader className="bg-primary/8">
+                            <TableRow>
+                              <TableHead className="text-center font-semibold text-primary">
+                                {t('challenge.liveGuessPlayer')}
+                              </TableHead>
+                              <TableHead className="text-center font-semibold text-primary">
+                                {t('challenge.liveGuessAnime')}
+                              </TableHead>
+                              <TableHead className="text-center font-semibold text-primary">
+                                {t('challenge.liveGuessScore')}
+                              </TableHead>
+                              <TableHead className="text-center font-semibold text-primary">
+                                {t('challenge.liveGuessTry')}
+                              </TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {currentRoundLiveAttempts.map((entry) => (
+                              <TableRow key={entry.key} className="hover:bg-transparent">
+                                <TableCell className="text-center font-medium">{entry.playerName}</TableCell>
+                                <TableCell className="text-center">{entry.animeTitle}</TableCell>
+                                <TableCell className="text-center font-semibold text-primary">
+                                  {entry.attemptScore}/8
+                                </TableCell>
+                                <TableCell className="text-center text-muted-foreground">
+                                  {t('challenge.opponentTryNumber', { count: entry.guessNumber })}
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
                       </div>
                     </div>
                   )}

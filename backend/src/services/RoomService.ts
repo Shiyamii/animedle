@@ -225,6 +225,22 @@ export class RoomService {
     return { remaining };
   }
 
+  private getAttemptScore(result: GuessResultDTO): number {
+    const { results } = result;
+    let score = 0;
+
+    score += results.demographicType.isCorrect ? 1 : 0;
+    score += results.episodes.isCorrect ? 1 : 0;
+    score += results.seasonStart.isCorrect ? 1 : 0;
+    score += results.studio.isCorrect ? 1 : 0;
+    score += results.source.isCorrect ? 1 : 0;
+    score += results.genres.isCorrect ? 1 : results.genres.isPartiallyCorrect ? 0.5 : 0;
+    score += results.animeFormat.isCorrect ? 1 : 0;
+    score += results.score.isCorrect ? 1 : 0;
+
+    return score;
+  }
+
   async handleRoomGuess(
     roomId: string,
     playerKey: string,
@@ -298,6 +314,7 @@ export class RoomService {
           guessedAnimeId,
           guessedAnimeTitle: result.anime?.title || guessedAnimeId,
           guessNumber,
+          attemptScore: this.getAttemptScore(result),
         }),
       );
     }
@@ -329,6 +346,7 @@ export class RoomService {
           foundAnimeId: result.anime?.id || foundAnimeId,
           foundAnimeTitle: result.anime?.title || foundAnimeId,
           guessNumber,
+          attemptScore: this.getAttemptScore(result),
         }),
       );
     }

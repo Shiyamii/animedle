@@ -90,6 +90,7 @@
     "genres": "Genres",
     "episodes": "Episodes",
     "season": "Season",
+    "attemptScore": "Attempt score",
     "score": "Score"
   },
   "endless": {
@@ -123,6 +124,15 @@
     "opponentFoundTitle": "Opponent found this round",
     "opponentFoundInTry": "{{player}} found it in {{count}} tries",
     "opponentAttemptsTitle": "Opponent attempts on this anime",
+    "liveGuessesTitle": "Live guess feed",
+    "liveGuessPlayer": "Player",
+    "liveGuessAnime": "Guessed anime",
+    "liveGuessFoundAnime": "found the anime",
+    "liveGuessTry": "Try",
+    "liveGuessScore": "Score",
+    "liveGuessStatus": "Status",
+    "liveGuessAttempt": "Attempt",
+    "liveGuessFound": "Found",
     "opponentAttemptBy": "Try {{count}} by {{player}}",
     "opponentFoundGeneric": "{{player}} found this anime",
     "opponentTryNumber": "Try {{count}}",
