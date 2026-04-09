@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type Fuse from 'fuse.js';
-import { createFuse, filterAnimeList } from '@/viewmodels/guessingViewModel';
-import { useAnimeStore } from '@/stores/animeStore';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { AnimeItemDTO, GuessResultDTO } from '@/stores/animeStore';
+import { useAnimeStore } from '@/stores/animeStore';
 import { useUserStore } from '@/stores/userStore';
+import { createFuse, filterAnimeList } from '@/viewmodels/guessingViewModel';
+import { useChallengeStore } from '../../stores/challengeStore';
 
 type RoomAnime = {
   animeId: string;
@@ -17,18 +18,18 @@ type WSOpponentAttemptMsg = {
   type: 'challenge-attempt';
   playerKey: string;
   playerName: string;
-  animeIdx: number;
-  animeId: string;
-  animeTitle: string;
+  roundIndex: number;
+  guessedAnimeId: string;
+  guessedAnimeTitle: string;
   guessNumber: number;
 };
 type WSOpponentFoundMsg = {
   type: 'challenge-found';
   playerKey: string;
   playerName: string;
-  animeIdx: number;
-  animeId: string;
-  animeTitle: string;
+  roundIndex: number;
+  foundAnimeId: string;
+  foundAnimeTitle: string;
   guessNumber: number;
 };
 type WSJoinMsg = { type: 'join'; name: string };
@@ -61,17 +62,9 @@ function getInitialUrlGameId(): string {
   return searchParams.get('gameid') || '';
 }
 
-function getInitialIsHost(urlGameId: string): boolean {
-  if (typeof window === 'undefined') {
-    return false;
-  }
-  const hostRoom = localStorage.getItem('challenge_host_room');
-  return !!hostRoom && hostRoom === urlGameId;
-}
-
 function getWsUrl(): string {
   const envUrl = import.meta.env.VITE_BACKEND_WS_URL;
-  if (envUrl && envUrl.endsWith('/')) {
+  if (envUrl?.endsWith('/')) {
     return envUrl.slice(0, -1);
   }
   if (envUrl) {
@@ -81,16 +74,19 @@ function getWsUrl(): string {
   return `${proto}://${window.location.hostname}:3001`;
 }
 
-function normalizeGuessesByAnime(value: Record<string, GuessResultDTO[]>): { [animeIdx: number]: GuessResultDTO[] } {
-  const normalized: { [animeIdx: number]: GuessResultDTO[] } = {};
-  for (const [animeIdx, guesses] of Object.entries(value || {})) {
-    normalized[Number(animeIdx)] = [...guesses].reverse();
+function normalizeGuessesByRound(value: Record<string, GuessResultDTO[]>): { [roundIndex: number]: GuessResultDTO[] } {
+  const normalized: { [roundIndex: number]: GuessResultDTO[] } = {};
+  for (const [roundIndex, guesses] of Object.entries(value || {})) {
+    normalized[Number(roundIndex)] = [...guesses].reverse();
   }
   return normalized;
 }
 
 export function useChallengePageViewModel() {
   const animeStore = useAnimeStore();
+  const hostRoomId = useChallengeStore((s) => s.hostRoomId);
+  const setHostRoomId = useChallengeStore((s) => s.setHostRoomId);
+  const clearHostRoomId = useChallengeStore((s) => s.clearHostRoomId);
   const user = useUserStore((s) => s.user);
   const playerKey = user?.id || user?.name;
   const backendUrl = import.meta.env.VITE_API_URL || '';
@@ -102,68 +98,91 @@ export function useChallengePageViewModel() {
   const [joinedRoom, setJoinedRoom] = useState<string | null>(urlGameId || null);
   const [remaining, setRemaining] = useState<number | null>(null);
   const [wsLog, setWsLog] = useState<string[]>([]);
-  const [isHost, setIsHost] = useState<boolean>(() => getInitialIsHost(urlGameId));
   const [animeLimit, setAnimeLimit] = useState(5);
   const [animeList, setAnimeList] = useState<RoomAnime[]>([]);
   const [inputValue, setInputValue] = useState('');
-  const [guessesByAnime, setGuessesByAnime] = useState<{ [animeIdx: number]: GuessResultDTO[] }>({});
-  const [opponentAttemptsByAnime, setOpponentAttemptsByAnime] = useState<{
-    [animeIdx: number]: Array<{ playerKey: string; playerName: string; animeId: string; animeTitle: string; guessNumber: number }>;
+  const [guessesByRound, setGuessesByRound] = useState<{ [roundIndex: number]: GuessResultDTO[] }>({});
+  const [opponentAttemptsByRound, setOpponentAttemptsByRound] = useState<{
+    [roundIndex: number]: Array<{
+      playerKey: string;
+      playerName: string;
+      guessedAnimeId: string;
+      guessedAnimeTitle: string;
+      guessNumber: number;
+    }>;
   }>({});
-  const [opponentFoundByAnime, setOpponentFoundByAnime] = useState<{
-    [animeIdx: number]: Array<{ playerKey: string; playerName: string; animeId: string; animeTitle: string; guessNumber: number }>;
+  const [opponentFoundByRound, setOpponentFoundByRound] = useState<{
+    [roundIndex: number]: Array<{
+      playerKey: string;
+      playerName: string;
+      foundAnimeId: string;
+      foundAnimeTitle: string;
+      guessNumber: number;
+    }>;
   }>({});
-  const [currentAnimeIdx, setCurrentAnimeIdx] = useState(0);
+  const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOutcome, setGameOutcome] = useState<GameOutcome>(null);
   const [winnerName, setWinnerName] = useState<string | null>(null);
   const [isWsOpen, setIsWsOpen] = useState(false);
   const [hasJoinedRoom, setHasJoinedRoom] = useState(false);
   const [players, setPlayers] = useState<string[]>([]);
-  const currentAnimeIdxRef = useRef(0);
+  const currentRoundIndexRef = useRef(0);
+  const gameStartedRef = useRef(false);
 
   useEffect(() => {
-    currentAnimeIdxRef.current = currentAnimeIdx;
-  }, [currentAnimeIdx]);
+    currentRoundIndexRef.current = currentRoundIndex;
+  }, [currentRoundIndex]);
 
-  const fetchRemaining = useCallback(async () => {
-    if (!joinedRoom || !playerKey || !gameStarted) {
-      return;
-    }
+  useEffect(() => {
+    gameStartedRef.current = gameStarted;
+  }, [gameStarted]);
 
-    try {
-      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/remaining?userId=${encodeURIComponent(playerKey)}`);
-      if (!res.ok) {
+  const fetchRemaining = useCallback(
+    async (force = false) => {
+      if (!(joinedRoom && playerKey && (force || gameStartedRef.current))) {
         return;
       }
-      const data = await res.json();
-      setRemaining(data.remaining);
-    } catch {
-      void 0;
-    }
-  }, [joinedRoom, playerKey, gameStarted, backendUrl]);
+
+      try {
+        const res = await fetch(
+          `${backendUrl}/api/room/${joinedRoom}/remaining?userId=${encodeURIComponent(playerKey)}`,
+        );
+        if (!res.ok) {
+          return;
+        }
+        const data = await res.json();
+        setRemaining(data.remaining);
+      } catch {
+        // ignore request errors
+      }
+    },
+    [joinedRoom, playerKey, backendUrl],
+  );
 
   const fetchProgression = useCallback(async () => {
-    if (!joinedRoom || !playerKey) {
+    if (!(joinedRoom && playerKey)) {
       return;
     }
 
     try {
-      const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/progression?userId=${encodeURIComponent(playerKey)}`);
+      const res = await fetch(
+        `${backendUrl}/api/room/${joinedRoom}/progression?userId=${encodeURIComponent(playerKey)}`,
+      );
       if (!res.ok) {
         return;
       }
       const data = await res.json();
-      setGuessesByAnime(normalizeGuessesByAnime(data.guessesByAnime || {}));
-      setCurrentAnimeIdx(data.currentAnimeIdx || 0);
+      setGuessesByRound(normalizeGuessesByRound(data.guessesByRound || {}));
+      setCurrentRoundIndex(data.currentRoundIndex || 0);
     } catch {
-      void 0;
+      // ignore request errors
     }
   }, [joinedRoom, playerKey, backendUrl]);
 
   const currentRoundGuessedAnimeIds = useMemo(() => {
-    return new Set((guessesByAnime[currentAnimeIdx] || []).map((guess) => guess.anime.id));
-  }, [guessesByAnime, currentAnimeIdx]);
+    return new Set((guessesByRound[currentRoundIndex] || []).map((guess) => guess.anime.id));
+  }, [guessesByRound, currentRoundIndex]);
 
   const guessableAnimeList = useMemo(() => {
     return animeStore.animeList.filter((anime: AnimeItemDTO) => !currentRoundGuessedAnimeIds.has(anime.id));
@@ -179,27 +198,29 @@ export function useChallengePageViewModel() {
   }, [inputValue, fuse]);
 
   const correctGuessesHistory = useMemo(() => {
-    return Object.entries(guessesByAnime)
-      .map(([animeIdx, guesses]) => ({ animeIdx: Number(animeIdx), guesses }))
-      .sort((a, b) => a.animeIdx - b.animeIdx)
+    return Object.entries(guessesByRound)
+      .map(([roundIndex, guesses]) => ({ roundIndex: Number(roundIndex), guesses }))
+      .sort((a, b) => a.roundIndex - b.roundIndex)
       .map(({ guesses }) => guesses.find((guess) => guess.isCorrect))
       .filter((guess): guess is GuessResultDTO => !!guess);
-  }, [guessesByAnime]);
+  }, [guessesByRound]);
 
   const currentRoundOpponentAttempts = useMemo(
-    () => opponentAttemptsByAnime[currentAnimeIdx] || [],
-    [opponentAttemptsByAnime, currentAnimeIdx],
+    () => opponentAttemptsByRound[currentRoundIndex] || [],
+    [opponentAttemptsByRound, currentRoundIndex],
   );
 
   const currentRoundOpponentFound = useMemo(
-    () => opponentFoundByAnime[currentAnimeIdx] || [],
-    [opponentFoundByAnime, currentAnimeIdx],
+    () => opponentFoundByRound[currentRoundIndex] || [],
+    [opponentFoundByRound, currentRoundIndex],
   );
+
+  const isHost = hostRoomId === joinedRoom;
 
   const isFilteringLoading = false;
 
   useEffect(() => {
-    if (!joinedRoom || !user?.name) {
+    if (!(joinedRoom && user?.name)) {
       return;
     }
 
@@ -221,41 +242,41 @@ export function useChallengePageViewModel() {
       const msg = JSON.parse(event.data) as WSMsg;
 
       if (msg.type === 'proposal') {
-        setGuessesByAnime((prev) => {
-          const animeIdx = currentAnimeIdxRef.current;
-          const arr = prev[animeIdx] ? [...prev[animeIdx]] : [];
+        setGuessesByRound((prev) => {
+          const roundIndex = currentRoundIndexRef.current;
+          const arr = prev[roundIndex] ? [...prev[roundIndex]] : [];
           arr.push(msg.guess);
-          return { ...prev, [animeIdx]: arr };
+          return { ...prev, [roundIndex]: arr };
         });
       } else if (msg.type === 'challenge-attempt') {
         if (!playerKey || msg.playerKey === playerKey) {
           return;
         }
-        setOpponentAttemptsByAnime((prev) => {
-          const arr = prev[msg.animeIdx] ? [...prev[msg.animeIdx]] : [];
+        setOpponentAttemptsByRound((prev) => {
+          const arr = prev[msg.roundIndex] ? [...prev[msg.roundIndex]] : [];
           arr.push({
             playerKey: msg.playerKey,
             playerName: msg.playerName,
-            animeId: msg.animeId,
-            animeTitle: msg.animeTitle,
+            guessedAnimeId: msg.guessedAnimeId,
+            guessedAnimeTitle: msg.guessedAnimeTitle,
             guessNumber: msg.guessNumber,
           });
-          return { ...prev, [msg.animeIdx]: arr };
+          return { ...prev, [msg.roundIndex]: arr };
         });
       } else if (msg.type === 'challenge-found') {
         if (!playerKey || msg.playerKey === playerKey) {
           return;
         }
-        setOpponentFoundByAnime((prev) => {
-          const arr = prev[msg.animeIdx] ? [...prev[msg.animeIdx]] : [];
+        setOpponentFoundByRound((prev) => {
+          const arr = prev[msg.roundIndex] ? [...prev[msg.roundIndex]] : [];
           arr.push({
             playerKey: msg.playerKey,
             playerName: msg.playerName,
-            animeId: msg.animeId,
-            animeTitle: msg.animeTitle,
+            foundAnimeId: msg.foundAnimeId,
+            foundAnimeTitle: msg.foundAnimeTitle,
             guessNumber: msg.guessNumber,
           });
-          return { ...prev, [msg.animeIdx]: arr };
+          return { ...prev, [msg.roundIndex]: arr };
         });
       } else if (msg.type === 'joined') {
         setHasJoinedRoom(true);
@@ -266,10 +287,10 @@ export function useChallengePageViewModel() {
         setGameStarted(true);
         setGameOutcome(null);
         setWinnerName(null);
-        setOpponentAttemptsByAnime({});
-        setOpponentFoundByAnime({});
+        setOpponentAttemptsByRound({});
+        setOpponentFoundByRound({});
         fetchProgression().catch(() => {});
-        fetchRemaining().catch(() => {});
+        fetchRemaining(true).catch(() => {});
       } else if (msg.type === 'win') {
         setWsLog((log) => [...log, '[GAME] You win']);
         setGameOutcome('win');
@@ -314,16 +335,30 @@ export function useChallengePageViewModel() {
       return;
     }
 
-    fetch(`${backendUrl}/api/room/${joinedRoom}/animes`)
-      .then((res) => res.json())
-      .then((data) => {
+    const loadRoomState = async () => {
+      try {
+        const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/animes`);
+        const data = await res.json();
         setAnimeList(data.animes || []);
-      })
-      .catch(() => {
+      } catch {
         setAnimeList([]);
-      });
-  }, [joinedRoom, backendUrl]);
+      }
 
+      try {
+        const res = await fetch(`${backendUrl}/api/room/${joinedRoom}/status`);
+        const data = await res.json();
+        if (data.started) {
+          setGameStarted(true);
+        }
+      } catch {
+        // ignore request errors
+      }
+    };
+
+    loadRoomState().catch(() => {
+      // ignore request errors
+    });
+  }, [joinedRoom, backendUrl]);
 
   useEffect(() => {
     if (animeStore.animeList.length === 0) {
@@ -339,21 +374,6 @@ export function useChallengePageViewModel() {
     fetchRemaining().catch(() => {});
   }, [fetchRemaining]);
 
-  useEffect(() => {
-    if (!joinedRoom) {
-      return;
-    }
-
-    fetch(`${backendUrl}/api/room/${joinedRoom}/status`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.started) {
-          setGameStarted(true);
-        }
-      })
-      .catch(() => {});
-  }, [joinedRoom, backendUrl]);
-
   const handleStartGame = () => {
     if (!wsRef.current || wsRef.current.readyState !== WebSocket.OPEN || !hasJoinedRoom || players.length < 2) {
       return;
@@ -367,7 +387,7 @@ export function useChallengePageViewModel() {
   const handleCreate = () => {
     const id = Math.random().toString(36).slice(2, 8);
     setRoomId(id);
-    setIsHost(true);
+    setHostRoomId(id);
     setJoinedRoom(id);
     setGameStarted(false);
     setGameOutcome(null);
@@ -376,7 +396,6 @@ export function useChallengePageViewModel() {
     setWsLog([]);
 
     if (typeof window !== 'undefined') {
-      localStorage.setItem('challenge_host_room', id);
       window.location.href = `${window.location.pathname}?gameid=${id}`;
     }
   };
@@ -398,7 +417,6 @@ export function useChallengePageViewModel() {
     }
 
     const cleanRoomId = roomId.trim();
-    setIsHost(false);
     setJoinedRoom(cleanRoomId);
     setGameStarted(false);
     setGameOutcome(null);
@@ -407,16 +425,16 @@ export function useChallengePageViewModel() {
     setWsLog([]);
 
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('challenge_host_room');
+      clearHostRoomId();
       window.location.href = `${window.location.pathname}?gameid=${cleanRoomId}`;
     }
   };
 
-  const handleGuess = async (animeId: string) => {
-    setWsLog((log) => [...log, `[DEBUG] Selection animeId=${animeId}`]);
+  const handleGuess = async (guessedAnimeId: string) => {
+    setWsLog((log) => [...log, `[DEBUG] Selection guessedAnimeId=${guessedAnimeId}`]);
 
-    if (currentRoundGuessedAnimeIds.has(animeId)) {
-      setWsLog((log) => [...log, `[WARN] Duplicate guess blocked animeId=${animeId}`]);
+    if (currentRoundGuessedAnimeIds.has(guessedAnimeId)) {
+      setWsLog((log) => [...log, `[WARN] Duplicate guess blocked guessedAnimeId=${guessedAnimeId}`]);
       return;
     }
 
@@ -425,22 +443,22 @@ export function useChallengePageViewModel() {
       return;
     }
 
-    if (!playerKey || !user?.name) {
+    if (!(playerKey && user?.name)) {
       setWsLog((log) => [...log, '[ERROR] Guess blocked: no user']);
       return;
     }
 
-    if (!animeList[currentAnimeIdx]) {
-      setWsLog((log) => [...log, `[WARN] No target anime for index=${currentAnimeIdx}, trying request anyway`]);
+    if (!animeList[currentRoundIndex]) {
+      setWsLog((log) => [...log, `[WARN] No target anime for roundIndex=${currentRoundIndex}, trying request anyway`]);
     }
 
-    setWsLog((log) => [...log, `[SEND] POST /api/room/${joinedRoom}/guess animeId=${animeId}`]);
+    setWsLog((log) => [...log, `[SEND] POST /api/room/${joinedRoom}/guess guessedAnimeId=${guessedAnimeId}`]);
     let response: Response;
     try {
       response = await fetch(`${backendUrl}/api/room/${joinedRoom}/guess`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: playerKey, user: user.name, animeId }),
+        body: JSON.stringify({ userId: playerKey, user: user.name, guessedAnimeId }),
       });
     } catch (error) {
       setWsLog((log) => [...log, `[ERROR] Guess request crashed: ${String(error)}`]);
@@ -475,8 +493,8 @@ export function useChallengePageViewModel() {
     filteredAnimeList,
     isFilteringLoading,
     correctGuessesHistory,
-    guessesByAnime,
-    currentAnimeIdx,
+    guessesByRound,
+    currentRoundIndex,
     gameStarted,
     gameOutcome,
     winnerName,

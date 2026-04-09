@@ -15,7 +15,6 @@ import DailyGuessingPage from '@/pages/daily/DailyGuessingPage.tsx';
 import EndlessPage from '@/pages/endless/EndlessModePage.tsx';
 import HomePage from '@/pages/home/HomePage.tsx';
 import ChallengePage from './pages/challenge/ChallengePage';
-import RoomLogPage from './pages/challenge/RoomLogPage';
 
 const router = createBrowserRouter([
   {
@@ -60,11 +59,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/challenge',
-            element: <ChallengePage />, 
-          },
-          {
-            path: '/challenge/log',
-            element: <RoomLogPage />,
+            element: <ChallengePage />,
           },
         ],
       },
@@ -81,7 +76,13 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('Root element not found');
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,

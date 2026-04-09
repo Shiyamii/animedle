@@ -152,6 +152,7 @@
     }
   },
   "javascript": {
+    "globals": ["Bun"],
     "formatter": {
       "quoteStyle": "single",
       "jsxQuoteStyle": "double",

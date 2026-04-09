@@ -1,4 +1,3 @@
-import { log } from 'console';
 import fs from 'fs';
 import fetch from 'node-fetch';
 
@@ -148,8 +147,9 @@ function fetchAnimeRelations(id: number): Promise<JikanRelationsResponse> {
 }
 
 async function fetchAnime(id: number): Promise<JikanAnime> {
-  if (fetchedAnimeCache.has(id)) {
-    return fetchedAnimeCache.get(id)!;
+  const cachedAnime = fetchedAnimeCache.get(id);
+  if (cachedAnime) {
+    return cachedAnime;
   }
   const url = `https://api.jikan.moe/v4/anime/${id}`;
   const response = await fetchFromJikan<JikanAnimeResponse>(url);
@@ -183,63 +183,63 @@ async function getAllRelationsOfAnime(
     return { first: id, relatedIds: [] };
   }
 
-  const anime = await fetchAnime(id);
-  if (anime.type === 'Movie') {
+  const currentAnime = await fetchAnime(id);
+  if (currentAnime.type === 'Movie') {
     return { first: id, relatedIds: [] };
   }
   visited.add(id);
 
   const relationsResponse = await fetchAnimeRelations(id);
   const relatedAnimes = relationsResponse.data;
-  const allRelatedIds: number[] = [];
-  let first = id;
+  const prequelResults =
+    relation === 'Sequel'
+      ? { first: null as number | null, relatedIds: [] as number[] }
+      : await collectRelatedBranch(relatedAnimes, visited, 'Prequel');
+  const sequelResults =
+    relation === 'Prequel'
+      ? { first: null as number | null, relatedIds: [] as number[] }
+      : await collectRelatedBranch(relatedAnimes, visited, 'Sequel');
 
-  if (relation === 'Prequel' || relation === 'all') {
-    const prequelIds = relatedAnimes
-      .filter((rel) => rel.relation === 'Prequel')
-      .flatMap((rel) =>
-        rel.entry
-          .filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id))
-          .map((entry) => entry.mal_id),
-      );
-    for (const prequelId of prequelIds) {
-      if (visited.has(prequelId)) {
-        continue;
-      }
-      const anime = await fetchAnime(prequelId);
-      if (anime.type === 'Movie') {
-        continue;
-      }
-      const prequels = await getAllRelationsOfAnime(prequelId, visited, 'Prequel');
-      first = prequels.first;
-      allRelatedIds.push(...prequels.relatedIds);
+  return {
+    first: prequelResults.first ?? id,
+    relatedIds: [id, ...prequelResults.relatedIds, ...sequelResults.relatedIds],
+  };
+}
+
+async function collectRelatedBranch(
+  relatedAnimes: JikanRelation[],
+  visited: Set<number>,
+  relationType: 'Prequel' | 'Sequel',
+): Promise<{ first: number | null; relatedIds: number[] }> {
+  const relatedIds = relatedAnimes
+    .filter((rel) => rel.relation === relationType)
+    .flatMap((rel) =>
+      rel.entry
+        .filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id))
+        .map((entry) => entry.mal_id),
+    );
+
+  let first: number | null = null;
+  const collectedIds: number[] = [];
+
+  for (const relatedId of relatedIds) {
+    if (visited.has(relatedId)) {
+      continue;
     }
-  }
-  if (relation === 'Sequel' || relation === 'all') {
-    const sequelsIds = relatedAnimes
-      .filter((rel) => rel.relation === 'Sequel')
-      .flatMap((rel) =>
-        rel.entry
-          .filter((entry) => entry.type === 'anime' && !relationIdsToIgnore.has(entry.mal_id))
-          .map((entry) => entry.mal_id),
-      );
 
-    for (const sequelId of sequelsIds) {
-      if (visited.has(sequelId)) {
-        continue;
-      }
-      const anime = await fetchAnime(sequelId);
-      if (!anime) {
-      }
-      if (anime.type === 'Movie') {
-        continue;
-      }
-      const subRelatedIds = (await getAllRelationsOfAnime(sequelId, visited, 'Sequel')).relatedIds;
-      allRelatedIds.push(...subRelatedIds);
+    const relatedAnime = await fetchAnime(relatedId);
+    if (relatedAnime.type === 'Movie') {
+      continue;
     }
+
+    const nestedResults = await getAllRelationsOfAnime(relatedId, visited, relationType);
+    if (first === null) {
+      first = nestedResults.first;
+    }
+    collectedIds.push(...nestedResults.relatedIds);
   }
 
-  return { first: first, relatedIds: [id, ...allRelatedIds] };
+  return { first, relatedIds: collectedIds };
 }
 
 /**
@@ -309,7 +309,6 @@ async function fetchAndFilterAnimeData() {
       if (!visitedAnimeIds.has(anime.mal_id) && allAnime.length < TARGET_ANIME_COUNT) {
         const fullAnime = await getAnime(anime.mal_id);
         allAnime.push(fullAnime);
-        log(`Anime ID ${anime.mal_id} ajouté. Total actuel: ${allAnime.length}`);
       }
     }
     hasNextPage = pageData.pagination?.has_next_page ?? false;
@@ -345,7 +344,6 @@ async function fecthAndFilterCharacterData(animes: FilteredAnime[]) {
     if (anime.mal_id) {
       const mainCharacter = await getMainCharacter(anime.mal_id);
       charactersData[anime.mal_id] = mainCharacter;
-      log(`Personnage principal de l'anime ID ${anime.mal_id} récupéré.`);
     }
   }
 

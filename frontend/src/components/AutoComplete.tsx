@@ -3,7 +3,7 @@
 import { Command as CommandPrimitive } from 'cmdk';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList, CommandInput } from '@/components/ui/command';
+import { Command, CommandEmpty, CommandGroup, CommandItem, CommandList } from '@/components/ui/command';
 import type { AnimeItemDTO } from '@/stores/animeStore';
 
 export type AutoCompleteProps = {
@@ -41,17 +41,13 @@ export function AutocompleteTextInput({
 
   return (
     <Command ref={wrapperRef} shouldFilter={false} className="relative w-full overflow-visible">
-      <input
-        type="text"
+      <CommandPrimitive.Input
         placeholder={t('autocomplete.placeholder')}
         value={inputValue}
-        autoFocus
         autoComplete="off"
         name="searchAnime"
-        style={{ zIndex: 1000, pointerEvents: 'auto', background: 'white', color: 'black', width: '100%', border: '1px solid #ccc', borderRadius: 4, padding: 8, marginBottom: 8 }}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          const value = e.target.value;
-          console.log('[DEBUG] onChange autocomplete', value);
+        className="h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40"
+        onValueChange={(value: string) => {
           setInputValue(value);
           setIsOpen(value.length > 0);
           if (selectedValue) {
