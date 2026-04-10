@@ -25,7 +25,7 @@ export function HintSpoilerBlock({
 
   useEffect(() => {
     setRevealed(false);
-  }, [contentKey]);
+  }, []);
 
   if (empty) {
     return (
