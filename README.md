@@ -1,5 +1,32 @@
 # Animedle
 
+## URL de l'application
+Déployé sur le serveur de Tamas [Animedle](https://animedle.apps.shiyamii.com/).
+
+## Description
+
+**Animedle** est un jeu web dans l’esprit des *daily games* (type Wordle) : vous devez identifier des animes à partir d’indices et de comparaisons avec vos propositions. Les titres proviennent d’une base de données alimentée via l’API [Jikan](https://jikan.moe/) (MyAnimeList). L’accueil propose un menu pour choisir le mode ; certains modes nécessitent un compte (Challenge).
+
+### Daily Guessing
+
+Un **anime mystère par jour**, commun à tous les joueurs. Vous proposez des titres ; chaque essai est comparé à la cible (studio, genres, saison, etc.) pour vous rapprocher de la bonne réponse. La partie est liée au calendrier : un nouvel anime est disponible chaque jour.
+
+### Endless
+
+**Enchaînement sans limite** : à chaque fois, un anime est tiré au hasard dans la base. Une fois trouvé, vous enchaînez avec un nouvel anime. Le mode suit une **série** (streak actuelle et meilleure série) pour mesurer votre régularité.
+
+### Personnage
+
+Vous devez deviner **de quel anime provient le personnage du jour**. Une image du personnage (souvent floutée au départ) et des **indices** se débloquent au fil des essais (palier par palier). Vous proposez des animes comme dans les autres modes ; le but est d’identifier la série source du personnage.
+
+### Personnage (endless)
+
+Même principe que **Personnage**, mais avec un **nouveau personnage** à chaque manche, sans contrainte journalière : idéal pour s’entraîner en continu ou enchaîner les parties.
+
+### Challenge
+
+Mode **multijoueur en temps réel** : création ou rejoindre une salle (code ou lien), plusieurs joueurs, **plusieurs animes à deviner** dans la partie. Les tentatives et les trouvailles des adversaires sont visibles en direct (WebSocket). **Connexion obligatoire** pour accéder à ce mode.
+
 ## Technologies utilisées
 
 | Technologie | Rôle | URL |
@@ -14,12 +41,15 @@
 | BetterAuth | Système d'authentification | [https://betterauth.dev/](https://betterauth.dev/) |
 | Mongoose | ODM pour MongoDB | [https://mongoosejs.com/](https://mongoosejs.com/) |
 | node-cron | Planification de tâches pour Node.js | [https://www.npmjs.com/package/node-cron](https://www.npmjs.com/package/node-cron) |
+| biome | Outil de formatage et de linting pour JavaScript et TypeScript | [https://biomejs.dev/](https://biomejs.dev/) |
+| Husky | Outil de gestion de hooks Git pour automatiser les tâches de développement (lint avec biome) | [https://typicode.github.io/husky/](https://typicode.github.io/husky/) |
 
 ### Autres bibliothèques et outils
 - **Fuse.js** : Bibliothèque de recherche floue pour JavaScript.
 - **framer-motion** : Bibliothèque d'animations pour React.
 - **lucide-react** : Collection d'icônes pour React.
 - **canvas-confetti** : Bibliothèque pour créer des confettis animés dans le navigateur.
+- **concurrently** : Outil pour exécuter plusieurs commandes en parallèle dans le terminal.
 
 
 
