@@ -60,16 +60,19 @@ const ArrowHint = ({ direction }: { direction: 'up' | 'down' }) => {
 export default function GuessTable({
   guesses,
   guessStats = {},
+  showGuessNumber = false,
 }: {
   guesses: GuessResultDTO[];
   guessStats?: Record<string, number>;
+  showGuessNumber?: boolean;
 }) {
   const { t } = useTranslation();
   return (
     <div className="w-full overflow-x-auto rounded-md border">
-      <Table className="min-w-[800px]">
+      <Table className={showGuessNumber ? 'min-w-[900px]' : 'min-w-[800px]'}>
         <TableHeader className="bg-primary/8">
           <TableRow>
+            {showGuessNumber && <TableHead className="text-center font-semibold text-primary">Tentative</TableHead>}
             <TableHead className="text-center font-semibold text-primary">{t('guessTable.anime')}</TableHead>
             <TableHead className="text-center font-semibold text-primary">{t('guessTable.format')}</TableHead>
             <TableHead className="text-center font-semibold text-primary">{t('guessTable.demographic')}</TableHead>
@@ -97,6 +100,9 @@ export default function GuessTable({
             return (
               <TableRow key={`${a.id}-${rowIndex}`} className="mx-auto border-b-0 hover:bg-transparent">
                 {/** L'animation est active uniquement sur la première ligne. */}
+                {showGuessNumber && (
+                  <TableCell className="text-center align-middle font-semibold">{guess.guessNumber}</TableCell>
+                )}
                 {/* 1. Anime - Delay 0 */}
                 <AnimatedCell
                   delay={0}
