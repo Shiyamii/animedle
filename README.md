@@ -1,5 +1,26 @@
 # Animedle
 
+## Technologies utilisées
+
+| Technologie | Rôle | URL |
+| --- | --- | --- |
+| Bun | Gestionnaire de paquets et exécuteur de scripts | [https://bun.sh/](https://bun.sh/) |
+| React (avec react-drouter et react-i18next) | Bibliothèque front-end | [https://react.dev/](https://react.dev/) |
+| Vite | Outil de build pour le front-end | [https://vitejs.dev/](https://vitejs.dev/) |
+| ShadeCN | UI library pour React (avec Tailwindcss et RadixUI) | [https://shadcn.com/](https://shadcn.com/) |
+| TweakCN | Theme builder pour ShadeCN | [https://tweakcn.com/](https://tweakcn.com/) |
+| Zustand | State management pour React | [https://zustand-demo.pmnd.rs/](https://zustand-demo.pmnd.rs/) |
+| Hono | Framework back-end | [https://hono.dev/](https://hono.dev/) |
+| BetterAuth | Système d'authentification | [https://betterauth.dev/](https://betterauth.dev/) |
+| Mongoose | ODM pour MongoDB | [https://mongoosejs.com/](https://mongoosejs.com/) |
+| node-cron | Planification de tâches pour Node.js | [https://www.npmjs.com/package/node-cron](https://www.npmjs.com/package/node-cron) |
+
+### Autres bibliothèques et outils
+- **Fuse.js** : Bibliothèque de recherche floue pour JavaScript.
+- **framer-motion** : Bibliothèque d'animations pour React.
+- **lucide-react** : Collection d'icônes pour React.
+- **canvas-confetti** : Bibliothèque pour créer des confettis animés dans le navigateur.
+
 ## Data fetcher
 
 This is a separate package responsible for fetching and filtering data from the Jikan API and storing it in a MongoDB database. It is designed to run independently of the main application, allowing for efficient data management and updates.
