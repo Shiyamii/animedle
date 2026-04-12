@@ -6,12 +6,15 @@ function generateAvatarSeed(): string {
   return Math.random().toString(36).substring(2, 10);
 }
 
+const trustedOrigins = process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : ['*'];
+trustedOrigins.push('http://localhost:5173');
+
 export const auth = betterAuth({
   database: mongodbAdapter(db),
   emailAndPassword: {
     enabled: true,
   },
-  trustedOrigins: ['http://localhost:5173'],
+  trustedOrigins: trustedOrigins,
   user: {
     additionalFields: {
       avatarSeed: {
