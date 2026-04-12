@@ -14,6 +14,8 @@ services:
     environment:
       - MONGODB_URL=mongodb://admin:adminpassword@mongo:27017/animedle?authSource=admin
       - FRONTEND_URL=http://localhost:5173
+      - VITE_API_URL=http://localhost:3000
+      - VITE_BACKEND_WS_URL=ws://localhost:3001
 
 include:
   - docker-compose.yml

@@ -3,6 +3,9 @@
 ## URL de l'application
 Déployé sur le serveur de Tamas [Animedle](https://animedle.apps.shiyamii.com/).
 
+### Utilisateurs admin
+-- A ajouter --
+
 ## Description
 
 **Animedle** est un jeu web dans l’esprit des *daily games* (type Wordle) : vous devez identifier des animes à partir d’indices et de comparaisons avec vos propositions. Les titres proviennent d’une base de données alimentée via l’API [Jikan](https://jikan.moe/) (MyAnimeList). L’accueil propose un menu pour choisir le mode ; certains modes nécessitent un compte (Challenge).
@@ -26,6 +29,16 @@ Même principe que **Personnage**, mais avec un **nouveau personnage** à chaque
 ### Challenge
 
 Mode **multijoueur en temps réel** : création ou rejoindre une salle (code ou lien), plusieurs joueurs, **plusieurs animes à deviner** dans la partie. Les tentatives et les trouvailles des adversaires sont visibles en direct (WebSocket). **Connexion obligatoire** pour accéder à ce mode.
+
+## Équipe
+
+Répartition des tâches, pour plus de détails voir [TASKS.md](./TASKS.md).
+
+| Prénom | Nom | Utilisateur GitHub | Tâches réalisées |
+| --- | --- | --- | --- |
+| Samy | Ben Dhiab | [samsoucoupe](https://github.com/samsoucoupe) | Système de scraping (fetch des données) ; mise en place du WebSocket et intégration frontend ; mise en place du Challenge et intégration frontend |
+| Tamas | Palotas | [Shiyamii](https://github.com/Shiyamii) | Vérification et nettoyage des données ; complétion des données ; adaptation du format des données pour l’insertion ; Anime Guessing (système, cron de l’anime du jour, mode endless) ; Character Guessing (système, cron du personnage du jour, mode endless) ; déploiement (dockerisation, configuration du serveur) |
+| Titouan | Lacombe--Fabre | [Tit0u4N](https://github.com/Tit0u4N) | Authentification ; espace administrateur ; refonte visuelle |
 
 ## Technologies utilisées
 
@@ -56,6 +69,7 @@ Mode **multijoueur en temps réel** : création ou rejoindre une salle (code ou 
 ## Prérequis 
 - Node.js (version 18 ou supérieure recommandée)
 - Bun (vous pouvez l'installer depuis [https://bun.sh/](https://bun.sh/))
+- Docker et Docker Compose (pour MongoDB avec `docker-compose.yml` ou la stack de dev avec `docker-compose.dev.yml`)
 
 ### Bun
 Bun est un gestionnaire de paquets et un exécuteur de scripts rapide et moderne pour JavaScript et TypeScript. Il offre des performances améliorées par rapport à d'autres gestionnaires de paquets, ce qui en fait un excellent choix pour ce projet. Assurez-vous d'avoir Bun installé sur votre machine pour pouvoir exécuter les scripts et gérer les dépendances du projet.
@@ -64,6 +78,79 @@ Attention : Bun est nécessaire pour exécuter ce projet, il gère nottament les
 
 
 
+
+## Comment démarrer le projet
+
+Deux approches courantes : ne lancer que la base avec le **Docker Compose classique** (`docker-compose.yml`), puis l’application en local avec Bun ; ou lancer toute la stack de développement avec **`docker-compose.dev.yml`**.
+
+### Base de données avec le Docker Compose classique
+
+Le fichier [`docker-compose.yml`](./docker-compose.yml) démarre **MongoDB** (port `27017`, utilisateur `admin` / mot de passe `adminpassword`, base `animedle`) et le service **`db-seeder`**, qui exécute une insertion initiale dans la base après le démarrage de Mongo.
+
+À la racine du dépôt :
+
+```bash
+docker compose up -d
+```
+
+Pour ne démarrer **que** MongoDB (sans relancer le seeder), vous pouvez cibler le service :
+
+```bash
+docker compose up -d mongo
+```
+
+Ensuite, sur la machine hôte : installer les dépendances et lancer le front et le back :
+
+```bash
+bun install
+```
+
+Configurez les variables d'environnement dans le fichier `.env` local dans le dossier `backend` et `frontend` en prennant exemple sur le fichier `.env.example`. Adaptez les URL si vous changez les ports ou utilisez un hôte différent.
+
+Et pour finir lancer le projet :
+```bash
+bun run dev
+```
+
+### Stack de développement avec Docker Compose (dev)
+
+Le fichier [`docker-compose.dev.yml`](./docker-compose.dev.yml) **inclut** le `docker-compose.yml` (MongoDB + seeder) et ajoute un conteneur **`app-dev`** qui exécute `bun run dev` (front Vite, back Hono et WebSocket). Les variables d’environnement nécessaires sont déjà renseignées dans ce fichier pour parler à Mongo et entre services.
+
+À la racine du dépôt :
+
+```bash
+docker compose -f docker-compose.dev.yml up --build
+```
+
+Les ports exposés côté hôte sont notamment **5173** (Vite), **3000** (API) et **3001** (WebSocket), en plus de **27017** pour MongoDB.
+
+Pour arrêter les conteneurs, selon le fichier utilisé :
+
+```bash
+docker compose down
+```
+
+ou :
+
+```bash
+docker compose -f docker-compose.dev.yml down
+```
+
+## Frontend
+
+L’application cliente vit dans le dossier [`frontend/`](./frontend/). Elle est construite avec **React** et **Vite**, routée avec **React Router** (`main.tsx` : pages d’accueil, daily / endless, personnage, personnage endless, authentification, compte, challenge, administration).
+
+L’interface repose sur **Tailwind CSS** et des composants **shadcn/ui** (Radix). L’état global passe surtout par **Zustand** (`stores/`, par ex. liste d’animes, partie en cours, utilisateur, challenge). La logique d’écran est regroupée dans des hooks « view model » (`pages/**/use*ViewModel.ts`) et des utilitaires partagés (`viewmodels/guessingViewModel.ts`). La recherche de titres côté client utilise **Fuse.js** (autocomplétion).
+
+**react-i18next** gère les traductions (`i18n/`, fichiers JSON par langue). **Better Auth** côté client (`lib/auth-client.ts`) s’aligne sur les routes d’auth du backend. Le mode **Challenge** ouvre une connexion **WebSocket** vers le serveur temps réel (`lib/ws-client.ts`, port habituel **3001**). Les tests unitaires passent par **Vitest**.
+
+## Backend
+
+L’API et la logique métier sont dans [`backend/`](./backend/), exécutées avec **Bun** et **TypeScript**. Le cœur HTTP est une application **Hono** exportée depuis [`backend/src/index.ts`](./backend/src/index.ts), servie par Bun ; les routes REST sont préfixées par **`/api`** et incluent notamment **l’authentification** ([`routes/auth.ts`](./backend/src/routes/auth.ts)), **les animes et personnages** (devinettes, endless, indices, stats — [`routes/anime.ts`](./backend/src/routes/anime.ts)), **l’administration** ([`routes/admin.ts`](./backend/src/routes/admin.ts)) et **les salles multijoueur** ([`routes/room.ts`](./backend/src/routes/room.ts), [`routes/room-guess.ts`](./backend/src/routes/room-guess.ts)).
+
+Les données sont lues et écrites dans **MongoDB** via le client officiel et **Mongoose** ([`lib/db.ts`](./backend/src/lib/db.ts)). **Better Auth** avec l’adaptateur Mongo assure les sessions et comptes. Des **services** ([`AnimeService`](./backend/src/services/AnimeService.ts), [`CharacterService`](./backend/src/services/CharacterService.ts), [`RoomService`](./backend/src/services/RoomService.ts)) encapsulent la logique et s’appuient sur des dépôts / modèles dédiés.
+
+Un **cron** (`node-cron`), planifié à minuit **UTC**, met à jour l’**anime du jour** et le **personnage du jour**. En parallèle du HTTP, un second **`Bun.serve`** dans [`wsHandlers.ts`](./backend/src/wsHandlers.ts) expose le **WebSocket** du Challenge sur le port **3001**. Le CORS est configuré pour accepter l’origine définie par **`FRONTEND_URL`**. Les tests backend utilisent **Vitest**.
 
 ## Récupérateur de données
 
