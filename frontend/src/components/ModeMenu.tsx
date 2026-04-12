@@ -1,4 +1,4 @@
-import { CalendarDays, Infinity as InfinityIcon, Orbit, User } from 'lucide-react';
+import { CalendarDays, Infinity as InfinityIcon, Orbit, User, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router';
 import { cn } from '@/lib/utils';
@@ -69,6 +69,19 @@ export function ModeMenu({ orientation = 'vertical', className }: ModeMenuProps)
       >
         <Orbit className="size-5" />
         <span>{t('home.characterEndlessButton')}</span>
+      </NavLink>
+      <NavLink
+        to="/challenge"
+        className={({ isActive }) =>
+          cn(
+            'flex items-center gap-2 rounded-md border border-border bg-background px-4 py-3 font-semibold text-foreground transition hover:bg-accent',
+            itemClass,
+            isActive && 'bg-accent',
+          )
+        }
+      >
+        <Users className="size-5" />
+        <span>Challenge</span>
       </NavLink>
     </div>
   );

@@ -47,11 +47,15 @@ router.post('/animes/endless/guess/:id', async (c) => {
 });
 
 router.get('/animes/current-date', async (c) => {
-  const date = await animeService.getCurrentAnimeDate();
-  if (!date) {
-    return c.json({ error: 'Aucun anime courant' }, 404);
+  try {
+    const date = await animeService.getCurrentAnimeDate();
+    if (!date) {
+      return c.json({ error: 'Aucun anime courant' }, 404);
+    }
+    return c.json({ date });
+  } catch {
+    return c.json({ error: 'Database Down' }, 503);
   }
-  return c.json({ date });
 });
 
 router.get('/animes/stats', async (c) => {
