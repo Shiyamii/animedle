@@ -42,7 +42,7 @@ vi.mock('@/repositories/CurrentCharacterRepository', () => ({
   },
 }));
 
-vi.mock('@/services/AnimeRepositories', () => ({
+vi.mock('@/repositories/AnimeRepository', () => ({
   AnimeRepository: class {
     findById = mocks.animesFindById;
   },
