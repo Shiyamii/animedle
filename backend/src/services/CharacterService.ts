@@ -1,8 +1,8 @@
 /** biome-ignore-all lint/style/useNamingConvention: Tkt c fine*/
 
+import { AnimeRepository } from '../repositories/AnimeRepository';
 import { type CharacterEntity, CharacterRepository } from '../repositories/CharacterRepository';
-import { CurrentCharacterRepository } from '../repositories/CurrentCharacterRepositories';
-import { AnimeRepository } from './AnimeRepositories';
+import { CurrentCharacterRepository } from '../repositories/CurrentCharacterRepository';
 
 /** Attributs du personnage du jour pouvant être révélés comme indices (ordre / paliers configurables via `hintTiers`). */
 export type DailyCharacterHintKey = 'imageUrl' | 'demographicType' | 'animeGenres';
