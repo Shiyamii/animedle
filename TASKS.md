@@ -43,7 +43,7 @@
 - CRUD — Gestion des personnages — **Titouan L.**
 - Gestion de l'anime du jour — **Titouan L.**
 - Visualisation des stats par l'admin — **Titouan L.**
-- Tests unitaires — **Titouan L.**
+- Tests unitaires (AnimeService, CharacterService, RoomService) — **Titouan L.**
 
 
 ---
