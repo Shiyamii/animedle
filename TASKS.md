@@ -43,6 +43,8 @@
 - CRUD — Gestion des personnages — **Titouan L.**
 - Gestion de l'anime du jour — **Titouan L.**
 - Visualisation des stats par l'admin — **Titouan L.**
+- Tests unitaires — **Titouan L.**
+
 
 ---
 
@@ -64,6 +66,7 @@
 *Samy B.*
 - Mise en place du challenge — **Samy B.**
 - Intégration dans le frontend — **Samy B.**
+- Tests unitaires — **Titouan L.**
 
 ---
 
