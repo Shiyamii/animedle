@@ -9,8 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import type { CharacterDailyHintConfigDTO } from '@/lib/guessing-utils.ts';
 import { useCharacterDifficultyStore } from '@/stores/characterDifficultyStore';
-import type { CharacterDailyHintConfigDTO } from '@/viewmodels/guessingViewModel';
 import { afterGuessCountForAttribute, guessesRemainingUntilUnlock, hintAttributeLabel } from './characterGuessingUtils';
 import { HintSpoilerBlock } from './HintSpoilerBlock';
 

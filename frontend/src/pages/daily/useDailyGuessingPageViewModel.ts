@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/lib/guessing-utils.ts';
 import { type AnimeItemDTO, type GuessResultDTO, useAnimeStore } from '@/stores/animeStore';
-import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/viewmodels/guessingViewModel';
 
 async function fetchAnimeStats(animeId: string): Promise<Record<string, number>> {
   try {
