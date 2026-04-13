@@ -1,6 +1,6 @@
 import { Types } from 'mongoose';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { AnimeEntity } from '../AnimeRepositories';
+import type { AnimeEntity } from '@/repositories/AnimeRepository';
 
 // ─── Mocks ────────────────────────────────────────────────────────────────────
 
@@ -20,7 +20,7 @@ const mocks = vi.hoisted(() => ({
   getCurrentAnime: vi.fn(),
 }));
 
-vi.mock('@/services/AnimeRepositories', () => ({
+vi.mock('@/repositories/AnimeRepository', () => ({
   AnimeRepository: class {
     findAll = mocks.findAll;
     findAllEnabled = mocks.findAllEnabled;
@@ -31,7 +31,7 @@ vi.mock('@/services/AnimeRepositories', () => ({
   },
 }));
 
-vi.mock('@/services/CurrentAnimeRepositories', () => ({
+vi.mock('@/repositories/CurrentAnimeRepository', () => ({
   CurrentAnimeRepository: class {
     saveCurrentAnime = mocks.saveCurrentAnime;
     getCurrentAnime = mocks.getCurrentAnime;

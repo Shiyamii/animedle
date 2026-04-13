@@ -3,7 +3,7 @@ import {
   type AnimeImagesWebpEntity,
   AnimeRepository,
   type AnimeTitleEntity,
-} from '../repositories/AnimeRepository';
+} from '@/repositories/AnimeRepository';
 import { type AnimeStatsDTO, CurrentAnimeRepository } from '../repositories/CurrentAnimeRepository';
 
 export interface AnimeItemDTO {

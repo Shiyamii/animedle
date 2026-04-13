@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/style/useNamingConvention: Tkt c fine */
 import { Types } from 'mongoose';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { CharacterEntity } from '../../repositories/CharacterRepository';
+import type { CharacterEntity } from '@/repositories/CharacterRepository';
 
 // ─── Mocks ────────────────────────────────────────────────────────────────────
 
@@ -23,7 +23,7 @@ const mocks = vi.hoisted(() => ({
   animesFindById: vi.fn(),
 }));
 
-vi.mock('@/services/CharacterRepository', () => ({
+vi.mock('@/repositories/CharacterRepository', () => ({
   CharacterRepository: class {
     findAll = mocks.findAll;
     findOneByAnimeId = mocks.findOneByAnimeId;
@@ -33,7 +33,7 @@ vi.mock('@/services/CharacterRepository', () => ({
   },
 }));
 
-vi.mock('@/services/CurrentCharacterRepositories', () => ({
+vi.mock('@/repositories/CurrentCharacterRepository', () => ({
   CurrentCharacterRepository: class {
     saveCurrentCharacter = mocks.saveCurrentCharacter;
     getCurrentCharacter = mocks.getCurrentCharacter;
