@@ -51,9 +51,7 @@ export function useDailyGuessingPageViewModel() {
       .then((date) => {
         setServerAnimeDate(date);
         const dateChanged = date && animeStore.currentAnimeDate !== date;
-        const isInProgress = animeStore.guessList.length > 0 && !animeStore.foundAnime;
-
-        if (dateChanged && isInProgress) {
+        if (dateChanged && !!animeStore.foundAnime) {
           animeStore.resetGame();
         } else {
           const list = animeStore.guessList;
