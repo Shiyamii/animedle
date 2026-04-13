@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/style/useNamingConvention: Tkt c fine */
 import { Types } from 'mongoose';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { CharacterEntity } from '../CharacterRepository';
+import type { CharacterEntity } from '../../repositories/CharacterRepository';
 
 // ─── Mocks ────────────────────────────────────────────────────────────────────
 

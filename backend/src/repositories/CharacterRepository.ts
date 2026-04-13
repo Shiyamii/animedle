@@ -1,7 +1,7 @@
 /** biome-ignore-all lint/style/useNamingConvention: Tkt c fine */
 import mongoose, { type Model, Schema, type Types } from 'mongoose';
 import { ensureMongooseConnection } from '@/lib/db';
-import type { AnimeTitleEntity } from './AnimeRepositories';
+import type { AnimeTitleEntity } from '../services/AnimeRepositories';
 
 export interface CharacterEntity {
   _id?: Types.ObjectId;
