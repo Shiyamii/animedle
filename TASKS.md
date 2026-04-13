@@ -55,6 +55,7 @@
 - Système de guessing — **Tamas P.**
 - Cron de l'anime du jour — **Tamas P.**
 - Mode endless — **Tamas P.**
+- Tests unitaires (useDailyGuessingPageViewModel, useEndlessModePageViewModel) — **Titouan L.**
 
 ### Character Guessing
 *Tamas P.*
