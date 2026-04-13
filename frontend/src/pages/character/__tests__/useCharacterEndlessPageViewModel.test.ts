@@ -204,7 +204,7 @@ describe('useCharacterEndlessPageViewModel', () => {
     });
 
     it("récupère les règles de hint depuis l'API au montage", async () => {
-      const { result } = renderHook(() => useCharacterEndlessPageViewModel());
+      renderHook(() => useCharacterEndlessPageViewModel());
       // hintConfig reste null tant qu'il n'y a pas de target
       await waitFor(() => {
         expect(fetch).toHaveBeenCalledWith(expect.stringContaining('/hint-config'));
