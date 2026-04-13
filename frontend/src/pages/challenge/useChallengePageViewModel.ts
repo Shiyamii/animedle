@@ -3,8 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createFuse, filterAnimeList } from '@/lib/guessing-utils.ts';
 import type { AnimeItemDTO, GuessResultDTO } from '@/stores/animeStore';
 import { useAnimeStore } from '@/stores/animeStore';
+import { useChallengeStore } from '@/stores/challengeStore.ts';
 import { useUserStore } from '@/stores/userStore';
-import { useChallengeStore } from '../../stores/challengeStore';
 
 type RoomAnime = {
   animeId: string;
