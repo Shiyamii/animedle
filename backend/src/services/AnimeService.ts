@@ -1,10 +1,10 @@
+import { type AnimeStatsDTO, CurrentAnimeRepository } from '../repositories/CurrentAnimeRepositories';
 import {
   type AnimeEntity,
   type AnimeImagesWebpEntity,
   AnimeRepository,
   type AnimeTitleEntity,
 } from './AnimeRepositories';
-import { type AnimeStatsDTO, CurrentAnimeRepository } from './CurrentAnimeRepositories';
 
 export interface AnimeItemDTO {
   id: string;

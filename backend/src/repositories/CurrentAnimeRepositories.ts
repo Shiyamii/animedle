@@ -1,6 +1,6 @@
 import mongoose, { type Model, Schema, Types } from 'mongoose';
 import { ensureMongooseConnection } from '@/lib/db';
-import type { AnimeEntity } from './AnimeRepositories';
+import type { AnimeEntity } from '../services/AnimeRepositories';
 
 export interface CurrentAnimeEntity {
   _id?: Types.ObjectId;
