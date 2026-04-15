@@ -28,10 +28,13 @@
 ## URL de l'application
 
 Déployé sur le serveur de Tamas [Animedle](https://animedle.apps.shiyamii.com/).
+Pour les utilisateurs normals, créez une compte.
 
-### Utilisateurs admin
+### Utilisateur admin
 
--- A ajouter --
+| Email | Mot de passe |
+| --- | --- |
+| admin@admin.com | 12345Admin! |
 
 ## Équipe
 
