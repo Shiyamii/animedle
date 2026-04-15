@@ -23,6 +23,7 @@
   - [Configuration](#configuration)
   - [Récupération et filtrage des données](#récupération-et-filtrage-des-données)
   - [Intégration MongoDB](#intégration-mongodb)
+-[Notre utilisation de l'IA](#notre-utilisation-de-lai)
 
 ## URL de l'application
 
@@ -210,3 +211,14 @@ Les données filtrées sont stockées dans une base de données MongoDB, ce qui 
 ```bash
 bun run start:insert
 ```
+
+
+---
+
+
+## Notre utilisation de l'ai
+
+Nous avons utilisé different IAs
+- Copilot: pour l'autocomplete intiligient
+- Gemini/chatGPT: pour se renseigner, créer de petits bouts de code
+- Code Claude: pour generer les tests unitaires
