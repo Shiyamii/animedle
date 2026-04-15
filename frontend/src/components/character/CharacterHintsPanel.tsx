@@ -163,7 +163,7 @@ export function CharacterHintsPanel({
               </p>
               <HintSpoilerBlock
                 useSpoiler={spoilerModeForHints}
-                contentKey={genresKey}
+                contentKey={genresKey as string}
                 empty={!hasGenres}
                 emptyLabel={t('character.hintSlotEmpty')}
                 emptyHint={genresEmptyHint}

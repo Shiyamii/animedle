@@ -39,8 +39,6 @@ ENV VITE_API_URL=$VITE_API_URL
 WORKDIR  /app/frontend
 RUN bun install
 
-RUN echo "============== DEBUG URL : ${VITE_API_URL} =============="
-
 RUN bun run build
 
 
