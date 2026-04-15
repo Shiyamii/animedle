@@ -11,7 +11,6 @@ import roomGuessRoutes from '@/routes/room-guess';
 import { AnimeService } from '@/services/AnimeService';
 import { CharacterService } from './services/CharacterService';
 
-
 import './wsHandlers';
 
 loadDotenv();
@@ -45,7 +44,6 @@ app.use(
     credentials: true,
   }),
 );
-
 
 const routes = [authRoutes, animeRoutes, adminRoutes, roomRoutes, roomGuessRoutes] as Hono[];
 routes.forEach((route: Hono) => {

@@ -50,8 +50,9 @@ export function CharacterHintsPanel({
   const hasDemographic = hints.demographicType != null && hints.demographicType !== '';
   const hasGenres = (hints.animeGenres?.length ?? 0) > 0;
 
+  // biome-ignore lint/style/noNonNullAssertion: CHILL
   const demoKey = hasDemographic ? hints.demographicType! : '';
-  const genresKey = hasGenres ? hints.animeGenres!.join(',') : '';
+  const genresKey = hasGenres ? hints.animeGenres?.join(',') : '';
 
   const sortedTiers = hintConfig ? [...hintConfig.hintTiers].sort((a, b) => a.afterGuessCount - b.afterGuessCount) : [];
 

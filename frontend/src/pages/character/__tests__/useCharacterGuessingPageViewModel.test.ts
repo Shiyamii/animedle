@@ -75,7 +75,9 @@ function mockFetch(guessResult?: CharacterGuessResultDTO) {
         return Promise.resolve({ ok: true, json: async () => HINT_CONFIG } as Response);
       }
       if (url.includes('/guess/')) {
-        if (!guessResult) return Promise.resolve({ ok: false, status: 404 } as Response);
+        if (!guessResult) {
+          return Promise.resolve({ ok: false, status: 404 } as Response);
+        }
         return Promise.resolve({ ok: true, json: async () => guessResult } as Response);
       }
       return Promise.resolve({ ok: false } as Response);

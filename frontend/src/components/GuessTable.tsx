@@ -85,6 +85,7 @@ export default function GuessTable({
           </TableRow>
         </TableHeader>
         <TableBody>
+          {/** biome-ignore lint/complexity/noExcessiveCognitiveComplexity: CHILL */}
           {guesses.map((guess, rowIndex) => {
             const r = guess.results;
             const a = guess.anime;

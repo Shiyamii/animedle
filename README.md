@@ -36,11 +36,11 @@ Déployé sur le serveur de Tamas [Animedle](https://animedle.apps.shiyamii.com/
 
 Répartition des tâches, pour plus de détails voir [TASKS.md](./TASKS.md).
 
-| Prénom | Nom | Utilisateur GitHub | Tâches réalisées |
-| --- | --- | --- | --- |
-| Samy | Ben Dhiab | [samsoucoupe](https://github.com/samsoucoupe) | Système de scraping (fetch des données) ; mise en place du WebSocket et intégration frontend ; mise en place du Challenge et intégration frontend |
+| Prénom | Nom | Utilisateur GitHub | Tâches réalisées                                                                                                                                                                                                                                                                                                      |
+| --- | --- | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samy | Ben Dhiab | [samsoucoupe](https://github.com/samsoucoupe) | Système de scraping (fetch des données) ; mise en place du WebSocket et intégration frontend ; mise en place du Challenge et intégration frontend                                                                                                                                                                     |
 | Tamas | Palotas | [Shiyamii](https://github.com/Shiyamii) | Vérification et nettoyage des données ; complétion des données ; adaptation du format des données pour l’insertion ; Anime Guessing (système, cron de l’anime du jour, mode endless) ; Character Guessing (système, cron du personnage du jour, mode endless) ; déploiement (dockerisation, configuration du serveur) |
-| Titouan | Lacombe--Fabre | [Tit0u4N](https://github.com/Tit0u4N) | Mise en place de l'architecture générale (backend et frontend) ; authentification ; espace administrateur (CRUD animes et personnages, gestion anime du jour, visualisation des stats) ; statistiques (mode daily, visualisation admin) ; refonte visuelle (charte graphique, i18n, responsive) ; tests unitaires |
+| Titouan | Lacombe--Fabre | [Tit0u4N](https://github.com/Tit0u4N) | Mise en place de l'architecture générale (backend et frontend) ; authentification ; espace administrateur (CRUD animes et personnages, gestion anime du jour, visualisation des stats) ; statistiques (mode daily, visualisation admin) ; refonte visuelle (charte graphique, i18n, responsive) ; tests unitairesa    |
 
 ---
 

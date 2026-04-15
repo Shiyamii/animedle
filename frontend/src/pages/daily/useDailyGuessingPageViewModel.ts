@@ -62,7 +62,14 @@ export function useDailyGuessingPageViewModel() {
         }
       })
       .catch(() => {});
-  }, []);
+  }, [
+    animeStore.animeList.length,
+    animeStore.currentAnimeDate,
+    animeStore.foundAnime,
+    animeStore.guessList,
+    animeStore.loadAnimeList,
+    animeStore.resetGame,
+  ]);
 
   useEffect(() => {
     setFuse(createFuse(makeGuessableList(animeStore.animeList, guessList)));

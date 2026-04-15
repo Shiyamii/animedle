@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/useNamingConvention: TKT C FINE */
 import {
   type AnimeEntity,
   type AnimeImagesWebpEntity,

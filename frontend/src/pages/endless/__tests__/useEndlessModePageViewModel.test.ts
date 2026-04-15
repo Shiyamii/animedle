@@ -100,11 +100,15 @@ function mockFetch(opts: { endlessTarget?: RandomAnimeDTO | null; guessResult?: 
     'fetch',
     vi.fn().mockImplementation((url: string) => {
       if (url.includes('/endless/guess/')) {
-        if (!guessResult) return Promise.resolve({ ok: false, status: 404 } as Response);
+        if (!guessResult) {
+          return Promise.resolve({ ok: false, status: 404 } as Response);
+        }
         return Promise.resolve({ ok: true, json: async () => guessResult } as Response);
       }
       if (url.includes('/endless')) {
-        if (endlessTarget === null) return Promise.resolve({ ok: false, status: 404 } as Response);
+        if (endlessTarget === null) {
+          return Promise.resolve({ ok: false, status: 404 } as Response);
+        }
         return Promise.resolve({ ok: true, json: async () => endlessTarget } as Response);
       }
       return Promise.resolve({ ok: false } as Response);

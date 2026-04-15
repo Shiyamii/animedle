@@ -161,7 +161,7 @@ export function useChallengePageViewModel() {
         // ignore request errors
       }
     },
-    [joinedRoom, playerKey, backendUrl],
+    [joinedRoom, playerKey],
   );
 
   const fetchProgression = useCallback(async () => {
@@ -182,7 +182,7 @@ export function useChallengePageViewModel() {
     } catch {
       // ignore request errors
     }
-  }, [joinedRoom, playerKey, backendUrl]);
+  }, [joinedRoom, playerKey]);
 
   const currentRoundGuessedAnimeIds = useMemo(() => {
     return new Set((guessesByRound[currentRoundIndex] || []).map((guess) => guess.anime.id));
@@ -241,6 +241,7 @@ export function useChallengePageViewModel() {
       setPlayers([user.name]);
     };
 
+    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: need to handle many message types
     ws.onmessage = (event) => {
       setWsLog((log) => [...log, `[RECV] ${event.data}`]);
       const msg = JSON.parse(event.data) as WSMsg;
@@ -364,7 +365,7 @@ export function useChallengePageViewModel() {
     loadRoomState().catch(() => {
       // ignore request errors
     });
-  }, [joinedRoom, backendUrl]);
+  }, [joinedRoom]);
 
   useEffect(() => {
     if (animeStore.animeList.length === 0) {
