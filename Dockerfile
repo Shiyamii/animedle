@@ -34,12 +34,13 @@ WORKDIR /app
 COPY --from=builder /app/frontend  /app/frontend
 
 ARG VITE_API_URL
+ARG VITE_BACKEND_WS_URL
 ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_BACKEND_WS_URL=$VITE_BACKEND_WS_URL
 
 WORKDIR  /app/frontend
 RUN bun install
 
-RUN echo "============== DEBUG URL : ${VITE_API_URL} =============="
 
 RUN bun run build
 
