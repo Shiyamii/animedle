@@ -1,6 +1,5 @@
 import type Fuse from 'fuse.js';
 import { useEffect, useState } from 'react';
-import { type AnimeItemDTO, type CharacterGuessResultDTO, useAnimeStore } from '@/stores/animeStore';
 import {
   type CharacterDailyHintConfigDTO,
   createFuse,
@@ -8,7 +7,8 @@ import {
   filterAnimeList,
   makeCharacterGuessRequest,
   makeGuessableListForCharacter,
-} from '@/viewmodels/guessingViewModel';
+} from '@/lib/guessing-utils.ts';
+import { type AnimeItemDTO, type CharacterGuessResultDTO, useAnimeStore } from '@/stores/animeStore';
 
 export function useCharacterGuessingPageViewModel() {
   const animeStore = useAnimeStore();

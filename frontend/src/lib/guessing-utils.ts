@@ -4,7 +4,7 @@ import type {
   CharacterEndlessTargetDTO,
   CharacterGuessResultDTO,
   GuessResultDTO,
-} from '@/stores/animeStore';
+} from '@/stores/animeStore.ts';
 
 export function filterAnimeList(fuse: Fuse<AnimeItemDTO>, query: string): AnimeItemDTO[] {
   if (!query) {

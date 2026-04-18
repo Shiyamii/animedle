@@ -1,9 +1,11 @@
 import { Hono } from 'hono';
 import { adminMiddleware } from '@/lib/adminMiddleware';
 import { AnimeService } from '@/services/AnimeService';
+import { CharacterService } from '@/services/CharacterService';
 
 const router = new Hono({ strict: false });
 const animeService = AnimeService.getInstance();
+const characterService = CharacterService.getInstance();
 
 router.use('/admin/*', adminMiddleware);
 
@@ -80,6 +82,46 @@ router.delete('/admin/animes/:id', async (c) => {
   const deleted = await animeService.deleteAnime(id);
   if (!deleted) {
     return c.json({ error: 'Anime non trouvé' }, 404);
+  }
+  return c.json({ success: true });
+});
+
+router.get('/admin/characters', async (c) => {
+  const characters = await characterService.getAdminCharacterList();
+  return c.json(characters);
+});
+
+router.post('/admin/characters', async (c) => {
+  const body = await c.req.json();
+  try {
+    const character = await characterService.createCharacter(body);
+    return c.json(character, 201);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Erreur inconnue';
+    return c.json({ error: message }, 400);
+  }
+});
+
+router.put('/admin/characters/:id', async (c) => {
+  const id = c.req.param('id');
+  const body = await c.req.json();
+  try {
+    const character = await characterService.updateCharacter(id, body);
+    if (!character) {
+      return c.json({ error: 'Personnage non trouvé' }, 404);
+    }
+    return c.json(character);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Erreur inconnue';
+    return c.json({ error: message }, 400);
+  }
+});
+
+router.delete('/admin/characters/:id', async (c) => {
+  const id = c.req.param('id');
+  const deleted = await characterService.deleteCharacter(id);
+  if (!deleted) {
+    return c.json({ error: 'Personnage non trouvé' }, 404);
   }
   return c.json({ success: true });
 });

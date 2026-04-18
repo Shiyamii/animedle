@@ -1,5 +1,8 @@
-import { type CharacterEntity, CharacterRepository } from './CharacterRepository';
-import { CurrentCharacterRepository } from './CurrentCharacterRepositories';
+/** biome-ignore-all lint/style/useNamingConvention: Tkt c fine*/
+
+import { AnimeRepository } from '../repositories/AnimeRepository';
+import { type CharacterEntity, CharacterRepository } from '../repositories/CharacterRepository';
+import { CurrentCharacterRepository } from '../repositories/CurrentCharacterRepository';
 
 /** Attributs du personnage du jour pouvant être révélés comme indices (ordre / paliers configurables via `hintTiers`). */
 export type DailyCharacterHintKey = 'imageUrl' | 'demographicType' | 'animeGenres';
@@ -40,7 +43,7 @@ export interface DailyCharacterGuessResultDTO {
   isCorrect: boolean;
   guessNumber: number;
   guessedAnimeId: string;
-  /** Indices texte (démographie, genres) selon `guessNumber` et `hintTiers`. L’image est gérée à part (flou côté UI). */
+  /** Indices texte (démographie, genres) selon `guessNumber` et `hintTiers`. L'image est gérée à part (flou côté UI). */
   hints: DailyCharacterHintsDTO;
 }
 
@@ -54,7 +57,7 @@ export interface CharacterEndlessTargetDTO {
 /** Réponse de `GET .../characters/daily/hint-config` — paliers et image du personnage du jour. */
 export interface DailyCharacterHintConfigDTO {
   hintTiers: DailyCharacterHintTier[];
-  /** Nombre d’essais après lesquels le flou de l’image est entièrement retiré (progressif). */
+  /** Nombre d'essais après lesquels le flou de l'image est entièrement retiré (progressif). */
   imageBlur: {
     totalGuessesUntilClear: number;
   };
@@ -63,23 +66,40 @@ export interface DailyCharacterHintConfigDTO {
   mysteryCharacterName: string;
 }
 
+export interface AdminCharacterDTO {
+  id: string;
+  name: string;
+  imageUrl: string;
+  animeId: string;
+  animeTitle: string;
+  demographicType: string | null;
+  animeGenres: string[];
+}
+
+export interface CharacterCreatePayload {
+  name: string;
+  imageUrl: string;
+  animeId: string;
+}
+
 export class CharacterService {
   private static instance: CharacterService;
 
-  /** Paliers texte par défaut (l’image est affichée dès le départ avec flou, voir `imageBlurTotalGuesses`). */
+  /** Paliers texte par défaut (l'image est affichée dès le départ avec flou, voir `imageBlurTotalGuesses`). */
   public static readonly DEFAULT_HINT_TIERS: DailyCharacterHintTier[] = [
     { afterGuessCount: 9, revealAttributes: ['demographicType'] },
     { afterGuessCount: 12, revealAttributes: ['animeGenres'] },
   ];
 
-  /** Après autant d’essais, le flou appliqué à l’image mystère est nul (réduction linéaire à chaque essai). */
+  /** Après autant d'essais, le flou appliqué à l'image mystère est nul (réduction linéaire à chaque essai). */
   public static readonly DEFAULT_IMAGE_BLUR_TOTAL_GUESSES = 10;
 
   private repository: CharacterRepository;
   private currentCharacterRepository: CurrentCharacterRepository;
+  private animeRepository: AnimeRepository;
 
   /**
-   * Paliers d’indices (modifiable à l’exécution : remplacer le tableau ou muter `afterGuessCount` / `revealAttributes`).
+   * Paliers d'indices (modifiable à l'exécution : remplacer le tableau ou muter `afterGuessCount` / `revealAttributes`).
    */
   public hintTiers: DailyCharacterHintTier[];
 
@@ -89,6 +109,7 @@ export class CharacterService {
   constructor() {
     this.repository = new CharacterRepository();
     this.currentCharacterRepository = new CurrentCharacterRepository();
+    this.animeRepository = new AnimeRepository();
     this.hintTiers = [...CharacterService.DEFAULT_HINT_TIERS];
     this.imageBlurTotalGuesses = CharacterService.DEFAULT_IMAGE_BLUR_TOTAL_GUESSES;
   }
@@ -245,8 +266,72 @@ export class CharacterService {
     };
   }
 
+  private toAdminCharacterDTO(entity: CharacterEntity): AdminCharacterDTO {
+    return {
+      id: entity._id?.toHexString() ?? '',
+      name: entity.name,
+      imageUrl: this.getCharacterImageUrl(entity),
+      animeId: entity.anime_id,
+      animeTitle: this.getCharacterMainAnimeTitle(entity),
+      demographicType: entity.demographic_type,
+      animeGenres: [...entity.anime_genres],
+    };
+  }
+
+  public async getAdminCharacterList(): Promise<AdminCharacterDTO[]> {
+    const characters = await this.repository.findAll();
+    return characters.map((c) => this.toAdminCharacterDTO(c));
+  }
+
+  public async createCharacter(payload: CharacterCreatePayload): Promise<AdminCharacterDTO> {
+    const anime = await this.animeRepository.findById(payload.animeId);
+    if (!anime) {
+      throw new Error('Anime non trouvé');
+    }
+    const entity = await this.repository.create({
+      name: payload.name,
+      images_webp: {
+        image_url: payload.imageUrl,
+        small_image_url: payload.imageUrl,
+        large_image_url: payload.imageUrl,
+      },
+      anime_id: payload.animeId,
+      anime_titles: anime.titles,
+      anime_genres: anime.genres,
+      demographic_type: anime.demographic_type ?? null,
+    });
+    return this.toAdminCharacterDTO(entity);
+  }
+
+  public async updateCharacter(id: string, payload: CharacterCreatePayload): Promise<AdminCharacterDTO | null> {
+    const anime = await this.animeRepository.findById(payload.animeId);
+    if (!anime) {
+      throw new Error('Anime non trouvé');
+    }
+    const entity = await this.repository.update(id, {
+      name: payload.name,
+      images_webp: {
+        image_url: payload.imageUrl,
+        small_image_url: payload.imageUrl,
+        large_image_url: payload.imageUrl,
+      },
+      anime_id: payload.animeId,
+      anime_titles: anime.titles,
+      anime_genres: anime.genres,
+      demographic_type: anime.demographic_type ?? null,
+    });
+    if (!entity) {
+      return null;
+    }
+    return this.toAdminCharacterDTO(entity);
+  }
+
+  public async deleteCharacter(id: string): Promise<boolean> {
+    return await this.repository.delete(id);
+  }
+
   /**
-   * @param animeId Identifiant de l’anime proposé (même champ que `anime_id` côté personnage / liste d’animes).
+   * @param animeId Identifiant de l'anime proposé (même champ que `anime_id` côté personnage / liste d'animes).
    */
   public async guessDailyCharacter(animeId: string, guessNumber: number): Promise<DailyCharacterGuessResultDTO> {
     const currentCharacter = await this.getCurrentCharacter();

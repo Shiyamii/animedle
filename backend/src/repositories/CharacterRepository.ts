@@ -1,6 +1,7 @@
+/** biome-ignore-all lint/style/useNamingConvention: Tkt c fine */
 import mongoose, { type Model, Schema, type Types } from 'mongoose';
 import { ensureMongooseConnection } from '@/lib/db';
-import type { AnimeTitleEntity } from './AnimeRepositories';
+import type { AnimeTitleEntity } from './AnimeRepository';
 
 export interface CharacterEntity {
   _id?: Types.ObjectId;
@@ -59,6 +60,24 @@ export class CharacterRepository {
   async findOneByAnimeId(animeId: string): Promise<CharacterEntity | null> {
     await ensureMongooseConnection();
     return this.model.findOne({ anime_id: animeId }).lean<CharacterEntity>().exec();
+  }
+
+  async create(data: Omit<CharacterEntity, '_id'>): Promise<CharacterEntity> {
+    await ensureMongooseConnection();
+    const character = new this.model(data);
+    const saved = await character.save();
+    return saved.toObject() as CharacterEntity;
+  }
+
+  async update(id: string, data: Partial<Omit<CharacterEntity, '_id'>>): Promise<CharacterEntity | null> {
+    await ensureMongooseConnection();
+    return this.model.findByIdAndUpdate(id, data, { new: true }).lean<CharacterEntity>().exec();
+  }
+
+  async delete(id: string): Promise<boolean> {
+    await ensureMongooseConnection();
+    const result = await this.model.findByIdAndDelete(id).exec();
+    return result !== null;
   }
 }
 

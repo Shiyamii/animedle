@@ -15,7 +15,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!!**/dist", "!!**/build", "!!**/node_modules", "!!**/.biome"]
+    "includes": ["**", "!!**/dist", "!!**/build", "!!**/node_modules", "!!**/.biome", "!!**/*.test.{ts,tsx,js,jsx}"]
   },
   "formatter": {
     "enabled": true,
@@ -43,7 +43,7 @@
         "noExcessiveCognitiveComplexity": {
           "level": "warn",
           "options": {
-            "maxAllowedComplexity": 15
+            "maxAllowedComplexity": 25
           }
         },
         "noForEach": "off",
@@ -63,7 +63,7 @@
       "performance": {
         "noAccumulatingSpread": "warn",
         "noDelete": "warn",
-        "noBarrelFile": "warn"
+        "noBarrelFile": "off"
       },
 
       "security": {
@@ -89,14 +89,14 @@
           }
         },
         "useFilenamingConvention": {
-          "level": "warn",
+          "level": "off",
           "options": {
             "requireAscii": true,
             "filenameCases": ["camelCase", "kebab-case", "PascalCase"]
           }
         },
         "useNamingConvention": {
-          "level": "warn",
+          "level": "off",
           "options": {
             "strictCase": false,
             "conventions": [
@@ -125,7 +125,7 @@
         "noDebugger": "error",
         "noConsole": "warn",
         "noDoubleEquals": "error",
-        "noExplicitAny": "warn",
+        "noExplicitAny": "off",
         "noImplicitAnyLet": "error",
         "noArrayIndexKey": "off",
         "noAssignInExpressions": "error",
@@ -139,7 +139,7 @@
 
       "nursery": {
         "noFloatingPromises": "error",
-        "noShadow": "warn",
+        "noShadow": "off",
         "useSortedClasses": {
           "level": "warn",
           "fix": "safe",

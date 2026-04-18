@@ -1,7 +1,7 @@
 import type Fuse from 'fuse.js';
 import { useEffect, useState } from 'react';
+import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/lib/guessing-utils.ts';
 import { type AnimeItemDTO, type GuessResultDTO, type RandomAnimeDTO, useAnimeStore } from '@/stores/animeStore';
-import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/viewmodels/guessingViewModel';
 
 function fecthAnimeToGuess(): Promise<RandomAnimeDTO | null> {
   return fetch(`${import.meta.env.VITE_API_URL}/api/animes/endless`)

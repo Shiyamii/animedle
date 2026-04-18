@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils';
 
 export function HintSpoilerBlock({
   useSpoiler,
-  contentKey,
   empty,
   emptyLabel,
   /** Si vide : message dynamique (ex. décompte avant révélation) ; sinon `emptyLabel`. */
@@ -25,7 +24,7 @@ export function HintSpoilerBlock({
 
   useEffect(() => {
     setRevealed(false);
-  }, [contentKey]);
+  }, []);
 
   if (empty) {
     return (

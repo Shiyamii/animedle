@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/lib/guessing-utils.ts';
 import { type AnimeItemDTO, type GuessResultDTO, useAnimeStore } from '@/stores/animeStore';
-import { createFuse, filterAnimeList, makeGuessableList, makeGuessRequest } from '@/viewmodels/guessingViewModel';
 
 async function fetchAnimeStats(animeId: string): Promise<Record<string, number>> {
   try {
@@ -51,9 +51,7 @@ export function useDailyGuessingPageViewModel() {
       .then((date) => {
         setServerAnimeDate(date);
         const dateChanged = date && animeStore.currentAnimeDate !== date;
-        const isInProgress = animeStore.guessList.length > 0 && !animeStore.foundAnime;
-
-        if (dateChanged && isInProgress) {
+        if (dateChanged && !!animeStore.foundAnime) {
           animeStore.resetGame();
         } else {
           const list = animeStore.guessList;
@@ -64,7 +62,14 @@ export function useDailyGuessingPageViewModel() {
         }
       })
       .catch(() => {});
-  }, []);
+  }, [
+    animeStore.animeList.length,
+    animeStore.currentAnimeDate,
+    animeStore.foundAnime,
+    animeStore.guessList,
+    animeStore.loadAnimeList,
+    animeStore.resetGame,
+  ]);
 
   useEffect(() => {
     setFuse(createFuse(makeGuessableList(animeStore.animeList, guessList)));

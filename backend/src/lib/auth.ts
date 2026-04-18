@@ -46,7 +46,6 @@ export const auth = betterAuth({
           }
           return Promise.resolve();
         },
-        // biome-ignore lint/correctness/noUnreachable: weird error
       },
     },
   },

@@ -23,24 +23,28 @@
   - [Configuration](#configuration)
   - [Récupération et filtrage des données](#récupération-et-filtrage-des-données)
   - [Intégration MongoDB](#intégration-mongodb)
+-[Notre utilisation de l'IA](#notre-utilisation-de-lai)
 
 ## URL de l'application
 
 Déployé sur le serveur de Tamas [Animedle](https://animedle.apps.shiyamii.com/).
+Pour les utilisateurs normals, créez une compte.
 
-### Utilisateurs admin
+### Utilisateur admin
 
--- A ajouter --
+| Email | Mot de passe |
+| --- | --- |
+| admin@admin.com | 12345Admin! |
 
 ## Équipe
 
 Répartition des tâches, pour plus de détails voir [TASKS.md](./TASKS.md).
 
-| Prénom | Nom | Utilisateur GitHub | Tâches réalisées |
-| --- | --- | --- | --- |
-| Samy | Ben Dhiab | [samsoucoupe](https://github.com/samsoucoupe) | Système de scraping (fetch des données) ; mise en place du WebSocket et intégration frontend ; mise en place du Challenge et intégration frontend |
+| Prénom | Nom | Utilisateur GitHub | Tâches réalisées                                                                                                                                                                                                                                                                                                      |
+| --- | --- | --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Samy | Ben Dhiab | [samsoucoupe](https://github.com/samsoucoupe) | Système de scraping (fetch des données) ; mise en place du WebSocket et intégration frontend ; mise en place du Challenge et intégration frontend                                                                                                                                                                     |
 | Tamas | Palotas | [Shiyamii](https://github.com/Shiyamii) | Vérification et nettoyage des données ; complétion des données ; adaptation du format des données pour l’insertion ; Anime Guessing (système, cron de l’anime du jour, mode endless) ; Character Guessing (système, cron du personnage du jour, mode endless) ; déploiement (dockerisation, configuration du serveur) |
-| Titouan | Lacombe--Fabre | [Tit0u4N](https://github.com/Tit0u4N) | Authentification ; espace administrateur ; refonte visuelle |
+| Titouan | Lacombe--Fabre | [Tit0u4N](https://github.com/Tit0u4N) | Mise en place de l'architecture générale (backend et frontend) ; authentification ; espace administrateur (CRUD animes et personnages, gestion anime du jour, visualisation des stats) ; statistiques (mode daily, visualisation admin) ; refonte visuelle (charte graphique, i18n, responsive) ; tests unitairesa    |
 
 ---
 
@@ -210,3 +214,14 @@ Les données filtrées sont stockées dans une base de données MongoDB, ce qui 
 ```bash
 bun run start:insert
 ```
+
+
+---
+
+
+## Notre utilisation de l'ai
+
+Nous avons utilisé different IAs
+- Copilot: pour l'autocomplete intiligient
+- Gemini/chatGPT: pour se renseigner, créer de petits bouts de code
+- Code Claude: pour generer les tests unitaires

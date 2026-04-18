@@ -50,6 +50,7 @@ type AnimeRelatedList = {
   relatedIds: number[];
 };
 
+// biome-ignore lint/complexity/noBannedTypes: is necessary for JikanResponse
 type JikanResponse = {};
 
 type JikanAnimePaginatedResponse = JikanResponse & {
@@ -149,6 +150,7 @@ function fetchAnimeRelations(id: number): Promise<JikanRelationsResponse> {
 
 async function fetchAnime(id: number): Promise<JikanAnime> {
   if (fetchedAnimeCache.has(id)) {
+    // biome-ignore lint/style/noNonNullAssertion: is safe because we check with has() before
     return fetchedAnimeCache.get(id)!;
   }
   const url = `https://api.jikan.moe/v4/anime/${id}`;

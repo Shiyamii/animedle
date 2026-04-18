@@ -1,13 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { AdminAnimesTab } from './AdminAnimesTab';
+import { AdminCharactersTab } from './AdminCharactersTab';
 import { AdminDailyTab } from './AdminDailyTab';
 import { AdminStatsTab } from './AdminStatsTab';
 import { AnimeFormDialog } from './AnimeFormDialog';
+import { CharacterFormDialog } from './CharacterFormDialog';
+import { DeleteCharacterConfirmDialog } from './DeleteCharacterConfirmDialog';
 import { DeleteConfirmDialog } from './DeleteConfirmDialog';
 import { DisableAnimeConfirmDialog } from './DisableAnimeConfirmDialog';
 import { useAdminViewModel } from './useAdminViewModel';
 
-const TABS = ['animes', 'daily', 'stats'] as const;
+const TABS = ['animes', 'characters', 'daily', 'stats'] as const;
 
 export function AdminPage() {
   const { t } = useTranslation();
@@ -37,6 +40,7 @@ export function AdminPage() {
         </div>
 
         {activeTab === 'animes' && <AdminAnimesTab vm={vm} />}
+        {activeTab === 'characters' && <AdminCharactersTab vm={vm} />}
         {activeTab === 'daily' && <AdminDailyTab vm={vm} />}
         {activeTab === 'stats' && <AdminStatsTab vm={vm} />}
       </div>
@@ -44,6 +48,8 @@ export function AdminPage() {
       <AnimeFormDialog vm={vm} />
       <DeleteConfirmDialog vm={vm} />
       <DisableAnimeConfirmDialog vm={vm} />
+      <CharacterFormDialog vm={vm} />
+      <DeleteCharacterConfirmDialog vm={vm} />
     </div>
   );
 }

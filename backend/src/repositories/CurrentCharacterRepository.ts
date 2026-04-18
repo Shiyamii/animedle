@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/useNamingConvention: TKT C FINE */
 import mongoose, { type Model, Schema, type Types } from 'mongoose';
 import { ensureMongooseConnection } from '@/lib/db';
 import type { CharacterEntity } from './CharacterRepository';

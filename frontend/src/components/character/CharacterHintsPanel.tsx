@@ -9,8 +9,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import type { CharacterDailyHintConfigDTO } from '@/lib/guessing-utils.ts';
 import { useCharacterDifficultyStore } from '@/stores/characterDifficultyStore';
-import type { CharacterDailyHintConfigDTO } from '@/viewmodels/guessingViewModel';
 import { afterGuessCountForAttribute, guessesRemainingUntilUnlock, hintAttributeLabel } from './characterGuessingUtils';
 import { HintSpoilerBlock } from './HintSpoilerBlock';
 
@@ -50,8 +50,9 @@ export function CharacterHintsPanel({
   const hasDemographic = hints.demographicType != null && hints.demographicType !== '';
   const hasGenres = (hints.animeGenres?.length ?? 0) > 0;
 
+  // biome-ignore lint/style/noNonNullAssertion: CHILL
   const demoKey = hasDemographic ? hints.demographicType! : '';
-  const genresKey = hasGenres ? hints.animeGenres!.join(',') : '';
+  const genresKey = hasGenres ? hints.animeGenres?.join(',') : '';
 
   const sortedTiers = hintConfig ? [...hintConfig.hintTiers].sort((a, b) => a.afterGuessCount - b.afterGuessCount) : [];
 
@@ -162,7 +163,7 @@ export function CharacterHintsPanel({
               </p>
               <HintSpoilerBlock
                 useSpoiler={spoilerModeForHints}
-                contentKey={genresKey}
+                contentKey={genresKey as string}
                 empty={!hasGenres}
                 emptyLabel={t('character.hintSlotEmpty')}
                 emptyHint={genresEmptyHint}

@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/useNamingConvention: Tkt c fine */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -66,13 +67,35 @@ const defaultForm: AnimeFormData = {
 
 export type EnabledFilter = 'all' | 'enabled' | 'disabled';
 
+export interface AdminCharacterDTO {
+  id: string;
+  name: string;
+  imageUrl: string;
+  animeId: string;
+  animeTitle: string;
+  demographicType: string | null;
+  animeGenres: string[];
+}
+
+export interface CharacterFormData {
+  name: string;
+  imageUrl: string;
+  animeId: string;
+}
+
+const defaultCharacterForm: CharacterFormData = {
+  name: '',
+  imageUrl: '',
+  animeId: '',
+};
+
 export function useAdminViewModel() {
   const [animes, setAnimes] = useState<AdminAnimeDTO[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [enabledFilter, setEnabledFilter] = useState<EnabledFilter>('all');
   const [currentAnime, setCurrentAnime] = useState<AdminAnimeDTO | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState<'animes' | 'daily' | 'stats'>('animes');
+  const [activeTab, setActiveTab] = useState<'animes' | 'characters' | 'daily' | 'stats'>('animes');
   const [stats, setStats] = useState<AdminStatsDTO | null>(null);
   const [isLoadingStats, setIsLoadingStats] = useState(false);
   const statsFetched = useRef(false);
@@ -83,6 +106,24 @@ export function useAdminViewModel() {
   const [selectedAnimeId, setSelectedAnimeId] = useState('');
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [disableConfirmAnimeId, setDisableConfirmAnimeId] = useState<string | null>(null);
+
+  // Characters state
+  const [characters, setCharacters] = useState<AdminCharacterDTO[]>([]);
+  const [characterSearchQuery, setCharacterSearchQuery] = useState('');
+  const charactersFetched = useRef(false);
+  const [showCharacterForm, setShowCharacterForm] = useState(false);
+  const [editingCharacterId, setEditingCharacterId] = useState<string | null>(null);
+  const [characterForm, setCharacterForm] = useState<CharacterFormData>(defaultCharacterForm);
+  const [characterError, setCharacterError] = useState<string | null>(null);
+  const [deleteCharacterConfirmId, setDeleteCharacterConfirmId] = useState<string | null>(null);
+
+  const filteredCharacters = useMemo(() => {
+    const q = characterSearchQuery.trim().toLowerCase();
+    if (!q) {
+      return characters;
+    }
+    return characters.filter((c) => c.name.toLowerCase().includes(q) || c.animeTitle.toLowerCase().includes(q));
+  }, [characters, characterSearchQuery]);
 
   const filteredAnimes = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -117,6 +158,17 @@ export function useAdminViewModel() {
     setCurrentAnime(data);
   }, []);
 
+  const loadCharacters = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const res = await fetch(`${API_URL}/api/admin/characters`, { credentials: 'include' });
+      const data = await res.json();
+      setCharacters(data);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
   const loadStats = useCallback(async () => {
     setIsLoadingStats(true);
     try {
@@ -139,6 +191,13 @@ export function useAdminViewModel() {
       loadStats().catch(() => {});
     }
   }, [activeTab, loadStats]);
+
+  useEffect(() => {
+    if (activeTab === 'characters' && !charactersFetched.current) {
+      charactersFetched.current = true;
+      loadCharacters().catch(() => {});
+    }
+  }, [activeTab, loadCharacters]);
 
   const openCreateForm = () => {
     setEditingId(null);
@@ -324,6 +383,77 @@ export function useAdminViewModel() {
     }
   };
 
+  const openCreateCharacterForm = () => {
+    setEditingCharacterId(null);
+    setCharacterForm(defaultCharacterForm);
+    setCharacterError(null);
+    setShowCharacterForm(true);
+  };
+
+  const openEditCharacterForm = (character: AdminCharacterDTO) => {
+    setEditingCharacterId(character.id);
+    setCharacterForm({ name: character.name, imageUrl: character.imageUrl, animeId: character.animeId });
+    setCharacterError(null);
+    setShowCharacterForm(true);
+  };
+
+  const closeCharacterForm = () => {
+    setShowCharacterForm(false);
+    setEditingCharacterId(null);
+    setCharacterForm(defaultCharacterForm);
+    setCharacterError(null);
+  };
+
+  const updateCharacterFormField = (key: keyof CharacterFormData, value: string) => {
+    setCharacterForm((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleCharacterSubmit = async () => {
+    setCharacterError(null);
+    setIsLoading(true);
+    try {
+      const url = editingCharacterId
+        ? `${API_URL}/api/admin/characters/${editingCharacterId}`
+        : `${API_URL}/api/admin/characters`;
+      const method = editingCharacterId ? 'PUT' : 'POST';
+      const res = await fetch(url, {
+        method,
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(characterForm),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setCharacterError(data.error ?? 'Erreur lors de la sauvegarde');
+        return;
+      }
+      closeCharacterForm();
+      await loadCharacters();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const confirmDeleteCharacter = (id: string) => setDeleteCharacterConfirmId(id);
+  const cancelDeleteCharacter = () => setDeleteCharacterConfirmId(null);
+
+  const handleDeleteCharacter = async () => {
+    if (!deleteCharacterConfirmId) {
+      return;
+    }
+    setIsLoading(true);
+    try {
+      await fetch(`${API_URL}/api/admin/characters/${deleteCharacterConfirmId}`, {
+        method: 'DELETE',
+        credentials: 'include',
+      });
+      setDeleteCharacterConfirmId(null);
+      await loadCharacters();
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return {
     animes,
     filteredAnimes,
@@ -362,5 +492,22 @@ export function useAdminViewModel() {
     stats,
     isLoadingStats,
     loadStats,
+    characters,
+    filteredCharacters,
+    characterSearchQuery,
+    setCharacterSearchQuery,
+    showCharacterForm,
+    editingCharacterId,
+    characterForm,
+    characterError,
+    deleteCharacterConfirmId,
+    openCreateCharacterForm,
+    openEditCharacterForm,
+    closeCharacterForm,
+    updateCharacterFormField,
+    handleCharacterSubmit,
+    confirmDeleteCharacter,
+    cancelDeleteCharacter,
+    handleDeleteCharacter,
   };
 }

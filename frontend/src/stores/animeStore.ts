@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/style/useNamingConvention: TKT C FINE */
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 

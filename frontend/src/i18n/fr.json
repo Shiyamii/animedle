@@ -143,6 +143,7 @@
     "title": "Administration",
     "tabs": {
       "animes": "Gestion des animes",
+      "characters": "Gestion des personnages",
       "daily": "Anime du jour",
       "stats": "Statistiques"
     },
@@ -227,6 +228,39 @@
         "totalWins": "Total victoires",
         "winDistribution": "Distribution globale des victoires"
       }
+    },
+    "characters": {
+      "count_one": "{{count}} personnage",
+      "count_other": "{{count}} personnages",
+      "add": "Ajouter un personnage",
+      "loading": "Chargement...",
+      "searchPlaceholder": "Rechercher un personnage...",
+      "table": {
+        "image": "Image",
+        "name": "Nom",
+        "anime": "Anime",
+        "actions": "Actions"
+      }
+    },
+    "characterForm": {
+      "titleCreate": "Ajouter un personnage",
+      "titleEdit": "Modifier le personnage",
+      "name": "Nom du personnage",
+      "namePlaceholder": "Naruto Uzumaki",
+      "imageUrl": "URL de l'image",
+      "imageUrlPlaceholder": "https://cdn.myanimelist.net/images/characters/...",
+      "anime": "Anime associé",
+      "animePlaceholder": "Sélectionner un anime...",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "saving": "Sauvegarde..."
+    },
+    "deleteCharacter": {
+      "title": "Supprimer le personnage",
+      "confirm": "Supprimer «\u00a0{{name}}\u00a0»\u00a0? Cette action est irréversible.",
+      "cancel": "Annuler",
+      "confirmBtn": "Supprimer",
+      "deleting": "Suppression..."
     },
     "daily": {
       "current": "Anime actuel",

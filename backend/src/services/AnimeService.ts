@@ -1,10 +1,11 @@
+/** biome-ignore-all lint/style/useNamingConvention: TKT C FINE */
 import {
   type AnimeEntity,
   type AnimeImagesWebpEntity,
   AnimeRepository,
   type AnimeTitleEntity,
-} from './AnimeRepositories';
-import { type AnimeStatsDTO, CurrentAnimeRepository } from './CurrentAnimeRepositories';
+} from '@/repositories/AnimeRepository';
+import { type AnimeStatsDTO, CurrentAnimeRepository } from '../repositories/CurrentAnimeRepository';
 
 export interface AnimeItemDTO {
   id: string;

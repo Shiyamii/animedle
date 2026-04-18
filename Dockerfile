@@ -41,7 +41,6 @@ ENV VITE_BACKEND_WS_URL=$VITE_BACKEND_WS_URL
 WORKDIR  /app/frontend
 RUN bun install
 
-
 RUN bun run build
 
 
